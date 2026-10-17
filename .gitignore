@@ -1,0 +1,8 @@
+# Material y fuentes de trabajo externas
+fuentes-externas/
+
+# Archivos del sistema y editores
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/

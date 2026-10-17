@@ -1,0 +1,368 @@
+{
+  "id": "cap_02_visigodos",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_sociales",
+  "tema_id": "tema_06_castillos",
+  "titulo": "Capítulo 2: El Reino Visigodo",
+  "subtitulo": "El inicio de la Edad Media española",
+  "icono": "👑",
+  "color_primario": "#8b5cf6",
+  "color_secundario": "#7c3aed",
+  "es_circular": true,
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "subtipo": "parejas",
+      "titulo": "1. Parejas Visigodas",
+      "descripcion": "Encuentra las 7 parejas entre los reyes, pueblos y conceptos visigodos.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "leovigildo", "etiqueta": "Leovigildo", "icono": "👑", "detalle": "Unificó el reino visigodo", "color": "#8b5cf6" },
+        { "id": "recaredo", "etiqueta": "Recaredo", "icono": "✝️", "detalle": "Se convirtió al catolicismo (589)", "color": "#ec4899" },
+        { "id": "suevos", "etiqueta": "Suevos", "icono": "🗺️", "detalle": "Capital en Braga (noroeste)", "color": "#3b82f6" },
+        { "id": "toledo", "etiqueta": "Toledo", "icono": "🏰", "detalle": "Capital del reino visigodo", "color": "#f97316" },
+        { "id": "nobleza", "etiqueta": "Nobleza", "icono": "🎖️", "detalle": "Ocupaban los cargos políticos", "color": "#10b981" },
+        { "id": "campesinado", "etiqueta": "Campesinado", "icono": "🌾", "detalle": "Mayoría de la población", "color": "#f59e0b" },
+        { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🏛️", "detalle": "Arte visigodo característico", "color": "#06b6d4" }
+      ]
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Ficha: La llegada de los Visigodos",
+      "descripcion": "Descubre cómo los pueblos germánicos llegaron a Hispania.",
+      "icono": "⚔️",
+      "fichas": [
+        {
+          "titulo": "La llegada de los Visigodos (Siglo V d.C.)",
+          "subtitulo": "Los pueblos bárbaros invaden la Hispania romana",
+          "icono": "⚔️",
+          "tarjetas": [
+            {
+              "nombre": "La invasión bárbara",
+              "fecha": "Principios del siglo V",
+              "icono": "🌊",
+              "color": "#ef4444",
+              "puntos": [
+                "La Hispania romana fue invadida por **alanos**, **suevos**, **vándalos** y **visigodos**, procedentes del Cáucaso y de origen escandinavo.",
+                "Los **cántabros** y **vascones** del área cantábrica no formaron ningún reino y resistieron a los invasores."
+              ]
+            },
+            {
+              "nombre": "El pacto romano-visigodo",
+              "fecha": "Siglo V",
+              "icono": "🤝",
+              "color": "#3b82f6",
+              "puntos": [
+                "El ejército romano necesitaba ayuda para frenar la invasión, por lo que pactó con los **visigodos** que podían instalarse en Hispania si derrotaban a los demás invasores.",
+                "Los visigodos expulsaron a **alanos** y **vándalos**, mientras que los **suevos** permanecieron en el noroeste con capital en **Braga**."
+              ]
+            },
+            {
+              "nombre": "El Reino Visigodo",
+              "fecha": "Siglo VI",
+              "icono": "👑",
+              "color": "#8b5cf6",
+              "puntos": [
+                "Los visigodos establecieron su capital en **Toledo**. Su reino se extendía por casi toda la península Ibérica, incluyendo parte del sur de la actual Francia.",
+                "El rey **Leovigildo** conquistó el reino suevo en el año **585**, logrando dominar todo el territorio peninsular."
+              ]
+            }
+          ],
+          "destacado": {
+            "icono": "📍",
+            "titulo": "Pueblos que resistieron",
+            "texto": "Los **cántabros** y los **vascones** del área cantábrica nunca fueron dominados por los visigodos, manteniendo su independencia."
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: La llegada de los Visigodos",
+      "descripcion": "Preguntas aleatorias sobre los pueblos que invadieron Hispania.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué pueblos invadieron la Hispania romana a principios del siglo V?",
+          "opciones": [
+            "Alanos, suevos, vándalos y visigodos",
+            "Griegos, romanos, fenicios y cartagineses",
+            "Vikingos, celtas, iberos y tartesios",
+            "Francos, hunos, sajones y normandos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Alanos, suevos, vándalos y visigodos invadieron Hispania procedentes del norte y el este de Europa."
+        },
+        {
+          "enunciado": "¿Qué pueblos del área cantábrica NO formaron ningún reino y resistieron a los visigodos?",
+          "opciones": [
+            "Los cántabros y los vascones",
+            "Los suevos y los alanos",
+            "Los vándalos y los francos",
+            "Los romanos y los griegos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! Los cántabros y los vascones mantuvieron su independencia y no fueron sometidos por los visigodos."
+        },
+        {
+          "enunciado": "¿Por qué el ejército romano pactó con los visigodos?",
+          "opciones": [
+            "Necesitaba ayuda para frenar la invasión de otros pueblos",
+            "Quería que los visigodos construyeran castillos",
+            "Para que enseñaran latín a los demás pueblos",
+            "Porque los visigodos tenían los mejores barcos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Roma negoció con los visigodos: podían instalarse en Hispania a cambio de expulsar a los otros invasores."
+        },
+        {
+          "enunciado": "¿Dónde se estableció la capital del reino visigodo?",
+          "opciones": [
+            "Toledo (Toletum)",
+            "Braga (Bracara Augusta)",
+            "Sevilla (Hispalis)",
+            "Zaragoza (Caesaraugusta)"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! Toledo, llamada Toletum en latín, fue la capital del reino visigodo durante todo su período."
+        },
+        {
+          "enunciado": "¿Dónde estaba la capital del reino de los suevos?",
+          "opciones": [
+            "Braga (Bracara Augusta), en el noroeste",
+            "Toledo, en el centro",
+            "Pamplona, en el norte",
+            "Mérida, en el suroeste"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! Los suevos establecieron su capital en Braga (Bracara Augusta), en el noroeste de la Península."
+        },
+        {
+          "enunciado": "¿Qué rey visigodo conquistó el reino suevo en el año 585?",
+          "opciones": [
+            "Leovigildo",
+            "Recaredo",
+            "Recesvinto",
+            "Ataulfo"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Estupendo! Leovigildo conquistó el reino suevo en el 585, logrando unificar toda la Península Ibérica."
+        },
+        {
+          "enunciado": "¿Cuál era el origen de los visigodos?",
+          "opciones": [
+            "Procedían de la región del Cáucaso y eran de origen escandinavo",
+            "Eran de la Península Ibérica desde siempre",
+            "Procedían del norte de África",
+            "Venían de la India y Asia Central"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! Los visigodos (y otros pueblos germánicos) procedían del Cáucaso y tenían origen escandinavo."
+        },
+        {
+          "enunciado": "¿Cuál es el orden correcto de los reyes visigodos más importantes estudiados?",
+          "opciones": [
+            "Leovigildo ➡️ Recaredo ➡️ Recesvinto",
+            "Recaredo ➡️ Leovigildo ➡️ Recesvinto",
+            "Recesvinto ➡️ Recaredo ➡️ Leovigildo",
+            "Leovigildo ➡️ Recesvinto ➡️ Recaredo"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Primero Leovigildo unificó el reino, después Recaredo se convirtió al catolicismo, y más tarde Recesvinto creó leyes comunes."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "subtipo": "puzzle",
+      "titulo": "4. Puzzle: ¡La Península Visigoda!",
+      "descripcion": "Ordena las 6 piezas del mapa visigodo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/puzzle.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Ficha: La vida en el Reino Visigodo",
+      "descripcion": "Conoce cómo era la sociedad, la religión y el arte de los visigodos.",
+      "icono": "🏰",
+      "fichas": [
+        {
+          "titulo": "La vida en el Reino Visigodo",
+          "subtitulo": "Religión, sociedad y arte en el reino medieval hispano",
+          "icono": "🏰",
+          "tarjetas": [
+            {
+              "nombre": "La religión: el catolicismo",
+              "fecha": "Año 589",
+              "icono": "✝️",
+              "color": "#ec4899",
+              "puntos": [
+                "Los hispanorromanos eran **católicos**, pero los visigodos eran **arrianos** (diferente versión del cristianismo). Esto causaba división.",
+                "En el año **589**, el rey **Recaredo** abandonó el arrianismo y se convirtió al **catolicismo**, uniendo religiosamente a todo el reino."
+              ]
+            },
+            {
+              "nombre": "La sociedad visigoda",
+              "fecha": "Siglos V-VIII",
+              "icono": "👥",
+              "color": "#f59e0b",
+              "puntos": [
+                "Con los visigodos disminuyó el comercio y la artesanía, pero **aumentó la agricultura y la ganadería**. Existían grandes diferencias entre los grupos sociales.",
+                "La **nobleza** (minoría) ocupaba los cargos políticos y de la Iglesia. El **campesinado** era la mayoría y trabajaba las tierras. También había esclavos."
+              ]
+            },
+            {
+              "nombre": "Las leyes comunes",
+              "fecha": "Reinado de Recesvinto",
+              "icono": "📜",
+              "color": "#10b981",
+              "puntos": [
+                "Al principio, visigodos e hispanorromanos no compartían ni religión ni leyes. Había profunda división.",
+                "Durante el reinado de **Recesvinto** se elaboraron **leyes comunes** para todo el reino, lo que aumentó la unidad."
+              ]
+            },
+            {
+              "nombre": "El Arte Visigodo",
+              "fecha": "Siglos V-VIII",
+              "icono": "⛪",
+              "color": "#06b6d4",
+              "puntos": [
+                "El arte visigodo experimentó un **declive** frente a los grandes monumentos romanos. Se caracterizó por la construcción de **pequeñas iglesias rurales** con pocas ventanas y **arcos de herradura**.",
+                "Destacó la **orfebrería**: la creación de piezas artísticas con metal, como las famosas coronas votivas."
+              ]
+            }
+          ],
+          "destacado": {
+            "icono": "🏛️",
+            "titulo": "Iglesia visigoda famosa",
+            "texto": "La iglesia de **San Juan de Baños de Cerrato** (Palencia) es uno de los mejores ejemplos conservados de la arquitectura visigoda, con su característico **arco de herradura**."
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: El Reino Visigodo",
+      "descripcion": "Preguntas aleatorias sobre la vida, sociedad y arte en el reino visigodo.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué diferencia religiosa existía entre los hispanorromanos y los visigodos al principio?",
+          "opciones": [
+            "Los hispanorromanos eran católicos y los visigodos arrianos",
+            "Los hispanorromanos eran musulmanes y los visigodos católicos",
+            "Ambos grupos eran católicos desde el principio",
+            "Los visigodos eran budistas y los hispanorromanos paganos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Los hispanorromanos eran católicos mientras que los visigodos seguían el arrianismo, lo que generaba división en el reino."
+        },
+        {
+          "enunciado": "¿Qué decisión tomó el rey Recaredo en el año 589 para unir al pueblo?",
+          "opciones": [
+            "Se convirtió al catolicismo, abandonando el arrianismo",
+            "Expulsó a todos los hispanorromanos del reino",
+            "Declaró el islam como religión oficial",
+            "Prohibió todas las religiones en el reino"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! En el 589, Recaredo adoptó el catolicismo, lo que unificó religiosamente a visigodos e hispanorromanos."
+        },
+        {
+          "enunciado": "¿Cómo cambió la economía con la llegada de los visigodos?",
+          "opciones": [
+            "Disminuyó el comercio pero aumentó la agricultura y la ganadería",
+            "Aumentó el comercio marítimo con América",
+            "Se desarrollaron mucho la industria y las fábricas",
+            "Todo siguió exactamente igual que con los romanos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Con los visigodos el comercio y la artesanía decayeron, pero creció la importancia del mundo rural: la agricultura y ganadería."
+        },
+        {
+          "enunciado": "¿Qué grupo social era la minoría privilegiada en el reino visigodo?",
+          "opciones": [
+            "La nobleza, que ocupaba los cargos políticos y de la Iglesia",
+            "El campesinado, que gobernaba las ciudades",
+            "Los artesanos, que controlaban el comercio",
+            "Los esclavos, que dirigían el ejército"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! La nobleza era una minoría que ostentaba los principales cargos políticos y religiosos del reino."
+        },
+        {
+          "enunciado": "¿Quién era la mayoría de la población en el reino visigodo?",
+          "opciones": [
+            "El campesinado, que trabajaba las tierras",
+            "La nobleza, que vivía en palacios",
+            "Los mercaderes, que viajaban por Europa",
+            "Los soldados, que vigilaban las fronteras"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! La mayoría de la población eran campesinos que trabajaban la tierra. También había esclavos."
+        },
+        {
+          "enunciado": "¿Qué rey visigodo creó leyes comunes para todo el reino, uniendo a visigodos e hispanorromanos?",
+          "opciones": [
+            "Recesvinto",
+            "Leovigildo",
+            "Recaredo",
+            "Ataulfo"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! Durante el reinado de Recesvinto se elaboraron leyes comunes para todos los habitantes del reino visigodo."
+        },
+        {
+          "enunciado": "¿Cuál es la característica más reconocible de la arquitectura visigoda?",
+          "opciones": [
+            "Las pequeñas iglesias rurales con arcos de herradura",
+            "Las grandes pirámides de piedra como en Egipto",
+            "Los enormes acueductos y anfiteatros como los romanos",
+            "Los rascacielos con cúpulas doradas"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! El arte visigodo se caracterizó por iglesias rurales de pequeño tamaño, pocas ventanas y el arco de herradura."
+        },
+        {
+          "enunciado": "¿En qué rama artística destacaron especialmente los visigodos?",
+          "opciones": [
+            "En la orfebrería: piezas artísticas elaboradas con metal",
+            "En la pintura de grandes murales al fresco",
+            "En la escultura de estatuas de mármol gigantes",
+            "En la cerámica pintada de colores vivos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Excelente! Los visigodos destacaron en la orfebrería, creando bellas piezas artísticas con metales preciosos."
+        },
+        {
+          "enunciado": "¿En qué provincia se encuentra la famosa iglesia visigoda de San Juan de Baños de Cerrato?",
+          "opciones": [
+            "Palencia",
+            "Toledo",
+            "Sevilla",
+            "Granada"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! La iglesia de San Juan de Baños de Cerrato, en Palencia, es uno de los mejores ejemplos de arquitectura visigoda conservada."
+        },
+        {
+          "enunciado": "¿Cuáles son los tres reyes visigodos más importantes que estudiamos en este capítulo?",
+          "opciones": [
+            "Leovigildo, Recaredo y Recesvinto",
+            "Julio César, Augusto y Nerón",
+            "Fernando, Isabel y Carlos",
+            "Pelayo, Alfonso y Sancho"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
+        }
+      ]
+    }
+  ]
+}

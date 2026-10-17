@@ -402,6 +402,16 @@
                     "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/contenido.json",
                     "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/",
                     "total_estrellas_posibles": 18
+                  },
+                  {
+                    "id": "cap_02_visigodos",
+                    "numero": 2,
+                    "titulo": "Capítulo 2: El Reino Visigodo",
+                    "subtitulo": "El inicio de la Edad Media española",
+                    "icono": "👑",
+                    "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/contenido.json",
+                    "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/",
+                    "total_estrellas_posibles": 18
                   }
                 ]
               }
@@ -1152,7 +1162,7 @@
             <div class="modal-card victory-card">
               <div class="victory-icon">🎉</div>
               <h2 class="victory-title">¡Misión Cumplida!</h2>
-              <p class="victory-subtitle">Has descubierto todas las etapas de la Historia</p>
+              <p class="victory-subtitle">¡Has encontrado todas las parejas!</p>
               
               <div class="stars-awarded" id="victory-stars">
                 <span class="star">⭐</span>
@@ -1167,7 +1177,7 @@
 
               <div class="modal-actions">
                 <button class="btn-primary btn-large" id="btn-next-step">
-                  <span>Continuar a la Ficha: Prehistoria 🦴 ➡️</span>
+                  <span>Continuar al siguiente reto 🗺️ ➡️</span>
                 </button>
               </div>
             </div>
@@ -1407,7 +1417,7 @@
       this.timerInterval = null;
       this.isVictory = false;
 
-      this.imageSrc = casillaData.imagen || 'data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg';
+      this.imageSrc = casillaData.imagen || (tema.assets_dir ? `${tema.assets_dir}puzzle.jpg` : 'data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg');
       this.useCustomImage = false;
 
       this.svgIllustration = `
@@ -1593,7 +1603,7 @@
 
               <div class="modal-actions">
                 <button class="btn-primary btn-large" id="btn-puzzle-next">
-                  <span>Continuar a la Ficha de Historia 📜 ➡️</span>
+                  <span>Continuar al siguiente reto 🗺️ ➡️</span>
                 </button>
               </div>
             </div>
@@ -2468,12 +2478,12 @@
   class App {
     constructor() {
       this.root = document.getElementById('app-root');
-      this.catalogo = defaultCatalogo;
+      this.catalogo = (typeof window !== 'undefined' && window.CATALOGO_DATA) ? window.CATALOGO_DATA : defaultCatalogo;
       this.currentCapitulo = defaultCapituloData;
       this.currentViewInstance = null;
     }
 
-    init() {
+    async init() {
       const unlockAudio = () => {
         audio.init();
         window.removeEventListener('pointerdown', unlockAudio);
@@ -2482,15 +2492,51 @@
       window.addEventListener('pointerdown', unlockAudio);
       window.addEventListener('keydown', unlockAudio);
 
+      // Intentar cargar catalogo vía fetch si estamos en servidor HTTP
+      try {
+        const res = await fetch('data/catalogo.json');
+        if (res.ok) {
+          this.catalogo = await res.json();
+        }
+      } catch (e) {
+        // En file:// usamos window.CATALOGO_DATA o defaultCatalogo
+      }
+
       this.showMenu();
+    }
+
+    async loadCapituloData(capituloObj) {
+      if (!capituloObj) return defaultCapituloData;
+
+      // 1. Intentar cargar vía fetch (HTTP)
+      if (capituloObj.archivo) {
+        try {
+          const res = await fetch(capituloObj.archivo);
+          if (res.ok) {
+            return await res.json();
+          }
+        } catch (e) {}
+      }
+
+      // 2. Intentar buscar en window.CAPITULOS_DATA (file://)
+      if (typeof window !== 'undefined' && window.CAPITULOS_DATA) {
+        if (capituloObj.id && window.CAPITULOS_DATA[capituloObj.id]) {
+          return window.CAPITULOS_DATA[capituloObj.id];
+        }
+        if (capituloObj.archivo && window.CAPITULOS_DATA[capituloObj.archivo]) {
+          return window.CAPITULOS_DATA[capituloObj.archivo];
+        }
+      }
+
+      return defaultCapituloData;
     }
 
     showMenu() {
       this.cleanupCurrentView();
       const menuView = new MenuView(
         this.catalogo,
-        (capituloObj) => {
-          this.currentCapitulo = defaultCapituloData;
+        async (capituloObj) => {
+          this.currentCapitulo = await this.loadCapituloData(capituloObj);
           this.showMap();
         }
       );
