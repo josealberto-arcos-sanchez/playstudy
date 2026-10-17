@@ -1,6 +1,6 @@
 {
-  "name": "Aventura en el Tiempo: Las Edades de la Historia",
-  "short_name": "AventuraTiempo",
+  "name": "PlayStudy",
+  "short_name": "PlayStudy",
   "description": "Videojuego educativo interactivo sobre las edades de la historia.",
   "start_url": "/playstudy/",
   "scope": "/playstudy/",
