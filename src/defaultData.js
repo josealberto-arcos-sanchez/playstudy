@@ -35,6 +35,16 @@ export const defaultCatalogo = {
                   "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/contenido.json",
                   "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/",
                   "total_estrellas_posibles": 18
+                },
+                {
+                  "id": "cap_02_visigodos",
+                  "numero": 2,
+                  "titulo": "Capítulo 2: El Reino Visigodo",
+                  "subtitulo": "El inicio de la Edad Media española",
+                  "icono": "👑",
+                  "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/",
+                  "total_estrellas_posibles": 18
                 }
               ]
             }

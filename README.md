@@ -43,14 +43,17 @@ videojuego/
 
 ---
 
-## 🔄 El Bucle de Juego del Capítulo 1 (6 Paradas en Circuito)
+## 🚀 Cómo Añadir Nuevos Capítulos de Forma Sencilla y Escalable
 
-Cada capítulo es un circuito continuo en el que el niño puede avanzar y rejugar paradas para mejorar su récord:
+Para añadir cualquier nuevo capítulo en el futuro solo hay que hacer **dos cosas**:
 
-1. **🃏 Casilla 1:** Minijuego de Parejas (14 cartas / 7 parejas históricas).
-2. **🦴 Casilla 2:** Micro-Ficha visual de La Prehistoria (tarjetas de Paleolítico, Neolítico, Metales y yacimientos).
-3. **❓ Casilla 3:** Quiz de Prehistoria (3 preguntas rápidas).
-4. **🧩 Casilla 4:** Puzzle cómico de 6 piezas (soporta imagen personalizada).
-5. **📜 Casilla 5:** Micro-Ficha visual de La Historia (Edad Antigua, Media, Moderna y Contemporánea).
-6. **🏆 Casilla 6:** Quiz de La Historia (4 preguntas).
-7. **👑 Podio Central:** Corona de Oro al conseguir las 18 estrellas totales (**18/18 ⭐**).
+1. **Crear la carpeta del capítulo** con su [`contenido.json`](file:///c:/jose_alberto/proyectos/videojuego/data/cursos/) y su imagen `assets/puzzle.jpg`:
+   ```text
+   data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_XX_nombre/
+   ├── contenido.json
+   └── assets/
+       └── puzzle.jpg
+   ```
+2. **Añadir la entrada en [`data/catalogo.json`](file:///c:/jose_alberto/proyectos/videojuego/data/catalogo.json)** dentro del tema correspondiente.
+
+¡Y listo! Al hacer doble clic en [`jugar.bat`](file:///c:/jose_alberto/proyectos/videojuego/jugar.bat), el sistema compila y sincroniza automáticamente los datos para que funcionen 100% offline (o con servidor HTTP si se prefiere). También puedes sincronizar manualmente ejecutando [`scripts/actualizar_datos.ps1`](file:///c:/jose_alberto/proyectos/videojuego/scripts/actualizar_datos.ps1).
