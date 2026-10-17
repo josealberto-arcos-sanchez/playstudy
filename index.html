@@ -5,14 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Aventura en el Tiempo - Videojuego educativo interactivo">
   <meta name="theme-color" content="#3b82f6">
-  
+
   <!-- Soporte Web App / Tablet -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Aventura en el Tiempo">
-  
+
   <title>Aventura en el Tiempo: Las Edades de la Historia</title>
+
+  <!-- ═══════════════════════════════════════════════
+       PWA & ICONOS
+  ════════════════════════════════════════════════ -->
+  <!-- Favicon clásico (navegadores de escritorio) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+  <!-- Icono para "Añadir a pantalla de inicio" en iOS (Safari) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+  <!-- Web App Manifest (Android / Chrome / escritorio) -->
+  <link rel="manifest" href="manifest.json">
 
   <!-- Hojas de Estilos Modulares -->
   <link rel="stylesheet" href="css/main.css">
@@ -36,5 +47,16 @@
 
   <!-- Código del Juego (Compatible con doble clic directo file:// y servidor web http://) -->
   <script src="src/game_bundle.js"></script>
+
+  <!-- ── Registro del Service Worker (PWA) ── -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/playstudy/sw.js')
+          .then(reg => console.log('[SW] Registrado:', reg.scope))
+          .catch(err => console.warn('[SW] Error al registrar:', err));
+      });
+    }
+  </script>
 </body>
 </html>
