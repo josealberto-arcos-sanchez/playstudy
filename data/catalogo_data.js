@@ -45,6 +45,16 @@
                   "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/contenido.json",
                   "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/",
                   "total_estrellas_posibles": 18
+                },
+                {
+                  "id": "cap_03_al_andalus",
+                  "numero": 3,
+                  "titulo": "Capítulo 3: Al-Ándalus y los Reinos Cristianos",
+                  "subtitulo": "El origen de al-Ándalus, los núcleos cristianos y la Reconquista",
+                  "icono": "🕌",
+                  "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/",
+                  "total_estrellas_posibles": 18
                 }
               ]
             }
@@ -1636,6 +1646,802 @@
           ],
           "correcta": 0,
           "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
+        }
+      ]
+    }
+  ]
+}
+,
+    "cap_03_al_andalus": {
+  "id": "cap_03_al_andalus",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_sociales",
+  "tema_id": "tema_06_castillos",
+  "titulo": "Capítulo 3: Al-Ándalus y los Reinos Cristianos",
+  "subtitulo": "El origen de al-Ándalus, los núcleos cristianos del norte y la Reconquista",
+  "icono": "🕌",
+  "color_primario": "#10b981",
+  "color_secundario": "#059669",
+  "es_circular": true,
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "subtipo": "parejas",
+      "titulo": "1. Parejas Medievales",
+      "descripcion": "Encuentra las 7 parejas entre los protagonistas, lugares y conceptos clave.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "al_andalus", "etiqueta": "Al-Ándalus", "icono": "🕌", "detalle": "Territorio musulmán peninsular", "color": "#10b981" },
+        { "id": "pelayo", "etiqueta": "Don Pelayo", "icono": "🛡️", "detalle": "Venció en Covadonga (722)", "color": "#3b82f6" },
+        { "id": "califato", "etiqueta": "Abd al-Rahman III", "icono": "👑", "detalle": "Califato de Córdoba (929)", "color": "#8b5cf6" },
+        { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f59e0b" },
+        { "id": "navas", "etiqueta": "Las Navas de Tolosa", "icono": "⚔️", "detalle": "Victoria cristiana clave (1212)", "color": "#ef4444" },
+        { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XV)", "color": "#ec4899" },
+        { "id": "mudejares", "etiqueta": "Mudéjares", "icono": "🤝", "detalle": "Musulmanes en reinos cristianos", "color": "#06b6d4" }
+      ]
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Ficha: Origen y Desarrollo de Al-Ándalus",
+      "descripcion": "El nacimiento del islam, la llegada a la Península y las etapas andalusíes.",
+      "icono": "📖",
+      "fichas": [
+        {
+          "titulo": "Origen y Desarrollo de Al-Ándalus",
+          "subtitulo": "Desde la llegada en 711 hasta el reino nazarí de Granada",
+          "icono": "🕌",
+          "tarjetas": [
+            {
+              "nombre": "El nacimiento del islam",
+              "fecha": "Principios del siglo VII",
+              "icono": "🌙",
+              "color": "#10b981",
+              "puntos": [
+                "A principios del siglo VII surgió en Arabia una nueva religión, el **islam**, siguiendo las enseñanzas del profeta **Mahoma**.",
+                "A sus fieles se les llama **musulmanes** y su libro sagrado es el **Corán**, donde se recogen por escrito los preceptos que deben cumplir.",
+                "Los musulmanes se expandieron con gran rapidez hasta controlar un inmenso territorio desde la India hasta el norte de África."
+              ]
+            },
+            {
+              "nombre": "La llegada a la Península (711)",
+              "fecha": "Año 711",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "puntos": [
+                "En el año **711**, durante una guerra interna visigoda, un bando pidió ayuda a los musulmanes del norte de África.",
+                "Los musulmanes derrotaron al rey visigodo **don Rodrigo** en la **batalla de Guadalete** y acabaron con el reino visigodo de Toledo.",
+                "En poco tiempo dominaron casi toda la península ibérica (excepto las montañas del norte) y la llamaron **al-Ándalus**. Sus habitantes eran los **andalusíes**."
+              ]
+            },
+            {
+              "nombre": "Del Emirato al Califato de Córdoba",
+              "fecha": "Años 756 y 929",
+              "icono": "👑",
+              "color": "#8b5cf6",
+              "puntos": [
+                "Al inicio, al-Ándalus era un **emirato** (provincia) dependiente del gran califato del imperio islámico gobernado por la familia de los **Omeyas**.",
+                "En el año **756**, el príncipe omeya **Abd al-Rahman I** llegó a Córdoba y se independizó políticamente del califato.",
+                "En el año **929**, **Abd al-Rahman III** proclamó el **califato de Córdoba**, alcanzando la época dorada de esplendor militar, cultural y económico."
+              ]
+            },
+            {
+              "nombre": "Los Reinos de Taifas y Granada",
+              "fecha": "Años 1031 a 1492",
+              "icono": "🏰",
+              "color": "#f59e0b",
+              "puntos": [
+                "En el año **1031**, las disputas internas y la presión cristiana provocaron la división del califato en pequeños reinos llamados **taifas**.",
+                "Para frenar el avance cristiano, los andalusíes pidieron ayuda a pueblos musulmanes del norte de África: los **almorávides** y los **almohades**.",
+                "Desde el siglo XIII, al-Ándalus quedó reducido al **reino nazarí de Granada**, que sobrevivió hasta su conquista a finales del siglo XV (1492)."
+              ]
+            }
+          ],
+          "destacado": {
+            "icono": "🏛️",
+            "titulo": "La Mezquita de Córdoba",
+            "texto": "Construida durante el emirato y el califato, la **Mezquita de Córdoba** es una de las mayores joyas artísticas del mundo islámico y símbolo del esplendor andalusí."
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: Al-Ándalus",
+      "descripcion": "Comprueba lo que has aprendido sobre el origen y evolución de al-Ándalus.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué religión nació en Arabia a principios del siglo VII fundada por las enseñanzas de Mahoma?",
+          "opciones": [
+            "El islam",
+            "El cristianismo",
+            "El judaísmo",
+            "El budismo"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! El islam nació en Arabia a principios del siglo VII a través de las enseñanzas de Mahoma."
+        },
+        {
+          "enunciado": "¿Cómo se llama el libro sagrado de los musulmanes donde se recogen por escrito sus enseñanzas?",
+          "opciones": [
+            "El Corán",
+            "La Biblia",
+            "La Torá",
+            "El Fuero Real"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! El Corán es el libro sagrado del islam, con todos los preceptos que debe cumplir un musulmán."
+        },
+        {
+          "enunciado": "¿En qué batalla del año 711 derrotaron los musulmanes al rey visigodo don Rodrigo?",
+          "opciones": [
+            "Batalla de Guadalete",
+            "Batalla de Covadonga",
+            "Batalla de Las Navas de Tolosa",
+            "Batalla de Poitiers"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! En la batalla de Guadalete (711), los musulmanes derrotaron a don Rodrigo y conquistaron la Península."
+        },
+        {
+          "enunciado": "¿Qué nombre dieron los musulmanes al territorio peninsular que conquistaron?",
+          "opciones": [
+            "Al-Ándalus",
+            "Hispania",
+            "Lusitania",
+            "Tarraconense"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! Los musulmanes llamaron al-Ándalus a su territorio, y a sus habitantes andalusíes."
+        },
+        {
+          "enunciado": "¿Quién se hizo con el poder en Córdoba en el año 756 independizándose del califato?",
+          "opciones": [
+            "Abd al-Rahman I",
+            "Abd al-Rahman III",
+            "Don Pelayo",
+            "Alfonso VI"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! Abd al-Rahman I, de la familia Omeya, creó el emirato independiente de Córdoba en el 756."
+        },
+        {
+          "enunciado": "¿Qué acontecimiento histórico proclamó Abd al-Rahman III en el año 929?",
+          "opciones": [
+            "El califato de Córdoba",
+            "El reino nazarí de Granada",
+            "La rendición ante los cristianos",
+            "La división en taifas"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! En el año 929, Abd al-Rahman III proclamó el califato de Córdoba, máxima época de esplendor."
+        },
+        {
+          "enunciado": "¿En qué se fragmentó el califato de Córdoba en el año 1031 debido a disputas internas?",
+          "opciones": [
+            "En pequeños reinos llamados taifas",
+            "En provincias del Imperio Romano",
+            "En reinos visigodos del norte",
+            "En condados bajo control francés"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Estupendo! En 1031 el califato se desmembró en numerosos pequeños reinos denominados taifas."
+        },
+        {
+          "enunciado": "¿Qué pueblos procedentes del norte de África llegaron para ayudar a los andalusíes ante el avance cristiano?",
+          "opciones": [
+            "Los almorávides y los almohades",
+            "Los suevos y los vándalos",
+            "Los alanos y los celtas",
+            "Los francos y los normandos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Los reyes de taifas solicitaron auxilio a los almorávides y más tarde a los almohades."
+        },
+        {
+          "enunciado": "¿Cuál fue el último reino andalusí que resistió desde el siglo XIII hasta finales del siglo XV?",
+          "opciones": [
+            "El reino nazarí de Granada",
+            "El califato de Córdoba",
+            "La taifa de Toledo",
+            "El emirato de Zaragoza"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Excelente! El reino nazarí de Granada fue el último reducto musulmán peninsular hasta 1492."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "subtipo": "puzzle",
+      "titulo": "4. Puzzle: ¡Al-Ándalus Medieval!",
+      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Ficha: Los Reinos Cristianos y la Reconquista",
+      "descripcion": "Los núcleos del norte, el avance cristiano y la convivencia de culturas.",
+      "icono": "📜",
+      "fichas": [
+        {
+          "titulo": "Los Reinos Cristianos y la Reconquista",
+          "subtitulo": "El nacimiento de los núcleos del norte y la expansión hacia el sur",
+          "icono": "🛡️",
+          "tarjetas": [
+            {
+              "nombre": "El origen: Covadonga y los Pirineos",
+              "fecha": "Siglos VIII y IX (Año 722)",
+              "icono": "⛰️",
+              "color": "#3b82f6",
+              "puntos": [
+                "En el año **722**, liderados por el noble **don Pelayo**, los astures vencieron a los musulmanes en la **batalla de Covadonga**, naciendo el **reino de Asturias**.",
+                "En los Pirineos surgieron otros núcleos que no dependían de al-Ándalus, dando lugar al **reino de Navarra** y a los **condados aragoneses y catalanes**.",
+                "Todos estos núcleos comenzaron su expansión militar hacia el sur, reconquistando tierras a al-Ándalus."
+              ]
+            },
+            {
+              "nombre": "Evolución de los reinos occidentales",
+              "fecha": "Siglos X a XII (Año 1085)",
+              "icono": "🏰",
+              "color": "#8b5cf6",
+              "puntos": [
+                "El reino de Asturias se expandió hasta el río Duero y trasladó su capital, convirtiéndose en el **reino de León**.",
+                "Más adelante, este reino se dividió en tres reinos independientes: **Castilla**, **Portugal** y **León**.",
+                "En el año **1085**, el rey **Alfonso VI** logró un hito histórico fundamental al conquistar la ciudad de **Toledo**."
+              ]
+            },
+            {
+              "nombre": "Las Coronas de Castilla y Aragón",
+              "fecha": "Años 1137, 1212 y 1230",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "puntos": [
+                "En **1137**, el reino de Aragón y los condados catalanes se unieron formando la **corona de Aragón**.",
+                "En **1212**, los reyes cristianos liderados por **Alfonso VIII de Castilla** lograron la decisiva victoria en la **batalla de Las Navas de Tolosa**, abriendo paso al valle del Guadalquivir.",
+                "En **1230**, Castilla y León se unieron definitivamente en la **corona de Castilla** (conquistando Córdoba, Jaén y Sevilla), mientras **Jaime I el Conquistador** sumaba a Aragón Valencia y Baleares."
+              ]
+            },
+            {
+              "nombre": "La repoblación y la convivencia de tres culturas",
+              "fecha": "Edad Media",
+              "icono": "🤝",
+              "color": "#10b981",
+              "puntos": [
+                "Los territorios conquistados eran repoblados con pobladores cristianos procedentes del norte.",
+                "En muchas ciudades convivieron pacíficamente durante siglos tres comunidades: **cristianos**, **judíos** y **musulmanes**.",
+                "A los musulmanes que permanecían viviendo en territorio cristiano conquistado se les llamaba **mudéjares**."
+              ]
+            }
+          ],
+          "destacado": {
+            "icono": "⚔️",
+            "titulo": "La Batalla de Las Navas de Tolosa (1212)",
+            "texto": "Unió a los ejércitos de Castilla, Navarra y Aragón frente al imperio almohade, marcando el principio del fin del dominio musulmán en la Península."
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Reinos Cristianos y Convivencia",
+      "descripcion": "Demuestra lo que sabes sobre la Reconquista, sus batallas y las tres culturas.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué líder noble venció a los musulmanes en la batalla de Covadonga en el año 722 originando el reino de Asturias?",
+          "opciones": [
+            "Don Pelayo",
+            "Alfonso VI",
+            "Jaime I el Conquistador",
+            "Don Rodrigo"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! Don Pelayo lideró a los astures en Covadonga en el 722, dando origen al reino de Asturias."
+        },
+        {
+          "enunciado": "¿Qué reinos independientes se originaron con el tiempo a partir del reino de León?",
+          "opciones": [
+            "Castilla, Portugal y León",
+            "Navarra, Aragón y Cataluña",
+            "Valencia, Baleares y Murcia",
+            "Toledo, Córdoba y Granada"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! El reino de León se dividió con el tiempo en tres reinos independientes: Castilla, Portugal y León."
+        },
+        {
+          "enunciado": "¿Qué gran ciudad conquistó el rey Alfonso VI en el año 1085, consolidando la frontera cristiana?",
+          "opciones": [
+            "Toledo",
+            "Córdoba",
+            "Granada",
+            "Sevilla"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! En 1085, Alfonso VI conquistó la histórica ciudad de Toledo para el reino cristiano."
+        },
+        {
+          "enunciado": "¿En qué año se unieron Aragón y Barcelona para formar la Corona de Aragón?",
+          "opciones": [
+            "En 1137",
+            "En 711",
+            "En 1212",
+            "En 1492"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! En 1137 se formalizó la unión dinástica entre Aragón y el condado de Barcelona."
+        },
+        {
+          "enunciado": "¿Qué histórica batalla ganaron los cristianos en 1212 abriendo las puertas del valle del Guadalquivir?",
+          "opciones": [
+            "Batalla de Las Navas de Tolosa",
+            "Batalla de Covadonga",
+            "Batalla de Guadalete",
+            "Batalla de Roncesvalles"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! La batalla de Las Navas de Tolosa (1212) fue el punto de inflexión decisivo de la Reconquista."
+        },
+        {
+          "enunciado": "¿Qué rey de la Corona de Aragón conquistó las islas Baleares y el reino de Valencia?",
+          "opciones": [
+            "Jaime I el Conquistador",
+            "Alfonso VIII de Castilla",
+            "Don Pelayo",
+            "Fernando el Católico"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Estupendo! Jaime I el Conquistador expandió la Corona de Aragón por Valencia, Baleares y el mar Mediterráneo."
+        },
+        {
+          "enunciado": "¿En qué año se unificaron definitivamente Castilla y León formando la Corona de Castilla?",
+          "opciones": [
+            "En 1230",
+            "En 722",
+            "En 1031",
+            "En 1085"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! En 1230 se unieron definitivamente Castilla y León formando la poderosa Corona de Castilla."
+        },
+        {
+          "enunciado": "¿Cómo se llamaba a los musulmanes que vivían en las tierras conquistadas por los reinos cristianos?",
+          "opciones": [
+            "Mudéjares",
+            "Almorávides",
+            "Visigodos",
+            "Andalusíes"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! Los mudéjares eran los musulmanes que conservaron su religión viviendo bajo dominio cristiano."
+        },
+        {
+          "enunciado": "¿Qué tres comunidades culturales y religiosas convivían en muchas ciudades medievales de la Península?",
+          "opciones": [
+            "Cristianos, musulmanes y judíos",
+            "Romanos, griegos y egipcios",
+            "Celtas, iberos y fenicios",
+            "Suevos, alanos y vándalos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Excelente! La época medieval peninsular destacó por la enriquecedora convivencia entre cristianos, musulmanes y judíos."
+        },
+        {
+          "enunciado": "¿Cuál es el orden cronológico correcto de estos acontecimientos históricos?",
+          "opciones": [
+            "Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085) ➡️ Navas de Tolosa (1212)",
+            "Batalla de Covadonga (722) ➡️ Batalla de Guadalete (711) ➡️ Navas de Tolosa (1212) ➡️ Conquista de Toledo (1085)",
+            "Navas de Tolosa (1212) ➡️ Conquista de Toledo (1085) ➡️ Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722)",
+            "Batalla de Guadalete (711) ➡️ Navas de Tolosa (1212) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085)"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
+        }
+      ]
+    }
+  ]
+}
+,
+    "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/contenido.json": {
+  "id": "cap_03_al_andalus",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_sociales",
+  "tema_id": "tema_06_castillos",
+  "titulo": "Capítulo 3: Al-Ándalus y los Reinos Cristianos",
+  "subtitulo": "El origen de al-Ándalus, los núcleos cristianos del norte y la Reconquista",
+  "icono": "🕌",
+  "color_primario": "#10b981",
+  "color_secundario": "#059669",
+  "es_circular": true,
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "subtipo": "parejas",
+      "titulo": "1. Parejas Medievales",
+      "descripcion": "Encuentra las 7 parejas entre los protagonistas, lugares y conceptos clave.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "al_andalus", "etiqueta": "Al-Ándalus", "icono": "🕌", "detalle": "Territorio musulmán peninsular", "color": "#10b981" },
+        { "id": "pelayo", "etiqueta": "Don Pelayo", "icono": "🛡️", "detalle": "Venció en Covadonga (722)", "color": "#3b82f6" },
+        { "id": "califato", "etiqueta": "Abd al-Rahman III", "icono": "👑", "detalle": "Califato de Córdoba (929)", "color": "#8b5cf6" },
+        { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f59e0b" },
+        { "id": "navas", "etiqueta": "Las Navas de Tolosa", "icono": "⚔️", "detalle": "Victoria cristiana clave (1212)", "color": "#ef4444" },
+        { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XV)", "color": "#ec4899" },
+        { "id": "mudejares", "etiqueta": "Mudéjares", "icono": "🤝", "detalle": "Musulmanes en reinos cristianos", "color": "#06b6d4" }
+      ]
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Ficha: Origen y Desarrollo de Al-Ándalus",
+      "descripcion": "El nacimiento del islam, la llegada a la Península y las etapas andalusíes.",
+      "icono": "📖",
+      "fichas": [
+        {
+          "titulo": "Origen y Desarrollo de Al-Ándalus",
+          "subtitulo": "Desde la llegada en 711 hasta el reino nazarí de Granada",
+          "icono": "🕌",
+          "tarjetas": [
+            {
+              "nombre": "El nacimiento del islam",
+              "fecha": "Principios del siglo VII",
+              "icono": "🌙",
+              "color": "#10b981",
+              "puntos": [
+                "A principios del siglo VII surgió en Arabia una nueva religión, el **islam**, siguiendo las enseñanzas del profeta **Mahoma**.",
+                "A sus fieles se les llama **musulmanes** y su libro sagrado es el **Corán**, donde se recogen por escrito los preceptos que deben cumplir.",
+                "Los musulmanes se expandieron con gran rapidez hasta controlar un inmenso territorio desde la India hasta el norte de África."
+              ]
+            },
+            {
+              "nombre": "La llegada a la Península (711)",
+              "fecha": "Año 711",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "puntos": [
+                "En el año **711**, durante una guerra interna visigoda, un bando pidió ayuda a los musulmanes del norte de África.",
+                "Los musulmanes derrotaron al rey visigodo **don Rodrigo** en la **batalla de Guadalete** y acabaron con el reino visigodo de Toledo.",
+                "En poco tiempo dominaron casi toda la península ibérica (excepto las montañas del norte) y la llamaron **al-Ándalus**. Sus habitantes eran los **andalusíes**."
+              ]
+            },
+            {
+              "nombre": "Del Emirato al Califato de Córdoba",
+              "fecha": "Años 756 y 929",
+              "icono": "👑",
+              "color": "#8b5cf6",
+              "puntos": [
+                "Al inicio, al-Ándalus era un **emirato** (provincia) dependiente del gran califato del imperio islámico gobernado por la familia de los **Omeyas**.",
+                "En el año **756**, el príncipe omeya **Abd al-Rahman I** llegó a Córdoba y se independizó políticamente del califato.",
+                "En el año **929**, **Abd al-Rahman III** proclamó el **califato de Córdoba**, alcanzando la época dorada de esplendor militar, cultural y económico."
+              ]
+            },
+            {
+              "nombre": "Los Reinos de Taifas y Granada",
+              "fecha": "Años 1031 a 1492",
+              "icono": "🏰",
+              "color": "#f59e0b",
+              "puntos": [
+                "En el año **1031**, las disputas internas y la presión cristiana provocaron la división del califato en pequeños reinos llamados **taifas**.",
+                "Para frenar el avance cristiano, los andalusíes pidieron ayuda a pueblos musulmanes del norte de África: los **almorávides** y los **almohades**.",
+                "Desde el siglo XIII, al-Ándalus quedó reducido al **reino nazarí de Granada**, que sobrevivió hasta su conquista a finales del siglo XV (1492)."
+              ]
+            }
+          ],
+          "destacado": {
+            "icono": "🏛️",
+            "titulo": "La Mezquita de Córdoba",
+            "texto": "Construida durante el emirato y el califato, la **Mezquita de Córdoba** es una de las mayores joyas artísticas del mundo islámico y símbolo del esplendor andalusí."
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: Al-Ándalus",
+      "descripcion": "Comprueba lo que has aprendido sobre el origen y evolución de al-Ándalus.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué religión nació en Arabia a principios del siglo VII fundada por las enseñanzas de Mahoma?",
+          "opciones": [
+            "El islam",
+            "El cristianismo",
+            "El judaísmo",
+            "El budismo"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! El islam nació en Arabia a principios del siglo VII a través de las enseñanzas de Mahoma."
+        },
+        {
+          "enunciado": "¿Cómo se llama el libro sagrado de los musulmanes donde se recogen por escrito sus enseñanzas?",
+          "opciones": [
+            "El Corán",
+            "La Biblia",
+            "La Torá",
+            "El Fuero Real"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! El Corán es el libro sagrado del islam, con todos los preceptos que debe cumplir un musulmán."
+        },
+        {
+          "enunciado": "¿En qué batalla del año 711 derrotaron los musulmanes al rey visigodo don Rodrigo?",
+          "opciones": [
+            "Batalla de Guadalete",
+            "Batalla de Covadonga",
+            "Batalla de Las Navas de Tolosa",
+            "Batalla de Poitiers"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! En la batalla de Guadalete (711), los musulmanes derrotaron a don Rodrigo y conquistaron la Península."
+        },
+        {
+          "enunciado": "¿Qué nombre dieron los musulmanes al territorio peninsular que conquistaron?",
+          "opciones": [
+            "Al-Ándalus",
+            "Hispania",
+            "Lusitania",
+            "Tarraconense"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! Los musulmanes llamaron al-Ándalus a su territorio, y a sus habitantes andalusíes."
+        },
+        {
+          "enunciado": "¿Quién se hizo con el poder en Córdoba en el año 756 independizándose del califato?",
+          "opciones": [
+            "Abd al-Rahman I",
+            "Abd al-Rahman III",
+            "Don Pelayo",
+            "Alfonso VI"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! Abd al-Rahman I, de la familia Omeya, creó el emirato independiente de Córdoba en el 756."
+        },
+        {
+          "enunciado": "¿Qué acontecimiento histórico proclamó Abd al-Rahman III en el año 929?",
+          "opciones": [
+            "El califato de Córdoba",
+            "El reino nazarí de Granada",
+            "La rendición ante los cristianos",
+            "La división en taifas"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! En el año 929, Abd al-Rahman III proclamó el califato de Córdoba, máxima época de esplendor."
+        },
+        {
+          "enunciado": "¿En qué se fragmentó el califato de Córdoba en el año 1031 debido a disputas internas?",
+          "opciones": [
+            "En pequeños reinos llamados taifas",
+            "En provincias del Imperio Romano",
+            "En reinos visigodos del norte",
+            "En condados bajo control francés"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Estupendo! En 1031 el califato se desmembró en numerosos pequeños reinos denominados taifas."
+        },
+        {
+          "enunciado": "¿Qué pueblos procedentes del norte de África llegaron para ayudar a los andalusíes ante el avance cristiano?",
+          "opciones": [
+            "Los almorávides y los almohades",
+            "Los suevos y los vándalos",
+            "Los alanos y los celtas",
+            "Los francos y los normandos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Los reyes de taifas solicitaron auxilio a los almorávides y más tarde a los almohades."
+        },
+        {
+          "enunciado": "¿Cuál fue el último reino andalusí que resistió desde el siglo XIII hasta finales del siglo XV?",
+          "opciones": [
+            "El reino nazarí de Granada",
+            "El califato de Córdoba",
+            "La taifa de Toledo",
+            "El emirato de Zaragoza"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Excelente! El reino nazarí de Granada fue el último reducto musulmán peninsular hasta 1492."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "subtipo": "puzzle",
+      "titulo": "4. Puzzle: ¡Al-Ándalus Medieval!",
+      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Ficha: Los Reinos Cristianos y la Reconquista",
+      "descripcion": "Los núcleos del norte, el avance cristiano y la convivencia de culturas.",
+      "icono": "📜",
+      "fichas": [
+        {
+          "titulo": "Los Reinos Cristianos y la Reconquista",
+          "subtitulo": "El nacimiento de los núcleos del norte y la expansión hacia el sur",
+          "icono": "🛡️",
+          "tarjetas": [
+            {
+              "nombre": "El origen: Covadonga y los Pirineos",
+              "fecha": "Siglos VIII y IX (Año 722)",
+              "icono": "⛰️",
+              "color": "#3b82f6",
+              "puntos": [
+                "En el año **722**, liderados por el noble **don Pelayo**, los astures vencieron a los musulmanes en la **batalla de Covadonga**, naciendo el **reino de Asturias**.",
+                "En los Pirineos surgieron otros núcleos que no dependían de al-Ándalus, dando lugar al **reino de Navarra** y a los **condados aragoneses y catalanes**.",
+                "Todos estos núcleos comenzaron su expansión militar hacia el sur, reconquistando tierras a al-Ándalus."
+              ]
+            },
+            {
+              "nombre": "Evolución de los reinos occidentales",
+              "fecha": "Siglos X a XII (Año 1085)",
+              "icono": "🏰",
+              "color": "#8b5cf6",
+              "puntos": [
+                "El reino de Asturias se expandió hasta el río Duero y trasladó su capital, convirtiéndose en el **reino de León**.",
+                "Más adelante, este reino se dividió en tres reinos independientes: **Castilla**, **Portugal** y **León**.",
+                "En el año **1085**, el rey **Alfonso VI** logró un hito histórico fundamental al conquistar la ciudad de **Toledo**."
+              ]
+            },
+            {
+              "nombre": "Las Coronas de Castilla y Aragón",
+              "fecha": "Años 1137, 1212 y 1230",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "puntos": [
+                "En **1137**, el reino de Aragón y los condados catalanes se unieron formando la **corona de Aragón**.",
+                "En **1212**, los reyes cristianos liderados por **Alfonso VIII de Castilla** lograron la decisiva victoria en la **batalla de Las Navas de Tolosa**, abriendo paso al valle del Guadalquivir.",
+                "En **1230**, Castilla y León se unieron definitivamente en la **corona de Castilla** (conquistando Córdoba, Jaén y Sevilla), mientras **Jaime I el Conquistador** sumaba a Aragón Valencia y Baleares."
+              ]
+            },
+            {
+              "nombre": "La repoblación y la convivencia de tres culturas",
+              "fecha": "Edad Media",
+              "icono": "🤝",
+              "color": "#10b981",
+              "puntos": [
+                "Los territorios conquistados eran repoblados con pobladores cristianos procedentes del norte.",
+                "En muchas ciudades convivieron pacíficamente durante siglos tres comunidades: **cristianos**, **judíos** y **musulmanes**.",
+                "A los musulmanes que permanecían viviendo en territorio cristiano conquistado se les llamaba **mudéjares**."
+              ]
+            }
+          ],
+          "destacado": {
+            "icono": "⚔️",
+            "titulo": "La Batalla de Las Navas de Tolosa (1212)",
+            "texto": "Unió a los ejércitos de Castilla, Navarra y Aragón frente al imperio almohade, marcando el principio del fin del dominio musulmán en la Península."
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Reinos Cristianos y Convivencia",
+      "descripcion": "Demuestra lo que sabes sobre la Reconquista, sus batallas y las tres culturas.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué líder noble venció a los musulmanes en la batalla de Covadonga en el año 722 originando el reino de Asturias?",
+          "opciones": [
+            "Don Pelayo",
+            "Alfonso VI",
+            "Jaime I el Conquistador",
+            "Don Rodrigo"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! Don Pelayo lideró a los astures en Covadonga en el 722, dando origen al reino de Asturias."
+        },
+        {
+          "enunciado": "¿Qué reinos independientes se originaron con el tiempo a partir del reino de León?",
+          "opciones": [
+            "Castilla, Portugal y León",
+            "Navarra, Aragón y Cataluña",
+            "Valencia, Baleares y Murcia",
+            "Toledo, Córdoba y Granada"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! El reino de León se dividió con el tiempo en tres reinos independientes: Castilla, Portugal y León."
+        },
+        {
+          "enunciado": "¿Qué gran ciudad conquistó el rey Alfonso VI en el año 1085, consolidando la frontera cristiana?",
+          "opciones": [
+            "Toledo",
+            "Córdoba",
+            "Granada",
+            "Sevilla"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! En 1085, Alfonso VI conquistó la histórica ciudad de Toledo para el reino cristiano."
+        },
+        {
+          "enunciado": "¿En qué año se unieron Aragón y Barcelona para formar la Corona de Aragón?",
+          "opciones": [
+            "En 1137",
+            "En 711",
+            "En 1212",
+            "En 1492"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! En 1137 se formalizó la unión dinástica entre Aragón y el condado de Barcelona."
+        },
+        {
+          "enunciado": "¿Qué histórica batalla ganaron los cristianos en 1212 abriendo las puertas del valle del Guadalquivir?",
+          "opciones": [
+            "Batalla de Las Navas de Tolosa",
+            "Batalla de Covadonga",
+            "Batalla de Guadalete",
+            "Batalla de Roncesvalles"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! La batalla de Las Navas de Tolosa (1212) fue el punto de inflexión decisivo de la Reconquista."
+        },
+        {
+          "enunciado": "¿Qué rey de la Corona de Aragón conquistó las islas Baleares y el reino de Valencia?",
+          "opciones": [
+            "Jaime I el Conquistador",
+            "Alfonso VIII de Castilla",
+            "Don Pelayo",
+            "Fernando el Católico"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Estupendo! Jaime I el Conquistador expandió la Corona de Aragón por Valencia, Baleares y el mar Mediterráneo."
+        },
+        {
+          "enunciado": "¿En qué año se unificaron definitivamente Castilla y León formando la Corona de Castilla?",
+          "opciones": [
+            "En 1230",
+            "En 722",
+            "En 1031",
+            "En 1085"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! En 1230 se unieron definitivamente Castilla y León formando la poderosa Corona de Castilla."
+        },
+        {
+          "enunciado": "¿Cómo se llamaba a los musulmanes que vivían en las tierras conquistadas por los reinos cristianos?",
+          "opciones": [
+            "Mudéjares",
+            "Almorávides",
+            "Visigodos",
+            "Andalusíes"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Genial! Los mudéjares eran los musulmanes que conservaron su religión viviendo bajo dominio cristiano."
+        },
+        {
+          "enunciado": "¿Qué tres comunidades culturales y religiosas convivían en muchas ciudades medievales de la Península?",
+          "opciones": [
+            "Cristianos, musulmanes y judíos",
+            "Romanos, griegos y egipcios",
+            "Celtas, iberos y fenicios",
+            "Suevos, alanos y vándalos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Excelente! La época medieval peninsular destacó por la enriquecedora convivencia entre cristianos, musulmanes y judíos."
+        },
+        {
+          "enunciado": "¿Cuál es el orden cronológico correcto de estos acontecimientos históricos?",
+          "opciones": [
+            "Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085) ➡️ Navas de Tolosa (1212)",
+            "Batalla de Covadonga (722) ➡️ Batalla de Guadalete (711) ➡️ Navas de Tolosa (1212) ➡️ Conquista de Toledo (1085)",
+            "Navas de Tolosa (1212) ➡️ Conquista de Toledo (1085) ➡️ Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722)",
+            "Batalla de Guadalete (711) ➡️ Navas de Tolosa (1212) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085)"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
         }
       ]
     }
