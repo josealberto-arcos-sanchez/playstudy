@@ -1,10 +1,10 @@
 /* ============================================================
-   sw.js — Service Worker para "Aventura en el Tiempo" (PWA)
+   sw.js — Service Worker para "PlayStudy" (PWA)
    Estrategia: Cache-first con red como fallback.
    Actualiza CACHE_NAME cada vez que hagas cambios relevantes.
    ============================================================ */
 
-const CACHE_NAME = 'aventura-tiempo-v1';
+const CACHE_NAME = 'playstudy-v1';
 
 // Recursos que se cachean en la instalación (shell de la app)
 const PRECACHE_URLS = [
