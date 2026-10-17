@@ -1,0 +1,11 @@
+[
+  {
+    "id": "edades_historia",
+    "archivo": "data/temas/edades_historia.json",
+    "titulo": "Las Edades de la Historia",
+    "icono": "🏛️",
+    "descripcion": "Prehistoria, Edad Antigua, Media, Moderna y Contemporánea",
+    "nivel": "Primaria",
+    "color": "#f59e0b"
+  }
+]

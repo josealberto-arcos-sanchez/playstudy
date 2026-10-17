@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Aventura en el Tiempo - Videojuego educativo interactivo">
+  <meta name="theme-color" content="#3b82f6">
+  
+  <!-- Soporte Web App / Tablet -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Aventura en el Tiempo">
+  
+  <title>Aventura en el Tiempo: Las Edades de la Historia</title>
+
+  <!-- Hojas de Estilos Modulares -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/memory.css">
+  <link rel="stylesheet" href="css/puzzle.css">
+  <link rel="stylesheet" href="css/theory.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <!-- Contenedor del aviso para rotar en tablets y móviles en vertical -->
+  <div id="orientation-warning">
+    <div class="orientation-icon">📱🔄</div>
+    <h2>¡Gira tu pantalla!</h2>
+    <p>Este juego está diseñado para jugarse en formato horizontal (apaisado) en PC y tablet.</p>
+  </div>
+
+  <!-- Raíz de la Aplicación -->
+  <div id="app-root"></div>
+
+  <!-- Código del Juego (Compatible con doble clic directo file:// y servidor web http://) -->
+  <script src="src/game_bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "cursos": [
+    {
+      "id": "5_primaria",
+      "titulo": "5º de Primaria",
+      "subtitulo": "Educación Primaria",
+      "icono": "🎒",
+      "color": "#3b82f6",
+      "asignaturas": [
+        {
+          "id": "ciencias_sociales",
+          "titulo": "Ciencias Sociales",
+          "subtitulo": "Historia, Geografía y Sociedad",
+          "icono": "🌍",
+          "color": "#f59e0b",
+          "temas": [
+            {
+              "id": "tema_06_castillos",
+              "numero": 6,
+              "titulo": "Tema 6: Caminando entre castillos",
+              "subtitulo": "La Prehistoria y las Edades de la Historia",
+              "icono": "🏰",
+              "color": "#8b5cf6",
+              "capitulos": [
+                {
+                  "id": "cap_01_edades",
+                  "numero": 1,
+                  "titulo": "Capítulo 1: Las Edades de la Historia",
+                  "subtitulo": "La Prehistoria, la Historia y sus etapas clave",
+                  "icono": "🏛️",
+                  "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/",
+                  "total_estrellas_posibles": 18
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+/* ==========================================================================
+   ESTILOS DEL MAPA CIRCULAR (CIRCUITO DE AVENTURA EN EL TIEMPO)
+   ========================================================================== */
+
+.map-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 40%, #fef3c7 70%, #dcfce7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-viewport {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* Elementos decorativos */
+.map-scenery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.85;
+}
+
+.cloud-1 {
+  top: 10%;
+  left: 8%;
+  animation: floatCloud 28s infinite linear;
+}
+
+.cloud-2 {
+  top: 18%;
+  left: 65%;
+  animation: floatCloud 35s infinite linear;
+}
+
+.mountain-decor {
+  position: absolute;
+  bottom: 12%;
+  left: 4%;
+  font-size: 4rem;
+  opacity: 0.25;
+}
+
+.castle-decor {
+  position: absolute;
+  bottom: 12%;
+  right: 4%;
+  font-size: 4rem;
+  opacity: 0.25;
+}
+
+@keyframes floatCloud {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(110vw); }
+}
+
+/* ==========================================================================
+   CIRCUITO OVALADO / CIRCULAR
+   ========================================================================== */
+.circuit-stage {
+  width: 100%;
+  max-width: 1050px;
+  height: 100%;
+  max-height: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circuit-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Pista base punteada */
+.circuit-track-base {
+  fill: none;
+  stroke: #cbd5e1;
+  stroke-width: 18;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 14 14;
+}
+
+/* Pista activa dorada */
+.circuit-track-active {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 18;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 0.8s ease-in-out;
+}
+
+/* ==========================================================================
+   NÚCLEO CENTRAL DEL CIRCUITO (PODIO / CORONA DE ORO)
+   ========================================================================== */
+.circuit-center-hub {
+  position: absolute;
+  width: 250px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 3px solid #fde68a;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 16px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.circuit-center-hub.all-stars-perfect {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #f59e0b;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+  animation: crownPulse 2s infinite ease-in-out;
+}
+
+.hub-trophy {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hub-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #78350f;
+  margin-bottom: 4px;
+}
+
+.hub-stars-badge {
+  background: #ffffff;
+  border: 2px solid #f59e0b;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  color: #b45309;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.hub-hint {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   NODOS DEL CIRCUITO (DISTRIBUCIÓN 6 POSICIONES EN ANILLO)
+   ========================================================================== */
+.circuit-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 140px;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.circuit-node:hover {
+  transform: scale(1.06);
+}
+
+/* Coordenadas en porcentaje sobre el óvalo (1050x480) */
+/* Nodo 1: Parejas (Superior izquierda) */
+.circuit-node.pos-1 {
+  top: 2%;
+  left: 12%;
+}
+
+/* Nodo 2: Ficha Prehistoria (Superior centro) */
+.circuit-node.pos-2 {
+  top: -2%;
+  left: 43%;
+}
+
+/* Nodo 3: Quiz Prehistoria (Superior derecha) */
+.circuit-node.pos-3 {
+  top: 2%;
+  right: 12%;
+}
+
+/* Nodo 4: Puzzle Mamut (Inferior derecha) */
+.circuit-node.pos-4 {
+  bottom: 2%;
+  right: 12%;
+}
+
+/* Nodo 5: Ficha Historia (Inferior centro) */
+.circuit-node.pos-5 {
+  bottom: -2%;
+  left: 43%;
+}
+
+/* Nodo 6: Quiz Historia (Inferior izquierda) */
+.circuit-node.pos-6 {
+  bottom: 2%;
+  left: 12%;
+}
+
+/* Botón del nodo */
+.circuit-btn {
+  width: 82px;
+  height: 82px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  border: 4px solid #e2e8f0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.circuit-btn-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.circuit-stars-tag {
+  position: absolute;
+  bottom: -8px;
+  background: #ffffff;
+  border: 2px solid #f59e0b;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Estados de los nodos */
+.circuit-node.current .circuit-btn {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25), 0 8px 18px rgba(59, 130, 246, 0.35);
+  animation: bounceSmall 2s infinite ease-in-out;
+}
+
+.circuit-node.completed .circuit-btn {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.circuit-node.three-stars .circuit-btn {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+}
+
+.circuit-node.locked {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.circuit-node.locked .circuit-btn {
+  background: #94a3b8;
+  border-color: #64748b;
+  color: #cbd5e1;
+}
+
+.circuit-node-label {
+  margin-top: 6px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  width: 130px;
+}
+
+.circuit-node-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes crownPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
