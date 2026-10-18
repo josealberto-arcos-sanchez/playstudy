@@ -6,6 +6,7 @@
  */
 import { audio } from '../audio.js';
 import { gameState } from '../state.js';
+import { speechManager } from '../speech.js';
 
 export class TheoryView {
   constructor(tema, casillaData, onComplete, onExit) {
@@ -22,6 +23,7 @@ export class TheoryView {
     this.isVoicePaused = false;
     this.isVoiceMuted = localStorage.getItem('playstudy_theory_mute') === 'true';
     this.currentUtterance = null;
+    this.speechRequestId = 0;
   }
 
   /**
@@ -383,52 +385,56 @@ export class TheoryView {
 
     if (!textToSpeak.trim()) return;
 
-    const utter = new SpeechSynthesisUtterance(textToSpeak);
-    utter.lang = 'es-ES';
-    utter.rate = 0.94; // Cadencia óptima y clara para niños
-    utter.pitch = 1.03; // Tono alegre y natural
+    const requestId = this.speechRequestId;
+    const slideIndex = this.currentIndex;
+    const preference = speechManager.getPreference();
+    const startSpeech = (preferLocal = false) => {
+      if (requestId !== this.speechRequestId || slideIndex !== this.currentIndex || !this.container) return;
+      const result = speechManager.createUtterance(textToSpeak, preference, { preferLocal });
+      if (!result) return;
+      const utter = result.utterance;
 
-    // Intentar seleccionar la mejor voz en español del dispositivo
-    const voices = window.speechSynthesis.getVoices();
-    const esVoice = voices.find(v => v.lang.startsWith('es') && (
-      v.name.includes('Natural') ||
-      v.name.includes('Google') ||
-      v.name.includes('Online') ||
-      v.name.includes('Microsoft') ||
-      v.name.includes('Laura') ||
-      v.name.includes('Helena') ||
-      v.name.includes('Pablo')
-    )) || voices.find(v => v.lang.startsWith('es'));
+      utter.onstart = () => {
+        if (this.currentUtterance !== utter) return;
+        this.isSpeaking = true;
+        this.isVoicePaused = false;
+        this.updateNarratorUi();
+      };
 
-    if (esVoice) {
-      utter.voice = esVoice;
+      utter.onend = () => {
+        if (this.currentUtterance !== utter) return;
+        this.isSpeaking = false;
+        this.isVoicePaused = false;
+        this.currentUtterance = null;
+        this.updateNarratorUi();
+        const nextBtn = this.container?.querySelector('#btn-next-slide');
+        if (nextBtn) nextBtn.classList.add('pulse-glow');
+      };
+
+      utter.onerror = () => {
+        if (this.currentUtterance !== utter) return;
+        if (!preferLocal && result.voice?.localService === false) {
+          this.currentUtterance = null;
+          this.isSpeaking = false;
+          this.isVoicePaused = false;
+          startSpeech(true);
+          return;
+        }
+        this.isSpeaking = false;
+        this.isVoicePaused = false;
+        this.currentUtterance = null;
+        this.updateNarratorUi();
+      };
+
+      this.currentUtterance = utter;
+      window.speechSynthesis.speak(utter);
+    };
+
+    if (preference.mode === 'selected' && !speechManager.getVoices().length) {
+      speechManager.waitForVoices().then(() => startSpeech());
+    } else {
+      startSpeech();
     }
-
-    utter.onstart = () => {
-      this.isSpeaking = true;
-      this.isVoicePaused = false;
-      this.updateNarratorUi();
-    };
-
-    utter.onend = () => {
-      this.isSpeaking = false;
-      this.isVoicePaused = false;
-      this.updateNarratorUi();
-      // Animar el botón siguiente para indicar que puede avanzar
-      const nextBtn = this.container.querySelector('#btn-next-slide');
-      if (nextBtn) {
-        nextBtn.classList.add('pulse-glow');
-      }
-    };
-
-    utter.onerror = () => {
-      this.isSpeaking = false;
-      this.isVoicePaused = false;
-      this.updateNarratorUi();
-    };
-
-    this.currentUtterance = utter;
-    window.speechSynthesis.speak(utter);
   }
 
   toggleSpeech(slide) {
@@ -450,6 +456,7 @@ export class TheoryView {
   }
 
   stopSpeaking() {
+    this.speechRequestId++;
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }

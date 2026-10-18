@@ -5,6 +5,7 @@
 import { DataLoader } from './dataLoader.js';
 import { gameState } from './state.js';
 import { audio } from './audio.js';
+import { speechManager } from './speech.js';
 import { MenuView } from './views/menuView.js';
 import { MapView } from './views/mapView.js';
 import { TheoryView } from './views/theoryView.js';
@@ -22,6 +23,7 @@ class App {
 
   async init() {
     console.log("Iniciando Aventura Educativa...");
+    speechManager.init();
     
     const unlockAudio = () => {
       audio.init();

@@ -7,6 +7,7 @@
  */
 import { audio } from '../audio.js';
 import { gameState } from '../state.js';
+import { SettingsView } from './settingsView.js';
 
 export class MenuView {
   constructor(catalogo, onSelectCapitulo) {
@@ -18,6 +19,7 @@ export class MenuView {
     this.selectedCurso = null;
     this.selectedAsignatura = null;
     this.selectedTema = null;
+    this.settingsView = null;
   }
 
   render(container) {
@@ -42,6 +44,7 @@ export class MenuView {
             <button class="btn-icon" id="btn-menu-sound" title="Sonido">
               <span id="menu-sound-icon">${audio.isEnabled() ? '🔊' : '🔇'}</span>
             </button>
+            <button class="btn-icon" id="btn-menu-settings" title="Configuración de voz" aria-label="Configuración de voz">⚙️</button>
           </div>
         </header>
 
@@ -69,11 +72,22 @@ export class MenuView {
       this.container.querySelector('#menu-sound-icon').textContent = isEnabled ? '🔊' : '🔇';
     });
 
+    this.container.querySelector('#btn-menu-settings').addEventListener('click', event => {
+      audio.playClick();
+      if (!this.settingsView?.isOpen) this.settingsView = new SettingsView();
+      this.settingsView.render(event.currentTarget);
+    });
+
     // Botón atrás
     this.container.querySelector('#btn-menu-back').addEventListener('click', () => {
       audio.playClick();
       this.goBack();
     });
+  }
+
+  cleanup() {
+    this.settingsView?.cleanup();
+    this.settingsView = null;
   }
 
   goBack() {
