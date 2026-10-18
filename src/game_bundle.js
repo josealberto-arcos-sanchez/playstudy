@@ -1877,12 +1877,96 @@
       this.onComplete = onComplete;
       this.onExit = onExit;
 
-      this.fichas = casillaData.fichas || [];
+      this.slides = this.buildSlides(casillaData);
       this.currentIndex = 0;
+
+      // Estado del narrador de voz
+      this.isSpeaking = false;
+      this.isVoicePaused = false;
+      this.isVoiceMuted = localStorage.getItem('playstudy_theory_mute') === 'true';
+      this.currentUtterance = null;
+    }
+
+    /**
+     * Transforma las fichas y tarjetas en una secuencia de diapositivas individuales
+     */
+    buildSlides(casillaData) {
+      const rawFichas = casillaData.fichas || [];
+      const slides = [];
+
+      rawFichas.forEach((ficha) => {
+        if (ficha.tarjetas && ficha.tarjetas.length > 0) {
+          ficha.tarjetas.forEach((t) => {
+            slides.push({
+              tipo: 'tarjeta',
+              fichaTitulo: ficha.titulo,
+              fichaSubtitulo: ficha.subtitulo,
+              fichaIcono: ficha.icono,
+              nombre: t.nombre,
+              fecha: t.fecha || '',
+              icono: t.icono || '📖',
+              color: t.color || '#3b82f6',
+              puntos: t.puntos || [],
+              locucion: t.locucion || '',
+              imagen: t.imagen || null,
+              texto: t.texto || ''
+            });
+          });
+
+          if (ficha.destacado) {
+            const d = ficha.destacado;
+            slides.push({
+              tipo: 'destacado',
+              fichaTitulo: ficha.titulo,
+              fichaSubtitulo: ficha.subtitulo,
+              fichaIcono: ficha.icono,
+              icono: typeof d === 'object' ? (d.icono || '💡') : '💡',
+              titulo: typeof d === 'object' ? (d.titulo || 'Dato Clave') : 'Dato Clave',
+              texto: typeof d === 'object' ? d.texto : d,
+              locucion: typeof d === 'object' ? (d.locucion || '') : '',
+              color: '#f59e0b'
+            });
+          }
+        } else if (ficha.secciones && ficha.secciones.length > 0) {
+          ficha.secciones.forEach((sec) => {
+            slides.push({
+              tipo: 'seccion',
+              fichaTitulo: ficha.titulo,
+              nombre: sec.nombre,
+              icono: ficha.icono || '📖',
+              color: '#3b82f6',
+              texto: sec.texto,
+              locucion: sec.locucion || ''
+            });
+          });
+        } else {
+          slides.push({
+            tipo: 'ficha_simple',
+            fichaTitulo: ficha.titulo,
+            fichaSubtitulo: ficha.subtitulo,
+            icono: ficha.icono || '📖',
+            color: '#3b82f6',
+            puntos: ficha.puntos || [],
+            destacado: ficha.destacado || null,
+            locucion: ficha.locucion || ''
+          });
+        }
+      });
+
+      return slides.length > 0 ? slides : [{
+        tipo: 'tarjeta',
+        fichaTitulo: casillaData.titulo,
+        nombre: casillaData.titulo,
+        icono: casillaData.icono || '📖',
+        color: '#3b82f6',
+        puntos: [casillaData.descripcion || 'Contenido de la lección.']
+      }];
     }
 
     render(container) {
       this.container = container;
+      const totalSlides = this.slides.length;
+
       this.container.innerHTML = `
         <div class="theory-wrapper">
           <header class="theory-hud">
@@ -1895,21 +1979,25 @@
             </div>
 
             <div class="theory-badge">
-              <span id="slide-indicator">📖 Lectura Rápida</span>
+              <span id="slide-indicator">Diapositiva 1 de ${totalSlides}</span>
             </div>
           </header>
 
           <div class="theory-content-viewport">
-            <div class="theory-card" id="theory-current-card"></div>
+            <div class="theory-card is-presentation" id="theory-current-card"></div>
           </div>
 
           <footer class="theory-nav-footer">
+            <div class="slide-dots-container" id="theory-dots-bar">
+              ${this.slides.map((_, i) => `<span class="slide-dot-pill ${i === 0 ? 'active' : ''}" data-index="${i}" title="Ir a diapositiva ${i + 1}"></span>`).join('')}
+            </div>
+
             <button class="btn-secondary btn-nav" id="btn-prev-slide" disabled>
               <span>⬅️ Anterior</span>
             </button>
 
             <button class="btn-primary btn-nav pulse-glow" id="btn-next-slide">
-              <span>¡Entendido! Ir al Quiz ❓ ➡️</span>
+              <span>${totalSlides === 1 ? '¡Entendido! Ir al Quiz ❓ ➡️' : 'Siguiente ➡️'}</span>
             </button>
           </footer>
         </div>
@@ -1922,12 +2010,14 @@
     bindEvents() {
       this.container.querySelector('#btn-theory-exit').addEventListener('click', () => {
         audio.playClick();
+        this.stopSpeaking();
         this.onExit();
       });
 
       this.container.querySelector('#btn-prev-slide').addEventListener('click', () => {
         if (this.currentIndex > 0) {
           audio.playClick();
+          this.stopSpeaking();
           this.currentIndex--;
           this.renderCurrentSlide();
         }
@@ -1935,12 +2025,26 @@
 
       this.container.querySelector('#btn-next-slide').addEventListener('click', () => {
         audio.playClick();
-        if (this.currentIndex < this.fichas.length - 1) {
+        this.stopSpeaking();
+        if (this.currentIndex < this.slides.length - 1) {
           this.currentIndex++;
           this.renderCurrentSlide();
         } else {
           this.handleComplete();
         }
+      });
+
+      const dots = this.container.querySelectorAll('.slide-dot-pill');
+      dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+          const targetIdx = parseInt(e.currentTarget.getAttribute('data-index'), 10);
+          if (!isNaN(targetIdx) && targetIdx !== this.currentIndex) {
+            audio.playClick();
+            this.stopSpeaking();
+            this.currentIndex = targetIdx;
+            this.renderCurrentSlide();
+          }
+        });
       });
 
       this.keyHandler = (e) => {
@@ -1956,90 +2060,281 @@
     }
 
     cleanup() {
+      this.stopSpeaking();
       if (this.keyHandler) {
         window.removeEventListener('keydown', this.keyHandler);
       }
     }
 
     renderCurrentSlide() {
-      const ficha = this.fichas[this.currentIndex];
+      const slide = this.slides[this.currentIndex];
+      const totalSlides = this.slides.length;
       const cardEl = this.container.querySelector('#theory-current-card');
       const prevBtn = this.container.querySelector('#btn-prev-slide');
       const nextBtn = this.container.querySelector('#btn-next-slide');
       const indicator = this.container.querySelector('#slide-indicator');
 
-      const totalFichas = this.fichas.length;
-      if (totalFichas > 1) {
-        indicator.textContent = `Ficha ${this.currentIndex + 1} de ${totalFichas}`;
-        prevBtn.disabled = this.currentIndex === 0;
-        prevBtn.classList.remove('hidden');
-      } else {
-        indicator.textContent = `Paso 2: Micro-Lectura`;
-        prevBtn.disabled = true;
-        prevBtn.classList.add('hidden');
-      }
+      indicator.textContent = `Diapositiva ${this.currentIndex + 1} de ${totalSlides}`;
+      prevBtn.disabled = this.currentIndex === 0;
 
-      const isLast = this.currentIndex === totalFichas - 1;
+      const isLast = this.currentIndex === totalSlides - 1;
       if (isLast) {
         nextBtn.innerHTML = `<span>¡Entendido! Ir al Quiz ❓ ➡️</span>`;
       } else {
         nextBtn.innerHTML = `<span>Siguiente ➡️</span>`;
       }
 
-      let contentHtml = '';
+      const dots = this.container.querySelectorAll('.slide-dot-pill');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === this.currentIndex);
+      });
 
-      if (ficha.tarjetas) {
-        contentHtml += `
-          <div class="theory-cards-grid cards-count-${ficha.tarjetas.length}">
-            ${ficha.tarjetas.map(t => `
-              <div class="stage-info-card" style="--stage-color: ${t.color || '#3b82f6'};">
-                <div class="stage-card-header">
-                  <span class="stage-card-icon">${t.icono}</span>
-                  <div class="stage-card-title-box">
-                    <h4 class="stage-name">${t.nombre}</h4>
-                    <span class="stage-date">${t.fecha || ''}</span>
+      if (slide.tipo === 'destacado') {
+        cardEl.style.setProperty('--slide-accent', slide.color);
+        cardEl.innerHTML = `
+          <header class="presentation-header">
+            <div class="presentation-title-group">
+              <span class="presentation-stage-icon">💡</span>
+              <div class="presentation-stage-titles">
+                <h3 class="presentation-stage-name">${slide.titulo}</h3>
+                <span class="presentation-stage-date">Resumen Clave</span>
+              </div>
+            </div>
+            ${this.getNarratorBarHtml()}
+          </header>
+
+          <div class="presentation-body">
+            <div class="presentation-destacado-slide">
+              <span class="presentation-destacado-big-icon">${slide.icono}</span>
+              <h4 class="presentation-destacado-title">${slide.titulo}</h4>
+              <p class="presentation-destacado-text">${this.formatMarkdown(slide.texto)}</p>
+            </div>
+          </div>
+        `;
+      } else {
+        cardEl.style.setProperty('--slide-accent', slide.color || '#3b82f6');
+        cardEl.innerHTML = `
+          <header class="presentation-header">
+            <div class="presentation-title-group">
+              <span class="presentation-stage-icon">${slide.icono}</span>
+              <div class="presentation-stage-titles">
+                <h3 class="presentation-stage-name">${slide.nombre}</h3>
+                ${slide.fecha ? `<span class="presentation-stage-date">${slide.fecha}</span>` : ''}
+              </div>
+            </div>
+            ${this.getNarratorBarHtml()}
+          </header>
+
+          <div class="presentation-body ${slide.imagen ? 'has-image' : ''}">
+            ${slide.imagen ? `
+              <div class="presentation-visual-frame">
+                <img class="presentation-main-image" src="${slide.imagen}" alt="${slide.nombre}" />
+              </div>
+              <div class="presentation-content-side">
+                ${slide.texto ? `<p class="presentation-image-caption">${this.formatMarkdown(slide.texto)}</p>` : ''}
+                ${(slide.puntos || []).map(p => `
+                  <div class="presentation-bullet-card">
+                    <span class="presentation-bullet-icon">✨</span>
+                    <div class="presentation-bullet-text">${this.formatMarkdown(p)}</div>
                   </div>
-                </div>
-                <ul class="stage-bullets-list">
-                  ${t.puntos.map(p => `
-                    <li><span class="bullet-check">✓</span> <span>${this.formatMarkdown(p)}</span></li>
-                  `).join('')}
-                </ul>
+                `).join('')}
+              </div>
+            ` : (slide.puntos || []).map(p => `
+              <div class="presentation-bullet-card">
+                <span class="presentation-bullet-icon">✨</span>
+                <div class="presentation-bullet-text">${this.formatMarkdown(p)}</div>
               </div>
             `).join('')}
           </div>
         `;
       }
 
-      if (ficha.destacado) {
-        const d = ficha.destacado;
-        const dIcon = typeof d === 'object' ? (d.icono || '💡') : '💡';
-        const dTitle = typeof d === 'object' ? (d.titulo || 'Dato Clave') : 'Dato Clave';
-        const dText = typeof d === 'object' ? d.texto : d;
+      this.bindVoiceControls(slide);
+      this.speakSlide(slide);
+    }
 
-        contentHtml += `
-          <div class="theory-golden-highlight">
-            <span class="highlight-big-icon">${dIcon}</span>
-            <div class="highlight-body">
-              <h5 class="highlight-title">${dTitle}</h5>
-              <p class="highlight-text">${this.formatMarkdown(dText)}</p>
-            </div>
+    getNarratorBarHtml() {
+      return `
+        <div class="theory-narrator-bar ${this.isSpeaking ? 'speaking' : ''} ${this.isVoicePaused ? 'paused' : ''}" id="narrator-bar">
+          <div class="voice-wave-anim">
+            <span></span><span></span><span></span>
           </div>
-        `;
-      }
-
-      cardEl.innerHTML = `
-        <div class="theory-card-top-bar">
-          <span class="theory-main-icon">${ficha.icono || '📖'}</span>
-          <div>
-            <h3 class="theory-top-title">${ficha.titulo}</h3>
-            <p class="theory-top-sub">${ficha.subtitulo || ''}</p>
-          </div>
-        </div>
-        <div class="theory-body-content">
-          ${contentHtml}
+          <span class="narrator-label" id="narrator-status-text">
+            ${this.isVoiceMuted ? 'Voz silenciada' : (this.isSpeaking ? 'Explicando...' : (this.isVoicePaused ? 'Pausado' : 'Lectura por voz'))}
+          </span>
+          <button class="btn-voice-ctrl" id="btn-voice-toggle" title="Pausar o reanudar explicación">
+            ${this.isSpeaking ? '⏸️ Pausar' : '▶️ Escuchar'}
+          </button>
+          <button class="btn-voice-ctrl" id="btn-voice-replay" title="Volver a escuchar esta diapositiva">
+            🔁 Repetir
+          </button>
+          <button class="btn-voice-ctrl" id="btn-voice-mute" title="Activar o silenciar voz">
+            ${this.isVoiceMuted ? '🔇' : '🔊'}
+          </button>
         </div>
       `;
+    }
+
+    bindVoiceControls(slide) {
+      const bar = this.container.querySelector('#narrator-bar');
+      if (!bar) return;
+
+      const toggleBtn = bar.querySelector('#btn-voice-toggle');
+      const replayBtn = bar.querySelector('#btn-voice-replay');
+      const muteBtn = bar.querySelector('#btn-voice-mute');
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.toggleSpeech(slide);
+        });
+      }
+
+      if (replayBtn) {
+        replayBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.speakSlide(slide, true);
+        });
+      }
+
+      if (muteBtn) {
+        muteBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.isVoiceMuted = !this.isVoiceMuted;
+          localStorage.setItem('playstudy_theory_mute', this.isVoiceMuted);
+          if (this.isVoiceMuted) {
+            this.stopSpeaking();
+          } else {
+            this.speakSlide(slide, true);
+          }
+          this.updateNarratorUi();
+        });
+      }
+    }
+
+    speakSlide(slide, force = false) {
+      if (!('speechSynthesis' in window)) return;
+      this.stopSpeaking();
+
+      if (this.isVoiceMuted && !force) {
+        this.updateNarratorUi();
+        return;
+      }
+
+      let textToSpeak = '';
+      if (slide.locucion) {
+        textToSpeak = slide.locucion;
+      } else if (slide.tipo === 'destacado') {
+        textToSpeak = `${slide.titulo}. ${slide.texto.replace(/\*\*/g, '')}`;
+      } else {
+        const puntosText = (slide.puntos || []).map(p => p.replace(/\*\*/g, '')).join('. ');
+        textToSpeak = `${slide.nombre}. ${slide.fecha ? slide.fecha + '. ' : ''}${puntosText}`;
+      }
+
+      if (!textToSpeak.trim()) return;
+
+      const utter = new SpeechSynthesisUtterance(textToSpeak);
+      utter.lang = 'es-ES';
+      utter.rate = 0.94;
+      utter.pitch = 1.03;
+
+      const voices = window.speechSynthesis.getVoices();
+      const esVoice = voices.find(v => v.lang.startsWith('es') && (
+        v.name.includes('Natural') ||
+        v.name.includes('Google') ||
+        v.name.includes('Online') ||
+        v.name.includes('Microsoft') ||
+        v.name.includes('Laura') ||
+        v.name.includes('Helena') ||
+        v.name.includes('Pablo')
+      )) || voices.find(v => v.lang.startsWith('es'));
+
+      if (esVoice) {
+        utter.voice = esVoice;
+      }
+
+      utter.onstart = () => {
+        this.isSpeaking = true;
+        this.isVoicePaused = false;
+        this.updateNarratorUi();
+      };
+
+      utter.onend = () => {
+        this.isSpeaking = false;
+        this.isVoicePaused = false;
+        this.updateNarratorUi();
+        const nextBtn = this.container.querySelector('#btn-next-slide');
+        if (nextBtn) {
+          nextBtn.classList.add('pulse-glow');
+        }
+      };
+
+      utter.onerror = () => {
+        this.isSpeaking = false;
+        this.isVoicePaused = false;
+        this.updateNarratorUi();
+      };
+
+      this.currentUtterance = utter;
+      window.speechSynthesis.speak(utter);
+    }
+
+    toggleSpeech(slide) {
+      if (!('speechSynthesis' in window)) return;
+
+      if (this.isSpeaking) {
+        window.speechSynthesis.pause();
+        this.isSpeaking = false;
+        this.isVoicePaused = true;
+        this.updateNarratorUi();
+      } else if (this.isVoicePaused) {
+        window.speechSynthesis.resume();
+        this.isSpeaking = true;
+        this.isVoicePaused = false;
+        this.updateNarratorUi();
+      } else {
+        this.speakSlide(slide, true);
+      }
+    }
+
+    stopSpeaking() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      this.isSpeaking = false;
+      this.isVoicePaused = false;
+      this.currentUtterance = null;
+    }
+
+    updateNarratorUi() {
+      const bar = this.container?.querySelector('#narrator-bar');
+      if (!bar) return;
+
+      bar.classList.toggle('speaking', this.isSpeaking);
+      bar.classList.toggle('paused', this.isVoicePaused);
+
+      const label = bar.querySelector('#narrator-status-text');
+      if (label) {
+        if (this.isVoiceMuted) {
+          label.textContent = 'Voz silenciada';
+        } else if (this.isSpeaking) {
+          label.textContent = 'Explicando...';
+        } else if (this.isVoicePaused) {
+          label.textContent = 'Pausado';
+        } else {
+          label.textContent = 'Lectura por voz';
+        }
+      }
+
+      const toggleBtn = bar.querySelector('#btn-voice-toggle');
+      if (toggleBtn) {
+        toggleBtn.innerHTML = this.isSpeaking ? '⏸️ Pausar' : '▶️ Escuchar';
+      }
+
+      const muteBtn = bar.querySelector('#btn-voice-mute');
+      if (muteBtn) {
+        muteBtn.innerHTML = this.isVoiceMuted ? '🔇' : '🔊';
+      }
     }
 
     formatMarkdown(text) {

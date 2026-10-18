@@ -1,0 +1,173 @@
+﻿{
+    "nota":  "Imágenes descargadas de Wikimedia Commons y guardadas localmente para uso sin conexión. Respeta la licencia indicada y consulta cada página para más detalles.",
+    "creditos":  [
+                     {
+                         "archivo":  "a05_aljaferia.jpg",
+                         "titulo":  "Aljafería Palace.jpg",
+                         "autor":  "Fernando",
+                         "licencia":  "CC BY-SA 4.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AAljafer%C3%ADa_Palace.jpg"
+                     },
+                     {
+                         "archivo":  "b10_cantar_mio_cid.jpg",
+                         "titulo":  "Cantar de mio Cid f. 1r (rep).jpg",
+                         "autor":  "Per Abbat (copista)",
+                         "licencia":  "Public domain",
+                         "url_licencia":  null,
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3ACantar_de_mio_Cid_f._1r_(rep).jpg"
+                     },
+                     {
+                         "archivo":  "a03_decoracion_medina_azahara.jpg",
+                         "titulo":  "Decoración de Medina Azahara (Córdoba, España).jpg",
+                         "autor":  "robven",
+                         "licencia":  "CC BY 2.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by/2.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3ADecoraci%C3%B3n_de_Medina_Azahara_(C%C3%B3rdoba%2C_Espa%C3%B1a).jpg"
+                     },
+                     {
+                         "archivo":  "b05_leon_catedral.jpg",
+                         "titulo":  "Fachada Catedral de León.jpg",
+                         "autor":  "PabloBWV",
+                         "licencia":  "CC BY-SA 4.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AFachada_Catedral_de_Le%C3%B3n.jpg"
+                     },
+                     {
+                         "archivo":  "b02_fromista.jpg",
+                         "titulo":  "IGLESIA SAN MARTIN DE FROMISTA - panoramio.jpg",
+                         "autor":  "Manuel Velazquez",
+                         "licencia":  "CC BY 3.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by/3.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AIGLESIA_SAN_MARTIN_DE_FROMISTA_-_panoramio.jpg"
+                     },
+                     {
+                         "archivo":  "b09_alfonso_x.jpg",
+                         "titulo":  "Alfonso X el Sabio (Museo del Prado).jpg",
+                         "autor":  "Eduardo Gimeno y Canencia",
+                         "licencia":  "Public domain",
+                         "url_licencia":  null,
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AAlfonso_X_el_Sabio_(Museo_del_Prado).jpg"
+                     },
+                     {
+                         "archivo":  "a04_arcos_herradura.jpg",
+                         "titulo":  "Arcos originales de la Mezquita de Córdoba.JPG",
+                         "autor":  "Pilar.lin.nav",
+                         "licencia":  "CC BY-SA 4.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AArcos_originales_de_la_Mezquita_de_C%C3%B3rdoba.JPG"
+                     },
+                     {
+                         "archivo":  "a02_mapa_al_andalus.jpg",
+                         "titulo":  "Al-Andalus, siglos XII-XIII.jpg",
+                         "autor":  "Santiago Quesada García; Guadalupe Romero Vergara.",
+                         "licencia":  "CC BY 4.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by/4.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AAl-Andalus%2C_siglos_XII-XIII.jpg"
+                     },
+                     {
+                         "archivo":  "a06_giralda.jpg",
+                         "titulo":  "Giralda Sevilla.jpg",
+                         "autor":  "Kiban",
+                         "licencia":  "CC BY-SA 3.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/3.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AGiralda_Sevilla.jpg"
+                     },
+                     {
+                         "archivo":  "b01_camino.jpg",
+                         "titulo":  "Camino Sanabrés (6174920639).jpg",
+                         "autor":  "José Antonio Gil Martínez from Vigo, Spain",
+                         "licencia":  "CC BY 2.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by/2.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3ACamino_Sanabr%C3%A9s_(6174920639).jpg"
+                     },
+                     {
+                         "archivo":  "a08_patio_leones.jpg",
+                         "titulo":  "Granada - Alhambra - Palacios nazaríes - Patio de los Leones - 1.jpg",
+                         "autor":  "Benjamin Smith",
+                         "licencia":  "CC BY-SA 4.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AGranada_-_Alhambra_-_Palacios_nazar%C3%ADes_-_Patio_de_los_Leones_-_1.jpg"
+                     },
+                     {
+                         "archivo":  "a01_mezquita.jpg",
+                         "titulo":  "Arcos Mezquita de Córdoba.jpg",
+                         "autor":  "Emarinizquierdo",
+                         "licencia":  "CC BY-SA 3.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/3.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AArcos_Mezquita_de_C%C3%B3rdoba.jpg"
+                     },
+                     {
+                         "archivo":  "a07_alhambra.jpg",
+                         "titulo":  "La Alhambra, Granada, España.jpg",
+                         "autor":  "Sdominguez1905",
+                         "licencia":  "CC BY-SA 4.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3ALa_Alhambra%2C_Granada%2C_Espa%C3%B1a.jpg"
+                     },
+                     {
+                         "archivo":  "b07_burgos_catedral.jpg",
+                         "titulo":  "Fachada Oeste - Catedral de Burgos - Burgos 01.jpg",
+                         "autor":  "Javier Perez Montes",
+                         "licencia":  "CC BY-SA 4.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AFachada_Oeste_-_Catedral_de_Burgos_-_Burgos_01.jpg"
+                     },
+                     {
+                         "archivo":  "b04_taull_frescos.jpg",
+                         "titulo":  "(Barcelona) Frescos of Sant Climent de Taüll.jpg",
+                         "autor":  "Didier Descouens",
+                         "licencia":  "Public domain",
+                         "url_licencia":  null,
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3A(Barcelona)_Frescos_of_Sant_Climent_de_Ta%C3%BCll.jpg"
+                     },
+                     {
+                         "archivo":  "b03_san_vicente_avila.jpg",
+                         "titulo":  "Avila - Basilica SV 07.jpg",
+                         "autor":  "Selbymay",
+                         "licencia":  "CC BY-SA 3.0",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/3.0",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AAvila_-_Basilica_SV_07.jpg"
+                     },
+                     {
+                         "archivo":  "b06_vidrieras_leon.jpg",
+                         "titulo":  "Vidrieras en la Catedral de León img n013.jpg",
+                         "autor":  "Random username 083794703875938",
+                         "licencia":  "CC0",
+                         "url_licencia":  "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File%3AVidrieras_en_la_Catedral_de_Le%C3%B3n_img_n013.jpg"
+                     },
+                     {
+                         "archivo":  "puzzle.jpg",
+                         "titulo":  "Composición: tres estilos medievales",
+                         "autor":  "Composición PlayStudy",
+                         "licencia":  "CC BY-SA 4.0 (composición adaptada; las fotos mantienen sus licencias indicadas)",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0/",
+                         "pagina_origen":  "Ver fuentes de a01_mezquita.jpg, b02_fromista.jpg y b05_leon_catedral.jpg"
+                     },
+                     {
+                         "archivo":  "a06_aljaferia_giralda.jpg",
+                         "titulo":  "Composición fotográfica: Aljafería y Giralda",
+                         "autor":  "Composición PlayStudy a partir de las fotografías de Fernando y Kiban",
+                         "licencia":  "CC BY-SA 4.0 (composición adaptada a partir de fotos CC BY-SA 4.0 y CC BY-SA 3.0)",
+                         "url_licencia":  "https://creativecommons.org/licenses/by-sa/4.0/",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File:Aljafer%C3%ADa_Palace.jpg ; https://commons.wikimedia.org/wiki/File:Giralda_Sevilla.jpg"
+                     },
+                     {
+                         "archivo":  "b11_roseton_leon.jpg",
+                         "titulo":  "Rosetón de la catedral de León",
+                         "autor":  "Archivaldo",
+                         "licencia":  "Dominio público (autor declara liberar la obra al dominio público)",
+                         "url_licencia":  "https://commons.wikimedia.org/wiki/File:Roset%C3%B3n_de_la_catedral_de_Le%C3%B3n.JPG",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File:Roset%C3%B3n_de_la_catedral_de_Le%C3%B3n.JPG"
+                     },
+                     {
+                         "archivo":  "b12_roseton_vidrieras.jpg",
+                         "titulo":  "Composición fotográfica: rosetón y vidrieras de la catedral de León",
+                         "autor":  "Composición PlayStudy",
+                         "licencia":  "Composición con foto de dominio público y foto CC0; las fuentes originales conservan sus condiciones",
+                         "url_licencia":  "",
+                         "pagina_origen":  "https://commons.wikimedia.org/wiki/File:Roset%C3%B3n_de_la_catedral_de_Le%C3%B3n.JPG ; https://commons.wikimedia.org/wiki/File:Vidrieras_en_la_Catedral_de_Le%C3%B3n_img_n013.jpg"
+                     }
+                 ]
+}

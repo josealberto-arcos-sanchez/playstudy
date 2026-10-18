@@ -52,6 +52,16 @@
                   "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/contenido.json",
                   "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/",
                   "total_estrellas_posibles": 18
+                },
+                {
+                  "id": "cap_04_arte_medieval",
+                  "numero": 4,
+                  "titulo": "Capítulo 4: El Arte y la Cultura Medievales",
+                  "subtitulo": "Arte andalusí, románico, gótico y cultura medieval",
+                  "icono": "⛪",
+                  "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/",
+                  "total_estrellas_posibles": 18
                 }
               ]
             }

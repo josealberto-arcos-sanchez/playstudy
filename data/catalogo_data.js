@@ -55,6 +55,16 @@
                   "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/contenido.json",
                   "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/",
                   "total_estrellas_posibles": 18
+                },
+                {
+                  "id": "cap_04_arte_medieval",
+                  "numero": 4,
+                  "titulo": "Capítulo 4: El Arte y la Cultura Medievales",
+                  "subtitulo": "Arte andalusí, románico, gótico y cultura medieval",
+                  "icono": "⛪",
+                  "archivo": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/",
+                  "total_estrellas_posibles": 18
                 }
               ]
             }
@@ -1698,6 +1708,7 @@
               "fecha": "Principios del siglo VII",
               "icono": "🌙",
               "color": "#10b981",
+              "locucion": "A principios del siglo séptimo surgió en Arabia una nueva religión: el islam, siguiendo las enseñanzas del profeta Mahoma. A sus fieles se les llama musulmanes y su libro sagrado es el Corán, donde se recogen sus normas. Los musulmanes se expandieron con gran rapidez hasta controlar un inmenso territorio desde la India hasta el norte de África.",
               "puntos": [
                 "A principios del siglo VII surgió en Arabia una nueva religión, el **islam**, siguiendo las enseñanzas del profeta **Mahoma**.",
                 "A sus fieles se les llama **musulmanes** y su libro sagrado es el **Corán**, donde se recogen por escrito los preceptos que deben cumplir.",
@@ -1709,6 +1720,7 @@
               "fecha": "Año 711",
               "icono": "⚔️",
               "color": "#ef4444",
+              "locucion": "En el año setecientos once, durante una guerra interna entre los visigodos, un bando pidió ayuda a los musulmanes del norte de África. Los musulmanes derrotaron al rey don Rodrigo en la batalla de Guadalete y acabaron con el reino visigodo. En muy poco tiempo dominaron casi toda la península, llamándola al-Ándalus, y a sus habitantes, andalusíes.",
               "puntos": [
                 "En el año **711**, durante una guerra interna visigoda, un bando pidió ayuda a los musulmanes del norte de África.",
                 "Los musulmanes derrotaron al rey visigodo **don Rodrigo** en la **batalla de Guadalete** y acabaron con el reino visigodo de Toledo.",
@@ -1720,6 +1732,7 @@
               "fecha": "Años 756 y 929",
               "icono": "👑",
               "color": "#8b5cf6",
+              "locucion": "Al principio, al-Ándalus era un emirato dependiente del gran califato islámico de los Omeyas. En el año setecientos cincuenta y seis, el príncipe Abd al-Rahmán Primero llegó a Córdoba y se independizó. Más tarde, en el año novecientos veintinueve, Abd al-Rahmán Tercero proclamó el Califato de Córdoba, alcanzando su época de mayor esplendor cultural y económico.",
               "puntos": [
                 "Al inicio, al-Ándalus era un **emirato** (provincia) dependiente del gran califato del imperio islámico gobernado por la familia de los **Omeyas**.",
                 "En el año **756**, el príncipe omeya **Abd al-Rahman I** llegó a Córdoba y se independizó políticamente del califato.",
@@ -1731,6 +1744,7 @@
               "fecha": "Años 1031 a 1492",
               "icono": "🏰",
               "color": "#f59e0b",
+              "locucion": "En el año mil treinta y uno, las disputas internas dividieron el califato en pequeños reinos llamados taifas. Para frenar el avance cristiano, los andalusíes pidieron ayuda a los almorávides y almohades del norte de África. Desde el siglo trece, al-Ándalus quedó reducido al Reino Nazarí de Granada, que resistió hasta su conquista en mil cuatrocientos noventa y dos.",
               "puntos": [
                 "En el año **1031**, las disputas internas y la presión cristiana provocaron la división del califato en pequeños reinos llamados **taifas**.",
                 "Para frenar el avance cristiano, los andalusíes pidieron ayuda a pueblos musulmanes del norte de África: los **almorávides** y los **almohades**.",
@@ -1741,6 +1755,7 @@
           "destacado": {
             "icono": "🏛️",
             "titulo": "La Mezquita de Córdoba",
+            "locucion": "Dato clave. Construida durante el emirato y el califato, la Mezquita de Córdoba es una de las mayores joyas artísticas del mundo islámico y el gran símbolo del esplendor andalusí.",
             "texto": "Construida durante el emirato y el califato, la **Mezquita de Córdoba** es una de las mayores joyas artísticas del mundo islámico y símbolo del esplendor andalusí."
           }
         }
@@ -1880,6 +1895,7 @@
               "fecha": "Siglos VIII y IX (Año 722)",
               "icono": "⛰️",
               "color": "#3b82f6",
+              "locucion": "En el año setecientos veintidós, liderados por don Pelayo, los astures vencieron a los musulmanes en la batalla de Covadonga, naciendo el Reino de Asturias. En los Pirineos surgieron el Reino de Navarra y los condados aragoneses y catalanes. Todos ellos comenzaron su avance militar hacia el sur, reconquistando tierras a al-Ándalus.",
               "puntos": [
                 "En el año **722**, liderados por el noble **don Pelayo**, los astures vencieron a los musulmanes en la **batalla de Covadonga**, naciendo el **reino de Asturias**.",
                 "En los Pirineos surgieron otros núcleos que no dependían de al-Ándalus, dando lugar al **reino de Navarra** y a los **condados aragoneses y catalanes**.",
@@ -1891,6 +1907,7 @@
               "fecha": "Siglos X a XII (Año 1085)",
               "icono": "🏰",
               "color": "#8b5cf6",
+              "locucion": "El Reino de Asturias se expandió hasta el río Duero y trasladó su capital, convirtiéndose en el Reino de León. Con el tiempo se dividió en tres reinos independientes: Castilla, Portugal y León. En el año mil ochenta y cinco, el rey Alfonso Sexto logró un hito histórico al reconquistar la importante ciudad de Toledo.",
               "puntos": [
                 "El reino de Asturias se expandió hasta el río Duero y trasladó su capital, convirtiéndose en el **reino de León**.",
                 "Más adelante, este reino se dividió en tres reinos independientes: **Castilla**, **Portugal** y **León**.",
@@ -1902,6 +1919,7 @@
               "fecha": "Años 1137, 1212 y 1230",
               "icono": "⚔️",
               "color": "#ef4444",
+              "locucion": "En mil ciento treinta y siete, el reino de Aragón y los condados catalanes se unieron formando la Corona de Aragón. En mil doscientos doce, los reyes cristianos lograron una victoria decisiva en la batalla de Las Navas de Tolosa. En mil doscientos treinta, Castilla y León se unieron definitivamente en la Corona de Castilla, mientras Jaime Primero sumaba Valencia y Baleares a Aragón.",
               "puntos": [
                 "En **1137**, el reino de Aragón y los condados catalanes se unieron formando la **corona de Aragón**.",
                 "En **1212**, los reyes cristianos liderados por **Alfonso VIII de Castilla** lograron la decisiva victoria en la **batalla de Las Navas de Tolosa**, abriendo paso al valle del Guadalquivir.",
@@ -1913,6 +1931,7 @@
               "fecha": "Edad Media",
               "icono": "🤝",
               "color": "#10b981",
+              "locucion": "Los territorios conquistados eran repoblados con familias cristianas del norte. En muchas ciudades convivieron pacíficamente durante siglos tres comunidades: cristianos, judíos y musulmanes. A los musulmanes que permanecían viviendo en territorio cristiano se les llamaba mudéjares.",
               "puntos": [
                 "Los territorios conquistados eran repoblados con pobladores cristianos procedentes del norte.",
                 "En muchas ciudades convivieron pacíficamente durante siglos tres comunidades: **cristianos**, **judíos** y **musulmanes**.",
@@ -1923,6 +1942,7 @@
           "destacado": {
             "icono": "⚔️",
             "titulo": "La Batalla de Las Navas de Tolosa (1212)",
+            "locucion": "Dato clave. La batalla de Las Navas de Tolosa, en mil doscientos doce, unió a los ejércitos de Castilla, Navarra y Aragón frente a los almohades, abriendo el camino para la reconquista de casi toda Andalucía.",
             "texto": "Unió a los ejércitos de Castilla, Navarra y Aragón frente al imperio almohade, marcando el principio del fin del dominio musulmán en la Península."
           }
         }
@@ -2096,6 +2116,7 @@
               "fecha": "Principios del siglo VII",
               "icono": "🌙",
               "color": "#10b981",
+              "locucion": "A principios del siglo séptimo surgió en Arabia una nueva religión: el islam, siguiendo las enseñanzas del profeta Mahoma. A sus fieles se les llama musulmanes y su libro sagrado es el Corán, donde se recogen sus normas. Los musulmanes se expandieron con gran rapidez hasta controlar un inmenso territorio desde la India hasta el norte de África.",
               "puntos": [
                 "A principios del siglo VII surgió en Arabia una nueva religión, el **islam**, siguiendo las enseñanzas del profeta **Mahoma**.",
                 "A sus fieles se les llama **musulmanes** y su libro sagrado es el **Corán**, donde se recogen por escrito los preceptos que deben cumplir.",
@@ -2107,6 +2128,7 @@
               "fecha": "Año 711",
               "icono": "⚔️",
               "color": "#ef4444",
+              "locucion": "En el año setecientos once, durante una guerra interna entre los visigodos, un bando pidió ayuda a los musulmanes del norte de África. Los musulmanes derrotaron al rey don Rodrigo en la batalla de Guadalete y acabaron con el reino visigodo. En muy poco tiempo dominaron casi toda la península, llamándola al-Ándalus, y a sus habitantes, andalusíes.",
               "puntos": [
                 "En el año **711**, durante una guerra interna visigoda, un bando pidió ayuda a los musulmanes del norte de África.",
                 "Los musulmanes derrotaron al rey visigodo **don Rodrigo** en la **batalla de Guadalete** y acabaron con el reino visigodo de Toledo.",
@@ -2118,6 +2140,7 @@
               "fecha": "Años 756 y 929",
               "icono": "👑",
               "color": "#8b5cf6",
+              "locucion": "Al principio, al-Ándalus era un emirato dependiente del gran califato islámico de los Omeyas. En el año setecientos cincuenta y seis, el príncipe Abd al-Rahmán Primero llegó a Córdoba y se independizó. Más tarde, en el año novecientos veintinueve, Abd al-Rahmán Tercero proclamó el Califato de Córdoba, alcanzando su época de mayor esplendor cultural y económico.",
               "puntos": [
                 "Al inicio, al-Ándalus era un **emirato** (provincia) dependiente del gran califato del imperio islámico gobernado por la familia de los **Omeyas**.",
                 "En el año **756**, el príncipe omeya **Abd al-Rahman I** llegó a Córdoba y se independizó políticamente del califato.",
@@ -2129,6 +2152,7 @@
               "fecha": "Años 1031 a 1492",
               "icono": "🏰",
               "color": "#f59e0b",
+              "locucion": "En el año mil treinta y uno, las disputas internas dividieron el califato en pequeños reinos llamados taifas. Para frenar el avance cristiano, los andalusíes pidieron ayuda a los almorávides y almohades del norte de África. Desde el siglo trece, al-Ándalus quedó reducido al Reino Nazarí de Granada, que resistió hasta su conquista en mil cuatrocientos noventa y dos.",
               "puntos": [
                 "En el año **1031**, las disputas internas y la presión cristiana provocaron la división del califato en pequeños reinos llamados **taifas**.",
                 "Para frenar el avance cristiano, los andalusíes pidieron ayuda a pueblos musulmanes del norte de África: los **almorávides** y los **almohades**.",
@@ -2139,6 +2163,7 @@
           "destacado": {
             "icono": "🏛️",
             "titulo": "La Mezquita de Córdoba",
+            "locucion": "Dato clave. Construida durante el emirato y el califato, la Mezquita de Córdoba es una de las mayores joyas artísticas del mundo islámico y el gran símbolo del esplendor andalusí.",
             "texto": "Construida durante el emirato y el califato, la **Mezquita de Córdoba** es una de las mayores joyas artísticas del mundo islámico y símbolo del esplendor andalusí."
           }
         }
@@ -2278,6 +2303,7 @@
               "fecha": "Siglos VIII y IX (Año 722)",
               "icono": "⛰️",
               "color": "#3b82f6",
+              "locucion": "En el año setecientos veintidós, liderados por don Pelayo, los astures vencieron a los musulmanes en la batalla de Covadonga, naciendo el Reino de Asturias. En los Pirineos surgieron el Reino de Navarra y los condados aragoneses y catalanes. Todos ellos comenzaron su avance militar hacia el sur, reconquistando tierras a al-Ándalus.",
               "puntos": [
                 "En el año **722**, liderados por el noble **don Pelayo**, los astures vencieron a los musulmanes en la **batalla de Covadonga**, naciendo el **reino de Asturias**.",
                 "En los Pirineos surgieron otros núcleos que no dependían de al-Ándalus, dando lugar al **reino de Navarra** y a los **condados aragoneses y catalanes**.",
@@ -2289,6 +2315,7 @@
               "fecha": "Siglos X a XII (Año 1085)",
               "icono": "🏰",
               "color": "#8b5cf6",
+              "locucion": "El Reino de Asturias se expandió hasta el río Duero y trasladó su capital, convirtiéndose en el Reino de León. Con el tiempo se dividió en tres reinos independientes: Castilla, Portugal y León. En el año mil ochenta y cinco, el rey Alfonso Sexto logró un hito histórico al reconquistar la importante ciudad de Toledo.",
               "puntos": [
                 "El reino de Asturias se expandió hasta el río Duero y trasladó su capital, convirtiéndose en el **reino de León**.",
                 "Más adelante, este reino se dividió en tres reinos independientes: **Castilla**, **Portugal** y **León**.",
@@ -2300,6 +2327,7 @@
               "fecha": "Años 1137, 1212 y 1230",
               "icono": "⚔️",
               "color": "#ef4444",
+              "locucion": "En mil ciento treinta y siete, el reino de Aragón y los condados catalanes se unieron formando la Corona de Aragón. En mil doscientos doce, los reyes cristianos lograron una victoria decisiva en la batalla de Las Navas de Tolosa. En mil doscientos treinta, Castilla y León se unieron definitivamente en la Corona de Castilla, mientras Jaime Primero sumaba Valencia y Baleares a Aragón.",
               "puntos": [
                 "En **1137**, el reino de Aragón y los condados catalanes se unieron formando la **corona de Aragón**.",
                 "En **1212**, los reyes cristianos liderados por **Alfonso VIII de Castilla** lograron la decisiva victoria en la **batalla de Las Navas de Tolosa**, abriendo paso al valle del Guadalquivir.",
@@ -2311,6 +2339,7 @@
               "fecha": "Edad Media",
               "icono": "🤝",
               "color": "#10b981",
+              "locucion": "Los territorios conquistados eran repoblados con familias cristianas del norte. En muchas ciudades convivieron pacíficamente durante siglos tres comunidades: cristianos, judíos y musulmanes. A los musulmanes que permanecían viviendo en territorio cristiano se les llamaba mudéjares.",
               "puntos": [
                 "Los territorios conquistados eran repoblados con pobladores cristianos procedentes del norte.",
                 "En muchas ciudades convivieron pacíficamente durante siglos tres comunidades: **cristianos**, **judíos** y **musulmanes**.",
@@ -2321,6 +2350,7 @@
           "destacado": {
             "icono": "⚔️",
             "titulo": "La Batalla de Las Navas de Tolosa (1212)",
+            "locucion": "Dato clave. La batalla de Las Navas de Tolosa, en mil doscientos doce, unió a los ejércitos de Castilla, Navarra y Aragón frente a los almohades, abriendo el camino para la reconquista de casi toda Andalucía.",
             "texto": "Unió a los ejércitos de Castilla, Navarra y Aragón frente al imperio almohade, marcando el principio del fin del dominio musulmán en la Península."
           }
         }
@@ -2442,6 +2472,772 @@
           ],
           "correcta": 0,
           "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
+        }
+      ]
+    }
+  ]
+}
+,
+    "cap_04_arte_medieval": {
+  "id": "cap_04_arte_medieval",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_sociales",
+  "tema_id": "tema_06_castillos",
+  "titulo": "Capítulo 4: El Arte y la Cultura Medievales",
+  "subtitulo": "El arte andalusí, el románico, el gótico y la cultura medieval",
+  "icono": "⛪",
+  "color_primario": "#f97316",
+  "color_secundario": "#ea580c",
+  "es_circular": true,
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "subtipo": "parejas",
+      "titulo": "1. Parejas del Arte Medieval",
+      "descripcion": "Relaciona los estilos, edificios y elementos de la Edad Media.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "andalusi", "etiqueta": "Arte andalusí", "icono": "🕌", "detalle": "Ladrillo, yeso y mucha decoración", "color": "#10b981" },
+        { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🐴", "detalle": "Un arco característico del arte islámico", "color": "#06b6d4" },
+        { "id": "cordoba", "etiqueta": "Mezquita de Córdoba", "icono": "🏛️", "detalle": "Gran construcción de al-Ándalus", "color": "#f59e0b" },
+        { "id": "alhambra", "etiqueta": "La Alhambra", "icono": "🏰", "detalle": "Palacios nazaríes de Granada", "color": "#ec4899" },
+        { "id": "camino", "etiqueta": "Camino de Santiago", "icono": "🥾", "detalle": "Ruta de peregrinación que difundió el románico", "color": "#3b82f6" },
+        { "id": "romanico", "etiqueta": "Arte románico", "icono": "⛪", "detalle": "Muros gruesos, ventanas pequeñas y arco de medio punto", "color": "#8b5cf6" },
+        { "id": "gotico", "etiqueta": "Arte gótico", "icono": "🌈", "detalle": "Catedrales altas, arcos apuntados y vidrieras", "color": "#ef4444" }
+      ]
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Presentación: El Arte Andalusí",
+      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
+      "icono": "🕌",
+      "fichas": [
+        {
+          "titulo": "El arte andalusí",
+          "subtitulo": "El arte islámico de la Península",
+          "icono": "🕌",
+          "tarjetas": [
+            {
+              "nombre": "El arte andalusí",
+              "fecha": "Al-Ándalus",
+              "icono": "🕌",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a01_mezquita.jpg",
+              "texto": "Mezquita de Córdoba",
+              "locucion": "¡Bienvenidos al arte de al-Ándalus! Así se llamaban las tierras de la Península gobernadas por musulmanes en la Edad Media. Allí construyeron edificios para rezar, vivir y proteger las ciudades: mezquitas, palacios y alcazabas. Una alcazaba era una fortaleza con murallas. Sus edificios nos cuentan cómo vivía la gente.",
+              "puntos": []
+            },
+            {
+              "nombre": "Un arte de ocho siglos",
+              "fecha": "711 – 1492",
+              "icono": "🗺️",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a02_mapa_al_andalus.jpg",
+              "texto": "Territorio peninsular",
+              "locucion": "Desde el año setecientos once hasta mil cuatrocientos noventa y dos, los gobernantes musulmanes controlaron distintas zonas de la Península. Sus fronteras cambiaron muchas veces, así que este mapa enseña solo un momento de la historia. En al-Ándalus se construyeron mezquitas para rezar y alcazabas: fortalezas protegidas por murallas.",
+              "puntos": []
+            },
+            {
+              "nombre": "Materiales y decoración",
+              "fecha": "Ladrillo · yeso · madera",
+              "icono": "🧱",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a03_decoracion_medina_azahara.jpg",
+              "texto": "Edificios muy decorados",
+              "locucion": "En muchos edificios andalusíes, los ladrillos formaban los muros y el yeso podía cubrirlos o crear adornos. El yeso se ponía húmedo: mientras estaba blando, los artesanos podían dibujar y tallar formas en él. Al secarse, se endurecía y el adorno quedaba firme. Por eso era un material práctico para decorar, aunque los diseños también se elegían para embellecer el edificio. Algunos techos eran planos y de madera.",
+              "puntos": []
+            },
+            {
+              "nombre": "El arco de herradura",
+              "fecha": "Arcos y columnas",
+              "icono": "🐴",
+              "color": "#06b6d4",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a04_arcos_herradura.jpg",
+              "texto": "Arcos y columnas",
+              "locucion": "Mira la curva: se cierra un poco hacia dentro y parece una herradura de caballo. Por eso se llama arco de herradura. Un arco cubre el hueco entre dos apoyos y reparte el peso hacia las columnas o los muros. Al repetir arcos sobre columnas se forman galerías, como en la Mezquita de Córdoba. También se usaban techos planos de madera y cúpulas, techos curvos con forma de media esfera.",
+              "puntos": []
+            },
+            {
+              "nombre": "Córdoba, capital andalusí",
+              "fecha": "Mezquita · Medina Azahara",
+              "icono": "🏛️",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a01_mezquita.jpg",
+              "texto": "Mezquita de Córdoba",
+              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
+              "puntos": []
+            },
+            {
+              "nombre": "Palacios y torres",
+              "fecha": "Época de los reinos de taifas",
+              "icono": "🏰",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a06_aljaferia_giralda.jpg",
+              "texto": "Aljafería · Giralda",
+              "locucion": "Estos edificios tenían usos distintos y se construyeron en momentos diferentes. La Aljafería de Zaragoza fue un palacio de la época de los reinos de taifas, pequeños reinos en que se dividió al-Ándalus. Allí vivían los gobernantes y recibían visitas. La Giralda de Sevilla se levantó más tarde como torre de la mezquita. Desde ella se llamaba a la gente a rezar. Hoy forma parte de la catedral.",
+              "puntos": []
+            },
+            {
+              "nombre": "El reino nazarí de Granada",
+              "fecha": "Siglos XIII – XV",
+              "icono": "🌺",
+              "color": "#ec4899",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a07_alhambra.jpg",
+              "texto": "La Alhambra",
+              "locucion": "Con el paso del tiempo, las tierras de al-Ándalus se hicieron más pequeñas. El reino de Granada fue el último reino musulmán de la Península. Sus gobernantes pertenecían a una familia llamada nazarí y vivían en la Alhambra. No era un solo palacio, sino varios edificios protegidos por murallas: había lugares para defenderse, vivir y recibir visitas.",
+              "puntos": []
+            },
+            {
+              "nombre": "Palacios entre jardines y patios",
+              "fecha": "La Alhambra de Granada",
+              "icono": "⛲",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a08_patio_leones.jpg",
+              "texto": "El Patio de los Leones",
+              "locucion": "En la Alhambra, muchas habitaciones daban a patios y jardines. Las fuentes y los canales llevaban agua, que ayudaba a refrescar el lugar y también lo decoraba. Este es el Patio de los Leones. Busca la fuente del centro, las columnas delgadas y los arcos con dibujos. ¿Qué formas ves repetidas?",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: El Arte Andalusí",
+      "descripcion": "Comprueba lo que sabes sobre los edificios de al-Ándalus.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué materiales se utilizaban mucho en el arte andalusí?",
+          "opciones": ["Ladrillo y yeso", "Hormigón y acero", "Mármol y cristal únicamente", "Plástico y madera"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! En muchas construcciones andalusíes se usaban ladrillo y yeso, y se decoraban mucho."
+        },
+        {
+          "enunciado": "¿Qué forma tenía el arco más frecuente en el arte andalusí?",
+          "opciones": ["De herradura", "Apuntado", "De medio punto", "Triangular"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! El arco de herradura es uno de los rasgos más reconocibles del arte islámico peninsular."
+        },
+        {
+          "enunciado": "¿Qué gran edificio se construyó en Córdoba, capital de al-Ándalus durante una parte de la Edad Media?",
+          "opciones": ["La Mezquita de Córdoba", "La catedral de Burgos", "La basílica de San Vicente", "La catedral de León"],
+          "correcta": 0,
+          "explicacion": "¡Exacto! La Mezquita de Córdoba es una de las construcciones más destacadas del arte andalusí."
+        },
+        {
+          "enunciado": "¿Qué era la Aljafería de Zaragoza?",
+          "opciones": ["Un palacio residencial", "Un monasterio románico", "Una catedral gótica", "Una ruta de peregrinación"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! La Aljafería fue un palacio residencial construido en época de los reinos de taifas."
+        },
+        {
+          "enunciado": "¿Qué edificio de Sevilla fue la torre de una antigua mezquita?",
+          "opciones": ["La Giralda", "La Aljafería", "La Alhambra", "Medina Azahara"],
+          "correcta": 0,
+          "explicacion": "¡Bien! La Giralda fue la torre de la antigua mezquita de Sevilla."
+        },
+        {
+          "enunciado": "¿En qué ciudad fijaron su residencia los nazaríes?",
+          "opciones": ["En Granada, en la Alhambra", "En Toledo, en la Giralda", "En Córdoba, en la Aljafería", "En Burgos, en la mezquita"],
+          "correcta": 0,
+          "explicacion": "¡Así es! Los nazaríes establecieron su residencia en la Alhambra de Granada."
+        },
+        {
+          "enunciado": "¿Cómo eran muchos techos andalusíes?",
+          "opciones": ["Planos y de madera, aunque también hubo cúpulas", "Siempre puntiagudos y de vidrio", "Todos estaban hechos de hierro", "No tenían techo"],
+          "correcta": 0,
+          "explicacion": "¡Excelente! Había techos planos de madera y también destacó la construcción de cúpulas."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "subtipo": "puzzle",
+      "titulo": "4. Puzzle: Tres Estilos Medievales",
+      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Presentación: Románico, Gótico y Cultura",
+      "descripcion": "Once diapositivas con imágenes y explicación por voz.",
+      "icono": "⛪",
+      "fichas": [
+        {
+          "titulo": "Románico, gótico y cultura medieval",
+          "subtitulo": "Los reinos cristianos de la Península",
+          "icono": "⛪",
+          "tarjetas": [
+            {
+              "nombre": "Dos estilos medievales",
+              "fecha": "Románico · Gótico",
+              "icono": "⛪",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b05_leon_catedral.jpg",
+              "texto": "Románico y Gótico",
+              "locucion": "En los reinos cristianos de la Edad Media destacaron dos estilos: el románico y, más tarde, el gótico. No solo se veían distintos: también se construían de otra manera. Al mirar una iglesia, podemos comparar su altura, sus muros, la forma de los arcos y cuánta luz entra por las ventanas.",
+              "puntos": []
+            },
+            {
+              "nombre": "El Camino de Santiago",
+              "fecha": "Desde el siglo XI",
+              "icono": "🥾",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b01_camino.jpg",
+              "texto": "Una ruta de peregrinación",
+              "locucion": "Desde el siglo once, muchos viajeros llamados peregrinos recorrían el Camino de Santiago como viaje religioso para visitar la tumba del apóstol Santiago. En el camino compartían ideas y maneras de construir. Así se extendió el estilo románico por la ruta. También se levantaron iglesias y monasterios donde los viajeros podían descansar y recibir ayuda.",
+              "puntos": []
+            },
+            {
+              "nombre": "Iglesias románicas",
+              "fecha": "Siglos XI – XII",
+              "icono": "🏰",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b02_fromista.jpg",
+              "texto": "Muros gruesos · poca luz",
+              "locucion": "Las iglesias románicas solían ser bajas y fuertes. Sus muros de piedra sostenían gran parte del peso del techo. Por eso eran gruesos y tenían ventanas pequeñas: abrir huecos grandes podía debilitar las paredes, y entraba poca luz. El arco de medio punto tiene forma de media circunferencia. La parte redondeada del fondo de la iglesia se llama ábside. Algunas iglesias también tenían torres.",
+              "puntos": []
+            },
+            {
+              "nombre": "Pórticos y pinturas románicas",
+              "fecha": "Esculturas · pinturas",
+              "icono": "🎨",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b04_taull_frescos.jpg",
+              "texto": "Historias en los muros",
+              "locucion": "La entrada principal de una iglesia se llama portada y podía decorarse con figuras talladas en piedra. Dentro se pintaban escenas de la Biblia. Como muchas personas no sabían leer, las imágenes les ayudaban a conocer esas historias. Algunas pinturas se hacían al fresco: el artista pintaba sobre la pared cuando el yeso aún estaba húmedo. Al secarse, el color quedaba unido al muro.",
+              "puntos": []
+            },
+            {
+              "nombre": "Ejemplos del arte románico",
+              "fecha": "Frómista · Ávila · Tahull",
+              "icono": "🏛️",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b03_san_vicente_avila.jpg",
+              "texto": "San Vicente de Ávila",
+              "locucion": "San Martín de Frómista, en Palencia, y la basílica de San Vicente, en Ávila, son iglesias románicas. También lo es San Clemente de Tahull, en Lleida, conocida por sus pinturas en los muros. Cada iglesia tiene sus propios detalles, pero podemos buscar rasgos comunes: paredes de piedra, arcos redondos y una forma fuerte y sencilla.",
+              "puntos": []
+            },
+            {
+              "nombre": "Catedrales góticas",
+              "fecha": "Siglos XIII – XV",
+              "icono": "⛪",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b05_leon_catedral.jpg",
+              "texto": "Altas y esbeltas",
+              "locucion": "El gótico se desarrolló sobre todo entre los siglos trece y quince. Sus catedrales eran muy altas y tenían torres delgadas. El arco apuntado termina en punta. Junto con otros apoyos, ayudaba a llevar el peso del edificio hacia el suelo. Así, las paredes podían ser menos gruesas y dejar espacio para ventanas más grandes.",
+              "puntos": []
+            },
+            {
+              "nombre": "La luz del gótico",
+              "fecha": "Rosetones · vidrieras",
+              "icono": "🌈",
+              "color": "#06b6d4",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b12_roseton_vidrieras.jpg",
+              "texto": "Rosetón · vidrieras",
+              "locucion": "En la imagen grande puedes ver un rosetón: una ventana redonda con dibujos que parecen pétalos. En la foto pequeña aparecen vidrieras, ventanas hechas con piezas de vidrio de colores unidas por tiras de metal. Cuando la luz pasa por ellas, llena la catedral de colores. Por eso el gótico puede tener interiores mucho más luminosos que una iglesia románica.",
+              "puntos": []
+            },
+            {
+              "nombre": "Grandes catedrales",
+              "fecha": "Burgos · León · Toledo",
+              "icono": "🏙️",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b07_burgos_catedral.jpg",
+              "texto": "Catedrales góticas",
+              "locucion": "La catedral era la iglesia principal de una ciudad y allí tenía su sede el obispo, que dirigía la comunidad cristiana local. Construir una catedral tan grande podía llevar muchos años y necesitaba albañiles, escultores y otros trabajadores. En la Península destacan las de Burgos, León, Toledo, Barcelona y Palma. Mira cómo sus torres hacen que parezca aún más alta.",
+              "puntos": []
+            },
+            {
+              "nombre": "Los monasterios y los libros",
+              "fecha": "La cultura cristiana",
+              "icono": "📚",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b10_cantar_mio_cid.jpg",
+              "texto": "Copiar y guardar libros",
+              "locucion": "En los reinos cristianos, los monasterios eran lugares importantes para aprender y guardar libros. Muchos monjes y monjas sabían leer y escribir. Como todavía no existía la imprenta, cada libro se copiaba a mano, letra por letra. ¡Imagina cuánto tiempo llevaba! Esos libros escritos a mano se llaman manuscritos y ayudaron a conservar historias e ideas.",
+              "puntos": []
+            },
+            {
+              "nombre": "La Escuela de Traductores de Toledo",
+              "fecha": "Alfonso X el Sabio",
+              "icono": "📜",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b09_alfonso_x.jpg",
+              "texto": "Traducir juntos",
+              "locucion": "En Toledo vivían cristianos, musulmanes y judíos. Personas de estas comunidades colaboraban para traducir libros: es decir, contar las mismas ideas en otro idioma. En la llamada Escuela de Traductores de Toledo tradujeron obras antiguas que estaban escritas en otras lenguas. Así, más personas pudieron conocer esas ideas. El trabajo recibió el apoyo de los obispos y del rey Alfonso Décimo, llamado el Sabio.",
+              "puntos": []
+            },
+            {
+              "nombre": "Primeras manifestaciones literarias",
+              "fecha": "Castellano · catalán · portugués",
+              "icono": "📝",
+              "color": "#ec4899",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b10_cantar_mio_cid.jpg",
+              "texto": "El Cantar de Mio Cid",
+              "locucion": "Durante la Edad Media, el latín todavía se usaba en muchos libros. Pero la gente lo hablaba de maneras distintas según el lugar, y con el paso del tiempo nacieron nuevas lenguas: castellano, catalán y portugués, entre otras. Se llaman lenguas romances porque vienen del latín de los romanos; no tiene que ver con las historias de amor. En castellano se escribió el Cantar de Mio Cid, una de las primeras obras literarias importantes.",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Románico, Gótico y Cultura",
+      "descripcion": "Pon a prueba lo que sabes de los estilos y la cultura medievales.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Por qué ruta llegó el románico a la Península?",
+          "opciones": ["Por el Camino de Santiago", "Por la Ruta de la Seda", "Por el Camino de Roma", "Por el Camino de las Islas"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! La peregrinación por el Camino de Santiago favoreció la llegada del románico."
+        },
+        {
+          "enunciado": "¿Qué tipo de arco era el más frecuente en el románico?",
+          "opciones": ["El arco de medio punto", "El arco apuntado", "El arco de herradura", "El arco triangular"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! El arco románico más habitual tiene forma semicircular y se llama de medio punto."
+        },
+        {
+          "enunciado": "¿Cómo eran los muros y las ventanas de las iglesias románicas?",
+          "opciones": ["Muros gruesos y ventanas pequeñas", "Muros finos y ventanas enormes", "Muros de cristal y sin ventanas", "Muros de madera y rosetones grandes"],
+          "correcta": 0,
+          "explicacion": "¡Exacto! Los muros gruesos y las ventanas pequeñas hacían que los interiores románicos fueran oscuros."
+        },
+        {
+          "enunciado": "¿Cómo se llama la parte posterior de una iglesia románica, normalmente semicircular?",
+          "opciones": ["El ábside", "El rosetón", "La cúpula", "El claustro"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! El ábside es la parte posterior del edificio y suele tener forma semicircular."
+        },
+        {
+          "enunciado": "¿En qué siglos fue típico el estilo gótico?",
+          "opciones": ["Siglos XIII, XIV y XV", "Siglos VIII, IX y X", "Siglos V, VI y VII", "Siglos XVI, XVII y XVIII"],
+          "correcta": 0,
+          "explicacion": "¡Así es! El gótico fue característico de los siglos trece, catorce y quince."
+        },
+        {
+          "enunciado": "¿Qué forma tenían los arcos típicos del gótico?",
+          "opciones": ["Apuntada, con un vértice", "Semicircular, de medio punto", "En forma de herradura", "Triangular y plano"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Los arcos apuntados terminan en un vértice en el centro."
+        },
+        {
+          "enunciado": "¿Qué ayudaba a que las catedrales góticas fueran muy luminosas?",
+          "opciones": ["Las grandes ventanas con vidrieras de colores", "Los muros más gruesos", "Las ventanas muy pequeñas", "Los techos planos de madera"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Las vidrieras dejaban entrar la luz y llenaban el interior de colores."
+        },
+        {
+          "enunciado": "¿Dónde se desarrollaba principalmente la cultura cristiana medieval?",
+          "opciones": ["En los monasterios", "En los mercados", "En los castillos únicamente", "En los puertos"],
+          "correcta": 0,
+          "explicacion": "¡Exacto! Los monasterios eran centros importantes de cultura y conservación de libros."
+        },
+        {
+          "enunciado": "¿Con qué rey se relaciona la Escuela de Traductores de Toledo?",
+          "opciones": ["Alfonso X el Sabio", "Don Pelayo", "Abd al-Rahman III", "Jaime I"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Alfonso X el Sabio impulsó el trabajo de traducción en Toledo."
+        },
+        {
+          "enunciado": "¿De qué lengua proceden el castellano, el catalán y el portugués?",
+          "opciones": ["Del latín", "Del griego", "Del árabe únicamente", "Del germánico"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! El castellano, el catalán y el portugués son lenguas romances derivadas del latín."
+        }
+      ]
+    }
+  ]
+}
+,
+    "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/contenido.json": {
+  "id": "cap_04_arte_medieval",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_sociales",
+  "tema_id": "tema_06_castillos",
+  "titulo": "Capítulo 4: El Arte y la Cultura Medievales",
+  "subtitulo": "El arte andalusí, el románico, el gótico y la cultura medieval",
+  "icono": "⛪",
+  "color_primario": "#f97316",
+  "color_secundario": "#ea580c",
+  "es_circular": true,
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "subtipo": "parejas",
+      "titulo": "1. Parejas del Arte Medieval",
+      "descripcion": "Relaciona los estilos, edificios y elementos de la Edad Media.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "andalusi", "etiqueta": "Arte andalusí", "icono": "🕌", "detalle": "Ladrillo, yeso y mucha decoración", "color": "#10b981" },
+        { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🐴", "detalle": "Un arco característico del arte islámico", "color": "#06b6d4" },
+        { "id": "cordoba", "etiqueta": "Mezquita de Córdoba", "icono": "🏛️", "detalle": "Gran construcción de al-Ándalus", "color": "#f59e0b" },
+        { "id": "alhambra", "etiqueta": "La Alhambra", "icono": "🏰", "detalle": "Palacios nazaríes de Granada", "color": "#ec4899" },
+        { "id": "camino", "etiqueta": "Camino de Santiago", "icono": "🥾", "detalle": "Ruta de peregrinación que difundió el románico", "color": "#3b82f6" },
+        { "id": "romanico", "etiqueta": "Arte románico", "icono": "⛪", "detalle": "Muros gruesos, ventanas pequeñas y arco de medio punto", "color": "#8b5cf6" },
+        { "id": "gotico", "etiqueta": "Arte gótico", "icono": "🌈", "detalle": "Catedrales altas, arcos apuntados y vidrieras", "color": "#ef4444" }
+      ]
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Presentación: El Arte Andalusí",
+      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
+      "icono": "🕌",
+      "fichas": [
+        {
+          "titulo": "El arte andalusí",
+          "subtitulo": "El arte islámico de la Península",
+          "icono": "🕌",
+          "tarjetas": [
+            {
+              "nombre": "El arte andalusí",
+              "fecha": "Al-Ándalus",
+              "icono": "🕌",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a01_mezquita.jpg",
+              "texto": "Mezquita de Córdoba",
+              "locucion": "¡Bienvenidos al arte de al-Ándalus! Así se llamaban las tierras de la Península gobernadas por musulmanes en la Edad Media. Allí construyeron edificios para rezar, vivir y proteger las ciudades: mezquitas, palacios y alcazabas. Una alcazaba era una fortaleza con murallas. Sus edificios nos cuentan cómo vivía la gente.",
+              "puntos": []
+            },
+            {
+              "nombre": "Un arte de ocho siglos",
+              "fecha": "711 – 1492",
+              "icono": "🗺️",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a02_mapa_al_andalus.jpg",
+              "texto": "Territorio peninsular",
+              "locucion": "Desde el año setecientos once hasta mil cuatrocientos noventa y dos, los gobernantes musulmanes controlaron distintas zonas de la Península. Sus fronteras cambiaron muchas veces, así que este mapa enseña solo un momento de la historia. En al-Ándalus se construyeron mezquitas para rezar y alcazabas: fortalezas protegidas por murallas.",
+              "puntos": []
+            },
+            {
+              "nombre": "Materiales y decoración",
+              "fecha": "Ladrillo · yeso · madera",
+              "icono": "🧱",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a03_decoracion_medina_azahara.jpg",
+              "texto": "Edificios muy decorados",
+              "locucion": "En muchos edificios andalusíes, los ladrillos formaban los muros y el yeso podía cubrirlos o crear adornos. El yeso se ponía húmedo: mientras estaba blando, los artesanos podían dibujar y tallar formas en él. Al secarse, se endurecía y el adorno quedaba firme. Por eso era un material práctico para decorar, aunque los diseños también se elegían para embellecer el edificio. Algunos techos eran planos y de madera.",
+              "puntos": []
+            },
+            {
+              "nombre": "El arco de herradura",
+              "fecha": "Arcos y columnas",
+              "icono": "🐴",
+              "color": "#06b6d4",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a04_arcos_herradura.jpg",
+              "texto": "Arcos y columnas",
+              "locucion": "Mira la curva: se cierra un poco hacia dentro y parece una herradura de caballo. Por eso se llama arco de herradura. Un arco cubre el hueco entre dos apoyos y reparte el peso hacia las columnas o los muros. Al repetir arcos sobre columnas se forman galerías, como en la Mezquita de Córdoba. También se usaban techos planos de madera y cúpulas, techos curvos con forma de media esfera.",
+              "puntos": []
+            },
+            {
+              "nombre": "Córdoba, capital andalusí",
+              "fecha": "Mezquita · Medina Azahara",
+              "icono": "🏛️",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a01_mezquita.jpg",
+              "texto": "Mezquita de Córdoba",
+              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
+              "puntos": []
+            },
+            {
+              "nombre": "Palacios y torres",
+              "fecha": "Época de los reinos de taifas",
+              "icono": "🏰",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a06_aljaferia_giralda.jpg",
+              "texto": "Aljafería · Giralda",
+              "locucion": "Estos edificios tenían usos distintos y se construyeron en momentos diferentes. La Aljafería de Zaragoza fue un palacio de la época de los reinos de taifas, pequeños reinos en que se dividió al-Ándalus. Allí vivían los gobernantes y recibían visitas. La Giralda de Sevilla se levantó más tarde como torre de la mezquita. Desde ella se llamaba a la gente a rezar. Hoy forma parte de la catedral.",
+              "puntos": []
+            },
+            {
+              "nombre": "El reino nazarí de Granada",
+              "fecha": "Siglos XIII – XV",
+              "icono": "🌺",
+              "color": "#ec4899",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a07_alhambra.jpg",
+              "texto": "La Alhambra",
+              "locucion": "Con el paso del tiempo, las tierras de al-Ándalus se hicieron más pequeñas. El reino de Granada fue el último reino musulmán de la Península. Sus gobernantes pertenecían a una familia llamada nazarí y vivían en la Alhambra. No era un solo palacio, sino varios edificios protegidos por murallas: había lugares para defenderse, vivir y recibir visitas.",
+              "puntos": []
+            },
+            {
+              "nombre": "Palacios entre jardines y patios",
+              "fecha": "La Alhambra de Granada",
+              "icono": "⛲",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a08_patio_leones.jpg",
+              "texto": "El Patio de los Leones",
+              "locucion": "En la Alhambra, muchas habitaciones daban a patios y jardines. Las fuentes y los canales llevaban agua, que ayudaba a refrescar el lugar y también lo decoraba. Este es el Patio de los Leones. Busca la fuente del centro, las columnas delgadas y los arcos con dibujos. ¿Qué formas ves repetidas?",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: El Arte Andalusí",
+      "descripcion": "Comprueba lo que sabes sobre los edificios de al-Ándalus.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué materiales se utilizaban mucho en el arte andalusí?",
+          "opciones": ["Ladrillo y yeso", "Hormigón y acero", "Mármol y cristal únicamente", "Plástico y madera"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! En muchas construcciones andalusíes se usaban ladrillo y yeso, y se decoraban mucho."
+        },
+        {
+          "enunciado": "¿Qué forma tenía el arco más frecuente en el arte andalusí?",
+          "opciones": ["De herradura", "Apuntado", "De medio punto", "Triangular"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! El arco de herradura es uno de los rasgos más reconocibles del arte islámico peninsular."
+        },
+        {
+          "enunciado": "¿Qué gran edificio se construyó en Córdoba, capital de al-Ándalus durante una parte de la Edad Media?",
+          "opciones": ["La Mezquita de Córdoba", "La catedral de Burgos", "La basílica de San Vicente", "La catedral de León"],
+          "correcta": 0,
+          "explicacion": "¡Exacto! La Mezquita de Córdoba es una de las construcciones más destacadas del arte andalusí."
+        },
+        {
+          "enunciado": "¿Qué era la Aljafería de Zaragoza?",
+          "opciones": ["Un palacio residencial", "Un monasterio románico", "Una catedral gótica", "Una ruta de peregrinación"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! La Aljafería fue un palacio residencial construido en época de los reinos de taifas."
+        },
+        {
+          "enunciado": "¿Qué edificio de Sevilla fue la torre de una antigua mezquita?",
+          "opciones": ["La Giralda", "La Aljafería", "La Alhambra", "Medina Azahara"],
+          "correcta": 0,
+          "explicacion": "¡Bien! La Giralda fue la torre de la antigua mezquita de Sevilla."
+        },
+        {
+          "enunciado": "¿En qué ciudad fijaron su residencia los nazaríes?",
+          "opciones": ["En Granada, en la Alhambra", "En Toledo, en la Giralda", "En Córdoba, en la Aljafería", "En Burgos, en la mezquita"],
+          "correcta": 0,
+          "explicacion": "¡Así es! Los nazaríes establecieron su residencia en la Alhambra de Granada."
+        },
+        {
+          "enunciado": "¿Cómo eran muchos techos andalusíes?",
+          "opciones": ["Planos y de madera, aunque también hubo cúpulas", "Siempre puntiagudos y de vidrio", "Todos estaban hechos de hierro", "No tenían techo"],
+          "correcta": 0,
+          "explicacion": "¡Excelente! Había techos planos de madera y también destacó la construcción de cúpulas."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "subtipo": "puzzle",
+      "titulo": "4. Puzzle: Tres Estilos Medievales",
+      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Presentación: Románico, Gótico y Cultura",
+      "descripcion": "Once diapositivas con imágenes y explicación por voz.",
+      "icono": "⛪",
+      "fichas": [
+        {
+          "titulo": "Románico, gótico y cultura medieval",
+          "subtitulo": "Los reinos cristianos de la Península",
+          "icono": "⛪",
+          "tarjetas": [
+            {
+              "nombre": "Dos estilos medievales",
+              "fecha": "Románico · Gótico",
+              "icono": "⛪",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b05_leon_catedral.jpg",
+              "texto": "Románico y Gótico",
+              "locucion": "En los reinos cristianos de la Edad Media destacaron dos estilos: el románico y, más tarde, el gótico. No solo se veían distintos: también se construían de otra manera. Al mirar una iglesia, podemos comparar su altura, sus muros, la forma de los arcos y cuánta luz entra por las ventanas.",
+              "puntos": []
+            },
+            {
+              "nombre": "El Camino de Santiago",
+              "fecha": "Desde el siglo XI",
+              "icono": "🥾",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b01_camino.jpg",
+              "texto": "Una ruta de peregrinación",
+              "locucion": "Desde el siglo once, muchos viajeros llamados peregrinos recorrían el Camino de Santiago como viaje religioso para visitar la tumba del apóstol Santiago. En el camino compartían ideas y maneras de construir. Así se extendió el estilo románico por la ruta. También se levantaron iglesias y monasterios donde los viajeros podían descansar y recibir ayuda.",
+              "puntos": []
+            },
+            {
+              "nombre": "Iglesias románicas",
+              "fecha": "Siglos XI – XII",
+              "icono": "🏰",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b02_fromista.jpg",
+              "texto": "Muros gruesos · poca luz",
+              "locucion": "Las iglesias románicas solían ser bajas y fuertes. Sus muros de piedra sostenían gran parte del peso del techo. Por eso eran gruesos y tenían ventanas pequeñas: abrir huecos grandes podía debilitar las paredes, y entraba poca luz. El arco de medio punto tiene forma de media circunferencia. La parte redondeada del fondo de la iglesia se llama ábside. Algunas iglesias también tenían torres.",
+              "puntos": []
+            },
+            {
+              "nombre": "Pórticos y pinturas románicas",
+              "fecha": "Esculturas · pinturas",
+              "icono": "🎨",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b04_taull_frescos.jpg",
+              "texto": "Historias en los muros",
+              "locucion": "La entrada principal de una iglesia se llama portada y podía decorarse con figuras talladas en piedra. Dentro se pintaban escenas de la Biblia. Como muchas personas no sabían leer, las imágenes les ayudaban a conocer esas historias. Algunas pinturas se hacían al fresco: el artista pintaba sobre la pared cuando el yeso aún estaba húmedo. Al secarse, el color quedaba unido al muro.",
+              "puntos": []
+            },
+            {
+              "nombre": "Ejemplos del arte románico",
+              "fecha": "Frómista · Ávila · Tahull",
+              "icono": "🏛️",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b03_san_vicente_avila.jpg",
+              "texto": "San Vicente de Ávila",
+              "locucion": "San Martín de Frómista, en Palencia, y la basílica de San Vicente, en Ávila, son iglesias románicas. También lo es San Clemente de Tahull, en Lleida, conocida por sus pinturas en los muros. Cada iglesia tiene sus propios detalles, pero podemos buscar rasgos comunes: paredes de piedra, arcos redondos y una forma fuerte y sencilla.",
+              "puntos": []
+            },
+            {
+              "nombre": "Catedrales góticas",
+              "fecha": "Siglos XIII – XV",
+              "icono": "⛪",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b05_leon_catedral.jpg",
+              "texto": "Altas y esbeltas",
+              "locucion": "El gótico se desarrolló sobre todo entre los siglos trece y quince. Sus catedrales eran muy altas y tenían torres delgadas. El arco apuntado termina en punta. Junto con otros apoyos, ayudaba a llevar el peso del edificio hacia el suelo. Así, las paredes podían ser menos gruesas y dejar espacio para ventanas más grandes.",
+              "puntos": []
+            },
+            {
+              "nombre": "La luz del gótico",
+              "fecha": "Rosetones · vidrieras",
+              "icono": "🌈",
+              "color": "#06b6d4",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b12_roseton_vidrieras.jpg",
+              "texto": "Rosetón · vidrieras",
+              "locucion": "En la imagen grande puedes ver un rosetón: una ventana redonda con dibujos que parecen pétalos. En la foto pequeña aparecen vidrieras, ventanas hechas con piezas de vidrio de colores unidas por tiras de metal. Cuando la luz pasa por ellas, llena la catedral de colores. Por eso el gótico puede tener interiores mucho más luminosos que una iglesia románica.",
+              "puntos": []
+            },
+            {
+              "nombre": "Grandes catedrales",
+              "fecha": "Burgos · León · Toledo",
+              "icono": "🏙️",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b07_burgos_catedral.jpg",
+              "texto": "Catedrales góticas",
+              "locucion": "La catedral era la iglesia principal de una ciudad y allí tenía su sede el obispo, que dirigía la comunidad cristiana local. Construir una catedral tan grande podía llevar muchos años y necesitaba albañiles, escultores y otros trabajadores. En la Península destacan las de Burgos, León, Toledo, Barcelona y Palma. Mira cómo sus torres hacen que parezca aún más alta.",
+              "puntos": []
+            },
+            {
+              "nombre": "Los monasterios y los libros",
+              "fecha": "La cultura cristiana",
+              "icono": "📚",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b10_cantar_mio_cid.jpg",
+              "texto": "Copiar y guardar libros",
+              "locucion": "En los reinos cristianos, los monasterios eran lugares importantes para aprender y guardar libros. Muchos monjes y monjas sabían leer y escribir. Como todavía no existía la imprenta, cada libro se copiaba a mano, letra por letra. ¡Imagina cuánto tiempo llevaba! Esos libros escritos a mano se llaman manuscritos y ayudaron a conservar historias e ideas.",
+              "puntos": []
+            },
+            {
+              "nombre": "La Escuela de Traductores de Toledo",
+              "fecha": "Alfonso X el Sabio",
+              "icono": "📜",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b09_alfonso_x.jpg",
+              "texto": "Traducir juntos",
+              "locucion": "En Toledo vivían cristianos, musulmanes y judíos. Personas de estas comunidades colaboraban para traducir libros: es decir, contar las mismas ideas en otro idioma. En la llamada Escuela de Traductores de Toledo tradujeron obras antiguas que estaban escritas en otras lenguas. Así, más personas pudieron conocer esas ideas. El trabajo recibió el apoyo de los obispos y del rey Alfonso Décimo, llamado el Sabio.",
+              "puntos": []
+            },
+            {
+              "nombre": "Primeras manifestaciones literarias",
+              "fecha": "Castellano · catalán · portugués",
+              "icono": "📝",
+              "color": "#ec4899",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/b10_cantar_mio_cid.jpg",
+              "texto": "El Cantar de Mio Cid",
+              "locucion": "Durante la Edad Media, el latín todavía se usaba en muchos libros. Pero la gente lo hablaba de maneras distintas según el lugar, y con el paso del tiempo nacieron nuevas lenguas: castellano, catalán y portugués, entre otras. Se llaman lenguas romances porque vienen del latín de los romanos; no tiene que ver con las historias de amor. En castellano se escribió el Cantar de Mio Cid, una de las primeras obras literarias importantes.",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Románico, Gótico y Cultura",
+      "descripcion": "Pon a prueba lo que sabes de los estilos y la cultura medievales.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Por qué ruta llegó el románico a la Península?",
+          "opciones": ["Por el Camino de Santiago", "Por la Ruta de la Seda", "Por el Camino de Roma", "Por el Camino de las Islas"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! La peregrinación por el Camino de Santiago favoreció la llegada del románico."
+        },
+        {
+          "enunciado": "¿Qué tipo de arco era el más frecuente en el románico?",
+          "opciones": ["El arco de medio punto", "El arco apuntado", "El arco de herradura", "El arco triangular"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! El arco románico más habitual tiene forma semicircular y se llama de medio punto."
+        },
+        {
+          "enunciado": "¿Cómo eran los muros y las ventanas de las iglesias románicas?",
+          "opciones": ["Muros gruesos y ventanas pequeñas", "Muros finos y ventanas enormes", "Muros de cristal y sin ventanas", "Muros de madera y rosetones grandes"],
+          "correcta": 0,
+          "explicacion": "¡Exacto! Los muros gruesos y las ventanas pequeñas hacían que los interiores románicos fueran oscuros."
+        },
+        {
+          "enunciado": "¿Cómo se llama la parte posterior de una iglesia románica, normalmente semicircular?",
+          "opciones": ["El ábside", "El rosetón", "La cúpula", "El claustro"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! El ábside es la parte posterior del edificio y suele tener forma semicircular."
+        },
+        {
+          "enunciado": "¿En qué siglos fue típico el estilo gótico?",
+          "opciones": ["Siglos XIII, XIV y XV", "Siglos VIII, IX y X", "Siglos V, VI y VII", "Siglos XVI, XVII y XVIII"],
+          "correcta": 0,
+          "explicacion": "¡Así es! El gótico fue característico de los siglos trece, catorce y quince."
+        },
+        {
+          "enunciado": "¿Qué forma tenían los arcos típicos del gótico?",
+          "opciones": ["Apuntada, con un vértice", "Semicircular, de medio punto", "En forma de herradura", "Triangular y plano"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Los arcos apuntados terminan en un vértice en el centro."
+        },
+        {
+          "enunciado": "¿Qué ayudaba a que las catedrales góticas fueran muy luminosas?",
+          "opciones": ["Las grandes ventanas con vidrieras de colores", "Los muros más gruesos", "Las ventanas muy pequeñas", "Los techos planos de madera"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Las vidrieras dejaban entrar la luz y llenaban el interior de colores."
+        },
+        {
+          "enunciado": "¿Dónde se desarrollaba principalmente la cultura cristiana medieval?",
+          "opciones": ["En los monasterios", "En los mercados", "En los castillos únicamente", "En los puertos"],
+          "correcta": 0,
+          "explicacion": "¡Exacto! Los monasterios eran centros importantes de cultura y conservación de libros."
+        },
+        {
+          "enunciado": "¿Con qué rey se relaciona la Escuela de Traductores de Toledo?",
+          "opciones": ["Alfonso X el Sabio", "Don Pelayo", "Abd al-Rahman III", "Jaime I"],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Alfonso X el Sabio impulsó el trabajo de traducción en Toledo."
+        },
+        {
+          "enunciado": "¿De qué lengua proceden el castellano, el catalán y el portugués?",
+          "opciones": ["Del latín", "Del griego", "Del árabe únicamente", "Del germánico"],
+          "correcta": 0,
+          "explicacion": "¡Correcto! El castellano, el catalán y el portugués son lenguas romances derivadas del latín."
         }
       ]
     }
