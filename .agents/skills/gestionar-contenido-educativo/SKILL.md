@@ -286,10 +286,18 @@ Cada capítulo consta de un circuito interactivo continuo de 6 paradas (3 estrel
 2. **Imágenes para el puzzle**:
    - Guardar como JPG en formato apaisado (`assets/puzzle.jpg`).
    - Peso recomendado: entre 100 KB y 600 KB para que cargue al instante.
-3. **No olvidar sincronizar si se prueba sin servidor web**:
+3. **Ajustar la narración a la edad del alumnado**:
+   - Para material de 5.º de Primaria, usar frases cortas, palabras cotidianas y voz activa.
+   - Mantener los términos históricos necesarios, pero explicarlos con palabras sencillas la primera vez (por ejemplo: «una alcazaba era una fortaleza con murallas»).
+   - Explicar las relaciones de causa y efecto con ejemplos concretos, sin dar por sabido el vocabulario técnico.
+4. **Comprobar que las imágenes muestran lo que cuenta la voz**:
+   - Si la locución nombra un detalle visible (como un rosetón, un arco apuntado o una vidriera), comprobar que se distingue claramente en la imagen de esa diapositiva.
+   - Si una imagen no muestra todos los elementos mencionados, añadir una segunda imagen o un pequeño montaje, o ajustar la locución para que describa lo que sí se ve.
+   - Mantener el texto en pantalla breve; la explicación más completa va en la locución.
+5. **No olvidar sincronizar si se prueba sin servidor web**:
    - Ejecutar `scripts/actualizar_datos.ps1` o arrancar desde `jugar.bat`.
    - Si se añade un capítulo y se recarga el navegador sin ejecutar la sincronización, el archivo `data/catalogo_data.js` no contendrá los nuevos datos cuando se acceda vía `file://`.
-4. **Paleta de colores para las tarjetas**:
+6. **Paleta de colores para las tarjetas**:
    - Rojo: `#ef4444`
    - Verde: `#10b981`
    - Azul: `#3b82f6`
