@@ -1,0 +1,125 @@
+{
+  "nota": "Imágenes descargadas de Wikimedia Commons y guardadas localmente para uso sin conexión. Las versiones reducidas, conversiones de SVG y recortes se indican como adaptaciones; consulta las páginas de origen y respeta las licencias.",
+  "creditos": [
+    {
+      "archivo": "a01_mezquita_cordoba.jpg",
+      "titulo": "Interior Mezquita Cordoba Spain.jpg",
+      "autor": "Jialiang Gao",
+      "licencia": "CC BY-SA 2.5 Generic",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/2.5/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Interior_Mezquita_Cordoba_Spain.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "a02_conquista_711.png",
+      "titulo": "Conquistaislamicapeninsula2.svg",
+      "autor": "NACLE (basado en un mapa de NordNordWest)",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Conquistaislamicapeninsula2.svg",
+      "adaptacion": "Conversión a PNG y reducción de tamaño para el juego."
+    },
+    {
+      "archivo": "a03_medina_azahara.jpg",
+      "titulo": "Córdoba. Medina Azahara 1990 02.jpg (Casa de la Guarnición)",
+      "autor": "LBM1948",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:C%C3%B3rdoba._Medina_Azahara_1990_02.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "a04_aljaferia.jpg",
+      "titulo": "Aljafería al ocaso.jpg",
+      "autor": "Sergio (Flickr: srgblog)",
+      "licencia": "CC BY 2.0 Generic",
+      "url_licencia": "https://creativecommons.org/licenses/by/2.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Aljafer%C3%ADa_al_ocaso.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "a05_alhambra_panorama.jpg",
+      "titulo": "Granada Spain Alhambra-seen-from-Albaicín-01.jpg",
+      "autor": "CEphoto, Uwe Aranas",
+      "atribucion_requerida": "Photo by CEphoto, Uwe Aranas",
+      "licencia": "CC BY-SA 3.0 Unported",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Granada_Spain_Alhambra-seen-from-Albaic%C3%ADn-01.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "a06_patio_leones.jpg",
+      "titulo": "En el Patio de los Leones.jpg",
+      "autor": "Juan Carlos Arizmendi",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:En_el_Patio_de_los_Leones.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "b01_covadonga.jpg",
+      "titulo": "El rey Don Pelayo en Covadonga (Museo del Prado).jpg",
+      "autor": "Luis de Madrazo",
+      "licencia": "Dominio público (reproducción de una obra de 1855)",
+      "url_licencia": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:El_rey_Don_Pelayo_en_Covadonga_(Museo_del_Prado).jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "b02_asturias_800.jpg",
+      "titulo": "Asturias in 800.png",
+      "autor": "Go-Chlodio",
+      "licencia": "CC BY 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Asturias_in_800.png",
+      "adaptacion": "Recorte de captura y conversión a JPG para el juego."
+    },
+    {
+      "archivo": "b03_mapa_1224_es.jpg",
+      "titulo": "Péninsule ibérique en 1224-es.svg",
+      "autor": "Rowanwindwhistler, basado en el mapa de Basilio",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:P%C3%A9ninsule_ib%C3%A9rique_en_1224-es.svg",
+      "adaptacion": "Conversión visual a JPG y recorte de márgenes para el juego."
+    },
+    {
+      "archivo": "b04_batalla_navas.jpg",
+      "titulo": "Batalla de las Navas de Tolosa, por Francisco van Halen.jpg",
+      "autor": "Francisco de Paula Van Halen",
+      "licencia": "Dominio público (reproducción de una obra de 1864)",
+      "url_licencia": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Batalla_de_las_Navas_de_Tolosa,_por_Francisco_van_Halen.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "b05_musicos_cantigas.jpg",
+      "titulo": "European and Islamic musicians in 13th century playing stringed instruments.jpg",
+      "autor": "La corte de Alfonso X; miniatura del Códice de los músicos",
+      "atribucion_sugerida": "Biblioteca del Monasterio de El Escorial (RBME), Patrimonio Nacional",
+      "licencia": "Dominio público (miniatura del siglo XIII)",
+      "url_licencia": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:European_and_Islamic_musicians_in_13th_century_playing_stringed_instruments.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "b06_agricultura_medieval.jpg",
+      "titulo": "Medievalplowingwoodcut.jpg",
+      "autor": "Desconocido; ilustración de un manuscrito del siglo XIV",
+      "fuente": "Philip Van Ness Myers, Mediaeval and Modern History (edición de 1905, p. 218)",
+      "licencia": "Dominio público",
+      "url_licencia": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Medievalplowingwoodcut.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "b07_torre_mudejar_toledo.jpg",
+      "titulo": "Arte Mudéjar-Toledo-Santo Tomé.jpg",
+      "autor": "Balbo",
+      "licencia": "CC BY-SA 3.0 Unported (también disponible bajo GFDL)",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Arte_Mud%C3%A9jar-Toledo-Santo_Tom%C3%A9.jpg",
+      "adaptacion": "Versión reducida guardada localmente."
+    }
+  ]
+}
