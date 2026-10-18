@@ -7,6 +7,7 @@
  */
 import { audio } from '../audio.js';
 import { gameState } from '../state.js';
+import { SettingsView } from './settingsView.js';
 
 export class MapView {
   constructor(tema, onSelectCasilla, onResetProgress, onReturnMenu) {
@@ -14,6 +15,7 @@ export class MapView {
     this.onSelectCasilla = onSelectCasilla;
     this.onResetProgress = onResetProgress;
     this.onReturnMenu = onReturnMenu;
+    this.settingsView = null;
   }
 
   render(container) {
@@ -46,6 +48,8 @@ export class MapView {
             <button class="btn-icon" id="btn-sound-toggle" title="Activar/Silenciar sonido">
               <span id="sound-icon">${audio.isEnabled() ? '🔊' : '🔇'}</span>
             </button>
+
+            <button class="btn-icon" id="btn-map-settings" title="Configuración de voz" aria-label="Configuración de voz">⚙️</button>
 
             <button class="btn-icon btn-secondary-icon" id="btn-reset-topic" title="Reiniciar circuito">
               <span>🔄</span>
@@ -144,6 +148,12 @@ export class MapView {
       this.container.querySelector('#sound-icon').textContent = isEnabled ? '🔊' : '🔇';
     });
 
+    this.container.querySelector('#btn-map-settings').addEventListener('click', event => {
+      audio.playClick();
+      if (!this.settingsView?.isOpen) this.settingsView = new SettingsView();
+      this.settingsView.render(event.currentTarget);
+    });
+
     // Reiniciar circuito
     this.container.querySelector('#btn-reset-topic').addEventListener('click', () => {
       if (confirm('¿Quieres reiniciar las estrellas del circuito para empezar de nuevo?')) {
@@ -171,6 +181,11 @@ export class MapView {
         }
       });
     });
+  }
+
+  cleanup() {
+    this.settingsView?.cleanup();
+    this.settingsView = null;
   }
 
   updateCircuitPath() {

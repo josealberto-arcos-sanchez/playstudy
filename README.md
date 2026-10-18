@@ -31,6 +31,8 @@ Para los capítulos nuevos, presenta la teoría como una **secuencia de diaposit
 
 La voz se genera en el navegador mediante **Web Speech Synthesis** a partir del campo `locucion`; no hace falta crear archivos MP3. Ejemplo de una tarjeta dentro de `fichas → tarjetas`:
 
+La configuración ⚙️ está disponible en el menú principal y en el mapa. Allí se puede probar y seleccionar una voz que proporcione el navegador, ajustar su velocidad (de 0,70× a 1,30×) o dejar la selección automática. La voz y la velocidad se guardan en el navegador para próximas sesiones; las voces disponibles y su funcionamiento offline dependen del dispositivo. Las voces en línea pueden necesitar conexión.
+
 ```json
 {
   "nombre": "Los muros románicos",
@@ -98,6 +100,7 @@ Para ver el capítulo de ejemplo, consulta [`cap_04_arte_medieval/contenido.json
 - `data/cursos/.../contenido.json`: parejas, presentaciones, quizzes y puzzle de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
 - `src/views/theoryView.js`: lógica modular de la presentación teórica.
+- `src/speech.js` y `src/views/settingsView.js`: selección, prueba y preferencia persistente de voces.
 - `src/game_bundle.js`: JavaScript que carga el juego; si modificas la lógica de teoría, mantén este bundle y la vista modular sincronizados.
 - `css/theory.css`: estilos de las diapositivas.
 - `.agents/skills/gestionar-contenido-educativo/SKILL.md`: pautas ampliadas para incorporar contenido educativo.
