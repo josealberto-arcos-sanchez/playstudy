@@ -17,7 +17,7 @@
       "licencia": "CC BY-SA 4.0 International",
       "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
       "pagina_origen": "https://commons.wikimedia.org/wiki/File:Conquistaislamicapeninsula2.svg",
-      "adaptacion": "Conversión a PNG y reducción de tamaño para el juego."
+      "adaptacion": "Conversión a PNG, reducción de tamaño y lienzo 4:3 con bandas laterales para que el mapa y su leyenda se vean completos."
     },
     {
       "archivo": "a03_medina_azahara.jpg",
@@ -55,6 +55,33 @@
       "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
       "pagina_origen": "https://commons.wikimedia.org/wiki/File:En_el_Patio_de_los_Leones.jpg",
       "adaptacion": "Versión reducida guardada localmente."
+    },
+    {
+      "archivo": "a07_expansion_islam.png",
+      "titulo": "Conquête de l'Islam à la chute des Omeyyades-es.svg",
+      "autor": "Romain0 y Rowanwindwhistler",
+      "licencia": "CC BY-SA 3.0 Unported",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Conqu%C3%AAte_de_l%27Islam_%C3%A0_la_chute_des_Omeyyades-es.svg",
+      "adaptacion": "Miniatura PNG de 1280 px, ampliada a un lienzo 4:3 con fondo claro para que el mapa completo se vea sin recortes."
+    },
+    {
+      "archivo": "a08_damasco_omeya.jpg",
+      "titulo": "Umayyad Mosque, Damascus 2018-01-20.jpg",
+      "autor": "Aladdin (علاء الدين)",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Umayyad_Mosque,_Damascus_2018-01-20.jpg",
+      "adaptacion": "Miniatura de 1280 px descargada de Wikimedia Commons para el juego."
+    },
+    {
+      "archivo": "a09_kaaba.jpg",
+      "titulo": "The Kaaba during Hajj.jpg",
+      "autor": "Adli Wahid",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:The_Kaaba_during_Hajj.jpg",
+      "adaptacion": "Miniatura de 1280 px descargada de Wikimedia Commons y recomprimida para reducir su peso."
     },
     {
       "archivo": "b01_covadonga.jpg",

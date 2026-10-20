@@ -22,7 +22,7 @@
         { "id": "recaredo", "etiqueta": "Recaredo", "icono": "✝️", "detalle": "Se convirtió al catolicismo (589)", "color": "#ec4899" },
         { "id": "suevos", "etiqueta": "Suevos", "icono": "🗺️", "detalle": "Capital en Braga (noroeste)", "color": "#3b82f6" },
         { "id": "toledo", "etiqueta": "Toledo", "icono": "🏰", "detalle": "Capital del reino visigodo", "color": "#f97316" },
-        { "id": "nobleza", "etiqueta": "Nobleza", "icono": "🎖️", "detalle": "Ocupaban los cargos políticos", "color": "#10b981" },
+        { "id": "don_rodrigo", "etiqueta": "Don Rodrigo", "icono": "⚔️", "detalle": "Último rey visigodo, derrotado en Guadalete (711)", "color": "#ef4444" },
         { "id": "campesinado", "etiqueta": "Campesinado", "icono": "🌾", "detalle": "Mayoría de la población", "color": "#f59e0b" },
         { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🏛️", "detalle": "Arte visigodo característico", "color": "#06b6d4" }
       ]
@@ -227,6 +227,17 @@
               ]
             },
             {
+              "nombre": "El final del reino visigodo",
+              "fecha": "Año 711",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "puntos": [
+                "A principios del siglo VIII, el reino visigodo vivía una **crisis**: los nobles luchaban por el trono.",
+                "En el año **711**, el rey **Don Rodrigo** fue derrotado por los musulmanes en la **batalla de Guadalete**.",
+                "Con esa derrota terminó el **reino de Toledo** y los musulmanes conquistaron casi toda la Península."
+              ]
+            },
+            {
               "nombre": "El Arte Visigodo",
               "fecha": "Siglos V-VIII",
               "icono": "⛪",
@@ -361,6 +372,28 @@
           ],
           "correcta": 0,
           "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
+        },
+        {
+          "enunciado": "¿Qué rey visigodo fue derrotado en la batalla de Guadalete en el año 711?",
+          "opciones": [
+            "Don Rodrigo",
+            "Leovigildo",
+            "Recaredo",
+            "Recesvinto"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Don Rodrigo fue el último rey visigodo. En el año 711 fue derrotado en Guadalete por los musulmanes."
+        },
+        {
+          "enunciado": "¿Qué consecuencia tuvo la derrota visigoda en la batalla de Guadalete?",
+          "opciones": [
+            "El fin del reino de Toledo y la conquista musulmana de casi toda la Península",
+            "El inicio de la Reconquista y la creación del reino de Asturias",
+            "La unión de Castilla y León en un solo reino",
+            "La conversión de los visigodos al islam"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Tras Guadalete, el reino visigodo de Toledo desapareció y los musulmanes conquistaron casi toda la Península. A ese territorio llamaron al-Ándalus."
         }
       ]
     }

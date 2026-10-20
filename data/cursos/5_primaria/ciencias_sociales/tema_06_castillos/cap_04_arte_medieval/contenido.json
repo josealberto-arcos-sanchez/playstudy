@@ -86,8 +86,11 @@
               "color": "#f97316",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a01_mezquita.jpg",
               "texto": "Mezquita de Córdoba",
-              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
-              "puntos": []
+              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Desde el año novecientos veintinueve fue la capital del califato de Córdoba, gobernado por un califa. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
+              "puntos": [
+                "Córdoba fue una capital muy importante de al-Ándalus.",
+                "Desde **929**, fue la capital del **califato de Córdoba**, gobernado por un **califa**."
+              ]
             },
             {
               "nombre": "Palacios y torres",

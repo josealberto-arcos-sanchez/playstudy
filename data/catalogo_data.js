@@ -313,7 +313,8 @@
               "color": "#8b5cf6",
               "puntos": [
                 "Comenzó con la **caída del Imperio romano**.",
-                "Época de señores feudales, castillos y el **reino visigodo**."
+                "Época de señores feudales, castillos y el **reino visigodo**.",
+                "En el siglo VII nació el **islam** en Arabia; en el **711** los musulmanes entraron en la Península y llamaron **al-Ándalus** a su territorio."
               ]
             },
             {
@@ -737,7 +738,8 @@
               "color": "#8b5cf6",
               "puntos": [
                 "Comenzó con la **caída del Imperio romano**.",
-                "Época de señores feudales, castillos y el **reino visigodo**."
+                "Época de señores feudales, castillos y el **reino visigodo**.",
+                "En el siglo VII nació el **islam** en Arabia; en el **711** los musulmanes entraron en la Península y llamaron **al-Ándalus** a su territorio."
               ]
             },
             {
@@ -948,7 +950,7 @@
         { "id": "recaredo", "etiqueta": "Recaredo", "icono": "✝️", "detalle": "Se convirtió al catolicismo (589)", "color": "#ec4899" },
         { "id": "suevos", "etiqueta": "Suevos", "icono": "🗺️", "detalle": "Capital en Braga (noroeste)", "color": "#3b82f6" },
         { "id": "toledo", "etiqueta": "Toledo", "icono": "🏰", "detalle": "Capital del reino visigodo", "color": "#f97316" },
-        { "id": "nobleza", "etiqueta": "Nobleza", "icono": "🎖️", "detalle": "Ocupaban los cargos políticos", "color": "#10b981" },
+        { "id": "don_rodrigo", "etiqueta": "Don Rodrigo", "icono": "⚔️", "detalle": "Último rey visigodo, derrotado en Guadalete (711)", "color": "#ef4444" },
         { "id": "campesinado", "etiqueta": "Campesinado", "icono": "🌾", "detalle": "Mayoría de la población", "color": "#f59e0b" },
         { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🏛️", "detalle": "Arte visigodo característico", "color": "#06b6d4" }
       ]
@@ -1153,6 +1155,17 @@
               ]
             },
             {
+              "nombre": "El final del reino visigodo",
+              "fecha": "Año 711",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "puntos": [
+                "A principios del siglo VIII, el reino visigodo vivía una **crisis**: los nobles luchaban por el trono.",
+                "En el año **711**, el rey **Don Rodrigo** fue derrotado por los musulmanes en la **batalla de Guadalete**.",
+                "Con esa derrota terminó el **reino de Toledo** y los musulmanes conquistaron casi toda la Península."
+              ]
+            },
+            {
               "nombre": "El Arte Visigodo",
               "fecha": "Siglos V-VIII",
               "icono": "⛪",
@@ -1287,6 +1300,28 @@
           ],
           "correcta": 0,
           "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
+        },
+        {
+          "enunciado": "¿Qué rey visigodo fue derrotado en la batalla de Guadalete en el año 711?",
+          "opciones": [
+            "Don Rodrigo",
+            "Leovigildo",
+            "Recaredo",
+            "Recesvinto"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Don Rodrigo fue el último rey visigodo. En el año 711 fue derrotado en Guadalete por los musulmanes."
+        },
+        {
+          "enunciado": "¿Qué consecuencia tuvo la derrota visigoda en la batalla de Guadalete?",
+          "opciones": [
+            "El fin del reino de Toledo y la conquista musulmana de casi toda la Península",
+            "El inicio de la Reconquista y la creación del reino de Asturias",
+            "La unión de Castilla y León en un solo reino",
+            "La conversión de los visigodos al islam"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Tras Guadalete, el reino visigodo de Toledo desapareció y los musulmanes conquistaron casi toda la Península. A ese territorio llamaron al-Ándalus."
         }
       ]
     }
@@ -1317,7 +1352,7 @@
         { "id": "recaredo", "etiqueta": "Recaredo", "icono": "✝️", "detalle": "Se convirtió al catolicismo (589)", "color": "#ec4899" },
         { "id": "suevos", "etiqueta": "Suevos", "icono": "🗺️", "detalle": "Capital en Braga (noroeste)", "color": "#3b82f6" },
         { "id": "toledo", "etiqueta": "Toledo", "icono": "🏰", "detalle": "Capital del reino visigodo", "color": "#f97316" },
-        { "id": "nobleza", "etiqueta": "Nobleza", "icono": "🎖️", "detalle": "Ocupaban los cargos políticos", "color": "#10b981" },
+        { "id": "don_rodrigo", "etiqueta": "Don Rodrigo", "icono": "⚔️", "detalle": "Último rey visigodo, derrotado en Guadalete (711)", "color": "#ef4444" },
         { "id": "campesinado", "etiqueta": "Campesinado", "icono": "🌾", "detalle": "Mayoría de la población", "color": "#f59e0b" },
         { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🏛️", "detalle": "Arte visigodo característico", "color": "#06b6d4" }
       ]
@@ -1522,6 +1557,17 @@
               ]
             },
             {
+              "nombre": "El final del reino visigodo",
+              "fecha": "Año 711",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "puntos": [
+                "A principios del siglo VIII, el reino visigodo vivía una **crisis**: los nobles luchaban por el trono.",
+                "En el año **711**, el rey **Don Rodrigo** fue derrotado por los musulmanes en la **batalla de Guadalete**.",
+                "Con esa derrota terminó el **reino de Toledo** y los musulmanes conquistaron casi toda la Península."
+              ]
+            },
+            {
               "nombre": "El Arte Visigodo",
               "fecha": "Siglos V-VIII",
               "icono": "⛪",
@@ -1656,6 +1702,28 @@
           ],
           "correcta": 0,
           "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
+        },
+        {
+          "enunciado": "¿Qué rey visigodo fue derrotado en la batalla de Guadalete en el año 711?",
+          "opciones": [
+            "Don Rodrigo",
+            "Leovigildo",
+            "Recaredo",
+            "Recesvinto"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Don Rodrigo fue el último rey visigodo. En el año 711 fue derrotado en Guadalete por los musulmanes."
+        },
+        {
+          "enunciado": "¿Qué consecuencia tuvo la derrota visigoda en la batalla de Guadalete?",
+          "opciones": [
+            "El fin del reino de Toledo y la conquista musulmana de casi toda la Península",
+            "El inicio de la Reconquista y la creación del reino de Asturias",
+            "La unión de Castilla y León en un solo reino",
+            "La conversión de los visigodos al islam"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! Tras Guadalete, el reino visigodo de Toledo desapareció y los musulmanes conquistaron casi toda la Península. A ese territorio llamaron al-Ándalus."
         }
       ]
     }
@@ -1683,19 +1751,19 @@
       "icono": "🃏",
       "parejas": [
         { "id": "al_andalus", "etiqueta": "Al-Ándalus", "icono": "🕌", "detalle": "Territorio musulmán peninsular", "color": "#10b981" },
-        { "id": "pelayo", "etiqueta": "Don Pelayo", "icono": "🛡️", "detalle": "Venció en Covadonga (722)", "color": "#3b82f6" },
-        { "id": "califato", "etiqueta": "Abd al-Rahman III", "icono": "👑", "detalle": "Califato de Córdoba (929)", "color": "#8b5cf6" },
-        { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f59e0b" },
-        { "id": "navas", "etiqueta": "Las Navas de Tolosa", "icono": "⚔️", "detalle": "Victoria cristiana clave (1212)", "color": "#ef4444" },
-        { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XV)", "color": "#ec4899" },
-        { "id": "mudejares", "etiqueta": "Mudéjares", "icono": "🤝", "detalle": "Musulmanes en reinos cristianos", "color": "#06b6d4" }
+        { "id": "mahoma", "etiqueta": "Mahoma", "icono": "📖", "detalle": "Fundador del islam (siglo VII)", "color": "#f59e0b" },
+        { "id": "don_rodrigo", "etiqueta": "Don Rodrigo", "icono": "⚔️", "detalle": "Derrotado en Guadalete (711)", "color": "#ef4444" },
+        { "id": "abd_al_rahman_i", "etiqueta": "Abd al-Rahman I", "icono": "🏛️", "detalle": "Emirato independiente (756)", "color": "#3b82f6" },
+        { "id": "abd_al_rahman_iii", "etiqueta": "Abd al-Rahman III", "icono": "👑", "detalle": "Califato de Córdoba (929)", "color": "#8b5cf6" },
+        { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f97316" },
+        { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XIII)", "color": "#ec4899" }
       ]
     },
     {
       "id": 2,
       "tipo": "teoria",
       "titulo": "2. Presentación: El origen y la evolución de Al-Ándalus",
-      "descripcion": "Seis diapositivas con imágenes y explicación por voz.",
+      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
       "icono": "📖",
       "fichas": [
         {
@@ -1708,10 +1776,27 @@
               "fecha": "Desde el siglo VII",
               "icono": "🕌",
               "color": "#10b981",
-              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a01_mezquita_cordoba.jpg",
-              "texto": "Mezquita de Córdoba",
-              "locucion": "El islam nació en Arabia en el siglo séptimo, siguiendo las enseñanzas de Mahoma. A quienes practican esta religión se les llama musulmanes y su libro sagrado es el Corán. La foto muestra una mezquita construida en Córdoba siglos después: un lugar de oración en la época de al-Ándalus.",
-              "puntos": []
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a09_kaaba.jpg",
+              "texto": "La Kaaba, en La Meca",
+              "locucion": "El islam nació en Arabia a principios del siglo séptimo. Mahoma fue su fundador y sus enseñanzas se recogen en el Corán. A quienes practican esta religión se les llama musulmanes. En la imagen se ve la Kaaba, en La Meca, el lugar más sagrado del islam; hacia ella se orientan los musulmanes para rezar. Siglos después, los musulmanes llevaron esta religión a la península ibérica.",
+              "puntos": [
+                "Nació en **Arabia** a principios del **siglo VII**.",
+                "Su fundador fue **Mahoma** y su libro sagrado es el **Corán**."
+              ]
+            },
+            {
+              "nombre": "La expansión del islam",
+              "fecha": "Siglos VII y VIII",
+              "icono": "🗺️",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a07_expansion_islam.png",
+              "texto": "La expansión del islam",
+              "locucion": "Este mapa muestra la expansión del islam hasta la caída de los omeyas. Después de la muerte de Mahoma, los musulmanes extendieron su territorio más allá de Arabia. En su expansión inicial llegaron desde la India hasta el norte de África. En el año setecientos once cruzaron el estrecho desde el norte de África y entraron en la península ibérica.",
+              "puntos": [
+                "El mapa muestra las conquistas del islam entre los siglos **VII** y **VIII**.",
+                "En su expansión inicial llegaron desde la **India** hasta el **norte de África**.",
+                "En el año **711** cruzaron el estrecho y entraron en la **península ibérica**."
+              ]
             },
             {
               "nombre": "La llegada a la Península",
@@ -1720,8 +1805,26 @@
               "color": "#3b82f6",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a02_conquista_711.png",
               "texto": "La batalla de Guadalete",
-              "locucion": "En el año setecientos once, en medio de una disputa por el trono visigodo, tropas musulmanas llegaron desde el norte de África. Vencieron al rey don Rodrigo en la batalla de Guadalete y conquistaron gran parte de la Península. Llamaron al-Ándalus al territorio que gobernaron. El mapa marca Guadalete y muestra cómo avanzaron hacia otras ciudades durante los años siguientes.",
-              "puntos": []
+              "locucion": "En el año setecientos once, en medio de una disputa por el trono visigodo, tropas musulmanas llegaron desde el norte de África. Vencieron al rey don Rodrigo en la batalla de Guadalete. Con esa derrota terminó el reino visigodo de Toledo y los musulmanes conquistaron gran parte de la Península. Llamaron al-Ándalus al territorio que gobernaron. El mapa marca Guadalete y muestra cómo avanzaron hacia otras ciudades durante los años siguientes.",
+              "puntos": [
+                "En **711**, los musulmanes vencieron a **Don Rodrigo** en **Guadalete**.",
+                "Con esa derrota terminó el **reino de Toledo**.",
+                "Llamaron **al-Ándalus** al territorio que conquistaron."
+              ]
+            },
+            {
+              "nombre": "Al-Ándalus y el califato",
+              "fecha": "Siglo VIII",
+              "icono": "👑",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a08_damasco_omeya.jpg",
+              "texto": "Damasco, capital del califato omeya",
+              "locucion": "Al principio, al-Ándalus era una provincia del califato omeya, un imperio musulmán con capital en Damasco. El califa era su máxima autoridad: dirigía el imperio y también era la cabeza religiosa. A mediados del siglo octavo, los abasíes derrocaron a la familia Omeya, es decir, les quitaron el poder. Algunos omeyas huyeron y uno de ellos, el príncipe Abd al-Rahman Primero, llegó a al-Ándalus. En la imagen se ve la Gran Mezquita de Damasco, construida en época omeya.",
+              "puntos": [
+                "Al principio, al-Ándalus era una **provincia (emirato dependiente)** del **califato omeya**, con capital en **Damasco**.",
+                "El **califa** era la máxima autoridad: dirigía el imperio y la religión.",
+                "A mediados del siglo VIII, los abasíes **derrocaron** a los omeyas; algunos huyeron y **Abd al-Rahman I**, un príncipe omeya, llegó a al-Ándalus."
+              ]
             },
             {
               "nombre": "Del emirato al califato",
@@ -1730,8 +1833,12 @@
               "color": "#8b5cf6",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a03_medina_azahara.jpg",
               "texto": "Medina Azahara, cerca de Córdoba",
-              "locucion": "En el año setecientos cincuenta y seis, Abd al-Rahmán Primero creó en Córdoba un emirato independiente. En el año novecientos veintinueve, Abd al-Rahmán Tercero proclamó el califato de Córdoba. Cerca de la ciudad mandó construir Medina Azahara, una ciudad palatina para la corte y el gobierno. En la fotografía se ven restos de edificios y arcos del conjunto.",
-              "puntos": []
+              "locucion": "En el año setecientos cincuenta y seis, Abd al-Rahman Primero creó en Córdoba un emirato independiente: al-Ándalus dejó de depender del califato abasí de Bagdad. En el año novecientos veintinueve, Abd al-Rahman Tercero se proclamó califa y creó el califato de Córdoba. Cerca de la ciudad mandó construir Medina Azahara, una ciudad palatina para la corte y el gobierno. En la fotografía se ven restos de edificios y arcos del conjunto.",
+              "puntos": [
+                "**756**: Abd al-Rahman I creó el **emirato independiente** de Córdoba.",
+                "**929**: Abd al-Rahman III se proclamó **califa** y creó el **califato de Córdoba**.",
+                "Cerca de Córdoba se construyó **Medina Azahara**, la ciudad palatina del califa."
+              ]
             },
             {
               "nombre": "Los reinos de taifas",
@@ -1741,7 +1848,10 @@
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a04_aljaferia.jpg",
               "texto": "El palacio de la Aljafería",
               "locucion": "En mil treinta y uno, las disputas dividieron el califato en pequeños reinos llamados taifas. La Aljafería de Zaragoza, que aparece en la imagen, fue un palacio construido en esa época. Más tarde llegaron desde el norte de África los almorávides y los almohades, que gobernaron distintos territorios de al-Ándalus.",
-              "puntos": []
+              "puntos": [
+                "**1031**: el califato de Córdoba se dividió en pequeños reinos llamados **taifas**.",
+                "Más tarde llegaron los **almorávides** y los **almohades** desde el norte de África."
+              ]
             },
             {
               "nombre": "El reino nazarí de Granada",
@@ -1751,7 +1861,10 @@
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a05_alhambra_panorama.jpg",
               "texto": "La Alhambra de Granada",
               "locucion": "Desde el siglo trece, Granada fue el último reino musulmán de la Península. Lo gobernó la familia nazarí y su residencia principal estaba en la Alhambra, un conjunto de palacios y fortalezas. El reino nazarí terminó en mil cuatrocientos noventa y dos, cuando Granada pasó a manos de los Reyes Católicos.",
-              "puntos": []
+              "puntos": [
+                "Desde el **siglo XIII**, solo quedó el **reino nazarí de Granada**.",
+                "Terminó en **1492**, con los Reyes Católicos."
+              ]
             },
             {
               "nombre": "La Alhambra, palacios y patios",
@@ -1765,10 +1878,10 @@
             }
           ],
           "destacado": {
-            "icono": "🏛️",
-            "titulo": "La Mezquita de Córdoba",
-            "locucion": "La Mezquita de Córdoba se construyó y amplió durante varios siglos, cuando Córdoba era una ciudad destacada de al-Ándalus.",
-            "texto": "Se construyó y amplió durante varios siglos, cuando Córdoba era una ciudad destacada de al-Ándalus."
+            "icono": "🕰️",
+            "titulo": "La línea del tiempo de al-Ándalus",
+            "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
+            "texto": "**711** Guadalete y emirato dependiente · **756** emirato independiente · **929** califato de Córdoba · **1031** taifas · **siglo XIII** reino nazarí de Granada · **1492** fin de al-Ándalus"
           }
         }
       ]
@@ -1781,15 +1894,15 @@
       "icono": "❓",
       "preguntas": [
         {
-          "enunciado": "¿Qué religión nació en Arabia a principios del siglo VII fundada por las enseñanzas de Mahoma?",
+          "enunciado": "¿En qué siglo surgió el islam y quién fue su fundador?",
           "opciones": [
-            "El islam",
-            "El cristianismo",
-            "El judaísmo",
-            "El budismo"
+            "En el siglo VII, en Arabia, fundado por Mahoma",
+            "En el siglo I, en Roma, fundado por Julio César",
+            "En el siglo XV, en América, fundado por Cristóbal Colón",
+            "En el siglo X, en China, fundado por Confucio"
           ],
           "correcta": 0,
-          "explicacion": "¡Correcto! El islam nació en Arabia a principios del siglo VII a través de las enseñanzas de Mahoma."
+          "explicacion": "¡Correcto! El islam nació a principios del siglo VII en Arabia. Su fundador fue Mahoma y su libro sagrado es el Corán."
         },
         {
           "enunciado": "¿Cómo se llama el libro sagrado de los musulmanes donde se recogen por escrito sus enseñanzas?",
@@ -1803,18 +1916,18 @@
           "explicacion": "¡Exacto! El Corán es el libro sagrado del islam, con todos los preceptos que debe cumplir un musulmán."
         },
         {
-          "enunciado": "¿En qué batalla del año 711 derrotaron los musulmanes al rey visigodo don Rodrigo?",
+          "enunciado": "¿Qué rey visigodo fue derrotado en la batalla de Guadalete y qué consecuencia tuvo esta derrota?",
           "opciones": [
-            "Batalla de Guadalete",
-            "Batalla de Covadonga",
-            "Batalla de Las Navas de Tolosa",
-            "Batalla de Poitiers"
+            "Don Rodrigo, el fin del reino de Toledo",
+            "Leovigildo, el inicio de la Reconquista",
+            "Recaredo, la creación de al-Ándalus",
+            "Alarico, la invasión de los francos"
           ],
           "correcta": 0,
-          "explicacion": "¡Muy bien! En la batalla de Guadalete (711), los musulmanes derrotaron a don Rodrigo y conquistaron la Península."
+          "explicacion": "¡Muy bien! Don Rodrigo fue derrotado en Guadalete en el año 711. Con él terminó el reino visigodo de Toledo y los musulmanes conquistaron casi toda la Península."
         },
         {
-          "enunciado": "¿Qué nombre dieron los musulmanes al territorio peninsular que conquistaron?",
+          "enunciado": "¿Cómo llamaron los musulmanes al territorio que ocuparon en la península ibérica?",
           "opciones": [
             "Al-Ándalus",
             "Hispania",
@@ -1825,18 +1938,84 @@
           "explicacion": "¡Genial! Los musulmanes llamaron al-Ándalus a su territorio, y a sus habitantes andalusíes."
         },
         {
-          "enunciado": "¿Quién se hizo con el poder en Córdoba en el año 756 independizándose del califato?",
+          "enunciado": "¿Qué territorio llegaron a controlar los musulmanes durante su expansión inicial?",
           "opciones": [
-            "Abd al-Rahman I",
-            "Abd al-Rahman III",
-            "Don Pelayo",
-            "Alfonso VI"
+            "Desde la India hasta el norte de África",
+            "Desde China hasta Europa central",
+            "Desde Arabia hasta América",
+            "Solo la península ibérica"
           ],
           "correcta": 0,
-          "explicacion": "¡Perfecto! Abd al-Rahman I, de la familia Omeya, creó el emirato independiente de Córdoba en el 756."
+          "explicacion": "¡Muy bien! En su expansión inicial, los musulmanes llegaron desde la India hasta el norte de África. Poco después, en el 711, entraron en la península ibérica."
         },
         {
-          "enunciado": "¿Qué acontecimiento histórico proclamó Abd al-Rahman III en el año 929?",
+          "enunciado": "¿Qué era al-Ándalus en un primer momento dentro del imperio islámico?",
+          "opciones": [
+            "Una provincia (emirato) que dependía del califato omeya de Damasco",
+            "Un imperio independiente gobernado por un emperador",
+            "Una república formada por ciudades libres",
+            "Un reino cristiano aliado de los francos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! Al principio, al-Ándalus era una provincia del califato omeya. Estaba gobernada por un emir que dependía del califa de Damasco."
+        },
+        {
+          "enunciado": "¿Cómo se llamaba el imperio islámico al que pertenecía al-Ándalus?",
+          "opciones": [
+            "Califato",
+            "Imperio Romano",
+            "Imperio Bizantino",
+            "Sultanato"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Al-Ándalus pertenecía al califato omeya, el imperio islámico con capital en Damasco."
+        },
+        {
+          "enunciado": "¿Quién dirigía el califato islámico?",
+          "opciones": [
+            "El califa",
+            "El emperador",
+            "El sultán",
+            "El papa"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! El califa era la máxima autoridad del califato: dirigía el imperio y también era la cabeza religiosa."
+        },
+        {
+          "enunciado": "¿Qué ocurrió con la familia Omeya a mediados del siglo VIII?",
+          "opciones": [
+            "Fue derrocada y algunos miembros huyeron a al-Ándalus",
+            "Fue derrocada y desapareció por completo",
+            "Fue derrotada por los reinos cristianos",
+            "Se convirtió en la familia real de Córdoba"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! En el año 750, los abasíes derrocaron a los omeyas. Algunos miembros de la familia huyeron; uno de ellos, Abd al-Rahman I, llegó a al-Ándalus."
+        },
+        {
+          "enunciado": "¿Quién fue Abd al-Rahman?",
+          "opciones": [
+            "Un príncipe omeya que huyó a al-Ándalus y creó el emirato independiente de Córdoba en 756",
+            "El último califa de Damasco",
+            "El rey visigodo derrotado en Guadalete",
+            "El califa que proclamó el califato de Córdoba en 929"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! Abd al-Rahman I era un príncipe de la familia Omeya. Tras la derrota de su familia, huyó a al-Ándalus y en 756 creó el emirato independiente de Córdoba."
+        },
+        {
+          "enunciado": "¿En qué año se independizó al-Ándalus del califato bajo el mando de Abd al-Rahman I?",
+          "opciones": [
+            "756",
+            "711",
+            "929",
+            "1031"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! En el año 756, Abd al-Rahman I independizó al-Ándalus del califato abasí y creó el emirato independiente de Córdoba."
+        },
+        {
+          "enunciado": "¿Qué proclamó Abd al-Rahman III en el año 929?",
           "opciones": [
             "El califato de Córdoba",
             "El reino nazarí de Granada",
@@ -1844,18 +2023,18 @@
             "La división en taifas"
           ],
           "correcta": 0,
-          "explicacion": "¡Así es! En el año 929, Abd al-Rahman III proclamó el califato de Córdoba, máxima época de esplendor."
+          "explicacion": "¡Así es! En el año 929, Abd al-Rahman III se proclamó califa y creó el califato de Córdoba, su época de máximo esplendor."
         },
         {
-          "enunciado": "¿En qué se fragmentó el califato de Córdoba en el año 1031 debido a disputas internas?",
+          "enunciado": "¿Qué ocurrió con el califato de Córdoba en el año 1031?",
           "opciones": [
-            "En pequeños reinos llamados taifas",
-            "En provincias del Imperio Romano",
-            "En reinos visigodos del norte",
-            "En condados bajo control francés"
+            "Se fragmentó en pequeños reinos llamados taifas",
+            "Fue conquistado por los cristianos",
+            "Pasó a formar parte del imperio bizantino",
+            "Se convirtió en el reino nazarí de Granada"
           ],
           "correcta": 0,
-          "explicacion": "¡Estupendo! En 1031 el califato se desmembró en numerosos pequeños reinos denominados taifas."
+          "explicacion": "¡Estupendo! En 1031 el califato de Córdoba se dividió en numerosos reinos pequeños llamados taifas."
         },
         {
           "enunciado": "¿Qué pueblos procedentes del norte de África llegaron para ayudar a los andalusíes ante el avance cristiano?",
@@ -1869,15 +2048,15 @@
           "explicacion": "¡Correcto! Los reyes de taifas solicitaron auxilio a los almorávides y más tarde a los almohades."
         },
         {
-          "enunciado": "¿Cuál fue el último reino andalusí que resistió desde el siglo XIII hasta finales del siglo XV?",
+          "enunciado": "¿Qué territorio dominaban los andalusíes en la península ibérica a partir del siglo XIII?",
           "opciones": [
             "El reino nazarí de Granada",
-            "El califato de Córdoba",
-            "La taifa de Toledo",
-            "El emirato de Zaragoza"
+            "Todo el norte peninsular",
+            "Las taifas del norte",
+            "El califato de Córdoba"
           ],
           "correcta": 0,
-          "explicacion": "¡Excelente! El reino nazarí de Granada fue el último reducto musulmán peninsular hasta 1492."
+          "explicacion": "¡Excelente! Desde el siglo XIII, el territorio musulmán se redujo al reino nazarí de Granada, que resistió hasta 1492."
         }
       ]
     },
@@ -1919,18 +2098,23 @@
               "color": "#8b5cf6",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/b02_asturias_800.jpg",
               "texto": "El reino de Asturias hacia 800",
-              "locucion": "Este mapa muestra el reino de Asturias alrededor del año ochocientos. Con el tiempo, aquel reino extendió su territorio hacia el sur y su centro político pasó a León. A lo largo de varios siglos también se formaron reinos como Galicia, Castilla y Portugal. El mapa representa solo un momento de una historia que fue cambiando.",
+              "locucion": "Este mapa muestra el reino de Asturias alrededor del año ochocientos. Con el tiempo, aquel reino extendió su territorio hacia el sur y su centro político pasó a León. A lo largo de varios siglos también se formaron reinos como León, Castilla y Portugal. El mapa representa solo un momento de una historia que fue cambiando.",
               "puntos": []
             },
             {
               "nombre": "Las coronas cristianas",
-              "fecha": "Años 1137 y 1230",
+              "fecha": "Siglos XI – XIII",
               "icono": "👑",
               "color": "#f97316",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/b03_mapa_1224_es.jpg",
               "texto": "La Península Ibérica en 1224",
-              "locucion": "En mil ciento treinta y siete se formó la Corona de Aragón, que reunió el reino de Aragón y los territorios catalanes. En mil doscientos treinta, Castilla y León quedaron unidos bajo un mismo rey. Este mapa muestra la Península en mil doscientos veinticuatro, seis años antes de esa unión: las fronteras y los nombres de los territorios siguieron cambiando.",
-              "puntos": []
+              "locucion": "En mil ochenta y cinco, el rey Alfonso Sexto de Castilla conquistó Toledo, una ciudad muy importante. En mil ciento treinta y siete se formó la Corona de Aragón, que reunió el reino de Aragón y los territorios catalanes. En mil doscientos treinta, Castilla y León quedaron unidos bajo un mismo rey. En el siglo trece, Jaime Primero el Conquistador incorporó a la Corona de Aragón Valencia y las islas Baleares. Este mapa muestra la Península en mil doscientos veinticuatro, seis años antes de la unión de Castilla y León: las fronteras y los nombres de los territorios siguieron cambiando.",
+              "puntos": [
+                "**1085**: Alfonso VI de Castilla conquistó **Toledo**.",
+                "**1137**: se formó la **Corona de Aragón**.",
+                "**1230**: Castilla y León quedaron unidos.",
+                "En el siglo XIII, **Jaime I** incorporó **Valencia** y las **islas Baleares**."
+              ]
             },
             {
               "nombre": "Las Navas de Tolosa",
@@ -1996,7 +2180,7 @@
       "id": 6,
       "tipo": "quiz",
       "titulo": "6. Quiz: Reinos Cristianos y Convivencia",
-      "descripcion": "Demuestra lo que sabes sobre la Reconquista, sus batallas y las tres culturas.",
+      "descripcion": "Demuestra lo que sabes sobre la Reconquista, al-Ándalus y las tres culturas.",
       "icono": "🏆",
       "preguntas": [
         {
@@ -2108,6 +2292,17 @@
           ],
           "correcta": 0,
           "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
+        },
+        {
+          "enunciado": "¿Cuál es el orden correcto de las etapas de al-Ándalus?",
+          "opciones": [
+            "Emirato dependiente ➡️ Emirato independiente (756) ➡️ Califato (929) ➡️ Taifas (1031) ➡️ Reino nazarí (siglo XIII)",
+            "Califato (929) ➡️ Emirato dependiente ➡️ Taifas (1031) ➡️ Emirato independiente (756) ➡️ Reino nazarí",
+            "Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente ➡️ Reino nazarí",
+            "Reino nazarí ➡️ Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Brillante! Primero al-Ándalus dependía del califato; en 756 se hizo emirato independiente; en 929 se proclamó el califato de Córdoba; en 1031 se dividió en taifas; y desde el siglo XIII solo quedó el reino nazarí de Granada."
         }
       ]
     }
@@ -2135,19 +2330,19 @@
       "icono": "🃏",
       "parejas": [
         { "id": "al_andalus", "etiqueta": "Al-Ándalus", "icono": "🕌", "detalle": "Territorio musulmán peninsular", "color": "#10b981" },
-        { "id": "pelayo", "etiqueta": "Don Pelayo", "icono": "🛡️", "detalle": "Venció en Covadonga (722)", "color": "#3b82f6" },
-        { "id": "califato", "etiqueta": "Abd al-Rahman III", "icono": "👑", "detalle": "Califato de Córdoba (929)", "color": "#8b5cf6" },
-        { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f59e0b" },
-        { "id": "navas", "etiqueta": "Las Navas de Tolosa", "icono": "⚔️", "detalle": "Victoria cristiana clave (1212)", "color": "#ef4444" },
-        { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XV)", "color": "#ec4899" },
-        { "id": "mudejares", "etiqueta": "Mudéjares", "icono": "🤝", "detalle": "Musulmanes en reinos cristianos", "color": "#06b6d4" }
+        { "id": "mahoma", "etiqueta": "Mahoma", "icono": "📖", "detalle": "Fundador del islam (siglo VII)", "color": "#f59e0b" },
+        { "id": "don_rodrigo", "etiqueta": "Don Rodrigo", "icono": "⚔️", "detalle": "Derrotado en Guadalete (711)", "color": "#ef4444" },
+        { "id": "abd_al_rahman_i", "etiqueta": "Abd al-Rahman I", "icono": "🏛️", "detalle": "Emirato independiente (756)", "color": "#3b82f6" },
+        { "id": "abd_al_rahman_iii", "etiqueta": "Abd al-Rahman III", "icono": "👑", "detalle": "Califato de Córdoba (929)", "color": "#8b5cf6" },
+        { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f97316" },
+        { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XIII)", "color": "#ec4899" }
       ]
     },
     {
       "id": 2,
       "tipo": "teoria",
       "titulo": "2. Presentación: El origen y la evolución de Al-Ándalus",
-      "descripcion": "Seis diapositivas con imágenes y explicación por voz.",
+      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
       "icono": "📖",
       "fichas": [
         {
@@ -2160,10 +2355,27 @@
               "fecha": "Desde el siglo VII",
               "icono": "🕌",
               "color": "#10b981",
-              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a01_mezquita_cordoba.jpg",
-              "texto": "Mezquita de Córdoba",
-              "locucion": "El islam nació en Arabia en el siglo séptimo, siguiendo las enseñanzas de Mahoma. A quienes practican esta religión se les llama musulmanes y su libro sagrado es el Corán. La foto muestra una mezquita construida en Córdoba siglos después: un lugar de oración en la época de al-Ándalus.",
-              "puntos": []
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a09_kaaba.jpg",
+              "texto": "La Kaaba, en La Meca",
+              "locucion": "El islam nació en Arabia a principios del siglo séptimo. Mahoma fue su fundador y sus enseñanzas se recogen en el Corán. A quienes practican esta religión se les llama musulmanes. En la imagen se ve la Kaaba, en La Meca, el lugar más sagrado del islam; hacia ella se orientan los musulmanes para rezar. Siglos después, los musulmanes llevaron esta religión a la península ibérica.",
+              "puntos": [
+                "Nació en **Arabia** a principios del **siglo VII**.",
+                "Su fundador fue **Mahoma** y su libro sagrado es el **Corán**."
+              ]
+            },
+            {
+              "nombre": "La expansión del islam",
+              "fecha": "Siglos VII y VIII",
+              "icono": "🗺️",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a07_expansion_islam.png",
+              "texto": "La expansión del islam",
+              "locucion": "Este mapa muestra la expansión del islam hasta la caída de los omeyas. Después de la muerte de Mahoma, los musulmanes extendieron su territorio más allá de Arabia. En su expansión inicial llegaron desde la India hasta el norte de África. En el año setecientos once cruzaron el estrecho desde el norte de África y entraron en la península ibérica.",
+              "puntos": [
+                "El mapa muestra las conquistas del islam entre los siglos **VII** y **VIII**.",
+                "En su expansión inicial llegaron desde la **India** hasta el **norte de África**.",
+                "En el año **711** cruzaron el estrecho y entraron en la **península ibérica**."
+              ]
             },
             {
               "nombre": "La llegada a la Península",
@@ -2172,8 +2384,26 @@
               "color": "#3b82f6",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a02_conquista_711.png",
               "texto": "La batalla de Guadalete",
-              "locucion": "En el año setecientos once, en medio de una disputa por el trono visigodo, tropas musulmanas llegaron desde el norte de África. Vencieron al rey don Rodrigo en la batalla de Guadalete y conquistaron gran parte de la Península. Llamaron al-Ándalus al territorio que gobernaron. El mapa marca Guadalete y muestra cómo avanzaron hacia otras ciudades durante los años siguientes.",
-              "puntos": []
+              "locucion": "En el año setecientos once, en medio de una disputa por el trono visigodo, tropas musulmanas llegaron desde el norte de África. Vencieron al rey don Rodrigo en la batalla de Guadalete. Con esa derrota terminó el reino visigodo de Toledo y los musulmanes conquistaron gran parte de la Península. Llamaron al-Ándalus al territorio que gobernaron. El mapa marca Guadalete y muestra cómo avanzaron hacia otras ciudades durante los años siguientes.",
+              "puntos": [
+                "En **711**, los musulmanes vencieron a **Don Rodrigo** en **Guadalete**.",
+                "Con esa derrota terminó el **reino de Toledo**.",
+                "Llamaron **al-Ándalus** al territorio que conquistaron."
+              ]
+            },
+            {
+              "nombre": "Al-Ándalus y el califato",
+              "fecha": "Siglo VIII",
+              "icono": "👑",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a08_damasco_omeya.jpg",
+              "texto": "Damasco, capital del califato omeya",
+              "locucion": "Al principio, al-Ándalus era una provincia del califato omeya, un imperio musulmán con capital en Damasco. El califa era su máxima autoridad: dirigía el imperio y también era la cabeza religiosa. A mediados del siglo octavo, los abasíes derrocaron a la familia Omeya, es decir, les quitaron el poder. Algunos omeyas huyeron y uno de ellos, el príncipe Abd al-Rahman Primero, llegó a al-Ándalus. En la imagen se ve la Gran Mezquita de Damasco, construida en época omeya.",
+              "puntos": [
+                "Al principio, al-Ándalus era una **provincia (emirato dependiente)** del **califato omeya**, con capital en **Damasco**.",
+                "El **califa** era la máxima autoridad: dirigía el imperio y la religión.",
+                "A mediados del siglo VIII, los abasíes **derrocaron** a los omeyas; algunos huyeron y **Abd al-Rahman I**, un príncipe omeya, llegó a al-Ándalus."
+              ]
             },
             {
               "nombre": "Del emirato al califato",
@@ -2182,8 +2412,12 @@
               "color": "#8b5cf6",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a03_medina_azahara.jpg",
               "texto": "Medina Azahara, cerca de Córdoba",
-              "locucion": "En el año setecientos cincuenta y seis, Abd al-Rahmán Primero creó en Córdoba un emirato independiente. En el año novecientos veintinueve, Abd al-Rahmán Tercero proclamó el califato de Córdoba. Cerca de la ciudad mandó construir Medina Azahara, una ciudad palatina para la corte y el gobierno. En la fotografía se ven restos de edificios y arcos del conjunto.",
-              "puntos": []
+              "locucion": "En el año setecientos cincuenta y seis, Abd al-Rahman Primero creó en Córdoba un emirato independiente: al-Ándalus dejó de depender del califato abasí de Bagdad. En el año novecientos veintinueve, Abd al-Rahman Tercero se proclamó califa y creó el califato de Córdoba. Cerca de la ciudad mandó construir Medina Azahara, una ciudad palatina para la corte y el gobierno. En la fotografía se ven restos de edificios y arcos del conjunto.",
+              "puntos": [
+                "**756**: Abd al-Rahman I creó el **emirato independiente** de Córdoba.",
+                "**929**: Abd al-Rahman III se proclamó **califa** y creó el **califato de Córdoba**.",
+                "Cerca de Córdoba se construyó **Medina Azahara**, la ciudad palatina del califa."
+              ]
             },
             {
               "nombre": "Los reinos de taifas",
@@ -2193,7 +2427,10 @@
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a04_aljaferia.jpg",
               "texto": "El palacio de la Aljafería",
               "locucion": "En mil treinta y uno, las disputas dividieron el califato en pequeños reinos llamados taifas. La Aljafería de Zaragoza, que aparece en la imagen, fue un palacio construido en esa época. Más tarde llegaron desde el norte de África los almorávides y los almohades, que gobernaron distintos territorios de al-Ándalus.",
-              "puntos": []
+              "puntos": [
+                "**1031**: el califato de Córdoba se dividió en pequeños reinos llamados **taifas**.",
+                "Más tarde llegaron los **almorávides** y los **almohades** desde el norte de África."
+              ]
             },
             {
               "nombre": "El reino nazarí de Granada",
@@ -2203,7 +2440,10 @@
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a05_alhambra_panorama.jpg",
               "texto": "La Alhambra de Granada",
               "locucion": "Desde el siglo trece, Granada fue el último reino musulmán de la Península. Lo gobernó la familia nazarí y su residencia principal estaba en la Alhambra, un conjunto de palacios y fortalezas. El reino nazarí terminó en mil cuatrocientos noventa y dos, cuando Granada pasó a manos de los Reyes Católicos.",
-              "puntos": []
+              "puntos": [
+                "Desde el **siglo XIII**, solo quedó el **reino nazarí de Granada**.",
+                "Terminó en **1492**, con los Reyes Católicos."
+              ]
             },
             {
               "nombre": "La Alhambra, palacios y patios",
@@ -2217,10 +2457,10 @@
             }
           ],
           "destacado": {
-            "icono": "🏛️",
-            "titulo": "La Mezquita de Córdoba",
-            "locucion": "La Mezquita de Córdoba se construyó y amplió durante varios siglos, cuando Córdoba era una ciudad destacada de al-Ándalus.",
-            "texto": "Se construyó y amplió durante varios siglos, cuando Córdoba era una ciudad destacada de al-Ándalus."
+            "icono": "🕰️",
+            "titulo": "La línea del tiempo de al-Ándalus",
+            "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
+            "texto": "**711** Guadalete y emirato dependiente · **756** emirato independiente · **929** califato de Córdoba · **1031** taifas · **siglo XIII** reino nazarí de Granada · **1492** fin de al-Ándalus"
           }
         }
       ]
@@ -2233,15 +2473,15 @@
       "icono": "❓",
       "preguntas": [
         {
-          "enunciado": "¿Qué religión nació en Arabia a principios del siglo VII fundada por las enseñanzas de Mahoma?",
+          "enunciado": "¿En qué siglo surgió el islam y quién fue su fundador?",
           "opciones": [
-            "El islam",
-            "El cristianismo",
-            "El judaísmo",
-            "El budismo"
+            "En el siglo VII, en Arabia, fundado por Mahoma",
+            "En el siglo I, en Roma, fundado por Julio César",
+            "En el siglo XV, en América, fundado por Cristóbal Colón",
+            "En el siglo X, en China, fundado por Confucio"
           ],
           "correcta": 0,
-          "explicacion": "¡Correcto! El islam nació en Arabia a principios del siglo VII a través de las enseñanzas de Mahoma."
+          "explicacion": "¡Correcto! El islam nació a principios del siglo VII en Arabia. Su fundador fue Mahoma y su libro sagrado es el Corán."
         },
         {
           "enunciado": "¿Cómo se llama el libro sagrado de los musulmanes donde se recogen por escrito sus enseñanzas?",
@@ -2255,18 +2495,18 @@
           "explicacion": "¡Exacto! El Corán es el libro sagrado del islam, con todos los preceptos que debe cumplir un musulmán."
         },
         {
-          "enunciado": "¿En qué batalla del año 711 derrotaron los musulmanes al rey visigodo don Rodrigo?",
+          "enunciado": "¿Qué rey visigodo fue derrotado en la batalla de Guadalete y qué consecuencia tuvo esta derrota?",
           "opciones": [
-            "Batalla de Guadalete",
-            "Batalla de Covadonga",
-            "Batalla de Las Navas de Tolosa",
-            "Batalla de Poitiers"
+            "Don Rodrigo, el fin del reino de Toledo",
+            "Leovigildo, el inicio de la Reconquista",
+            "Recaredo, la creación de al-Ándalus",
+            "Alarico, la invasión de los francos"
           ],
           "correcta": 0,
-          "explicacion": "¡Muy bien! En la batalla de Guadalete (711), los musulmanes derrotaron a don Rodrigo y conquistaron la Península."
+          "explicacion": "¡Muy bien! Don Rodrigo fue derrotado en Guadalete en el año 711. Con él terminó el reino visigodo de Toledo y los musulmanes conquistaron casi toda la Península."
         },
         {
-          "enunciado": "¿Qué nombre dieron los musulmanes al territorio peninsular que conquistaron?",
+          "enunciado": "¿Cómo llamaron los musulmanes al territorio que ocuparon en la península ibérica?",
           "opciones": [
             "Al-Ándalus",
             "Hispania",
@@ -2277,18 +2517,84 @@
           "explicacion": "¡Genial! Los musulmanes llamaron al-Ándalus a su territorio, y a sus habitantes andalusíes."
         },
         {
-          "enunciado": "¿Quién se hizo con el poder en Córdoba en el año 756 independizándose del califato?",
+          "enunciado": "¿Qué territorio llegaron a controlar los musulmanes durante su expansión inicial?",
           "opciones": [
-            "Abd al-Rahman I",
-            "Abd al-Rahman III",
-            "Don Pelayo",
-            "Alfonso VI"
+            "Desde la India hasta el norte de África",
+            "Desde China hasta Europa central",
+            "Desde Arabia hasta América",
+            "Solo la península ibérica"
           ],
           "correcta": 0,
-          "explicacion": "¡Perfecto! Abd al-Rahman I, de la familia Omeya, creó el emirato independiente de Córdoba en el 756."
+          "explicacion": "¡Muy bien! En su expansión inicial, los musulmanes llegaron desde la India hasta el norte de África. Poco después, en el 711, entraron en la península ibérica."
         },
         {
-          "enunciado": "¿Qué acontecimiento histórico proclamó Abd al-Rahman III en el año 929?",
+          "enunciado": "¿Qué era al-Ándalus en un primer momento dentro del imperio islámico?",
+          "opciones": [
+            "Una provincia (emirato) que dependía del califato omeya de Damasco",
+            "Un imperio independiente gobernado por un emperador",
+            "Una república formada por ciudades libres",
+            "Un reino cristiano aliado de los francos"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Exacto! Al principio, al-Ándalus era una provincia del califato omeya. Estaba gobernada por un emir que dependía del califa de Damasco."
+        },
+        {
+          "enunciado": "¿Cómo se llamaba el imperio islámico al que pertenecía al-Ándalus?",
+          "opciones": [
+            "Califato",
+            "Imperio Romano",
+            "Imperio Bizantino",
+            "Sultanato"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Correcto! Al-Ándalus pertenecía al califato omeya, el imperio islámico con capital en Damasco."
+        },
+        {
+          "enunciado": "¿Quién dirigía el califato islámico?",
+          "opciones": [
+            "El califa",
+            "El emperador",
+            "El sultán",
+            "El papa"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Muy bien! El califa era la máxima autoridad del califato: dirigía el imperio y también era la cabeza religiosa."
+        },
+        {
+          "enunciado": "¿Qué ocurrió con la familia Omeya a mediados del siglo VIII?",
+          "opciones": [
+            "Fue derrocada y algunos miembros huyeron a al-Ándalus",
+            "Fue derrocada y desapareció por completo",
+            "Fue derrotada por los reinos cristianos",
+            "Se convirtió en la familia real de Córdoba"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Así es! En el año 750, los abasíes derrocaron a los omeyas. Algunos miembros de la familia huyeron; uno de ellos, Abd al-Rahman I, llegó a al-Ándalus."
+        },
+        {
+          "enunciado": "¿Quién fue Abd al-Rahman?",
+          "opciones": [
+            "Un príncipe omeya que huyó a al-Ándalus y creó el emirato independiente de Córdoba en 756",
+            "El último califa de Damasco",
+            "El rey visigodo derrotado en Guadalete",
+            "El califa que proclamó el califato de Córdoba en 929"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! Abd al-Rahman I era un príncipe de la familia Omeya. Tras la derrota de su familia, huyó a al-Ándalus y en 756 creó el emirato independiente de Córdoba."
+        },
+        {
+          "enunciado": "¿En qué año se independizó al-Ándalus del califato bajo el mando de Abd al-Rahman I?",
+          "opciones": [
+            "756",
+            "711",
+            "929",
+            "1031"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Perfecto! En el año 756, Abd al-Rahman I independizó al-Ándalus del califato abasí y creó el emirato independiente de Córdoba."
+        },
+        {
+          "enunciado": "¿Qué proclamó Abd al-Rahman III en el año 929?",
           "opciones": [
             "El califato de Córdoba",
             "El reino nazarí de Granada",
@@ -2296,18 +2602,18 @@
             "La división en taifas"
           ],
           "correcta": 0,
-          "explicacion": "¡Así es! En el año 929, Abd al-Rahman III proclamó el califato de Córdoba, máxima época de esplendor."
+          "explicacion": "¡Así es! En el año 929, Abd al-Rahman III se proclamó califa y creó el califato de Córdoba, su época de máximo esplendor."
         },
         {
-          "enunciado": "¿En qué se fragmentó el califato de Córdoba en el año 1031 debido a disputas internas?",
+          "enunciado": "¿Qué ocurrió con el califato de Córdoba en el año 1031?",
           "opciones": [
-            "En pequeños reinos llamados taifas",
-            "En provincias del Imperio Romano",
-            "En reinos visigodos del norte",
-            "En condados bajo control francés"
+            "Se fragmentó en pequeños reinos llamados taifas",
+            "Fue conquistado por los cristianos",
+            "Pasó a formar parte del imperio bizantino",
+            "Se convirtió en el reino nazarí de Granada"
           ],
           "correcta": 0,
-          "explicacion": "¡Estupendo! En 1031 el califato se desmembró en numerosos pequeños reinos denominados taifas."
+          "explicacion": "¡Estupendo! En 1031 el califato de Córdoba se dividió en numerosos reinos pequeños llamados taifas."
         },
         {
           "enunciado": "¿Qué pueblos procedentes del norte de África llegaron para ayudar a los andalusíes ante el avance cristiano?",
@@ -2321,15 +2627,15 @@
           "explicacion": "¡Correcto! Los reyes de taifas solicitaron auxilio a los almorávides y más tarde a los almohades."
         },
         {
-          "enunciado": "¿Cuál fue el último reino andalusí que resistió desde el siglo XIII hasta finales del siglo XV?",
+          "enunciado": "¿Qué territorio dominaban los andalusíes en la península ibérica a partir del siglo XIII?",
           "opciones": [
             "El reino nazarí de Granada",
-            "El califato de Córdoba",
-            "La taifa de Toledo",
-            "El emirato de Zaragoza"
+            "Todo el norte peninsular",
+            "Las taifas del norte",
+            "El califato de Córdoba"
           ],
           "correcta": 0,
-          "explicacion": "¡Excelente! El reino nazarí de Granada fue el último reducto musulmán peninsular hasta 1492."
+          "explicacion": "¡Excelente! Desde el siglo XIII, el territorio musulmán se redujo al reino nazarí de Granada, que resistió hasta 1492."
         }
       ]
     },
@@ -2371,18 +2677,23 @@
               "color": "#8b5cf6",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/b02_asturias_800.jpg",
               "texto": "El reino de Asturias hacia 800",
-              "locucion": "Este mapa muestra el reino de Asturias alrededor del año ochocientos. Con el tiempo, aquel reino extendió su territorio hacia el sur y su centro político pasó a León. A lo largo de varios siglos también se formaron reinos como Galicia, Castilla y Portugal. El mapa representa solo un momento de una historia que fue cambiando.",
+              "locucion": "Este mapa muestra el reino de Asturias alrededor del año ochocientos. Con el tiempo, aquel reino extendió su territorio hacia el sur y su centro político pasó a León. A lo largo de varios siglos también se formaron reinos como León, Castilla y Portugal. El mapa representa solo un momento de una historia que fue cambiando.",
               "puntos": []
             },
             {
               "nombre": "Las coronas cristianas",
-              "fecha": "Años 1137 y 1230",
+              "fecha": "Siglos XI – XIII",
               "icono": "👑",
               "color": "#f97316",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/b03_mapa_1224_es.jpg",
               "texto": "La Península Ibérica en 1224",
-              "locucion": "En mil ciento treinta y siete se formó la Corona de Aragón, que reunió el reino de Aragón y los territorios catalanes. En mil doscientos treinta, Castilla y León quedaron unidos bajo un mismo rey. Este mapa muestra la Península en mil doscientos veinticuatro, seis años antes de esa unión: las fronteras y los nombres de los territorios siguieron cambiando.",
-              "puntos": []
+              "locucion": "En mil ochenta y cinco, el rey Alfonso Sexto de Castilla conquistó Toledo, una ciudad muy importante. En mil ciento treinta y siete se formó la Corona de Aragón, que reunió el reino de Aragón y los territorios catalanes. En mil doscientos treinta, Castilla y León quedaron unidos bajo un mismo rey. En el siglo trece, Jaime Primero el Conquistador incorporó a la Corona de Aragón Valencia y las islas Baleares. Este mapa muestra la Península en mil doscientos veinticuatro, seis años antes de la unión de Castilla y León: las fronteras y los nombres de los territorios siguieron cambiando.",
+              "puntos": [
+                "**1085**: Alfonso VI de Castilla conquistó **Toledo**.",
+                "**1137**: se formó la **Corona de Aragón**.",
+                "**1230**: Castilla y León quedaron unidos.",
+                "En el siglo XIII, **Jaime I** incorporó **Valencia** y las **islas Baleares**."
+              ]
             },
             {
               "nombre": "Las Navas de Tolosa",
@@ -2448,7 +2759,7 @@
       "id": 6,
       "tipo": "quiz",
       "titulo": "6. Quiz: Reinos Cristianos y Convivencia",
-      "descripcion": "Demuestra lo que sabes sobre la Reconquista, sus batallas y las tres culturas.",
+      "descripcion": "Demuestra lo que sabes sobre la Reconquista, al-Ándalus y las tres culturas.",
       "icono": "🏆",
       "preguntas": [
         {
@@ -2560,6 +2871,17 @@
           ],
           "correcta": 0,
           "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
+        },
+        {
+          "enunciado": "¿Cuál es el orden correcto de las etapas de al-Ándalus?",
+          "opciones": [
+            "Emirato dependiente ➡️ Emirato independiente (756) ➡️ Califato (929) ➡️ Taifas (1031) ➡️ Reino nazarí (siglo XIII)",
+            "Califato (929) ➡️ Emirato dependiente ➡️ Taifas (1031) ➡️ Emirato independiente (756) ➡️ Reino nazarí",
+            "Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente ➡️ Reino nazarí",
+            "Reino nazarí ➡️ Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente"
+          ],
+          "correcta": 0,
+          "explicacion": "¡Brillante! Primero al-Ándalus dependía del califato; en 756 se hizo emirato independiente; en 929 se proclamó el califato de Córdoba; en 1031 se dividió en taifas; y desde el siglo XIII solo quedó el reino nazarí de Granada."
         }
       ]
     }
@@ -2654,8 +2976,11 @@
               "color": "#f97316",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a01_mezquita.jpg",
               "texto": "Mezquita de Córdoba",
-              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
-              "puntos": []
+              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Desde el año novecientos veintinueve fue la capital del califato de Córdoba, gobernado por un califa. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
+              "puntos": [
+                "Córdoba fue una capital muy importante de al-Ándalus.",
+                "Desde **929**, fue la capital del **califato de Córdoba**, gobernado por un **califa**."
+              ]
             },
             {
               "nombre": "Palacios y torres",
@@ -3037,8 +3362,11 @@
               "color": "#f97316",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/a01_mezquita.jpg",
               "texto": "Mezquita de Córdoba",
-              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
-              "puntos": []
+              "locucion": "Córdoba fue una capital muy importante de al-Ándalus. Desde el año novecientos veintinueve fue la capital del califato de Córdoba, gobernado por un califa. Cerca de allí se construyó Medina Azahara, un palacio donde vivía el califa, el gobernante principal. La Mezquita de Córdoba se amplió en varias épocas. Dentro, muchas columnas sostienen filas de arcos. Las piezas rojas y claras se alternan y forman las franjas de colores que hacen tan fácil reconocerla.",
+              "puntos": [
+                "Córdoba fue una capital muy importante de al-Ándalus.",
+                "Desde **929**, fue la capital del **califato de Córdoba**, gobernado por un **califa**."
+              ]
             },
             {
               "nombre": "Palacios y torres",
