@@ -1,319 +1,761 @@
 /* ==========================================================================
-   ESTILOS DEL MAPA CIRCULAR (CIRCUITO DE AVENTURA EN EL TIEMPO)
+   MAPA DEL CIRCUITO — "GRAN RUTA DEL TIEMPO"
+   Estética de mapa ilustrado: cielo con paisaje, camino de arena con
+   huellas, medallones de parada y placa central con anillo de progreso.
    ========================================================================== */
 
 .map-screen {
+  --map-ink: #3b2a17;
+  --map-gold: #f59e0b;
+  --map-gold-deep: #d97706;
+  --map-sand: #f6e6c2;
+  --map-sand-deep: #e8cd99;
+  --map-ring-locked: #b9c4d2;
+  --map-ring-current: #3b82f6;
+  --map-ring-done: #10b981;
+  --map-ring-perfect: #f59e0b;
+
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 40%, #fef3c7 70%, #dcfce7 100%);
   position: relative;
   overflow: hidden;
-}
-
-.map-viewport {
-  flex: 1;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  overflow: hidden;
-}
-
-/* Elementos decorativos */
-.map-scenery {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.cloud {
-  position: absolute;
-  font-size: 3rem;
-  opacity: 0.85;
-}
-
-.cloud-1 {
-  top: 10%;
-  left: 8%;
-  animation: floatCloud 28s infinite linear;
-}
-
-.cloud-2 {
-  top: 18%;
-  left: 65%;
-  animation: floatCloud 35s infinite linear;
-}
-
-.mountain-decor {
-  position: absolute;
-  bottom: 12%;
-  left: 4%;
-  font-size: 4rem;
-  opacity: 0.25;
-}
-
-.castle-decor {
-  position: absolute;
-  bottom: 12%;
-  right: 4%;
-  font-size: 4rem;
-  opacity: 0.25;
-}
-
-@keyframes floatCloud {
-  0% { transform: translateX(-100px); }
-  100% { transform: translateX(110vw); }
+  background:
+    radial-gradient(120% 85% at 82% 4%, rgba(255, 248, 220, 0.95) 0%, rgba(255, 248, 220, 0) 58%),
+    linear-gradient(180deg, #a9ddf7 0%, #cfeefa 34%, #e9f7e6 64%, #f8f1d8 100%);
 }
 
 /* ==========================================================================
-   CIRCUITO OVALADO / CIRCULAR
+   CABECERA
    ========================================================================== */
-.circuit-stage {
-  width: 100%;
-  max-width: 1050px;
-  height: 100%;
-  max-height: 480px;
+.map-header {
+  position: relative;
+  z-index: 30;
+  gap: 16px;
+}
+
+.map-header .header-left {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.map-header .theme-info {
+  min-width: 0;
+}
+
+.map-header .btn-back,
+.map-header .header-right {
+  flex-shrink: 0;
+}
+
+.map-header .header-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.2;
+}
+
+.map-header .header-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 46ch;
+}
+
+.map-header .theme-badge-icon {
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7), 0 4px 10px rgba(180, 130, 40, 0.15);
+}
+
+.map-header .star-counter-pill {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.map-header .star-counter-pill strong {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   FONDO ILUSTRADO (CSS puro, sin emojis gigantes)
+   ========================================================================== */
+.map-viewport {
+  flex: 1;
+  min-height: 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6px 18px 0;
+  overflow: hidden;
+}
+
+.map-scenery {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.map-sun {
+  position: absolute;
+  top: 6%;
+  right: 7%;
+  width: clamp(70px, 10vw, 130px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, #fffdf0 0%, #ffe9a3 45%, #ffd663 100%);
+  box-shadow:
+    0 0 40px 18px rgba(255, 224, 130, 0.45),
+    0 0 110px 60px rgba(255, 236, 170, 0.28);
+  opacity: 0.85;
+}
+
+.map-cloud {
+  position: absolute;
+  width: 110px;
+  height: 30px;
+  border-radius: 999px;
+  background: #ffffff;
+  opacity: 0.72;
+  filter: blur(0.4px);
+  box-shadow: 0 8px 22px rgba(120, 160, 190, 0.16);
+  animation: cloudDrift linear infinite;
+}
+
+.map-cloud::before,
+.map-cloud::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.map-cloud::before {
+  width: 46px;
+  height: 46px;
+  left: 16px;
+  top: -22px;
+}
+
+.map-cloud::after {
+  width: 32px;
+  height: 32px;
+  left: 56px;
+  top: -15px;
+}
+
+.cloud-1 {
+  top: 13%;
+  left: -140px;
+  animation-duration: 46s;
+  animation-delay: -8s;
+}
+
+.cloud-2 {
+  top: 27%;
+  left: -140px;
+  width: 76px;
+  height: 22px;
+  opacity: 0.55;
+  animation-duration: 62s;
+  animation-delay: -34s;
+}
+
+.cloud-3 {
+  top: 7%;
+  left: -140px;
+  width: 140px;
+  height: 36px;
+  opacity: 0.42;
+  animation-duration: 78s;
+  animation-delay: -55s;
+}
+
+@keyframes cloudDrift {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100vw + 320px)); }
+}
+
+/* Colinas en tres planos, con degradado suave */
+.map-hills {
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  bottom: -4%;
+  height: 42%;
+}
+
+.map-hill {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.hill-back {
+  width: 72%;
+  height: 74%;
+  left: -4%;
+  background: linear-gradient(180deg, #bfe3b0 0%, #a8d99a 100%);
+  opacity: 0.55;
+}
+
+.hill-mid {
+  width: 62%;
+  height: 58%;
+  right: 2%;
+  background: linear-gradient(180deg, #a6d79a 0%, #8fcb86 100%);
+  opacity: 0.6;
+}
+
+.hill-front {
+  width: 110%;
+  height: 34%;
+  left: -5%;
+  background: linear-gradient(180deg, #93cd86 0%, #79bd72 100%);
+  opacity: 0.5;
+}
+
+/* Arbolitos discretos para dar profundidad */
+.map-tree {
+  position: absolute;
+  bottom: 8%;
+  width: 10px;
+  height: 22px;
+  background: #7a5a36;
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+.map-tree::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 55%;
+  width: 30px;
+  height: 30px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 46% 46%;
+  background: #5faa5c;
+}
+
+.tree-1 { left: 5%; transform: scale(0.9); }
+.tree-2 { left: 11%; bottom: 5%; transform: scale(1.25); }
+.tree-3 { right: 7%; bottom: 6%; transform: scale(1.05); }
+.tree-4 { right: 13%; bottom: 11%; transform: scale(0.8); }
+
+/* ==========================================================================
+   ESCENARIO DEL CIRCUITO
+   ========================================================================== */
+.circuit-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  height: 100%;
+  max-height: 620px;
+  z-index: 2;
 }
 
 .circuit-svg {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: visible;
 }
 
-/* Pista base punteada */
+/* El trazo no se deforma aunque el escenario cambie de proporción */
+.circuit-track {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Sombra proyectada del camino */
+.circuit-track-shadow {
+  stroke: rgba(94, 68, 34, 0.22);
+  stroke-width: 46;
+  filter: blur(7px);
+}
+
+/* Borde exterior del camino */
+.circuit-track-rim {
+  stroke: #d9b877;
+  stroke-width: 36;
+}
+
+/* Interior de arena clara */
 .circuit-track-base {
-  fill: none;
-  stroke: #cbd5e1;
-  stroke-width: 18;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 14 14;
+  stroke: url(#mapTrackSand);
+  stroke-width: 29;
 }
 
-/* Pista activa dorada */
+/* Huellas / marcas centrales del camino */
+.circuit-track-dashes {
+  stroke: rgba(174, 130, 64, 0.42);
+  stroke-width: 5;
+  stroke-dasharray: 0.1 26;
+}
+
+/* Tramo recorrido en oro */
 .circuit-track-active {
-  fill: none;
-  stroke: #f59e0b;
-  stroke-width: 18;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke-dashoffset 0.8s ease-in-out;
+  stroke: url(#mapTrackGold);
+  stroke-width: 29;
+  transition: stroke-dasharray 0.8s ease;
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.45));
+}
+
+.map-screen.all-stars .circuit-track-active {
+  filter: drop-shadow(0 0 9px rgba(245, 158, 11, 0.75));
 }
 
 /* ==========================================================================
-   NÚCLEO CENTRAL DEL CIRCUITO (PODIO / CORONA DE ORO)
+   PLACA CENTRAL
    ========================================================================== */
 .circuit-center-hub {
   position: absolute;
-  width: 250px;
-  height: 160px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  border: 3px solid #fde68a;
-  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
-  border-radius: var(--radius-lg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(248px, 34%, 330px);
+  padding: 6px 20px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 12px 16px;
-  z-index: 2;
-  transition: all 0.3s ease;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 249, 232, 0.98) 100%);
+  border: 3px solid #f0cf8a;
+  box-shadow:
+    0 18px 38px rgba(126, 88, 30, 0.2),
+    0 3px 0 rgba(255, 255, 255, 0.9) inset,
+    0 0 0 6px rgba(255, 255, 255, 0.35),
+    0 0 0 7px rgba(240, 207, 138, 0.4);
+  z-index: 3;
 }
 
-.circuit-center-hub.all-stars-perfect {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border-color: #f59e0b;
-  box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
-  animation: crownPulse 2s infinite ease-in-out;
-}
-
-.hub-trophy {
-  font-size: 2.5rem;
+.hub-emblem {
+  width: 62px;
+  height: 62px;
+  margin-top: -38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.85rem;
   line-height: 1;
-  margin-bottom: 4px;
+  background: radial-gradient(circle at 35% 28%, #fff6d6 0%, #fde68a 42%, #f5b93c 100%);
+  border: 4px solid #ffffff;
+  box-shadow:
+    0 6px 14px rgba(180, 120, 20, 0.3),
+    inset 0 -3px 6px rgba(180, 120, 20, 0.18);
 }
 
 .hub-title {
-  font-size: 0.95rem;
+  margin-top: 6px;
+  font-size: clamp(0.95rem, 2vmin, 1.1rem);
   font-weight: 900;
-  color: #78350f;
-  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+  color: #7c4a06;
+}
+
+.hub-progress {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.hub-progress-track {
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  background: #f1e3c4;
+  box-shadow: inset 0 1px 3px rgba(120, 82, 20, 0.25);
+  overflow: hidden;
+}
+
+.hub-progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 60%, #ea8a0c 100%);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.55);
+  transition: width 0.6s ease;
 }
 
 .hub-stars-badge {
-  background: #ffffff;
-  border: 2px solid #f59e0b;
-  padding: 2px 10px;
-  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  font-size: 0.78rem;
   font-weight: 800;
-  color: #b45309;
-  font-size: 0.85rem;
-  margin-bottom: 4px;
+  color: #92400e;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .hub-hint {
+  margin-top: 9px;
   font-size: 0.72rem;
-  color: #64748b;
+  line-height: 1.3;
   font-weight: 600;
-  line-height: 1.2;
+  color: #8a7350;
+  max-width: 30ch;
+}
+
+/* Estado perfecto: corona de oro */
+.circuit-center-hub.all-stars-perfect {
+  background: linear-gradient(180deg, #fffdf3 0%, #fdf0c4 100%);
+  border-color: #f0b429;
+  box-shadow:
+    0 18px 38px rgba(180, 120, 20, 0.28),
+    0 0 0 6px rgba(255, 255, 255, 0.4),
+    0 0 0 7px rgba(240, 180, 41, 0.55),
+    0 0 46px rgba(245, 158, 11, 0.55);
+  animation: hubGlow 3s ease-in-out infinite;
+}
+
+.circuit-center-hub.all-stars-perfect .hub-title {
+  color: #b45309;
+  letter-spacing: 0.04em;
+}
+
+.circuit-center-hub.all-stars-perfect .hub-emblem {
+  animation: emblemRock 3.2s ease-in-out infinite;
+}
+
+@keyframes hubGlow {
+  0%, 100% { box-shadow: 0 18px 38px rgba(180, 120, 20, 0.28), 0 0 0 6px rgba(255, 255, 255, 0.4), 0 0 0 7px rgba(240, 180, 41, 0.55), 0 0 30px rgba(245, 158, 11, 0.35); }
+  50% { box-shadow: 0 18px 38px rgba(180, 120, 20, 0.28), 0 0 0 6px rgba(255, 255, 255, 0.4), 0 0 0 7px rgba(240, 180, 41, 0.7), 0 0 60px rgba(245, 158, 11, 0.7); }
+}
+
+@keyframes emblemRock {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
 }
 
 /* ==========================================================================
-   NODOS DEL CIRCUITO (DISTRIBUCIÓN 6 POSICIONES EN ANILLO)
+   PARADAS DEL CIRCUITO
    ========================================================================== */
 .circuit-node {
+  --node-accent: #64748b;
+  --node-size: clamp(58px, 11vmin, 88px);
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  left: var(--nx);
+  top: var(--ny);
+  width: 0;
+  height: 0;
   cursor: pointer;
-  width: 140px;
-  z-index: 10;
-  transition: transform 0.2s ease;
-}
-
-.circuit-node:hover {
-  transform: scale(1.06);
-}
-
-/* Coordenadas en porcentaje sobre el óvalo (1050x480) */
-/* Nodo 1: Parejas (Superior izquierda) */
-.circuit-node.pos-1 {
-  top: 2%;
-  left: 12%;
-}
-
-/* Nodo 2: Ficha Prehistoria (Superior centro) */
-.circuit-node.pos-2 {
-  top: -2%;
-  left: 43%;
-}
-
-/* Nodo 3: Quiz Prehistoria (Superior derecha) */
-.circuit-node.pos-3 {
-  top: 2%;
-  right: 12%;
-}
-
-/* Nodo 4: Puzzle Mamut (Inferior derecha) */
-.circuit-node.pos-4 {
-  bottom: 2%;
-  right: 12%;
-}
-
-/* Nodo 5: Ficha Historia (Inferior centro) */
-.circuit-node.pos-5 {
-  bottom: -2%;
-  left: 43%;
-}
-
-/* Nodo 6: Quiz Historia (Inferior izquierda) */
-.circuit-node.pos-6 {
-  bottom: 2%;
-  left: 12%;
-}
-
-/* Botón del nodo */
-.circuit-btn {
-  width: 82px;
-  height: 82px;
-  border-radius: var(--radius-full);
-  background: #ffffff;
-  border: 4px solid #e2e8f0;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-.circuit-btn-icon {
-  font-size: 2.4rem;
-  line-height: 1;
-}
-
-.circuit-stars-tag {
-  position: absolute;
-  bottom: -8px;
-  background: #ffffff;
-  border: 2px solid #f59e0b;
-  padding: 1px 6px;
-  border-radius: var(--radius-full);
-  font-size: 0.7rem;
-  white-space: nowrap;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
-/* Estados de los nodos */
-.circuit-node.current .circuit-btn {
-  border-color: #3b82f6;
-  background: #eff6ff;
-  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25), 0 8px 18px rgba(59, 130, 246, 0.35);
-  animation: bounceSmall 2s infinite ease-in-out;
-}
-
-.circuit-node.completed .circuit-btn {
-  border-color: #10b981;
-  background: #ecfdf5;
-}
-
-.circuit-node.three-stars .circuit-btn {
-  border-color: #f59e0b;
-  background: #fffbeb;
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+  z-index: 6;
 }
 
 .circuit-node.locked {
   cursor: not-allowed;
-  opacity: 0.65;
+}
+
+/* --- Medallón --- */
+.circuit-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--node-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 34% 26%, #ffffff 0%, #f7fafc 46%, #dfe6ee 100%);
+  border: 3px solid #ffffff;
+  box-shadow:
+    0 0 0 4px var(--node-accent),
+    0 10px 18px rgba(30, 41, 59, 0.22),
+    0 2px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -6px 12px rgba(15, 23, 42, 0.08) inset;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.circuit-node:hover .circuit-btn {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.circuit-btn-icon {
+  font-size: clamp(1.55rem, 4.4vmin, 2.5rem);
+  line-height: 1;
+  filter: drop-shadow(0 2px 2px rgba(15, 23, 42, 0.18));
+}
+
+.circuit-btn-number {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #ffffff;
+  background: var(--node-accent);
+  background: linear-gradient(180deg, var(--node-accent) 0%, color-mix(in srgb, var(--node-accent) 78%, #000) 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 6px rgba(15, 23, 42, 0.28);
+}
+
+.circuit-stars-tag {
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 7px 2px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  background: #fffdf5;
+  border: 2px solid #f5c14b;
+  box-shadow: 0 3px 7px rgba(146, 100, 20, 0.28);
+}
+
+/* --- Estados --- */
+.circuit-node.current {
+  --node-accent: var(--map-ring-current);
+}
+
+.circuit-node.current .circuit-btn {
+  background: radial-gradient(circle at 34% 26%, #ffffff 0%, #eaf3ff 46%, #cfe3ff 100%);
+  animation: nodeBreathe 2.4s ease-in-out infinite;
+}
+
+.circuit-node.current .circuit-btn::after {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  border: 3px solid rgba(59, 130, 246, 0.45);
+  animation: nodeHalo 2.4s ease-out infinite;
+}
+
+.circuit-node.completed {
+  --node-accent: var(--map-ring-done);
+}
+
+.circuit-node.completed .circuit-btn {
+  background: radial-gradient(circle at 34% 26%, #ffffff 0%, #ecfdf5 46%, #c7f2dd 100%);
+}
+
+.circuit-node.three-stars {
+  --node-accent: var(--map-ring-perfect);
+}
+
+.circuit-node.three-stars .circuit-btn {
+  background: radial-gradient(circle at 34% 26%, #fffef7 0%, #fff6da 46%, #ffe3a3 100%);
+  box-shadow:
+    0 0 0 4px var(--node-accent),
+    0 10px 18px rgba(146, 100, 20, 0.26),
+    0 0 18px rgba(245, 158, 11, 0.45),
+    0 2px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.circuit-node.locked {
+  --node-accent: var(--map-ring-locked);
 }
 
 .circuit-node.locked .circuit-btn {
-  background: #94a3b8;
-  border-color: #64748b;
-  color: #cbd5e1;
+  background: radial-gradient(circle at 34% 26%, #f8fafc 0%, #e9eef4 50%, #cfd8e3 100%);
+  box-shadow:
+    0 0 0 4px var(--node-accent),
+    0 8px 14px rgba(30, 41, 59, 0.16),
+    0 -6px 12px rgba(15, 23, 42, 0.08) inset;
+  opacity: 0.82;
 }
 
+.circuit-node.locked .circuit-btn-icon {
+  filter: grayscale(0.7);
+  opacity: 0.75;
+}
+
+@keyframes nodeBreathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+@keyframes nodeHalo {
+  0% { transform: scale(0.92); opacity: 0.8; }
+  100% { transform: scale(1.22); opacity: 0; }
+}
+
+/* --- Etiqueta --- */
 .circuit-node-label {
-  margin-top: 6px;
+  position: absolute;
+  left: 50%;
+  bottom: calc(50% + var(--node-size) / 2 + 8px);
+  transform: translateX(-50%);
+  width: max-content;
+  min-width: 96px;
+  max-width: 170px;
+  padding: 4px 10px 5px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(4px);
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 4px 10px rgba(46, 66, 92, 0.14);
+  box-shadow:
+    0 4px 10px rgba(46, 66, 92, 0.14),
+    0 0 0 1px color-mix(in srgb, var(--node-accent) 45%, transparent);
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #e2e8f0;
-  width: 130px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease;
+}
+
+/* En las paradas inferiores la etiqueta cuelga por debajo del medallón */
+.circuit-node.label-below .circuit-node-label {
+  top: calc(50% + var(--node-size) / 2 + 8px);
+  bottom: auto;
+}
+
+.circuit-node-step {
+  display: block;
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--node-accent);
+  line-height: 1.3;
 }
 
 .circuit-node-title {
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: #0f172a;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: clamp(0.68rem, 1.55vmin, 0.8rem);
+  line-height: 1.18;
+  font-weight: 800;
+  color: #1e293b;
 }
 
-@keyframes crownPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
+.circuit-node.locked .circuit-node-step {
+  color: #7c8ba1;
+}
+
+.circuit-node.locked .circuit-node-title {
+  color: #52627a;
+}
+
+.circuit-node.locked .circuit-node-label {
+  box-shadow:
+    0 4px 10px rgba(46, 66, 92, 0.1),
+    0 0 0 1px rgba(148, 163, 184, 0.45);
+}
+
+/* ==========================================================================
+   PIE
+   ========================================================================== */
+.map-footer-tip {
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+  margin: 0 auto 10px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(760px, calc(100% - 36px));
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
+  backdrop-filter: blur(6px);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.map-footer-tip .tip-icon {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.map-footer-tip .tip-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .map-header {
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .map-header .header-subtitle {
+    display: none;
+  }
+
+  .map-header .theme-badge-icon {
+    display: none;
+  }
+
+  .map-header .btn-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .map-header .header-right {
+    gap: 8px;
+  }
+
+  .map-header .star-counter-pill {
+    padding: 5px 10px;
+    font-size: 0.95rem;
+  }
+
+  .map-viewport {
+    padding: 4px 10px 0;
+  }
+
+  .circuit-node {
+    --node-size: clamp(54px, 10.5vmin, 78px);
+  }
+
+  .circuit-node-label {
+    max-width: 146px;
+    padding: 3px 8px 4px;
+  }
+
+  .circuit-center-hub {
+    width: clamp(214px, 36%, 280px);
+    padding: 6px 14px 12px;
+  }
+
+  .hub-hint {
+    display: none;
+  }
+
+  .map-footer-tip {
+    margin-bottom: 6px;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-height: 620px) {
+  .hub-hint {
+    display: none;
+  }
+
+  .map-footer-tip {
+    margin-bottom: 5px;
+    padding: 4px 12px;
+  }
 }
