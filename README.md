@@ -64,6 +64,26 @@ La configuración ⚙️ está disponible en el menú principal y en el mapa. Al
 
 Para ver el capítulo de ejemplo, consulta [`cap_04_arte_medieval/contenido.json`](data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/contenido.json), sus recursos y la [documentación de sus diapositivas](docs/propuesta_diapositivas_cap_04_arte_medieval.md).
 
+## Tutor con IA para preguntar dudas (opcional)
+
+Desde la teoría, el botón **🙋 Preguntar** abre un tutor que responde dudas sobre las diapositivas del capítulo. Es opcional y necesita conexión a Internet. El tutor usa la teoría como punto de partida, pero si la pregunta está relacionada puede ampliar con conocimientos generales adecuados a la edad del niño, para fomentar la curiosidad.
+
+Para activarlo, un adulto debe abrir **⚙️ Configuración → Tutor con IA** y pegar una clave de API propia:
+
+- **Google Gemini** (según el modelo, puede tener plan gratuito).
+- **Anthropic (Claude)**.
+- **OpenRouter** (permite usar muchos modelos, incluidos los de OpenAI).
+
+> OpenAI no permite llamadas directas desde el navegador por CORS, así que su clave no funciona aquí; para modelos de OpenAI hay que usar OpenRouter.
+
+La clave se guarda **solo en el `localStorage` de ese navegador**, por proveedor, y no se sincroniza entre dispositivos. Desde la misma pantalla se puede borrar. Al preguntar, se envía al proveedor únicamente el texto de la teoría del capítulo y la pregunta; no se envía nada más. El campo **Modelo** usa el **ID exacto de la API**, no el nombre comercial. Por ejemplo, para Gemini 3.8 Flash hay que escribir `gemini-3.8-flash` (el juego convierte automáticamente `3.8 Flash`, espacios o minúsculas, pero no inventa IDs que no existan).
+
+La pregunta también se puede **dictar por voz** con el botón **🎤 Hablar**. El navegador escucha, escribe la transcripción en el cuadro de texto y la pregunta se envía al pulsar **Preguntar**, para poder revisarla antes. El dictado usa la **Web Speech API** del navegador: funciona en Chrome, Edge y Safari, necesita micrófono, conexión a Internet y un contexto seguro (HTTPS o `localhost`). Firefox no la incluye, así que allí el botón no aparece. El audio del dictado lo procesa el servicio de voz del navegador; no se envía a la API del tutor.
+
+El botón **Probar conexión** guarda la configuración y lanza una pregunta de prueba. Si falla, muestra el motivo; los detalles técnicos del proveedor aparecen en la consola del navegador (`F12 → Console`, líneas `[Tutor IA]`). La espera máxima es de 2 minutos. Gemini 3.8 Flash está teniendo latencias altas de forma intermitente; si tarda demasiado, prueba `gemini-3.6-flash` en el campo Modelo.
+
+Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a ese dispositivo y al navegador puede leer la clave guardada. Usa una clave con límite de gasto bajo, no la configures en equipos compartidos y revócala si se filtra. El resto del juego sigue funcionando sin conexión; solo el tutor necesita Internet.
+
 ## Añadir un capítulo
 
 1. **Elige un ID único** para el capítulo, siguiendo el orden del tema (por ejemplo, `cap_05_nombre_corto`).
@@ -101,6 +121,7 @@ Para ver el capítulo de ejemplo, consulta [`cap_04_arte_medieval/contenido.json
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
 - `src/views/theoryView.js`: lógica modular de la presentación teórica.
 - `src/speech.js` y `src/views/settingsView.js`: selección, prueba y preferencia persistente de voces.
+- `src/aiTutor.js`: tutor con IA opcional; guarda la clave de API en `localStorage` y llama al proveedor elegido.
 - `src/game_bundle.js`: JavaScript que carga el juego; si modificas la lógica de teoría, mantén este bundle y la vista modular sincronizados.
 - `css/theory.css`: estilos de las diapositivas.
 - `.agents/skills/gestionar-contenido-educativo/SKILL.md`: pautas ampliadas para incorporar contenido educativo.

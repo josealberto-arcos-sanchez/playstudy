@@ -439,6 +439,260 @@
 
   const speechManager = new SpeechManager();
 
+  /* ==========================================================================
+     1.b TUTOR CON IA — CLAVE DE API PROPIA (localStorage)
+     ========================================================================== */
+  const AI_CONFIG_KEY = 'playstudy_ai_tutor_v1';
+  const AI_MAX_QUESTION_LENGTH = 400;
+  const AI_MAX_CONTEXT_LENGTH = 9000;
+  const AI_TIMEOUT_MS = 120000;
+  const AI_PROVIDERS = {
+    gemini: { id: 'gemini', label: 'Google Gemini', defaultModel: 'gemini-3.8-flash', modelExample: 'gemini-3.8-flash', keyPlaceholder: 'AIza...', keysUrl: 'https://aistudio.google.com/app/apikey' },
+    anthropic: { id: 'anthropic', label: 'Anthropic (Claude)', defaultModel: 'claude-haiku-4-5', modelExample: 'claude-haiku-4-5', keyPlaceholder: 'sk-ant-...', keysUrl: 'https://console.anthropic.com/settings/keys' },
+    openrouter: { id: 'openrouter', label: 'OpenRouter (muchos modelos)', defaultModel: 'google/gemini-2.5-flash', modelExample: 'google/gemini-2.5-flash', keyPlaceholder: 'sk-or-...', keysUrl: 'https://openrouter.ai/keys' }
+  };
+  const AI_SYSTEM_PROMPT = [
+    'Eres "Profe", un tutor amable que ayuda a un niño de 10 años a entender la teoría de un videojuego educativo y a satisfacer su curiosidad.',
+    'Reglas:',
+    '- La TEORÍA es tu punto de partida y la base de la respuesta.',
+    '- Si la pregunta está relacionada con la teoría, respóndela aunque el dato no aparezca literalmente. Puedes ampliar con conocimientos generales adecuados para un niño de 10 años.',
+    '- Si la pregunta no tiene relación con la teoría o con el tema del capítulo, redirige amablemente al contenido de la diapositiva.',
+    '- No inventes fechas, nombres ni datos. Si no estás seguro, dilo con naturalidad.',
+    '- Usa español de España, frases cortas y palabras sencillas.',
+    '- Responde en 2 o 4 frases y como máximo 100 palabras.',
+    '- No pidas datos personales, no te vayas a temas que no tengan relación con la teoría y no incluyas enlaces.',
+    '- Fomenta la curiosidad: si viene al caso, puedes terminar con una pregunta breve que invite a seguir aprendiendo.'
+  ].join('\n');
+
+  function aiFriendlyHttpError(status) {
+    if (status === 400) return 'El proveedor ha rechazado la solicitud. Revisa el modelo elegido en Configuración.';
+    if (status === 401 || status === 403) return 'La clave de API no es válida o no tiene permiso. Revísala en Configuración.';
+    if (status === 404) return 'El modelo elegido no existe o no está disponible. Cambia el modelo en Configuración.';
+    if (status === 429) return 'Se ha alcanzado el límite de uso o no hay saldo en la cuenta del proveedor. Inténtalo más tarde.';
+    if (status >= 500) return 'El servicio del proveedor no está disponible ahora mismo. Inténtalo dentro de un rato.';
+    return 'No se ha podido obtener la respuesta del proveedor.';
+  }
+
+  async function aiHttpErrorFromResponse(response) {
+    let detail = '';
+    try { detail = (await response.text()).slice(0, 2000).toLowerCase(); }
+    catch (error) { detail = ''; }
+    console.warn('[Tutor IA] Error HTTP del proveedor:', response.status, detail.slice(0, 300));
+    const keyProblem = /api[ _-]?key|api_key_invalid|invalid.*key|unauthorized|permission/.test(detail);
+    if (keyProblem || response.status === 401 || response.status === 403) {
+      return 'La clave de API no es válida o no tiene permiso. Revísala en Configuración.';
+    }
+    return aiFriendlyHttpError(response.status);
+  }
+
+  function aiNormalizeConfig(raw) {
+    const config = raw && typeof raw === 'object' ? raw : {};
+    return {
+      version: 1,
+      provider: AI_PROVIDERS[config.provider] ? config.provider : 'gemini',
+      keys: config.keys && typeof config.keys === 'object' ? config.keys : {},
+      models: config.models && typeof config.models === 'object' ? config.models : {}
+    };
+  }
+
+  class AiTutor {
+    load() {
+      try { return aiNormalizeConfig(JSON.parse(localStorage.getItem(AI_CONFIG_KEY) || 'null')); }
+      catch (error) { return aiNormalizeConfig(null); }
+    }
+
+    save(config) {
+      try {
+        localStorage.setItem(AI_CONFIG_KEY, JSON.stringify(aiNormalizeConfig(config)));
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    getProvider(providerId) {
+      return AI_PROVIDERS[providerId] || AI_PROVIDERS.gemini;
+    }
+
+    getSettings(providerOverride) {
+      const config = this.load();
+      const providerId = AI_PROVIDERS[providerOverride] ? providerOverride : config.provider;
+      const provider = this.getProvider(providerId);
+      const apiKey = String(config.keys[providerId] || '').trim();
+      return {
+        provider: providerId,
+        providerLabel: provider.label,
+        model: this.normalizeModelId(providerId, config.models[providerId] || provider.defaultModel),
+        hasKey: Boolean(apiKey),
+        maskedKey: this.maskKey(apiKey),
+        keysUrl: provider.keysUrl
+      };
+    }
+
+    saveSettings({ provider, model, apiKey }) {
+      const nextProvider = AI_PROVIDERS[provider] ? provider : 'gemini';
+      const config = this.load();
+      config.provider = nextProvider;
+      const cleanModel = this.normalizeModelId(nextProvider, model);
+      if (cleanModel) config.models[nextProvider] = cleanModel;
+      else delete config.models[nextProvider];
+      const cleanKey = String(apiKey || '').trim();
+      if (cleanKey) config.keys[nextProvider] = cleanKey;
+      return this.save(config);
+    }
+
+    normalizeModelId(providerId, model) {
+      let value = String(model || '').trim().toLowerCase().replace(/^models\//, '').replace(/\s+/g, '-');
+      if (providerId === 'gemini' && value && !value.startsWith('gemini-') && !value.includes('/')) {
+        value = `gemini-${value}`;
+      }
+      return value;
+    }
+
+    clearKey(provider) {
+      const config = this.load();
+      const target = AI_PROVIDERS[provider] ? provider : config.provider;
+      delete config.keys[target];
+      return this.save(config);
+    }
+
+    maskKey(key) {
+      if (!key) return '';
+      return `••••••${key.slice(-4)}`;
+    }
+
+    hasKey() {
+      return this.getSettings().hasKey;
+    }
+
+    async ask({ question, theoryContext, currentSlide, signal }) {
+      const cleanQuestion = String(question || '').trim().slice(0, AI_MAX_QUESTION_LENGTH);
+      if (!cleanQuestion) throw new Error('Escribe una pregunta.');
+      const config = this.load();
+      const providerId = config.provider;
+      const apiKey = String(config.keys[providerId] || '').trim();
+      if (!apiKey) throw new Error('No hay ninguna clave de API guardada. Pide a un adulto que la configure en ⚙️ Configuración.');
+      const provider = this.getProvider(providerId);
+      const model = this.normalizeModelId(providerId, config.models[providerId] || provider.defaultModel);
+      const context = String(theoryContext || '').slice(0, AI_MAX_CONTEXT_LENGTH);
+      const current = currentSlide ? `Diapositiva que está viendo ahora: ${currentSlide}.\n\n` : '';
+      const user = `${current}TEORÍA DEL CAPÍTULO:\n${context}\n\nPREGUNTA DEL NIÑO:\n${cleanQuestion}`;
+
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), AI_TIMEOUT_MS);
+      const onAbort = () => controller.abort();
+      if (signal) signal.addEventListener('abort', onAbort);
+      console.info('[Tutor IA] Petición a', providerId, model);
+      try {
+        const answer = await this.request(providerId, { apiKey, model, system: AI_SYSTEM_PROMPT, user, signal: controller.signal });
+        if (!answer.trim()) throw new Error('El proveedor ha devuelto una respuesta vacía. Prueba a preguntar de otra forma.');
+        return answer.trim();
+      } catch (error) {
+        if (error.name === 'AbortError') {
+          if (signal?.aborted) throw new Error('Solicitud cancelada.');
+          console.warn('[Tutor IA] Tiempo de espera agotado:', providerId, model, AI_TIMEOUT_MS);
+          throw new Error(providerId === 'gemini'
+            ? 'La respuesta ha tardado más de 2 minutos. Gemini 3.8 Flash está teniendo mucha latencia estos días: prueba el modelo gemini-3.6-flash o inténtalo más tarde.'
+            : 'La respuesta ha tardado más de 2 minutos. Inténtalo de nuevo o cambia de modelo en Configuración.');
+        }
+        if (error instanceof TypeError) throw new Error('No se ha podido conectar con el proveedor. Comprueba tu conexión a Internet.');
+        throw error;
+      } finally {
+        clearTimeout(timer);
+        if (signal) signal.removeEventListener('abort', onAbort);
+      }
+    }
+
+    request(providerId, options) {
+      if (providerId === 'gemini') return this.requestGemini(options);
+      if (providerId === 'anthropic') return this.requestAnthropic(options);
+      return this.requestOpenRouter(options);
+    }
+
+    async requestOpenRouter({ apiKey, model, system, user, signal }) {
+      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        signal,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+          'HTTP-Referer': location.origin,
+          'X-Title': 'PlayStudy'
+        },
+        body: JSON.stringify({
+          model,
+          messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
+          temperature: 0.4,
+          max_tokens: 400
+        })
+      });
+      if (!response.ok) throw new Error(await aiHttpErrorFromResponse(response));
+      const data = await response.json();
+      return data?.choices?.[0]?.message?.content || '';
+    }
+
+    async requestGemini({ apiKey, model, system, user, signal }) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
+      const generationConfig = { temperature: 0.4, maxOutputTokens: 2048 };
+      if (/^gemini-2\.5-.*flash/i.test(model)) {
+        generationConfig.thinkingConfig = { thinkingBudget: 0 };
+      } else if (/^gemini-3(?:\.\d+)?/i.test(model)) {
+        generationConfig.thinkingConfig = { thinkingLevel: 'low' };
+      }
+      const response = await fetch(url, {
+        method: 'POST',
+        signal,
+        headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: system }] },
+          contents: [{ role: 'user', parts: [{ text: user }] }],
+          generationConfig
+        })
+      });
+      if (!response.ok) throw new Error(await aiHttpErrorFromResponse(response));
+      const data = await response.json();
+      if (data?.promptFeedback?.blockReason) throw new Error('El proveedor ha bloqueado la respuesta. Prueba a preguntar de otra forma.');
+      const candidate = data?.candidates?.[0];
+      const answer = (candidate?.content?.parts || []).map(part => part.thought ? '' : (part.text || '')).join('');
+      if (!answer.trim() && candidate?.finishReason) {
+        console.warn('[Tutor IA] Gemini no devolvió texto. finishReason:', candidate.finishReason, data);
+      }
+      return answer;
+    }
+
+    async requestAnthropic({ apiKey, model, system, user, signal }) {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        signal,
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens: 400,
+          temperature: 0.4,
+          system,
+          messages: [{ role: 'user', content: user }]
+        })
+      });
+      if (!response.ok) throw new Error(await aiHttpErrorFromResponse(response));
+      const data = await response.json();
+      return (Array.isArray(data?.content) ? data.content : []).filter(block => block.type === 'text').map(block => block.text || '').join('');
+    }
+    async testConnection() {
+      return this.ask({
+        question: '¿Qué dice la teoría de prueba?',
+        theoryContext: 'La teoría de prueba dice: OK.',
+        currentSlide: 'Prueba de conexión'
+      });
+    }
+  }
+
+  const aiTutor = new AiTutor();
+
   class SettingsView {
     constructor() {
       this.preference = speechManager.getPreference();
@@ -450,6 +704,8 @@
       this.testUtterance = null;
       this.unsubscribeVoices = null;
       this.isOpen = false;
+      this.aiSettings = aiTutor.getSettings();
+      this.aiKeyVisible = false;
     }
 
     render(returnFocus) {
@@ -460,8 +716,9 @@
       this.backdrop.className = 'voice-settings-backdrop';
       this.backdrop.innerHTML = `
         <section class="voice-settings-dialog" role="dialog" aria-modal="true" aria-labelledby="voice-settings-title" tabindex="-1">
-          <header class="voice-settings-header"><div><span class="voice-settings-icon" aria-hidden="true">🗣️</span><h2 id="voice-settings-title">Voz de las explicaciones</h2></div><button class="btn-icon voice-settings-close" type="button" aria-label="Cerrar configuración">✕</button></header>
-          <p class="voice-settings-intro">Elige cómo quieres escuchar las explicaciones. Puedes probar las voces antes de guardar.</p>
+          <header class="voice-settings-header"><div><span class="voice-settings-icon" aria-hidden="true">⚙️</span><h2 id="voice-settings-title">Configuración</h2></div><button class="btn-icon voice-settings-close" type="button" aria-label="Cerrar configuración">✕</button></header>
+          <p class="voice-settings-intro">Elige la voz de las explicaciones y, si quieres, activa el tutor con IA para preguntar dudas.</p>
+          <h3 class="settings-section-title">🗣️ Voz de las explicaciones</h3>
           <label class="voice-settings-label" for="voice-settings-select">Voz</label>
           <select id="voice-settings-select" class="voice-settings-select"></select>
           <label class="voice-settings-show-all"><input id="voice-settings-all" type="checkbox"> Mostrar voces de otros idiomas</label>
@@ -469,6 +726,22 @@
           <div class="voice-settings-rate-control"><label class="voice-settings-label" for="voice-settings-rate">Velocidad de la voz <output id="voice-settings-rate-value"></output></label><div class="voice-settings-rate-row"><span>Más despacio</span><input id="voice-settings-rate" type="range" min="0.7" max="1.3" step="0.01" value="${this.rate}"><span>Más rápido</span></div></div>
           <div class="voice-settings-preview"><button class="btn-primary" id="voice-settings-preview" type="button">▶ Escuchar prueba</button><button class="btn-secondary" id="voice-settings-stop" type="button" disabled>■ Detener</button></div>
           <p class="voice-settings-status" id="voice-settings-status" aria-live="polite"></p>
+          <div class="settings-divider"></div>
+          <section class="ai-settings" aria-labelledby="ai-settings-title">
+            <div class="ai-settings-heading"><span class="ai-settings-icon" aria-hidden="true">🤖</span><div><h3 class="settings-section-title" id="ai-settings-title">Tutor con IA (opcional)</h3><p class="ai-settings-subtitle">Permite al niño preguntar dudas sobre la teoría. Necesita una clave de API de un adulto.</p></div></div>
+            <label class="voice-settings-label" for="ai-settings-provider">Proveedor</label>
+            <select class="voice-settings-select" id="ai-settings-provider"></select>
+            <p class="ai-settings-hint">Gemini tiene plan gratuito según el modelo. OpenAI no permite llamadas directas desde el navegador: usa OpenRouter si quieres modelos de OpenAI.</p>
+            <label class="voice-settings-label" for="ai-settings-key">Clave de API</label>
+            <div class="ai-settings-key-row"><input class="ai-settings-input" id="ai-settings-key" type="password" autocomplete="off" spellcheck="false"><button class="btn-secondary ai-settings-toggle" id="ai-settings-key-toggle" type="button" aria-label="Mostrar clave">👁️</button></div>
+            <p class="ai-settings-hint" id="ai-settings-key-help"></p>
+            <label class="voice-settings-label" for="ai-settings-model">Modelo</label>
+            <input class="ai-settings-input" id="ai-settings-model" type="text" autocomplete="off" spellcheck="false">
+            <p class="ai-settings-hint" id="ai-settings-model-help"></p>
+            <div class="ai-settings-actions"><button class="btn-primary ai-settings-save" id="ai-settings-save" type="button">Guardar clave</button><button class="btn-secondary ai-settings-clear" id="ai-settings-clear" type="button">Borrar clave</button><button class="btn-secondary ai-settings-test" id="ai-settings-test" type="button">Probar conexión</button></div>
+            <p class="ai-settings-note">⚠️ La clave se guarda solo en este navegador y se envía únicamente al proveedor elegido. No la uses en un dispositivo compartido. El texto de la teoría y las preguntas salen de este equipo.</p>
+            <p class="ai-settings-status" id="ai-settings-status" aria-live="polite"></p>
+          </section>
           <footer class="voice-settings-footer"><span id="voice-settings-saved"></span><button class="btn-primary voice-settings-save" id="voice-settings-save" type="button">Usar esta voz</button></footer>
         </section>`;
       document.body.append(this.backdrop);
@@ -495,15 +768,141 @@
       this.previewButton.addEventListener('click', () => this.preview());
       this.stopButton.addEventListener('click', () => this.stopPreview());
       this.backdrop.querySelector('#voice-settings-save').addEventListener('click', () => this.saveSelection());
+      this.bindAiEvents();
       this.keyHandler = event => {
         if (event.key === 'Escape') { event.preventDefault(); this.close(); }
         if (event.key === 'Tab') this.trapFocus(event);
       };
       document.addEventListener('keydown', this.keyHandler);
       this.showSavedPreference();
+      this.initAiSection();
       this.refreshVoiceList(speechManager.getVoices());
       this.unsubscribeVoices = speechManager.subscribe(voices => this.refreshVoiceList(voices));
       this.updateRateLabel();
+    }
+
+    bindAiEvents() {
+      this.providerSelect = this.backdrop.querySelector('#ai-settings-provider');
+      this.keyInput = this.backdrop.querySelector('#ai-settings-key');
+      this.keyToggle = this.backdrop.querySelector('#ai-settings-key-toggle');
+      this.keyHelp = this.backdrop.querySelector('#ai-settings-key-help');
+      this.modelInput = this.backdrop.querySelector('#ai-settings-model');
+      this.modelHelp = this.backdrop.querySelector('#ai-settings-model-help');
+      this.aiStatus = this.backdrop.querySelector('#ai-settings-status');
+      this.aiSave = this.backdrop.querySelector('#ai-settings-save');
+      this.aiClear = this.backdrop.querySelector('#ai-settings-clear');
+      this.aiTest = this.backdrop.querySelector('#ai-settings-test');
+
+      this.providerSelect.addEventListener('change', () => {
+        const provider = AI_PROVIDERS[this.providerSelect.value] || AI_PROVIDERS.gemini;
+        const settings = aiTutor.getSettings(provider.id);
+        this.modelInput.value = settings.model;
+        this.keyInput.value = '';
+        this.keyInput.type = 'password';
+        this.aiKeyVisible = false;
+        this.keyToggle.textContent = '👁️';
+        this.keyToggle.setAttribute('aria-label', 'Mostrar clave');
+        this.refreshAiStatus();
+      });
+      this.keyToggle.addEventListener('click', () => {
+        this.aiKeyVisible = !this.aiKeyVisible;
+        this.keyInput.type = this.aiKeyVisible ? 'text' : 'password';
+        this.keyToggle.textContent = this.aiKeyVisible ? '🙈' : '👁️';
+        this.keyToggle.setAttribute('aria-label', this.aiKeyVisible ? 'Ocultar clave' : 'Mostrar clave');
+      });
+      this.aiSave.addEventListener('click', () => this.saveAiSettings());
+      this.aiClear.addEventListener('click', () => this.clearAiSettings());
+      this.aiTest.addEventListener('click', () => this.testAiSettings());
+    }
+
+    initAiSection() {
+      if (!this.providerSelect) return;
+      this.providerSelect.innerHTML = Object.values(AI_PROVIDERS)
+        .map(provider => `<option value="${provider.id}">${provider.label}</option>`)
+        .join('');
+      this.providerSelect.value = this.aiSettings.provider;
+      this.modelInput.value = this.aiSettings.model;
+      this.refreshAiStatus();
+    }
+
+    refreshAiStatus() {
+      const providerId = this.providerSelect.value;
+      const provider = AI_PROVIDERS[providerId] || AI_PROVIDERS.gemini;
+      const settings = aiTutor.getSettings(providerId);
+      this.aiSettings = settings;
+      this.keyInput.placeholder = settings.hasKey
+        ? `Guardada: ${settings.maskedKey} (escribe para cambiarla)`
+        : provider.keyPlaceholder;
+      this.keyHelp.innerHTML = `Consigue tu clave en <a href="${provider.keysUrl}" target="_blank" rel="noopener noreferrer">${provider.label}</a>.`;
+      this.modelHelp.textContent = `ID exacto del modelo, sin espacios. Ejemplo: ${provider.modelExample}.${provider.id === 'gemini' ? ' Si 3.8 Flash tarda demasiado, prueba gemini-3.6-flash.' : ''}`;
+      this.aiClear.disabled = !settings.hasKey;
+      this.aiStatus.textContent = settings.hasKey
+        ? `Clave guardada para ${provider.label} en este navegador.`
+        : `Sin clave para ${provider.label}. El tutor permanecerá desactivado.`;
+    }
+
+    saveAiSettings() {
+      const providerId = this.providerSelect.value;
+      const current = aiTutor.getSettings(providerId);
+      const typedKey = this.keyInput.value.trim();
+      if (!typedKey && !current.hasKey) {
+        this.aiStatus.textContent = 'Escribe una clave de API antes de guardar.';
+        return;
+      }
+      const model = aiTutor.normalizeModelId(providerId, this.modelInput.value);
+      this.modelInput.value = model;
+      const saved = aiTutor.saveSettings({ provider: providerId, model: model, apiKey: typedKey });
+      this.keyInput.value = '';
+      if (!saved) {
+        this.aiStatus.textContent = 'El navegador no ha permitido guardar la clave. Revisa la configuración de privacidad.';
+        return;
+      }
+      this.refreshAiStatus();
+      this.aiStatus.textContent = typedKey
+        ? 'Clave guardada en este navegador. Ya puedes preguntar desde la teoría.'
+        : 'Proveedor y modelo guardados. Se usará esta configuración en el tutor.';
+    }
+
+    async testAiSettings() {
+      const providerId = this.providerSelect.value;
+      const current = aiTutor.getSettings(providerId);
+      const typedKey = this.keyInput.value.trim();
+      if (!typedKey && !current.hasKey) {
+        this.aiStatus.textContent = 'Escribe una clave de API antes de probar.';
+        return;
+      }
+      const model = aiTutor.normalizeModelId(providerId, this.modelInput.value);
+      this.modelInput.value = model;
+      const saved = aiTutor.saveSettings({ provider: providerId, model: model, apiKey: typedKey });
+      if (!saved) {
+        this.aiStatus.textContent = 'El navegador no ha permitido guardar la clave. Revisa la configuración de privacidad.';
+        return;
+      }
+      this.keyInput.value = '';
+      this.refreshAiStatus();
+      this.aiTest.disabled = true;
+      this.aiStatus.textContent = 'Probando la conexión con el proveedor…';
+      const slowTimer = setTimeout(() => {
+        this.aiStatus.textContent = 'Sigue esperando… El proveedor está tardando; puede llegar a 1-2 minutos.';
+      }, 8000);
+      try {
+        const answer = await aiTutor.testConnection();
+        this.aiStatus.textContent = `Conexión correcta ✅ El proveedor responde: «${answer.slice(0, 80)}»`;
+      } catch (error) {
+        this.aiStatus.textContent = `No se pudo conectar: ${error?.message || 'error desconocido'}`;
+      } finally {
+        clearTimeout(slowTimer);
+        if (this.aiTest?.isConnected) this.aiTest.disabled = false;
+      }
+    }
+
+    clearAiSettings() {
+      const providerId = this.providerSelect.value;
+      if (!window.confirm('¿Borrar la clave de API guardada en este dispositivo?')) return;
+      aiTutor.clearKey(providerId);
+      this.keyInput.value = '';
+      this.refreshAiStatus();
+      this.aiStatus.textContent = 'Clave borrada de este navegador.';
     }
 
     refreshVoiceList(voices) {
@@ -1272,7 +1671,7 @@
               <button class="btn-icon" id="btn-menu-sound" title="Sonido">
                 <span id="menu-sound-icon">${audio.isEnabled() ? '🔊' : '🔇'}</span>
               </button>
-              <button class="btn-icon" id="btn-menu-settings" title="Configuración de voz" aria-label="Configuración de voz">⚙️</button>
+              <button class="btn-icon" id="btn-menu-settings" title="Configuración" aria-label="Configuración">⚙️</button>
             </div>
           </header>
 
@@ -2291,6 +2690,10 @@
       this.isVoiceMuted = localStorage.getItem('playstudy_theory_mute') === 'true';
       this.currentUtterance = null;
       this.speechRequestId = 0;
+      this.aiPanel = null;
+      this.aiRequest = null;
+      this.aiRecognition = null;
+      this.settingsView = null;
     }
 
     /**
@@ -2384,8 +2787,13 @@
               <h2 class="theory-main-title">${this.casillaData.titulo}</h2>
             </div>
 
-            <div class="theory-badge">
-              <span id="slide-indicator">Diapositiva 1 de ${totalSlides}</span>
+            <div class="theory-hud-actions">
+              <button class="btn-hud btn-ask-ai" id="btn-ask-ai" type="button" title="Preguntar al tutor sobre esta teoría">
+                <span>🙋 Preguntar</span>
+              </button>
+              <div class="theory-badge">
+                <span id="slide-indicator">Diapositiva 1 de ${totalSlides}</span>
+              </div>
             </div>
           </header>
 
@@ -2440,6 +2848,11 @@
         }
       });
 
+      this.container.querySelector('#btn-ask-ai').addEventListener('click', () => {
+        audio.playClick();
+        this.openAiPanel();
+      });
+
       const dots = this.container.querySelectorAll('.slide-dot-pill');
       dots.forEach(dot => {
         dot.addEventListener('click', (e) => {
@@ -2454,6 +2867,9 @@
       });
 
       this.keyHandler = (e) => {
+        const tag = e.target?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+        if (this.aiPanel) return;
         if (e.key === 'ArrowRight' || e.key === 'Enter') {
           const nextBtn = this.container.querySelector('#btn-next-slide');
           if (nextBtn) nextBtn.click();
@@ -2467,6 +2883,11 @@
 
     cleanup() {
       this.stopSpeaking();
+      this.closeAiPanel();
+      if (this.settingsView) {
+        this.settingsView.cleanup();
+        this.settingsView = null;
+      }
       if (this.keyHandler) {
         window.removeEventListener('keydown', this.keyHandler);
       }
@@ -2744,6 +3165,312 @@
       if (muteBtn) {
         muteBtn.innerHTML = this.isVoiceMuted ? '🔇' : '🔊';
       }
+    }
+
+    openAiPanel() {
+      if (this.aiPanel) return;
+      this.stopSpeaking();
+      const hasKey = aiTutor.hasKey();
+      const panel = document.createElement('div');
+      panel.className = 'ai-tutor-backdrop';
+      panel.id = 'ai-tutor-backdrop';
+      panel.innerHTML = `
+        <section class="ai-tutor-panel" role="dialog" aria-modal="true" aria-labelledby="ai-tutor-title" tabindex="-1">
+          <header class="ai-tutor-header">
+            <div class="ai-tutor-heading">
+              <span class="ai-tutor-emoji" aria-hidden="true">🤖</span>
+              <div>
+                <h2 id="ai-tutor-title">Pregunta sobre la teoría</h2>
+                <p class="ai-tutor-context" id="ai-tutor-context"></p>
+              </div>
+            </div>
+            <button class="btn-icon ai-tutor-close" type="button" aria-label="Cerrar el tutor">✕</button>
+          </header>
+          <div class="ai-tutor-body">
+            <div class="ai-tutor-setup" id="ai-tutor-setup" hidden>
+              <p>El tutor con IA todavía no está activado. Un adulto puede activarlo con una clave de API desde ⚙️ Configuración.</p>
+              <button class="btn-primary" id="ai-tutor-open-settings" type="button">Abrir configuración</button>
+            </div>
+            <form class="ai-tutor-form" id="ai-tutor-form">
+              <div class="ai-tutor-question-head">
+                <label class="ai-tutor-label" for="ai-tutor-question">Escribe o dicta tu pregunta</label>
+                <button class="ai-tutor-mic" id="ai-tutor-mic" type="button" aria-label="Dictar la pregunta por voz" title="Hablar en vez de escribir" aria-pressed="false" hidden>
+                  <span aria-hidden="true">🎤</span> Hablar
+                </button>
+              </div>
+              <p class="ai-tutor-dictation-status" id="ai-tutor-dictation-status" role="status" aria-live="polite" hidden></p>
+              <textarea class="ai-tutor-question" id="ai-tutor-question" maxlength="${AI_MAX_QUESTION_LENGTH}" rows="3" placeholder="¿Por qué...? ¿Qué significa...?"></textarea>
+              <div class="ai-tutor-suggestions" id="ai-tutor-suggestions">
+                <button type="button" data-question="Explícamelo con palabras más fáciles.">Explícamelo fácil</button>
+                <button type="button" data-question="¿Qué es lo más importante de esta diapositiva?">Lo más importante</button>
+                <button type="button" data-question="Ponme un ejemplo para entenderlo mejor.">Ponme un ejemplo</button>
+              </div>
+              <div class="ai-tutor-form-actions">
+                <span class="ai-tutor-count" id="ai-tutor-count">0/${AI_MAX_QUESTION_LENGTH}</span>
+                <button class="btn-primary ai-tutor-submit" id="ai-tutor-submit" type="submit">Preguntar 🤖</button>
+              </div>
+            </form>
+            <div class="ai-tutor-answer" id="ai-tutor-answer" aria-live="polite"></div>
+          </div>
+        </section>
+      `;
+      document.body.append(panel);
+      this.aiPanel = panel;
+
+      const form = panel.querySelector('#ai-tutor-form');
+      const setup = panel.querySelector('#ai-tutor-setup');
+      const questionInput = panel.querySelector('#ai-tutor-question');
+      const submit = panel.querySelector('#ai-tutor-submit');
+      const answerEl = panel.querySelector('#ai-tutor-answer');
+      const counter = panel.querySelector('#ai-tutor-count');
+      const contextEl = panel.querySelector('#ai-tutor-context');
+      const micButton = panel.querySelector('#ai-tutor-mic');
+      const dictationStatus = panel.querySelector('#ai-tutor-dictation-status');
+
+      contextEl.textContent = this.currentSlideLabel() ? `Sobre: ${this.currentSlideLabel()}` : '';
+      if (this.supportsAiDictation()) micButton.hidden = false;
+      if (!hasKey) {
+        setup.hidden = false;
+        form.hidden = true;
+      }
+
+      panel.querySelector('.ai-tutor-close').addEventListener('click', () => this.closeAiPanel());
+      panel.addEventListener('click', event => {
+        if (event.target === panel) this.closeAiPanel();
+      });
+      panel.querySelector('#ai-tutor-open-settings').addEventListener('click', (event) => {
+        this.closeAiPanel();
+        if (!this.settingsView) this.settingsView = new SettingsView();
+        this.settingsView.render(event.currentTarget);
+      });
+
+      questionInput.addEventListener('input', () => {
+        counter.textContent = `${questionInput.value.length}/${AI_MAX_QUESTION_LENGTH}`;
+      });
+      micButton.addEventListener('click', () => {
+        if (this.aiRecognition) this.stopAiDictation();
+        else this.startAiDictation({ questionInput, counter, micButton, statusEl: dictationStatus });
+      });
+      panel.querySelectorAll('#ai-tutor-suggestions button').forEach(button => {
+        button.addEventListener('click', () => {
+          questionInput.value = button.dataset.question || '';
+          counter.textContent = `${questionInput.value.length}/${AI_MAX_QUESTION_LENGTH}`;
+          questionInput.focus();
+        });
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (this.aiRecognition) this.stopAiDictation();
+        this.askAiQuestion(questionInput.value, submit, answerEl);
+      });
+
+      this.aiKeyHandler = (event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          this.closeAiPanel();
+        }
+      };
+      document.addEventListener('keydown', this.aiKeyHandler);
+
+      if (hasKey) questionInput.focus();
+      else panel.querySelector('#ai-tutor-open-settings').focus();
+    }
+
+    closeAiPanel() {
+      this.stopAiDictation();
+      if (this.aiRequest) {
+        this.aiRequest.abort();
+        this.aiRequest = null;
+      }
+      if (this.aiKeyHandler) {
+        document.removeEventListener('keydown', this.aiKeyHandler);
+        this.aiKeyHandler = null;
+      }
+      if (this.aiPanel) {
+        this.aiPanel.remove();
+        this.aiPanel = null;
+      }
+    }
+
+    supportsAiDictation() {
+      return Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
+    }
+
+    stopAiDictation() {
+      const recognition = this.aiRecognition;
+      if (!recognition) return;
+      try {
+        recognition.stop();
+      } catch (error) {
+        this.aiRecognition = null;
+      }
+    }
+
+    setAiDictationUi(micButton, listening) {
+      micButton.classList.toggle('is-listening', listening);
+      micButton.setAttribute('aria-pressed', listening ? 'true' : 'false');
+      micButton.innerHTML = listening
+        ? '<span aria-hidden="true">⏹️</span> Detener'
+        : '<span aria-hidden="true">🎤</span> Hablar';
+    }
+
+    showAiDictationStatus(statusEl, message, isError = false) {
+      statusEl.hidden = !message;
+      statusEl.textContent = message;
+      statusEl.classList.toggle('is-error', Boolean(message) && isError);
+    }
+
+    startAiDictation({ questionInput, counter, micButton, statusEl }) {
+      const SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognitionCtor || this.aiRecognition) return;
+
+      let recognition;
+      try {
+        recognition = new SpeechRecognitionCtor();
+      } catch (error) {
+        this.showAiDictationStatus(statusEl, 'Este navegador no puede usar el micrófono.', true);
+        return;
+      }
+
+      const baseText = questionInput.value.trim();
+      let finalText = '';
+      let hadError = false;
+
+      recognition.lang = 'es-ES';
+      recognition.interimResults = true;
+      recognition.continuous = false;
+      recognition.maxAlternatives = 1;
+      this.aiRecognition = recognition;
+      this.setAiDictationUi(micButton, true);
+      this.showAiDictationStatus(statusEl, 'Escuchando… habla ahora.');
+
+      recognition.onresult = (event) => {
+        let transcript = '';
+        for (let i = 0; i < event.results.length; i += 1) {
+          const result = event.results[i];
+          transcript += (result[0]?.transcript || '') + (result.isFinal ? ' ' : '');
+        }
+        finalText = transcript.trim();
+        const question = [baseText, finalText].filter(Boolean).join(' ');
+        questionInput.value = question.slice(0, AI_MAX_QUESTION_LENGTH);
+        counter.textContent = `${questionInput.value.length}/${AI_MAX_QUESTION_LENGTH}`;
+      };
+
+      recognition.onerror = (event) => {
+        if (event.error === 'aborted') return;
+        hadError = true;
+        const messages = {
+          'not-allowed': 'No se ha dado permiso al micrófono. Actívalo en los ajustes del navegador.',
+          'service-not-allowed': 'El dictado no está permitido aquí. Prueba desde HTTPS o localhost.',
+          'audio-capture': 'No se encuentra un micrófono disponible.',
+          network: 'El dictado necesita conexión a Internet y no ha podido conectar.',
+          'no-speech': 'No se ha oído ninguna pregunta. Inténtalo de nuevo hablando más cerca del micrófono.'
+        };
+        this.showAiDictationStatus(statusEl, messages[event.error] || 'No se ha podido dictar la pregunta.', true);
+      };
+
+      recognition.onend = () => {
+        if (this.aiRecognition === recognition) this.aiRecognition = null;
+        this.setAiDictationUi(micButton, false);
+        if (hadError) return;
+        if (finalText) {
+          this.showAiDictationStatus(statusEl, 'Pregunta dictada. Revísala y pulsa Preguntar.');
+          questionInput.focus();
+        } else {
+          this.showAiDictationStatus(statusEl, 'No se ha oído nada. Inténtalo de nuevo.', true);
+        }
+      };
+
+      try {
+        recognition.start();
+      } catch (error) {
+        this.aiRecognition = null;
+        this.setAiDictationUi(micButton, false);
+        this.showAiDictationStatus(statusEl, 'No se ha podido activar el micrófono.', true);
+      }
+    }
+
+    async askAiQuestion(question, submit, answerEl) {
+      const clean = String(question || '').trim();
+      if (!clean) {
+        answerEl.innerHTML = '<p class="ai-tutor-error">Escribe una pregunta para el tutor.</p>';
+        return;
+      }
+      const controller = new AbortController();
+      this.aiRequest = controller;
+      submit.disabled = true;
+      answerEl.innerHTML = '<p class="ai-tutor-thinking">Pensando… 🤔</p>';
+      const slowTimer = setTimeout(() => {
+        if (this.aiPanel) {
+          answerEl.innerHTML = '<p class="ai-tutor-thinking">Sigue pensando… Gemini está tardando últimamente. Puede llegar a un minuto; no cierres esta ventana.</p>';
+        }
+      }, 8000);
+      try {
+        const answer = await aiTutor.ask({
+          question: clean,
+          theoryContext: this.buildAiContext(),
+          currentSlide: this.currentSlideLabel(),
+          signal: controller.signal
+        });
+        if (!this.aiPanel) return;
+        this.renderAiAnswer(answer, answerEl);
+      } catch (error) {
+        if (!this.aiPanel || controller.signal.aborted) return;
+        const message = error?.message || 'No se ha podido obtener una respuesta.';
+        answerEl.innerHTML = '';
+        const paragraph = document.createElement('p');
+        paragraph.className = 'ai-tutor-error';
+        paragraph.textContent = message;
+        answerEl.append(paragraph);
+      } finally {
+        clearTimeout(slowTimer);
+        if (this.aiRequest === controller) this.aiRequest = null;
+        if (submit.isConnected) submit.disabled = false;
+      }
+    }
+
+    renderAiAnswer(answer, answerEl) {
+      answerEl.innerHTML = '';
+      const paragraph = document.createElement('p');
+      paragraph.className = 'ai-tutor-answer-text';
+      paragraph.textContent = answer;
+      const actions = document.createElement('div');
+      actions.className = 'ai-tutor-answer-actions';
+      if ('speechSynthesis' in window) {
+        const listen = document.createElement('button');
+        listen.type = 'button';
+        listen.className = 'btn-secondary';
+        listen.textContent = '🔊 Escuchar';
+        listen.addEventListener('click', () => this.speakAiAnswer(answer));
+        actions.append(listen);
+      }
+      answerEl.append(paragraph, actions);
+    }
+
+    speakAiAnswer(text) {
+      if (!('speechSynthesis' in window)) return;
+      const result = speechManager.createUtterance(text, speechManager.getPreference(), { preferLocal: false });
+      if (!result) return;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(result.utterance);
+    }
+
+    buildAiContext() {
+      const title = this.casillaData.titulo || 'Capítulo';
+      const lines = this.slides.map((slide, index) => {
+        const name = slide.nombre || slide.titulo || slide.fichaTitulo || `Diapositiva ${index + 1}`;
+        const body = [slide.texto, ...(slide.puntos || []), slide.locucion].filter(Boolean).join(' ');
+        return `${index + 1}. ${name}: ${body}`;
+      });
+      let context = `${title}\n${lines.join('\n')}`;
+      if (context.length > AI_MAX_CONTEXT_LENGTH) context = context.slice(0, AI_MAX_CONTEXT_LENGTH) + '…';
+      return context;
+    }
+
+    currentSlideLabel() {
+      const slide = this.slides[this.currentIndex];
+      if (!slide) return '';
+      return slide.nombre || slide.titulo || slide.fichaTitulo || `Diapositiva ${this.currentIndex + 1}`;
     }
 
     formatMarkdown(text) {
@@ -3038,7 +3765,7 @@
                 <span id="sound-icon">${audio.isEnabled() ? '🔊' : '🔇'}</span>
               </button>
 
-              <button class="btn-icon" id="btn-map-settings" title="Configuración de voz" aria-label="Configuración de voz">⚙️</button>
+              <button class="btn-icon" id="btn-map-settings" title="Configuración" aria-label="Configuración">⚙️</button>
 
               <button class="btn-icon btn-secondary-icon" id="btn-reset-topic" title="Reiniciar circuito">
                 <span>🔄</span>

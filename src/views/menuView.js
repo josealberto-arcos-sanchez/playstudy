@@ -44,7 +44,7 @@ export class MenuView {
             <button class="btn-icon" id="btn-menu-sound" title="Sonido">
               <span id="menu-sound-icon">${audio.isEnabled() ? '🔊' : '🔇'}</span>
             </button>
-            <button class="btn-icon" id="btn-menu-settings" title="Configuración de voz" aria-label="Configuración de voz">⚙️</button>
+            <button class="btn-icon" id="btn-menu-settings" title="Configuración" aria-label="Configuración">⚙️</button>
           </div>
         </header>
 

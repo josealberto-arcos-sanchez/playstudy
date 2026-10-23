@@ -49,7 +49,7 @@ export class MapView {
               <span id="sound-icon">${audio.isEnabled() ? '🔊' : '🔇'}</span>
             </button>
 
-            <button class="btn-icon" id="btn-map-settings" title="Configuración de voz" aria-label="Configuración de voz">⚙️</button>
+            <button class="btn-icon" id="btn-map-settings" title="Configuración" aria-label="Configuración">⚙️</button>
 
             <button class="btn-icon btn-secondary-icon" id="btn-reset-topic" title="Reiniciar circuito">
               <span>🔄</span>
