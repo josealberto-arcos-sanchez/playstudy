@@ -7,6 +7,8 @@
 import { audio } from '../audio.js';
 import { gameState } from '../state.js';
 import { speechManager } from '../speech.js';
+import { aiTutor, AI_MAX_QUESTION_LENGTH, AI_MAX_CONTEXT_LENGTH } from '../aiTutor.js';
+import { SettingsView } from './settingsView.js';
 
 export class TheoryView {
   constructor(tema, casillaData, onComplete, onExit) {
@@ -24,6 +26,10 @@ export class TheoryView {
     this.isVoiceMuted = localStorage.getItem('playstudy_theory_mute') === 'true';
     this.currentUtterance = null;
     this.speechRequestId = 0;
+    this.aiPanel = null;
+    this.aiRequest = null;
+    this.aiRecognition = null;
+    this.settingsView = null;
   }
 
   /**
@@ -120,8 +126,13 @@ export class TheoryView {
             <h2 class="theory-main-title">${this.casillaData.titulo}</h2>
           </div>
 
-          <div class="theory-badge">
-            <span id="slide-indicator">Diapositiva 1 de ${totalSlides}</span>
+          <div class="theory-hud-actions">
+            <button class="btn-hud btn-ask-ai" id="btn-ask-ai" type="button" title="Preguntar al tutor sobre esta teoría">
+              <span>🙋 Preguntar</span>
+            </button>
+            <div class="theory-badge">
+              <span id="slide-indicator">Diapositiva 1 de ${totalSlides}</span>
+            </div>
           </div>
         </header>
 
@@ -178,6 +189,11 @@ export class TheoryView {
       }
     });
 
+    this.container.querySelector('#btn-ask-ai').addEventListener('click', () => {
+      audio.playClick();
+      this.openAiPanel();
+    });
+
     // Clic en los puntos de navegación
     const dots = this.container.querySelectorAll('.slide-dot-pill');
     dots.forEach(dot => {
@@ -193,6 +209,9 @@ export class TheoryView {
     });
 
     this.keyHandler = (e) => {
+      const tag = e.target?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (this.aiPanel) return;
       if (e.key === 'ArrowRight' || e.key === 'Enter') {
         const nextBtn = this.container.querySelector('#btn-next-slide');
         if (nextBtn) nextBtn.click();
@@ -206,6 +225,11 @@ export class TheoryView {
 
   cleanup() {
     this.stopSpeaking();
+    this.closeAiPanel();
+    if (this.settingsView) {
+      this.settingsView.cleanup();
+      this.settingsView = null;
+    }
     if (this.keyHandler) {
       window.removeEventListener('keydown', this.keyHandler);
     }
@@ -494,6 +518,315 @@ export class TheoryView {
     if (muteBtn) {
       muteBtn.innerHTML = this.isVoiceMuted ? '🔇' : '🔊';
     }
+  }
+
+  /* ==========================================================================
+     TUTOR CON IA (clave de API propia)
+     ========================================================================== */
+  openAiPanel() {
+    if (this.aiPanel) return;
+    this.stopSpeaking();
+    const hasKey = aiTutor.hasKey();
+    const panel = document.createElement('div');
+    panel.className = 'ai-tutor-backdrop';
+    panel.id = 'ai-tutor-backdrop';
+    panel.innerHTML = `
+      <section class="ai-tutor-panel" role="dialog" aria-modal="true" aria-labelledby="ai-tutor-title" tabindex="-1">
+        <header class="ai-tutor-header">
+          <div class="ai-tutor-heading">
+            <span class="ai-tutor-emoji" aria-hidden="true">🤖</span>
+            <div>
+              <h2 id="ai-tutor-title">Pregunta sobre la teoría</h2>
+              <p class="ai-tutor-context" id="ai-tutor-context"></p>
+            </div>
+          </div>
+          <button class="btn-icon ai-tutor-close" type="button" aria-label="Cerrar el tutor">✕</button>
+        </header>
+        <div class="ai-tutor-body">
+          <div class="ai-tutor-setup" id="ai-tutor-setup" hidden>
+            <p>El tutor con IA todavía no está activado. Un adulto puede activarlo con una clave de API desde ⚙️ Configuración.</p>
+            <button class="btn-primary" id="ai-tutor-open-settings" type="button">Abrir configuración</button>
+          </div>
+          <form class="ai-tutor-form" id="ai-tutor-form">
+            <div class="ai-tutor-question-head">
+              <label class="ai-tutor-label" for="ai-tutor-question">Escribe o dicta tu pregunta</label>
+              <button class="ai-tutor-mic" id="ai-tutor-mic" type="button" aria-label="Dictar la pregunta por voz" title="Hablar en vez de escribir" aria-pressed="false" hidden>
+                <span aria-hidden="true">🎤</span> Hablar
+              </button>
+            </div>
+            <p class="ai-tutor-dictation-status" id="ai-tutor-dictation-status" role="status" aria-live="polite" hidden></p>
+            <textarea class="ai-tutor-question" id="ai-tutor-question" maxlength="${AI_MAX_QUESTION_LENGTH}" rows="3" placeholder="¿Por qué...? ¿Qué significa...?"></textarea>
+            <div class="ai-tutor-suggestions" id="ai-tutor-suggestions">
+              <button type="button" data-question="Explícamelo con palabras más fáciles.">Explícamelo fácil</button>
+              <button type="button" data-question="¿Qué es lo más importante de esta diapositiva?">Lo más importante</button>
+              <button type="button" data-question="Ponme un ejemplo para entenderlo mejor.">Ponme un ejemplo</button>
+            </div>
+            <div class="ai-tutor-form-actions">
+              <span class="ai-tutor-count" id="ai-tutor-count">0/${AI_MAX_QUESTION_LENGTH}</span>
+              <button class="btn-primary ai-tutor-submit" id="ai-tutor-submit" type="submit">Preguntar 🤖</button>
+            </div>
+          </form>
+          <div class="ai-tutor-answer" id="ai-tutor-answer" aria-live="polite"></div>
+        </div>
+      </section>
+    `;
+    document.body.append(panel);
+    this.aiPanel = panel;
+
+    const form = panel.querySelector('#ai-tutor-form');
+    const setup = panel.querySelector('#ai-tutor-setup');
+    const questionInput = panel.querySelector('#ai-tutor-question');
+    const submit = panel.querySelector('#ai-tutor-submit');
+    const answerEl = panel.querySelector('#ai-tutor-answer');
+    const counter = panel.querySelector('#ai-tutor-count');
+    const contextEl = panel.querySelector('#ai-tutor-context');
+    const micButton = panel.querySelector('#ai-tutor-mic');
+    const dictationStatus = panel.querySelector('#ai-tutor-dictation-status');
+
+    contextEl.textContent = this.currentSlideLabel() ? `Sobre: ${this.currentSlideLabel()}` : '';
+    if (this.supportsAiDictation()) micButton.hidden = false;
+    if (!hasKey) {
+      setup.hidden = false;
+      form.hidden = true;
+    }
+
+    panel.querySelector('.ai-tutor-close').addEventListener('click', () => this.closeAiPanel());
+    panel.addEventListener('click', event => {
+      if (event.target === panel) this.closeAiPanel();
+    });
+    panel.querySelector('#ai-tutor-open-settings').addEventListener('click', (event) => {
+      this.closeAiPanel();
+      if (!this.settingsView) this.settingsView = new SettingsView();
+      this.settingsView.render(event.currentTarget);
+    });
+
+    questionInput.addEventListener('input', () => {
+      counter.textContent = `${questionInput.value.length}/${AI_MAX_QUESTION_LENGTH}`;
+    });
+    micButton.addEventListener('click', () => {
+      if (this.aiRecognition) this.stopAiDictation();
+      else this.startAiDictation({ questionInput, counter, micButton, statusEl: dictationStatus });
+    });
+    panel.querySelectorAll('#ai-tutor-suggestions button').forEach(button => {
+      button.addEventListener('click', () => {
+        questionInput.value = button.dataset.question || '';
+        counter.textContent = `${questionInput.value.length}/${AI_MAX_QUESTION_LENGTH}`;
+        questionInput.focus();
+      });
+    });
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (this.aiRecognition) this.stopAiDictation();
+      this.askAiQuestion(questionInput.value, submit, answerEl);
+    });
+
+    this.aiKeyHandler = (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        this.closeAiPanel();
+      }
+    };
+    document.addEventListener('keydown', this.aiKeyHandler);
+
+    if (hasKey) questionInput.focus();
+    else panel.querySelector('#ai-tutor-open-settings').focus();
+  }
+
+  closeAiPanel() {
+    this.stopAiDictation();
+    if (this.aiRequest) {
+      this.aiRequest.abort();
+      this.aiRequest = null;
+    }
+    if (this.aiKeyHandler) {
+      document.removeEventListener('keydown', this.aiKeyHandler);
+      this.aiKeyHandler = null;
+    }
+    if (this.aiPanel) {
+      this.aiPanel.remove();
+      this.aiPanel = null;
+    }
+  }
+
+  supportsAiDictation() {
+    return Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
+  }
+
+  stopAiDictation() {
+    const recognition = this.aiRecognition;
+    if (!recognition) return;
+    try {
+      recognition.stop();
+    } catch (error) {
+      this.aiRecognition = null;
+    }
+  }
+
+  setAiDictationUi(micButton, listening) {
+    micButton.classList.toggle('is-listening', listening);
+    micButton.setAttribute('aria-pressed', listening ? 'true' : 'false');
+    micButton.innerHTML = listening
+      ? '<span aria-hidden="true">⏹️</span> Detener'
+      : '<span aria-hidden="true">🎤</span> Hablar';
+  }
+
+  showAiDictationStatus(statusEl, message, isError = false) {
+    statusEl.hidden = !message;
+    statusEl.textContent = message;
+    statusEl.classList.toggle('is-error', Boolean(message) && isError);
+  }
+
+  startAiDictation({ questionInput, counter, micButton, statusEl }) {
+    const SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognitionCtor || this.aiRecognition) return;
+
+    let recognition;
+    try {
+      recognition = new SpeechRecognitionCtor();
+    } catch (error) {
+      this.showAiDictationStatus(statusEl, 'Este navegador no puede usar el micrófono.', true);
+      return;
+    }
+
+    const baseText = questionInput.value.trim();
+    let finalText = '';
+    let hadError = false;
+
+    recognition.lang = 'es-ES';
+    recognition.interimResults = true;
+    recognition.continuous = false;
+    recognition.maxAlternatives = 1;
+    this.aiRecognition = recognition;
+    this.setAiDictationUi(micButton, true);
+    this.showAiDictationStatus(statusEl, 'Escuchando… habla ahora.');
+
+    recognition.onresult = (event) => {
+      let transcript = '';
+      for (let i = 0; i < event.results.length; i += 1) {
+        const result = event.results[i];
+        transcript += (result[0]?.transcript || '') + (result.isFinal ? ' ' : '');
+      }
+      finalText = transcript.trim();
+      const question = [baseText, finalText].filter(Boolean).join(' ');
+      questionInput.value = question.slice(0, AI_MAX_QUESTION_LENGTH);
+      counter.textContent = `${questionInput.value.length}/${AI_MAX_QUESTION_LENGTH}`;
+    };
+
+    recognition.onerror = (event) => {
+      if (event.error === 'aborted') return;
+      hadError = true;
+      const messages = {
+        'not-allowed': 'No se ha dado permiso al micrófono. Actívalo en los ajustes del navegador.',
+        'service-not-allowed': 'El dictado no está permitido aquí. Prueba desde HTTPS o localhost.',
+        'audio-capture': 'No se encuentra un micrófono disponible.',
+        network: 'El dictado necesita conexión a Internet y no ha podido conectar.',
+        'no-speech': 'No se ha oído ninguna pregunta. Inténtalo de nuevo hablando más cerca del micrófono.'
+      };
+      this.showAiDictationStatus(statusEl, messages[event.error] || 'No se ha podido dictar la pregunta.', true);
+    };
+
+    recognition.onend = () => {
+      if (this.aiRecognition === recognition) this.aiRecognition = null;
+      this.setAiDictationUi(micButton, false);
+      if (hadError) return;
+      if (finalText) {
+        this.showAiDictationStatus(statusEl, 'Pregunta dictada. Revísala y pulsa Preguntar.');
+        questionInput.focus();
+      } else {
+        this.showAiDictationStatus(statusEl, 'No se ha oído nada. Inténtalo de nuevo.', true);
+      }
+    };
+
+    try {
+      recognition.start();
+    } catch (error) {
+      this.aiRecognition = null;
+      this.setAiDictationUi(micButton, false);
+      this.showAiDictationStatus(statusEl, 'No se ha podido activar el micrófono.', true);
+    }
+  }
+
+  async askAiQuestion(question, submit, answerEl) {
+    const clean = String(question || '').trim();
+    if (!clean) {
+      answerEl.innerHTML = '<p class="ai-tutor-error">Escribe una pregunta para el tutor.</p>';
+      return;
+    }
+    const controller = new AbortController();
+    this.aiRequest = controller;
+    submit.disabled = true;
+    answerEl.innerHTML = '<p class="ai-tutor-thinking">Pensando… 🤔</p>';
+    const slowTimer = setTimeout(() => {
+      if (this.aiPanel) {
+        answerEl.innerHTML = '<p class="ai-tutor-thinking">Sigue pensando… Gemini está tardando últimamente. Puede llegar a un minuto; no cierres esta ventana.</p>';
+      }
+    }, 8000);
+    try {
+      const answer = await aiTutor.ask({
+        question: clean,
+        theoryContext: this.buildAiContext(),
+        currentSlide: this.currentSlideLabel(),
+        signal: controller.signal
+      });
+      if (!this.aiPanel) return;
+      this.renderAiAnswer(answer, answerEl);
+    } catch (error) {
+      if (!this.aiPanel || controller.signal.aborted) return;
+      const message = error?.message || 'No se ha podido obtener una respuesta.';
+      answerEl.innerHTML = '';
+      const paragraph = document.createElement('p');
+      paragraph.className = 'ai-tutor-error';
+      paragraph.textContent = message;
+      answerEl.append(paragraph);
+    } finally {
+      clearTimeout(slowTimer);
+      if (this.aiRequest === controller) this.aiRequest = null;
+      if (submit.isConnected) submit.disabled = false;
+    }
+  }
+
+  renderAiAnswer(answer, answerEl) {
+    answerEl.innerHTML = '';
+    const paragraph = document.createElement('p');
+    paragraph.className = 'ai-tutor-answer-text';
+    paragraph.textContent = answer;
+    const actions = document.createElement('div');
+    actions.className = 'ai-tutor-answer-actions';
+    if ('speechSynthesis' in window) {
+      const listen = document.createElement('button');
+      listen.type = 'button';
+      listen.className = 'btn-secondary';
+      listen.textContent = '🔊 Escuchar';
+      listen.addEventListener('click', () => this.speakAiAnswer(answer));
+      actions.append(listen);
+    }
+    answerEl.append(paragraph, actions);
+  }
+
+  speakAiAnswer(text) {
+    if (!('speechSynthesis' in window)) return;
+    const result = speechManager.createUtterance(text, speechManager.getPreference(), { preferLocal: false });
+    if (!result) return;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(result.utterance);
+  }
+
+  buildAiContext() {
+    const title = this.casillaData.titulo || 'Capítulo';
+    const lines = this.slides.map((slide, index) => {
+      const name = slide.nombre || slide.titulo || slide.fichaTitulo || `Diapositiva ${index + 1}`;
+      const body = [slide.texto, ...(slide.puntos || []), slide.locucion].filter(Boolean).join(' ');
+      return `${index + 1}. ${name}: ${body}`;
+    });
+    let context = `${title}\n${lines.join('\n')}`;
+    if (context.length > AI_MAX_CONTEXT_LENGTH) context = context.slice(0, AI_MAX_CONTEXT_LENGTH) + '…';
+    return context;
+  }
+
+  currentSlideLabel() {
+    const slide = this.slides[this.currentIndex];
+    if (!slide) return '';
+    return slide.nombre || slide.titulo || slide.fichaTitulo || `Diapositiva ${this.currentIndex + 1}`;
   }
 
   formatMarkdown(text) {
