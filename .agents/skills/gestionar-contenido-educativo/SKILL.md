@@ -130,7 +130,9 @@ Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas
 
 ## 🧩 3. Plantilla Estándar de `contenido.json` (6 Casillas del Circuito)
 
-Cada capítulo consta de un circuito interactivo continuo de 6 paradas (3 estrellas por parada = 18 estrellas):
+Cada capítulo consta de un circuito interactivo continuo de 6 paradas (3 estrellas por parada = 18 estrellas).
+
+Los minijuegos (`"tipo": "minijuego"`) se barajan aleatoriamente entre las paradas de juego cada vez que se entra en el circuito; la teoría y los quizzes mantienen siempre su posición. Para añadir un juego nuevo, crea una casilla con `"tipo": "minijuego"` y un `"subtipo"` propio: el barajado (`src/gameOrder.js`) funciona con cualquier número de juegos.
 
 ```json
 {

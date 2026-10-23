@@ -88,7 +88,7 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
 
 1. **Elige un ID único** para el capítulo, siguiendo el orden del tema (por ejemplo, `cap_05_nombre_corto`).
 2. **Crea la carpeta y los recursos** bajo `data/cursos/{curso}/{asignatura}/{tema}/{capitulo}/`. Añade `contenido.json`, `assets/puzzle.jpg`, las imágenes locales de las diapositivas y `assets/creditos_imagenes.json`.
-3. **Crea las casillas** en `contenido.json`. Sigue el circuito habitual de seis casillas y usa el formato de presentación ilustrada y narrada descrito arriba para la teoría.
+3. **Crea las casillas** en `contenido.json`. Sigue el circuito habitual de seis casillas y usa el formato de presentación ilustrada y narrada descrito arriba para la teoría. Los juegos (`"tipo": "minijuego"`) se barajan al entrar en el circuito entre las paradas de juego; la teoría y los quizzes conservan su orden. Para añadir juegos nuevos, usa un `subtipo` propio: el barajado funciona con cualquier número de juegos.
 4. **Registra el capítulo** en el array `capitulos` del tema correspondiente en `data/catalogo.json`. Ejemplo:
 
    ```json
@@ -119,6 +119,7 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
 - `data/cursos/.../contenido.json`: parejas, presentaciones, quizzes y puzzle de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
+- `src/gameOrder.js`: barajado genérico de los juegos del circuito al entrar (la teoría y los quizzes no se mueven).
 - `src/views/theoryView.js`: lógica modular de la presentación teórica.
 - `src/speech.js` y `src/views/settingsView.js`: selección, prueba y preferencia persistente de voces.
 - `src/aiTutor.js`: tutor con IA opcional; guarda la clave de API en `localStorage` y llama al proveedor elegido.

@@ -4014,7 +4014,81 @@
     }
   }
   /* ==========================================================================
-     10. ORQUESTADOR DE LA APLICACIÓN
+     10. ORDEN ALEATORIO DE LOS JUEGOS DEL CIRCUITO
+     Los juegos se barajan entre las paradas de juego de cada circuito,
+     conservando la teoría y los quizzes en su sitio. El algoritmo es genérico
+     y admite cualquier número de juegos: para añadir uno nuevo basta con
+     crear una casilla "minijuego" con su propio "subtipo".
+     ========================================================================== */
+  const TIPOS_JUEGO = ['minijuego'];
+
+  function esCasillaDeJuego(casilla) {
+    return Boolean(casilla) && TIPOS_JUEGO.includes(casilla.tipo);
+  }
+
+  function mezclarJuegos(array, random) {
+    const resultado = array.slice();
+    for (let i = resultado.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      [resultado[i], resultado[j]] = [resultado[j], resultado[i]];
+    }
+    return resultado;
+  }
+
+  function renumerarTituloJuego(titulo, numeroParada) {
+    if (typeof titulo !== 'string') return titulo;
+
+    const prefijo = /^\s*\d+\s*[.)-]\s*/;
+    if (prefijo.test(titulo)) {
+      return titulo.replace(prefijo, `${numeroParada}. `);
+    }
+
+    return titulo;
+  }
+
+  function barajarJuegosCircuito(casillas, random = Math.random) {
+    if (!Array.isArray(casillas)) return casillas;
+
+    const indicesDeJuego = [];
+    const juegos = [];
+
+    casillas.forEach((casilla, index) => {
+      if (esCasillaDeJuego(casilla)) {
+        indicesDeJuego.push(index);
+        juegos.push(casilla);
+      }
+    });
+
+    if (juegos.length < 2) return casillas;
+
+    const juegosMezclados = mezclarJuegos(juegos, random);
+    const resultado = casillas.slice();
+
+    indicesDeJuego.forEach((slotIndex, i) => {
+      const parada = casillas[slotIndex];
+      const juego = juegosMezclados[i];
+
+      resultado[slotIndex] = {
+        ...juego,
+        id: parada.id,
+        titulo: renumerarTituloJuego(juego.titulo, parada.id)
+      };
+    });
+
+    return resultado;
+  }
+
+  function prepararCapituloParaCircuito(capitulo, random = Math.random) {
+    if (!capitulo || !Array.isArray(capitulo.casillas)) return capitulo;
+
+    const casillas = barajarJuegosCircuito(capitulo.casillas, random);
+    if (casillas === capitulo.casillas) return capitulo;
+
+    return { ...capitulo, casillas };
+  }
+
+  /* ==========================================================================
+     11. ORQUESTADOR DE LA APLICACIÓN
      ========================================================================== */
   class App {
     constructor() {
@@ -4048,6 +4122,12 @@
     }
 
     async loadCapituloData(capituloObj) {
+      const capitulo = await this.cargarCapituloSinBarajar(capituloObj);
+      // Cada entrada al circuito baraja los juegos entre sus paradas.
+      return prepararCapituloParaCircuito(capitulo);
+    }
+
+    async cargarCapituloSinBarajar(capituloObj) {
       if (!capituloObj) return defaultCapituloData;
 
       // 1. Intentar cargar vía fetch (HTTP)

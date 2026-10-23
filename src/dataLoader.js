@@ -2,6 +2,7 @@
  * Cargador de Catálogo y Capítulos Educativos
  */
 import { defaultCatalogo, defaultHistoriaData } from './defaultData.js';
+import { prepararCapituloParaCircuito } from './gameOrder.js';
 
 export class DataLoader {
   static async loadCatalogo() {
@@ -24,6 +25,12 @@ export class DataLoader {
   }
 
   static async loadCapitulo(capituloObj) {
+    const capitulo = await DataLoader.cargarCapituloSinBarajar(capituloObj);
+    // Cada entrada al circuito baraja los juegos entre sus paradas.
+    return prepararCapituloParaCircuito(capitulo);
+  }
+
+  static async cargarCapituloSinBarajar(capituloObj) {
     if (!capituloObj) return defaultHistoriaData;
 
     // 1. Probar carga vía fetch (servidores HTTP)
