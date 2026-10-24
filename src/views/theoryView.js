@@ -33,88 +33,60 @@ export class TheoryView {
   }
 
   /**
-   * Transforma las fichas y tarjetas en una secuencia de diapositivas individuales
+   * Transforma las tarjetas de cada ficha en una secuencia de diapositivas narradas.
+   * Cada tarjeta es una diapositiva: una idea, una imagen y su locución.
    */
   buildSlides(casillaData) {
     const rawFichas = casillaData.fichas || [];
     const slides = [];
 
-    rawFichas.forEach((ficha, fIndex) => {
-      // Si la ficha contiene tarjetas individuales (etapas o conceptos)
-      if (ficha.tarjetas && ficha.tarjetas.length > 0) {
-        ficha.tarjetas.forEach((t, tIndex) => {
-          slides.push({
-            tipo: 'tarjeta',
-            fichaTitulo: ficha.titulo,
-            fichaSubtitulo: ficha.subtitulo,
-            fichaIcono: ficha.icono,
-            nombre: t.nombre,
-            fecha: t.fecha || '',
-            icono: t.icono || '📖',
-            color: t.color || '#3b82f6',
-            puntos: t.puntos || [],
-            locucion: t.locucion || '',
-            imagen: t.imagen || null,
-            ajusteImagen: t.ajuste_imagen || 'recorte',
-            texto: t.texto || ''
-          });
-        });
-
-        // Si tiene un destacado/resumen final, se añade como diapositiva de cierre
-        if (ficha.destacado) {
-          const d = ficha.destacado;
-          slides.push({
-            tipo: 'destacado',
-            fichaTitulo: ficha.titulo,
-            fichaSubtitulo: ficha.subtitulo,
-            fichaIcono: ficha.icono,
-            icono: typeof d === 'object' ? (d.icono || '💡') : '💡',
-            titulo: typeof d === 'object' ? (d.titulo || 'Dato Clave') : 'Dato Clave',
-            texto: typeof d === 'object' ? d.texto : d,
-            locucion: typeof d === 'object' ? (d.locucion || '') : '',
-            color: '#f59e0b'
-          });
+    rawFichas.forEach((ficha) => {
+      (ficha.tarjetas || []).forEach((t) => {
+        if (!t.imagen || !t.locucion) {
+          console.warn(
+            `[Teoría] La diapositiva «${t.nombre}» de «${casillaData.titulo}» debe tener "imagen" y "locucion".`
+          );
         }
-      } else if (ficha.secciones && ficha.secciones.length > 0) {
-        ficha.secciones.forEach((sec) => {
-          slides.push({
-            tipo: 'seccion',
-            fichaTitulo: ficha.titulo,
-            nombre: sec.nombre,
-            icono: ficha.icono || '📖',
-            color: '#3b82f6',
-            texto: sec.texto,
-            locucion: sec.locucion || ''
-          });
-        });
-      } else {
-        // Ficha estándar individual
         slides.push({
-          tipo: 'ficha_simple',
+          tipo: 'diapositiva',
           fichaTitulo: ficha.titulo,
           fichaSubtitulo: ficha.subtitulo,
-          icono: ficha.icono || '📖',
-          color: '#3b82f6',
-          puntos: ficha.puntos || [],
-          destacado: ficha.destacado || null,
-          locucion: ficha.locucion || ''
+          fichaIcono: ficha.icono,
+          nombre: t.nombre,
+          fecha: t.fecha || '',
+          icono: t.icono || '📖',
+          color: t.color || '#3b82f6',
+          puntos: t.puntos || [],
+          locucion: t.locucion || '',
+          imagen: t.imagen || null,
+          ajusteImagen: t.ajuste_imagen || 'recorte',
+          texto: t.texto || ''
         });
-      }
+      });
     });
 
-    return slides.length > 0 ? slides : [{
-      tipo: 'tarjeta',
-      fichaTitulo: casillaData.titulo,
-      nombre: casillaData.titulo,
-      icono: casillaData.icono || '📖',
-      color: '#3b82f6',
-      puntos: [casillaData.descripcion || 'Contenido de la lección.']
-    }];
+    return slides;
   }
 
   render(container) {
     this.container = container;
     const totalSlides = this.slides.length;
+
+    if (totalSlides === 0) {
+      this.container.innerHTML = `
+        <div class="theory-wrapper">
+          <div class="theory-card is-presentation">
+            <p>Esta teoría no tiene diapositivas. Añade tarjetas con <code>imagen</code> y <code>locucion</code> en <code>contenido.json</code>.</p>
+            <button class="btn-primary" id="btn-theory-exit-empty">⬅️ Volver al circuito</button>
+          </div>
+        </div>
+      `;
+      this.container.querySelector('#btn-theory-exit-empty').addEventListener('click', () => {
+        audio.playClick();
+        this.onExit();
+      });
+      return;
+    }
 
     this.container.innerHTML = `
       <div class="theory-wrapper">
@@ -261,66 +233,34 @@ export class TheoryView {
       dot.classList.toggle('active', idx === this.currentIndex);
     });
 
-    // Renderizar según el tipo de diapositiva
-    if (slide.tipo === 'destacado') {
-      cardEl.style.setProperty('--slide-accent', slide.color);
-      cardEl.innerHTML = `
-        <header class="presentation-header">
-          <div class="presentation-title-group">
-            <span class="presentation-stage-icon">💡</span>
-            <div class="presentation-stage-titles">
-              <h3 class="presentation-stage-name">${slide.titulo}</h3>
-              <span class="presentation-stage-date">Resumen Clave</span>
-            </div>
-          </div>
-          ${this.getNarratorBarHtml()}
-        </header>
-
-        <div class="presentation-body">
-          <div class="presentation-destacado-slide">
-            <span class="presentation-destacado-big-icon">${slide.icono}</span>
-            <h4 class="presentation-destacado-title">${slide.titulo}</h4>
-            <p class="presentation-destacado-text">${this.formatMarkdown(slide.texto)}</p>
+    cardEl.style.setProperty('--slide-accent', slide.color || '#3b82f6');
+    cardEl.innerHTML = `
+      <header class="presentation-header">
+        <div class="presentation-title-group">
+          <span class="presentation-stage-icon">${slide.icono}</span>
+          <div class="presentation-stage-titles">
+            <h3 class="presentation-stage-name">${slide.nombre}</h3>
+            ${slide.fecha ? `<span class="presentation-stage-date">${slide.fecha}</span>` : ''}
           </div>
         </div>
-      `;
-    } else {
-      cardEl.style.setProperty('--slide-accent', slide.color || '#3b82f6');
-      cardEl.innerHTML = `
-        <header class="presentation-header">
-          <div class="presentation-title-group">
-            <span class="presentation-stage-icon">${slide.icono}</span>
-            <div class="presentation-stage-titles">
-              <h3 class="presentation-stage-name">${slide.nombre}</h3>
-              ${slide.fecha ? `<span class="presentation-stage-date">${slide.fecha}</span>` : ''}
-            </div>
-          </div>
-          ${this.getNarratorBarHtml()}
-        </header>
+        ${this.getNarratorBarHtml()}
+      </header>
 
-        <div class="presentation-body ${slide.imagen ? 'has-image' : ''} ${slide.imagen && slide.ajusteImagen === 'completo' ? 'is-full-image' : ''}">
-          ${slide.imagen ? `
-            <div class="presentation-visual-frame">
-              <img class="presentation-main-image" src="${slide.imagen}" alt="${slide.nombre}" />
-            </div>
-            <div class="presentation-content-side">
-              ${slide.texto ? `<p class="presentation-image-caption">${this.formatMarkdown(slide.texto)}</p>` : ''}
-              ${(slide.puntos || []).map(p => `
-                <div class="presentation-bullet-card">
-                  <span class="presentation-bullet-icon">✨</span>
-                  <div class="presentation-bullet-text">${this.formatMarkdown(p)}</div>
-                </div>
-              `).join('')}
-            </div>
-          ` : (slide.puntos || []).map(p => `
+      <div class="presentation-body has-image ${slide.ajusteImagen === 'completo' ? 'is-full-image' : ''}">
+        <div class="presentation-visual-frame">
+          <img class="presentation-main-image" src="${slide.imagen}" alt="${slide.nombre}" />
+        </div>
+        <div class="presentation-content-side">
+          ${slide.texto ? `<p class="presentation-image-caption">${this.formatMarkdown(slide.texto)}</p>` : ''}
+          ${(slide.puntos || []).map(p => `
             <div class="presentation-bullet-card">
               <span class="presentation-bullet-icon">✨</span>
               <div class="presentation-bullet-text">${this.formatMarkdown(p)}</div>
             </div>
           `).join('')}
         </div>
-      `;
-    }
+      </div>
+    `;
 
     this.bindVoiceControls(slide);
     this.speakSlide(slide);
@@ -401,8 +341,6 @@ export class TheoryView {
     let textToSpeak = '';
     if (slide.locucion) {
       textToSpeak = slide.locucion;
-    } else if (slide.tipo === 'destacado') {
-      textToSpeak = `${slide.titulo}. ${slide.texto.replace(/\*\*/g, '')}`;
     } else {
       const puntosText = (slide.puntos || []).map(p => p.replace(/\*\*/g, '')).join('. ');
       textToSpeak = `${slide.nombre}. ${slide.fecha ? slide.fecha + '. ' : ''}${puntosText}`;

@@ -1,7 +1,7 @@
 /**
  * Minijuego de Puzzle Divertido (6 piezas: 3 columnas x 2 filas)
- * - Soporta imágenes externas personalizadas (JPG/PNG en data/assets/puzzle.jpg)
- * - Si no hay imagen externa, usa por defecto la ilustración divertida del mamut
+ * - Usa la imagen local indicada en `casillaData.imagen` (assets/ del capítulo)
+ * - Si no hay imagen, usa por defecto la ilustración divertida del mamut
  * - Al completarse, muestra la imagen resuelta durante 2.5 segundos con animación antes del modal
  */
 import { audio } from '../audio.js';
@@ -25,8 +25,8 @@ export class PuzzleGame {
     this.timerInterval = null;
     this.isVictory = false;
 
-    // Gestión de imagen: intentar cargar imagen externa o fallback a SVG
-    this.imageSrc = casillaData.imagen || 'data/assets/puzzle.jpg';
+    // Gestión de imagen: intentar cargar la imagen del capítulo o fallback a SVG
+    this.imageSrc = casillaData.imagen || null;
     this.useCustomImage = false;
     this.svgIllustration = this.generateFunnyMammothSVG();
 
@@ -34,6 +34,10 @@ export class PuzzleGame {
   }
 
   preloadCustomImage() {
+    if (!this.imageSrc) {
+      this.useCustomImage = false;
+      return;
+    }
     const img = new Image();
     img.onload = () => {
       this.useCustomImage = true;

@@ -354,3 +354,36 @@ button {
   20%, 60% { transform: translateX(-8px); }
   40%, 80% { transform: translateX(8px); }
 }
+/* ==========================================================================
+   AVISO DE DATOS NO DISPONIBLES
+   ========================================================================== */
+.error-panel {
+  max-width: 640px;
+  margin: 12vh auto 0;
+  padding: 28px 32px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-left: 8px solid #ef4444;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+.error-panel h2 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.error-panel p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.error-panel code {
+  background: #f1f5f9;
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 0.95em;
+}

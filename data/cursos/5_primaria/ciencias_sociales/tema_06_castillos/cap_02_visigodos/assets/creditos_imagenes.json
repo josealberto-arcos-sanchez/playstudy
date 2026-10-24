@@ -1,0 +1,128 @@
+{
+  "nota": "Imágenes descargadas de Wikimedia Commons y guardadas localmente para uso sin conexión. Las versiones reducidas y los montajes se indican como adaptaciones; consulta las páginas de origen y respeta las licencias. Las infografías de resumen son composiciones propias de PlayStudy.",
+  "creditos": [
+    {
+      "archivo": "a01_toledo.jpg",
+      "titulo": "Toledo Skyline Panorama, Spain - Dec 2006.jpg",
+      "autor": "Diliff",
+      "licencia": "CC BY 2.5 Generic",
+      "url_licencia": "https://creativecommons.org/licenses/by/2.5/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Toledo_Skyline_Panorama,_Spain_-_Dec_2006.jpg",
+      "adaptacion": "Versión reducida a 1600 px de ancho y recomprimida para el juego."
+    },
+    {
+      "archivo": "a02_invasiones_409.jpg",
+      "titulo": "Iberia 409-429 es.svg",
+      "autor": "P4K1T0",
+      "licencia": "CC BY-SA 3.0 Unported",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Iberia_409-429_es.svg",
+      "adaptacion": "Render PNG de Wikimedia Commons convertido a JPG y reducido a 1600 px de ancho."
+    },
+    {
+      "archivo": "a03_origen_godos.jpg",
+      "titulo": "Godos. Reinos, culturas y migraciones.svg",
+      "autor": "Nagihuin",
+      "licencia": "CC0",
+      "url_licencia": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Godos._Reinos,_culturas_y_migraciones.svg",
+      "adaptacion": "Render PNG de Wikimedia Commons convertido a JPG y reducido a 1600 px de ancho."
+    },
+    {
+      "archivo": "a04_reino_anno_526.jpg",
+      "titulo": "Europa in 526-es.svg",
+      "autor": "Bukkia (mapa original) y Rowanwindwhistler (versión en español)",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Europa_in_526-es.svg",
+      "adaptacion": "Render PNG de Wikimedia Commons convertido a JPG y reducido a 1600 px de ancho."
+    },
+    {
+      "archivo": "a05_resumen_reino_visigodo.jpg",
+      "titulo": "Infografía: recuerda el reino visigodo",
+      "autor": "Composición PlayStudy",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": null
+    },
+    {
+      "archivo": "b01_concilio_toledo.jpg",
+      "titulo": "III Concilio de Toledo (Museo del Prado).jpg",
+      "autor": "José Martí y Monsó",
+      "licencia": "Dominio público (cuadro de 1888)",
+      "url_licencia": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:III_Concilio_de_Toledo_(Museo_del_Prado).jpg",
+      "adaptacion": "Versión reducida a 1600 px de ancho y recomprimida para el juego."
+    },
+    {
+      "archivo": "b02_objetos_vida_diaria.jpg",
+      "titulo": "Cerámicas y metales visigodos.jpg",
+      "autor": "FLAVIVSAETIVS",
+      "licencia": "CC BY-SA 4.0 International",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Cer%C3%A1micas_y_metales_visigodos.jpg",
+      "adaptacion": "Versión reducida a 1600 px de ancho y recomprimida para el juego."
+    },
+    {
+      "archivo": "b03_liber_iudiciorum.jpg",
+      "titulo": "Liber Iudiciorum visigòtic.png (fragmento de una versión catalana, Ms. 1109)",
+      "autor": "Biblioteca de la Abadía de Montserrat",
+      "licencia": "Dominio público",
+      "url_licencia": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Liber_Iudiciorum_visig%C3%B2tic.png",
+      "adaptacion": "Montaje PlayStudy: página centrada sobre un fondo claro con marco y sombra."
+    },
+    {
+      "archivo": "b04_iglesia_quintanilla.jpg",
+      "titulo": "Quintanilla de las Viñas (46366762404).jpg",
+      "autor": "santiago lopez-pastor",
+      "licencia": "CC BY-SA 2.0 Generic",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Quintanilla_de_las_Vi%C3%B1as_(46366762404).jpg",
+      "adaptacion": "Versión reducida a 1600 px de ancho y recomprimida para el juego."
+    },
+    {
+      "archivo": "b05_arco_herradura.jpg",
+      "titulo": "Baños de Cerrato - Basílica de San Juan Bautista (San Juan de Baños) 06.jpg",
+      "autor": "Zarateman",
+      "licencia": "CC0",
+      "url_licencia": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Ba%C3%B1os_de_Cerrato_-_Bas%C3%ADlica_de_San_Juan_Bautista_(San_Juan_de_Ba%C3%B1os)_06.jpg",
+      "adaptacion": "Miniatura de 960 px descargada de Wikimedia Commons y recomprimida para el juego."
+    },
+    {
+      "archivo": "b06_corona_votiva.jpg",
+      "titulo": "Corona votiva Recesvinto.jpg",
+      "autor": "Magnificus",
+      "licencia": "CC BY-SA 3.0 es",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0/es/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Corona_votiva_Recesvinto.jpg",
+      "adaptacion": "Versión reducida a 1600 px de ancho y recomprimida para el juego."
+    },
+    {
+      "archivo": "b07_batalla_guadalete.jpg",
+      "titulo": "Mariano Barbasán - Batalla de Guadalete.jpg",
+      "autor": "Mariano Barbasán Lagueruela",
+      "licencia": "Dominio público (cuadro de 1882)",
+      "url_licencia": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Mariano_Barbas%C3%A1n_-_Batalla_de_Guadalete.jpg",
+      "adaptacion": "Versión reducida a 1600 px de ancho y recomprimida para el juego."
+    },
+    {
+      "archivo": "b08_resumen_vida_reino.jpg",
+      "titulo": "Infografía: recuerda la vida y el final del reino",
+      "autor": "Composición PlayStudy",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": null
+    },
+    {
+      "archivo": "puzzle.jpg",
+      "titulo": "Puzzle: la península visigoda",
+      "autor": "Composición PlayStudy",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": null
+    }
+  ]
+}

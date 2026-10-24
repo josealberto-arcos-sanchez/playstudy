@@ -196,31 +196,27 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
     {
       "id": 2,
       "tipo": "teoria",
-      "titulo": "2. Ficha: Primera Parte Teórica",
-      "descripcion": "Aprende los conceptos clave.",
+      "titulo": "2. Presentación: Primera Parte Teórica",
+      "descripcion": "Cinco diapositivas con imágenes y explicación por voz.",
       "icono": "📖",
       "fichas": [
         {
-          "titulo": "Título de la Ficha",
+          "titulo": "Primera parte",
           "subtitulo": "Subtítulo explicativo",
           "icono": "📖",
           "tarjetas": [
             {
-              "nombre": "Sección 1",
+              "nombre": "Idea de la diapositiva",
               "fecha": "Época o fecha",
               "icono": "📌",
               "color": "#3b82f6",
-              "puntos": [
-                "Punto clave 1 en **negrita**.",
-                "Punto clave 2 explicativo."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_XX_nombre/assets/a01_idea.jpg",
+              "texto": "Rótulo breve (≤ 6 palabras)",
+              "ajuste_imagen": "completo",
+              "locucion": "Explicación completa para la voz. Debe coincidir con lo que se ve en la imagen.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "💡",
-            "titulo": "Dato Importante",
-            "texto": "Información destacada para recordar."
-          }
+          ]
         }
       ]
     },
@@ -254,31 +250,26 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
     {
       "id": 5,
       "tipo": "teoria",
-      "titulo": "5. Ficha: Segunda Parte Teórica",
-      "descripcion": "Aprende sobre la vida, sociedad o cultura.",
+      "titulo": "5. Presentación: Segunda Parte Teórica",
+      "descripcion": "Cinco diapositivas con imágenes y explicación por voz.",
       "icono": "📜",
       "fichas": [
         {
-          "titulo": "Título de la Segunda Ficha",
+          "titulo": "Segunda parte",
           "subtitulo": "Subtítulo explicativo",
           "icono": "📜",
           "tarjetas": [
             {
-              "nombre": "Sección 2",
+              "nombre": "Idea de la diapositiva",
               "fecha": "Periodo",
               "icono": "🏰",
               "color": "#8b5cf6",
-              "puntos": [
-                "Detalles de la vida cotidiana.",
-                "Aspectos culturales y sociales."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_XX_nombre/assets/b01_idea.jpg",
+              "texto": "Rótulo breve (≤ 6 palabras)",
+              "locucion": "Explicación completa para la voz. Debe coincidir con lo que se ve en la imagen.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "🏛️",
-            "titulo": "Monumento o Elemento Clave",
-            "texto": "Ejemplo real conservado hoy en día."
-          }
+          ]
         }
       ]
     },
@@ -310,6 +301,8 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
 
 ## ⚡ 4. Puntos Críticos y Buenas Prácticas
 
+> **La teoría es siempre una presentación narrada.** Cada objeto de `tarjetas` es **una diapositiva** y necesita obligatoriamente `imagen` (ruta local en `assets/`) y `locucion`. El rótulo visible va en `texto` (idealmente 6 palabras o menos); `nombre` y `fecha` encabezan la diapositiva. `puntos` es opcional y sirve de apoyo escrito o accesible: no sustituye a la imagen ni a la locución. Para cerrar con un resumen, añade una última tarjeta con su propia imagen (por ejemplo, una infografía `*_resumen.jpg`) y su locución. El reproductor avisa por consola (`[Teoría]`) si alguna tarjeta no tiene imagen o locución.
+
 1. **La opción correcta siempre va en el índice `0`**:
    En el archivo `contenido.json`, define siempre la respuesta verdadera en `opciones[0]` con `"correcta": 0`. El motor del juego baraja las respuestas al azar al mostrarlas al niño.
 2. **Imágenes para el puzzle**:
@@ -323,9 +316,10 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
    - Si la locución nombra un detalle visible (como un rosetón, un arco apuntado o una vidriera), comprobar que se distingue claramente en la imagen de esa diapositiva.
    - Si una imagen no muestra todos los elementos mencionados, añadir una segunda imagen o un pequeño montaje, o ajustar la locución para que describa lo que sí se ve.
    - Mantener el texto en pantalla breve; la explicación más completa va en la locución.
-5. **No olvidar sincronizar si se prueba sin servidor web**:
+5. **Sincronizar y validar antes de dar el material por terminado**:
    - Ejecutar `scripts/actualizar_datos.ps1` o arrancar desde `jugar.bat`.
    - Si se añade un capítulo y se recarga el navegador sin ejecutar la sincronización, el archivo `data/catalogo_data.js` no contendrá los nuevos datos cuando se acceda vía `file://`.
+   - Ejecutar `powershell -ExecutionPolicy Bypass -File "scripts/validar_contenido.ps1"`: comprueba que cada diapositiva tiene imagen y locución, que las rutas existen, que los créditos están completos y que ninguna ficha usa bloques de texto sin imagen.
 6. **Paleta de colores para las tarjetas**:
    - Rojo: `#ef4444`
    - Verde: `#10b981`

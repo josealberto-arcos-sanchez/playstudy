@@ -63,7 +63,7 @@ El **orden del array `eventos` es el orden correcto**: escríbelos del más anti
 
 ## Formato de teoría: presentación con imágenes y voz
 
-Para los capítulos nuevos, presenta la teoría como una **secuencia de diapositivas**. Cada diapositiva debe explicar una sola idea con una imagen y una locución. El alumnado avanza y retrocede con los botones; también puede pausar, repetir o silenciar la voz.
+Toda la teoría del juego se presenta como una **secuencia de diapositivas narradas**. Cada diapositiva explica una sola idea con una imagen y una locución, y son **obligatorias las dos**: una tarjeta sin `imagen` o sin `locucion` no cumple el formato de presentación. El alumnado avanza y retrocede con los botones; también puede pausar, repetir o silenciar la voz.
 
 La voz se genera en el navegador mediante **Web Speech Synthesis** a partir del campo `locucion`; no hace falta crear archivos MP3. Ejemplo de una tarjeta dentro de `fichas → tarjetas`:
 
@@ -88,8 +88,10 @@ La configuración ⚙️ está disponible en el menú principal y en el mapa. Al
 2. **Explica, no solo enumeres:** relaciona las ideas con ejemplos y causas sencillas: qué es un elemento, para qué servía o qué efecto tenía.
 3. **Una idea por diapositiva:** deja solo un título o rótulo breve en pantalla (idealmente hasta seis palabras). La explicación completa va en `locucion`.
 4. **Imagen y voz deben coincidir:** si la locución menciona algo que se puede ver —como un rosetón, un arco apuntado o una vidriera— debe distinguirse en la imagen de esa diapositiva. Si se nombran varios detalles, usa un montaje de imágenes o ajusta la locución a lo que aparece.
-5. **Incluye una imagen en cada diapositiva:** usa una fotografía, ilustración o esquema que ayude a entender la idea. Comprueba que sea clara y adecuada para la edad.
+5. **Incluye una imagen en cada diapositiva:** usa una fotografía, ilustración o esquema que ayude a entender la idea. Comprueba que sea clara y adecuada para la edad. La ruta de `imagen` siempre es local, dentro de `assets/`.
 6. **La navegación es manual:** cada diapositiva es estática; el alumnado decide cuándo pasar a la anterior o a la siguiente. La voz se reproduce al abrirla y puede pausarse o repetirse.
+7. **Cierra con una diapositiva de resumen:** si quieres recordar las ideas clave, añade una última tarjeta con su infografía y su locución. `puntos` es solo un apoyo escrito opcional.
+8. **Comprueba que se ve:** si el reproductor detecta una diapositiva sin imagen o sin locución, lo avisa en la consola del navegador (`F12 → Console`, líneas `[Teoría]`).
 
 ### Buscar, guardar y acreditar imágenes
 
@@ -148,13 +150,20 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
    ```
 
    El script genera [`data/catalogo_data.js`](data/catalogo_data.js), que permite cargar los capítulos desde `file://`. No edites ese archivo a mano.
-7. **Comprueba el capítulo:** que el JSON sea válido, estén las seis casillas, el tema tenga exactamente dos juegos y el capítulo defina su material, cada ruta de imagen exista, las locuciones correspondan con las imágenes y los créditos incluyan todos los recursos.
+7. **Comprueba el capítulo** con el validador de contenido:
+
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File "scripts/validar_contenido.ps1"
+   ```
+
+   Revisa que el JSON sea válido, que estén las seis casillas, que el tema tenga exactamente dos juegos y el capítulo defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que la respuesta correcta de cada quiz esté en `opciones[0]`.
 
 ## Archivos principales
 
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
 - `data/cursos/.../contenido.json`: catálogo de juegos (parejas, línea del tiempo, puzzle…), presentaciones y quizzes de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
+- `scripts/validar_contenido.ps1`: comprueba que todos los capítulos usan el formato de presentaciones narradas (imagen y locución en cada diapositiva) y que las rutas y los créditos están completos.
 - `src/gameOrder.js`: monta los dos juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
 - `src/games/timelineGame.js`: minijuego de línea del tiempo.
 - `css/timeline.css`: estilos de la línea del tiempo.

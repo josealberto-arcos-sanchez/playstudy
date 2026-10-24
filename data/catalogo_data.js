@@ -88,12 +88,10 @@
   "color_primario": "#f59e0b",
   "color_secundario": "#d97706",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas del Tiempo",
+      "titulo": "Parejas del Tiempo",
       "descripcion": "Encuentra las 7 parejas entre las 14 cartas misteriosas.",
       "icono": "🃏",
       "parejas": [
@@ -105,6 +103,37 @@
         { "id": "moderna", "etiqueta": "Edad Moderna", "icono": "⛵", "detalle": "Llegada a América (1492)", "color": "#06b6d4" },
         { "id": "contemporanea", "etiqueta": "Edad Contemporánea", "icono": "🚀", "detalle": "Desde 1789 hasta hoy", "color": "#ec4899" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo de las Edades",
+      "descripcion": "Ordena las etapas de la Historia, desde la Prehistoria hasta hoy.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "prehistoria", "etiqueta": "Prehistoria", "fecha": "Hace 2,5 millones de años", "icono": "🦴", "color": "#ef4444" },
+        { "id": "neolitico", "etiqueta": "Neolítico", "fecha": "Hacia 8000 a.C.", "icono": "🌾", "color": "#10b981" },
+        { "id": "metales", "etiqueta": "Edad de los Metales", "fecha": "Hacia 5000 a.C.", "icono": "⚔️", "color": "#f97316" },
+        { "id": "antigua", "etiqueta": "Edad Antigua", "fecha": "3500 a.C. - 476", "icono": "🏛️", "color": "#3b82f6" },
+        { "id": "media", "etiqueta": "Edad Media", "fecha": "476 - 1492", "icono": "🏰", "color": "#8b5cf6" },
+        { "id": "moderna", "etiqueta": "Edad Moderna", "fecha": "1492 - 1789", "icono": "⛵", "color": "#06b6d4" },
+        { "id": "contemporanea", "etiqueta": "Edad Contemporánea", "fecha": "Desde 1789", "icono": "🚀", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡Desafío de la Cueva!",
+      "descripcion": "Ordena las 6 piezas del dibujo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -337,11 +366,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡Desafío de la Cueva!",
-      "descripcion": "Ordena las 6 piezas del dibujo.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -627,12 +654,10 @@
   "color_primario": "#f59e0b",
   "color_secundario": "#d97706",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas del Tiempo",
+      "titulo": "Parejas del Tiempo",
       "descripcion": "Encuentra las 7 parejas entre las 14 cartas misteriosas.",
       "icono": "🃏",
       "parejas": [
@@ -644,6 +669,37 @@
         { "id": "moderna", "etiqueta": "Edad Moderna", "icono": "⛵", "detalle": "Llegada a América (1492)", "color": "#06b6d4" },
         { "id": "contemporanea", "etiqueta": "Edad Contemporánea", "icono": "🚀", "detalle": "Desde 1789 hasta hoy", "color": "#ec4899" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo de las Edades",
+      "descripcion": "Ordena las etapas de la Historia, desde la Prehistoria hasta hoy.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "prehistoria", "etiqueta": "Prehistoria", "fecha": "Hace 2,5 millones de años", "icono": "🦴", "color": "#ef4444" },
+        { "id": "neolitico", "etiqueta": "Neolítico", "fecha": "Hacia 8000 a.C.", "icono": "🌾", "color": "#10b981" },
+        { "id": "metales", "etiqueta": "Edad de los Metales", "fecha": "Hacia 5000 a.C.", "icono": "⚔️", "color": "#f97316" },
+        { "id": "antigua", "etiqueta": "Edad Antigua", "fecha": "3500 a.C. - 476", "icono": "🏛️", "color": "#3b82f6" },
+        { "id": "media", "etiqueta": "Edad Media", "fecha": "476 - 1492", "icono": "🏰", "color": "#8b5cf6" },
+        { "id": "moderna", "etiqueta": "Edad Moderna", "fecha": "1492 - 1789", "icono": "⛵", "color": "#06b6d4" },
+        { "id": "contemporanea", "etiqueta": "Edad Contemporánea", "fecha": "Desde 1789", "icono": "🚀", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡Desafío de la Cueva!",
+      "descripcion": "Ordena las 6 piezas del dibujo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -876,11 +932,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡Desafío de la Cueva!",
-      "descripcion": "Ordena las 6 piezas del dibujo.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -1173,7 +1227,7 @@
       "descripcion": "Encuentra las 7 parejas entre los reyes, pueblos y conceptos visigodos.",
       "icono": "🃏",
       "parejas": [
-        { "id": "leovigildo", "etiqueta": "Leovigildo", "icono": "👑", "detalle": "Unificó el reino visigodo", "color": "#8b5cf6" },
+        { "id": "leovigildo", "etiqueta": "Leovigildo", "icono": "👑", "detalle": "Unificó el reino", "color": "#8b5cf6" },
         { "id": "recaredo", "etiqueta": "Recaredo", "icono": "✝️", "detalle": "Se convirtió al catolicismo (589)", "color": "#ec4899" },
         { "id": "suevos", "etiqueta": "Suevos", "icono": "🗺️", "detalle": "Capital en Braga (noroeste)", "color": "#3b82f6" },
         { "id": "toledo", "etiqueta": "Toledo", "icono": "🏰", "detalle": "Capital del reino visigodo", "color": "#f97316" },
@@ -1214,51 +1268,70 @@
     {
       "id": 2,
       "tipo": "teoria",
-      "titulo": "2. Ficha: La llegada de los Visigodos",
-      "descripcion": "Descubre cómo los pueblos germánicos llegaron a Hispania.",
+      "titulo": "2. Presentación: La llegada de los visigodos",
+      "descripcion": "Cinco diapositivas con imágenes y explicación por voz.",
       "icono": "⚔️",
       "fichas": [
         {
-          "titulo": "La llegada de los Visigodos (Siglo V d.C.)",
-          "subtitulo": "Los pueblos bárbaros invaden la Hispania romana",
+          "titulo": "La llegada de los visigodos",
+          "subtitulo": "De las invasiones germánicas al reino con capital en Toledo",
           "icono": "⚔️",
           "tarjetas": [
             {
-              "nombre": "La invasión bárbara",
-              "fecha": "Principios del siglo V",
-              "icono": "🌊",
-              "color": "#ef4444",
-              "puntos": [
-                "La Hispania romana fue invadida por **alanos**, **suevos**, **vándalos** y **visigodos**, procedentes del Cáucaso y de origen escandinavo.",
-                "Los **cántabros** y **vascones** del área cantábrica no formaron ningún reino y resistieron a los invasores."
-              ]
-            },
-            {
-              "nombre": "El pacto romano-visigodo",
-              "fecha": "Siglo V",
-              "icono": "🤝",
-              "color": "#3b82f6",
-              "puntos": [
-                "El ejército romano necesitaba ayuda para frenar la invasión, por lo que pactó con los **visigodos** que podían instalarse en Hispania si derrotaban a los demás invasores.",
-                "Los visigodos expulsaron a **alanos** y **vándalos**, mientras que los **suevos** permanecieron en el noroeste con capital en **Braga**."
-              ]
-            },
-            {
-              "nombre": "El Reino Visigodo",
-              "fecha": "Siglo VI",
+              "nombre": "El reino visigodo",
+              "fecha": "Siglos V - VIII",
               "icono": "👑",
               "color": "#8b5cf6",
-              "puntos": [
-                "Los visigodos establecieron su capital en **Toledo**. Su reino se extendía por casi toda la península Ibérica, incluyendo parte del sur de la actual Francia.",
-                "El rey **Leovigildo** conquistó el reino suevo en el año **585**, logrando dominar todo el territorio peninsular."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a01_toledo.jpg",
+              "texto": "El reino visigodo",
+              "locucion": "¡Bienvenidos al reino visigodo! Durante casi tres siglos, los visigodos gobernaron un reino con capital en Toledo, en el centro de la Península. En esta presentación veremos cómo llegaron, cómo consiguieron el territorio y por qué su reino terminó. La foto muestra Toledo desde el aire; los edificios que ves son de épocas posteriores: de la época visigoda quedan muy pocos restos en la ciudad.",
+              "puntos": []
+            },
+            {
+              "nombre": "409: llegan los pueblos germánicos",
+              "fecha": "Año 409",
+              "icono": "🌊",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a02_invasiones_409.jpg",
+              "texto": "409: invasiones germánicas",
+              "ajuste_imagen": "completo",
+              "locucion": "A comienzos del siglo quinto, la Hispania romana recibió la llegada de varios pueblos germánicos. Los alanos, los suevos y los vándalos cruzaron los Pirineos y se repartieron el territorio. En el mapa ves las zonas donde se instaló cada uno. Roma era cada vez más débil y ya no podía defender bien la Península. Años más tarde llegaron los visigodos.",
+              "puntos": []
+            },
+            {
+              "nombre": "¿De dónde venían los visigodos?",
+              "fecha": "Del norte de Europa a Hispania",
+              "icono": "🗺️",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a03_origen_godos.jpg",
+              "texto": "Godos: reinos y migraciones",
+              "ajuste_imagen": "completo",
+              "locucion": "Los visigodos eran un pueblo germánico. Muchos historiadores creen que su nombre viene de Gotland, una isla del norte de Europa. Durante siglos se desplazaron hacia el sur y hacia el este: primero por tierras cercanas al mar Negro y a la región del Cáucaso, y más tarde entraron en el Imperio romano. En el mapa, las flechas muestran ese largo viaje hasta llegar a Hispania.",
+              "puntos": []
+            },
+            {
+              "nombre": "El pacto con Roma",
+              "fecha": "Siglos V - VI",
+              "icono": "🤝",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a04_reino_anno_526.jpg",
+              "texto": "Un reino en la Península",
+              "ajuste_imagen": "completo",
+              "locucion": "Roma pactó con los visigodos: podían quedarse en Hispania si ayudaban a expulsar a los demás invasores. Vencieron a los alanos y a los vándalos. Los suevos se quedaron en el noroeste, con capital en Braga, y en el norte los vascos y los cántabros vivían con independencia. El reino visigodo tuvo primero su capital en Tolosa y después en Toledo. En el mapa del año quinientos veintiséis, el reino visigodo aparece en rojo y el reino suevo, en morado.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: el reino visigodo",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a05_resumen_reino_visigodo.jpg",
+              "texto": "Recuerda",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda tres ideas. Los visigodos crearon un reino con capital en Toledo. En el año quinientos ochenta y cinco, el rey Leovigildo conquistó el reino suevo y unió casi toda la Península bajo su gobierno. Y en el norte, los cántabros y los vascones resistieron y nunca formaron parte del reino visigodo.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "📍",
-            "titulo": "Pueblos que resistieron",
-            "texto": "Los **cántabros** y los **vascones** del área cantábrica nunca fueron dominados por los visigodos, manteniendo su independencia."
-          }
+          ]
         }
       ]
     },
@@ -1369,72 +1442,98 @@
     {
       "id": 5,
       "tipo": "teoria",
-      "titulo": "5. Ficha: La vida en el Reino Visigodo",
-      "descripcion": "Conoce cómo era la sociedad, la religión y el arte de los visigodos.",
+      "titulo": "5. Presentación: La vida en el reino visigodo",
+      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
       "icono": "🏰",
       "fichas": [
         {
-          "titulo": "La vida en el Reino Visigodo",
-          "subtitulo": "Religión, sociedad y arte en el reino medieval hispano",
+          "titulo": "La vida en el reino visigodo",
+          "subtitulo": "Religión, sociedad, leyes y arte de los visigodos",
           "icono": "🏰",
           "tarjetas": [
             {
-              "nombre": "La religión: el catolicismo",
+              "nombre": "589: Recaredo, rey católico",
               "fecha": "Año 589",
               "icono": "✝️",
               "color": "#ec4899",
-              "puntos": [
-                "Los hispanorromanos eran **católicos**, pero los visigodos eran **arrianos** (diferente versión del cristianismo). Esto causaba división.",
-                "En el año **589**, el rey **Recaredo** abandonó el arrianismo y se convirtió al **catolicismo**, uniendo religiosamente a todo el reino."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b01_concilio_toledo.jpg",
+              "texto": "589: Recaredo se hace católico",
+              "locucion": "Al principio, los visigodos eran arrianos, una versión distinta del cristianismo, y los hispanorromanos eran católicos. Esa diferencia creaba división en el reino. En el año quinientos ochenta y nueve, el rey Recaredo y muchos nobles se convirtieron al catolicismo durante el Tercer Concilio de Toledo. En el cuadro ves al rey junto a una gran cruz dorada, rodeado de obispos.",
+              "puntos": []
             },
             {
               "nombre": "La sociedad visigoda",
-              "fecha": "Siglos V-VIII",
+              "fecha": "Siglos V - VIII",
               "icono": "👥",
               "color": "#f59e0b",
-              "puntos": [
-                "Con los visigodos disminuyó el comercio y la artesanía, pero **aumentó la agricultura y la ganadería**. Existían grandes diferencias entre los grupos sociales.",
-                "La **nobleza** (minoría) ocupaba los cargos políticos y de la Iglesia. El **campesinado** era la mayoría y trabajaba las tierras. También había esclavos."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b02_objetos_vida_diaria.jpg",
+              "texto": "Objetos de la vida diaria",
+              "locucion": "La mayoría de la población eran campesinos que trabajaban la tierra y cuidaban rebaños. Con los visigodos creció el mundo rural y bajó el comercio. Arriba estaban la nobleza y la Iglesia, que ocupaban los cargos importantes; abajo, los campesinos y también las personas esclavas. En las vitrinas de los museos se conservan jarras de cerámica, hebillas y pendientes como estos, objetos sencillos de la vida diaria.",
+              "puntos": []
             },
             {
-              "nombre": "Las leyes comunes",
+              "nombre": "Leyes comunes para todo el reino",
               "fecha": "Reinado de Recesvinto",
               "icono": "📜",
               "color": "#10b981",
-              "puntos": [
-                "Al principio, visigodos e hispanorromanos no compartían ni religión ni leyes. Había profunda división.",
-                "Durante el reinado de **Recesvinto** se elaboraron **leyes comunes** para todo el reino, lo que aumentó la unidad."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b03_liber_iudiciorum.jpg",
+              "texto": "Un libro de leyes",
+              "ajuste_imagen": "completo",
+              "locucion": "Al principio, visigodos e hispanorromanos tenían leyes distintas. Durante el reinado de Recesvinto se reunieron las leyes en un solo libro, el Liber Iudiciorum, para que todos los habitantes del reino siguieran las mismas normas. En la imagen ves una página de ese libro, copiada siglos después por los monjes de un monasterio.",
+              "puntos": []
             },
             {
-              "nombre": "El final del reino visigodo",
-              "fecha": "Año 711",
-              "icono": "⚔️",
-              "color": "#ef4444",
-              "puntos": [
-                "A principios del siglo VIII, el reino visigodo vivía una **crisis**: los nobles luchaban por el trono.",
-                "En el año **711**, el rey **Don Rodrigo** fue derrotado por los musulmanes en la **batalla de Guadalete**.",
-                "Con esa derrota terminó el **reino de Toledo** y los musulmanes conquistaron casi toda la Península."
-              ]
-            },
-            {
-              "nombre": "El Arte Visigodo",
-              "fecha": "Siglos V-VIII",
+              "nombre": "Iglesias de piedra",
+              "fecha": "Siglos V - VIII",
               "icono": "⛪",
               "color": "#06b6d4",
-              "puntos": [
-                "El arte visigodo experimentó un **declive** frente a los grandes monumentos romanos. Se caracterizó por la construcción de **pequeñas iglesias rurales** con pocas ventanas y **arcos de herradura**.",
-                "Destacó la **orfebrería**: la creación de piezas artísticas con metal, como las famosas coronas votivas."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b04_iglesia_quintanilla.jpg",
+              "texto": "Iglesias pequeñas, en el campo",
+              "locucion": "El arte visigodo no fue tan grandioso como el romano. Construyeron iglesias pequeñas, muchas en el campo, con grandes bloques de piedra y pocas ventanas, así que dentro había poca luz. La iglesia de Santa María de Quintanilla de las Viñas, en Burgos, es uno de los mejores ejemplos que se conservan.",
+              "puntos": []
+            },
+            {
+              "nombre": "El arco de herradura",
+              "fecha": "Arte visigodo",
+              "icono": "🏛️",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b05_arco_herradura.jpg",
+              "texto": "El arco de herradura",
+              "locucion": "Su forma más característica es el arco de herradura: la curva baja más que la línea de las columnas, como una herradura de caballo. Lo usaban en puertas y ventanas. En esta pared de la iglesia de San Juan de Baños, en Palencia, ves una ventana con arco de herradura y una celosía de piedra. Tiene más de mil trescientos años.",
+              "puntos": []
+            },
+            {
+              "nombre": "La orfebrería visigoda",
+              "fecha": "Corona de Recesvinto",
+              "icono": "💎",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b06_corona_votiva.jpg",
+              "texto": "Coronas y joyas de oro",
+              "locucion": "Los visigodos destacaron en la orfebrería: el trabajo de los metales preciosos. Fabricaban coronas, cruces, hebillas y broches con oro, perlas y piedras. En la imagen ves de cerca la corona votiva del rey Recesvinto: de ella cuelgan letras de oro con su nombre. Se conserva en el Museo Arqueológico Nacional, en Madrid, junto con el resto del tesoro de Guarrazar.",
+              "puntos": []
+            },
+            {
+              "nombre": "711: el final del reino",
+              "fecha": "Batalla de Guadalete",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b07_batalla_guadalete.jpg",
+              "texto": "711: el final del reino",
+              "locucion": "A comienzos del siglo octavo, los nobles visigodos se peleaban por el trono y el reino estaba débil. En el año setecientos once, el rey Don Rodrigo fue derrotado por los musulmanes en la batalla de Guadalete. Poco después conquistaron casi toda la Península y llamaron al-Ándalus a ese territorio. Así terminó el reino de Toledo.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: vida y final del reino",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b08_resumen_vida_reino.jpg",
+              "texto": "Recuerda",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda. En el año quinientos ochenta y nueve, Recaredo unió al reino en el catolicismo. Con Recesvinto se escribieron unas leyes comunes para todos los habitantes. Y en el setecientos once, la derrota de Don Rodrigo en Guadalete puso fin al reino visigodo.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "🏛️",
-            "titulo": "Iglesia visigoda famosa",
-            "texto": "La iglesia de **San Juan de Baños de Cerrato** (Palencia) es uno de los mejores ejemplos conservados de la arquitectura visigoda, con su característico **arco de herradura**."
-          }
+          ]
         }
       ]
     },
@@ -1600,7 +1699,7 @@
       "descripcion": "Encuentra las 7 parejas entre los reyes, pueblos y conceptos visigodos.",
       "icono": "🃏",
       "parejas": [
-        { "id": "leovigildo", "etiqueta": "Leovigildo", "icono": "👑", "detalle": "Unificó el reino visigodo", "color": "#8b5cf6" },
+        { "id": "leovigildo", "etiqueta": "Leovigildo", "icono": "👑", "detalle": "Unificó el reino", "color": "#8b5cf6" },
         { "id": "recaredo", "etiqueta": "Recaredo", "icono": "✝️", "detalle": "Se convirtió al catolicismo (589)", "color": "#ec4899" },
         { "id": "suevos", "etiqueta": "Suevos", "icono": "🗺️", "detalle": "Capital en Braga (noroeste)", "color": "#3b82f6" },
         { "id": "toledo", "etiqueta": "Toledo", "icono": "🏰", "detalle": "Capital del reino visigodo", "color": "#f97316" },
@@ -1641,51 +1740,70 @@
     {
       "id": 2,
       "tipo": "teoria",
-      "titulo": "2. Ficha: La llegada de los Visigodos",
-      "descripcion": "Descubre cómo los pueblos germánicos llegaron a Hispania.",
+      "titulo": "2. Presentación: La llegada de los visigodos",
+      "descripcion": "Cinco diapositivas con imágenes y explicación por voz.",
       "icono": "⚔️",
       "fichas": [
         {
-          "titulo": "La llegada de los Visigodos (Siglo V d.C.)",
-          "subtitulo": "Los pueblos bárbaros invaden la Hispania romana",
+          "titulo": "La llegada de los visigodos",
+          "subtitulo": "De las invasiones germánicas al reino con capital en Toledo",
           "icono": "⚔️",
           "tarjetas": [
             {
-              "nombre": "La invasión bárbara",
-              "fecha": "Principios del siglo V",
-              "icono": "🌊",
-              "color": "#ef4444",
-              "puntos": [
-                "La Hispania romana fue invadida por **alanos**, **suevos**, **vándalos** y **visigodos**, procedentes del Cáucaso y de origen escandinavo.",
-                "Los **cántabros** y **vascones** del área cantábrica no formaron ningún reino y resistieron a los invasores."
-              ]
-            },
-            {
-              "nombre": "El pacto romano-visigodo",
-              "fecha": "Siglo V",
-              "icono": "🤝",
-              "color": "#3b82f6",
-              "puntos": [
-                "El ejército romano necesitaba ayuda para frenar la invasión, por lo que pactó con los **visigodos** que podían instalarse en Hispania si derrotaban a los demás invasores.",
-                "Los visigodos expulsaron a **alanos** y **vándalos**, mientras que los **suevos** permanecieron en el noroeste con capital en **Braga**."
-              ]
-            },
-            {
-              "nombre": "El Reino Visigodo",
-              "fecha": "Siglo VI",
+              "nombre": "El reino visigodo",
+              "fecha": "Siglos V - VIII",
               "icono": "👑",
               "color": "#8b5cf6",
-              "puntos": [
-                "Los visigodos establecieron su capital en **Toledo**. Su reino se extendía por casi toda la península Ibérica, incluyendo parte del sur de la actual Francia.",
-                "El rey **Leovigildo** conquistó el reino suevo en el año **585**, logrando dominar todo el territorio peninsular."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a01_toledo.jpg",
+              "texto": "El reino visigodo",
+              "locucion": "¡Bienvenidos al reino visigodo! Durante casi tres siglos, los visigodos gobernaron un reino con capital en Toledo, en el centro de la Península. En esta presentación veremos cómo llegaron, cómo consiguieron el territorio y por qué su reino terminó. La foto muestra Toledo desde el aire; los edificios que ves son de épocas posteriores: de la época visigoda quedan muy pocos restos en la ciudad.",
+              "puntos": []
+            },
+            {
+              "nombre": "409: llegan los pueblos germánicos",
+              "fecha": "Año 409",
+              "icono": "🌊",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a02_invasiones_409.jpg",
+              "texto": "409: invasiones germánicas",
+              "ajuste_imagen": "completo",
+              "locucion": "A comienzos del siglo quinto, la Hispania romana recibió la llegada de varios pueblos germánicos. Los alanos, los suevos y los vándalos cruzaron los Pirineos y se repartieron el territorio. En el mapa ves las zonas donde se instaló cada uno. Roma era cada vez más débil y ya no podía defender bien la Península. Años más tarde llegaron los visigodos.",
+              "puntos": []
+            },
+            {
+              "nombre": "¿De dónde venían los visigodos?",
+              "fecha": "Del norte de Europa a Hispania",
+              "icono": "🗺️",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a03_origen_godos.jpg",
+              "texto": "Godos: reinos y migraciones",
+              "ajuste_imagen": "completo",
+              "locucion": "Los visigodos eran un pueblo germánico. Muchos historiadores creen que su nombre viene de Gotland, una isla del norte de Europa. Durante siglos se desplazaron hacia el sur y hacia el este: primero por tierras cercanas al mar Negro y a la región del Cáucaso, y más tarde entraron en el Imperio romano. En el mapa, las flechas muestran ese largo viaje hasta llegar a Hispania.",
+              "puntos": []
+            },
+            {
+              "nombre": "El pacto con Roma",
+              "fecha": "Siglos V - VI",
+              "icono": "🤝",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a04_reino_anno_526.jpg",
+              "texto": "Un reino en la Península",
+              "ajuste_imagen": "completo",
+              "locucion": "Roma pactó con los visigodos: podían quedarse en Hispania si ayudaban a expulsar a los demás invasores. Vencieron a los alanos y a los vándalos. Los suevos se quedaron en el noroeste, con capital en Braga, y en el norte los vascos y los cántabros vivían con independencia. El reino visigodo tuvo primero su capital en Tolosa y después en Toledo. En el mapa del año quinientos veintiséis, el reino visigodo aparece en rojo y el reino suevo, en morado.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: el reino visigodo",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/a05_resumen_reino_visigodo.jpg",
+              "texto": "Recuerda",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda tres ideas. Los visigodos crearon un reino con capital en Toledo. En el año quinientos ochenta y cinco, el rey Leovigildo conquistó el reino suevo y unió casi toda la Península bajo su gobierno. Y en el norte, los cántabros y los vascones resistieron y nunca formaron parte del reino visigodo.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "📍",
-            "titulo": "Pueblos que resistieron",
-            "texto": "Los **cántabros** y los **vascones** del área cantábrica nunca fueron dominados por los visigodos, manteniendo su independencia."
-          }
+          ]
         }
       ]
     },
@@ -1796,72 +1914,98 @@
     {
       "id": 5,
       "tipo": "teoria",
-      "titulo": "5. Ficha: La vida en el Reino Visigodo",
-      "descripcion": "Conoce cómo era la sociedad, la religión y el arte de los visigodos.",
+      "titulo": "5. Presentación: La vida en el reino visigodo",
+      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
       "icono": "🏰",
       "fichas": [
         {
-          "titulo": "La vida en el Reino Visigodo",
-          "subtitulo": "Religión, sociedad y arte en el reino medieval hispano",
+          "titulo": "La vida en el reino visigodo",
+          "subtitulo": "Religión, sociedad, leyes y arte de los visigodos",
           "icono": "🏰",
           "tarjetas": [
             {
-              "nombre": "La religión: el catolicismo",
+              "nombre": "589: Recaredo, rey católico",
               "fecha": "Año 589",
               "icono": "✝️",
               "color": "#ec4899",
-              "puntos": [
-                "Los hispanorromanos eran **católicos**, pero los visigodos eran **arrianos** (diferente versión del cristianismo). Esto causaba división.",
-                "En el año **589**, el rey **Recaredo** abandonó el arrianismo y se convirtió al **catolicismo**, uniendo religiosamente a todo el reino."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b01_concilio_toledo.jpg",
+              "texto": "589: Recaredo se hace católico",
+              "locucion": "Al principio, los visigodos eran arrianos, una versión distinta del cristianismo, y los hispanorromanos eran católicos. Esa diferencia creaba división en el reino. En el año quinientos ochenta y nueve, el rey Recaredo y muchos nobles se convirtieron al catolicismo durante el Tercer Concilio de Toledo. En el cuadro ves al rey junto a una gran cruz dorada, rodeado de obispos.",
+              "puntos": []
             },
             {
               "nombre": "La sociedad visigoda",
-              "fecha": "Siglos V-VIII",
+              "fecha": "Siglos V - VIII",
               "icono": "👥",
               "color": "#f59e0b",
-              "puntos": [
-                "Con los visigodos disminuyó el comercio y la artesanía, pero **aumentó la agricultura y la ganadería**. Existían grandes diferencias entre los grupos sociales.",
-                "La **nobleza** (minoría) ocupaba los cargos políticos y de la Iglesia. El **campesinado** era la mayoría y trabajaba las tierras. También había esclavos."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b02_objetos_vida_diaria.jpg",
+              "texto": "Objetos de la vida diaria",
+              "locucion": "La mayoría de la población eran campesinos que trabajaban la tierra y cuidaban rebaños. Con los visigodos creció el mundo rural y bajó el comercio. Arriba estaban la nobleza y la Iglesia, que ocupaban los cargos importantes; abajo, los campesinos y también las personas esclavas. En las vitrinas de los museos se conservan jarras de cerámica, hebillas y pendientes como estos, objetos sencillos de la vida diaria.",
+              "puntos": []
             },
             {
-              "nombre": "Las leyes comunes",
+              "nombre": "Leyes comunes para todo el reino",
               "fecha": "Reinado de Recesvinto",
               "icono": "📜",
               "color": "#10b981",
-              "puntos": [
-                "Al principio, visigodos e hispanorromanos no compartían ni religión ni leyes. Había profunda división.",
-                "Durante el reinado de **Recesvinto** se elaboraron **leyes comunes** para todo el reino, lo que aumentó la unidad."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b03_liber_iudiciorum.jpg",
+              "texto": "Un libro de leyes",
+              "ajuste_imagen": "completo",
+              "locucion": "Al principio, visigodos e hispanorromanos tenían leyes distintas. Durante el reinado de Recesvinto se reunieron las leyes en un solo libro, el Liber Iudiciorum, para que todos los habitantes del reino siguieran las mismas normas. En la imagen ves una página de ese libro, copiada siglos después por los monjes de un monasterio.",
+              "puntos": []
             },
             {
-              "nombre": "El final del reino visigodo",
-              "fecha": "Año 711",
-              "icono": "⚔️",
-              "color": "#ef4444",
-              "puntos": [
-                "A principios del siglo VIII, el reino visigodo vivía una **crisis**: los nobles luchaban por el trono.",
-                "En el año **711**, el rey **Don Rodrigo** fue derrotado por los musulmanes en la **batalla de Guadalete**.",
-                "Con esa derrota terminó el **reino de Toledo** y los musulmanes conquistaron casi toda la Península."
-              ]
-            },
-            {
-              "nombre": "El Arte Visigodo",
-              "fecha": "Siglos V-VIII",
+              "nombre": "Iglesias de piedra",
+              "fecha": "Siglos V - VIII",
               "icono": "⛪",
               "color": "#06b6d4",
-              "puntos": [
-                "El arte visigodo experimentó un **declive** frente a los grandes monumentos romanos. Se caracterizó por la construcción de **pequeñas iglesias rurales** con pocas ventanas y **arcos de herradura**.",
-                "Destacó la **orfebrería**: la creación de piezas artísticas con metal, como las famosas coronas votivas."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b04_iglesia_quintanilla.jpg",
+              "texto": "Iglesias pequeñas, en el campo",
+              "locucion": "El arte visigodo no fue tan grandioso como el romano. Construyeron iglesias pequeñas, muchas en el campo, con grandes bloques de piedra y pocas ventanas, así que dentro había poca luz. La iglesia de Santa María de Quintanilla de las Viñas, en Burgos, es uno de los mejores ejemplos que se conservan.",
+              "puntos": []
+            },
+            {
+              "nombre": "El arco de herradura",
+              "fecha": "Arte visigodo",
+              "icono": "🏛️",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b05_arco_herradura.jpg",
+              "texto": "El arco de herradura",
+              "locucion": "Su forma más característica es el arco de herradura: la curva baja más que la línea de las columnas, como una herradura de caballo. Lo usaban en puertas y ventanas. En esta pared de la iglesia de San Juan de Baños, en Palencia, ves una ventana con arco de herradura y una celosía de piedra. Tiene más de mil trescientos años.",
+              "puntos": []
+            },
+            {
+              "nombre": "La orfebrería visigoda",
+              "fecha": "Corona de Recesvinto",
+              "icono": "💎",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b06_corona_votiva.jpg",
+              "texto": "Coronas y joyas de oro",
+              "locucion": "Los visigodos destacaron en la orfebrería: el trabajo de los metales preciosos. Fabricaban coronas, cruces, hebillas y broches con oro, perlas y piedras. En la imagen ves de cerca la corona votiva del rey Recesvinto: de ella cuelgan letras de oro con su nombre. Se conserva en el Museo Arqueológico Nacional, en Madrid, junto con el resto del tesoro de Guarrazar.",
+              "puntos": []
+            },
+            {
+              "nombre": "711: el final del reino",
+              "fecha": "Batalla de Guadalete",
+              "icono": "⚔️",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b07_batalla_guadalete.jpg",
+              "texto": "711: el final del reino",
+              "locucion": "A comienzos del siglo octavo, los nobles visigodos se peleaban por el trono y el reino estaba débil. En el año setecientos once, el rey Don Rodrigo fue derrotado por los musulmanes en la batalla de Guadalete. Poco después conquistaron casi toda la Península y llamaron al-Ándalus a ese territorio. Así terminó el reino de Toledo.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: vida y final del reino",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/b08_resumen_vida_reino.jpg",
+              "texto": "Recuerda",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda. En el año quinientos ochenta y nueve, Recaredo unió al reino en el catolicismo. Con Recesvinto se escribieron unas leyes comunes para todos los habitantes. Y en el setecientos once, la derrota de Don Rodrigo en Guadalete puso fin al reino visigodo.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "🏛️",
-            "titulo": "Iglesia visigoda famosa",
-            "texto": "La iglesia de **San Juan de Baños de Cerrato** (Palencia) es uno de los mejores ejemplos conservados de la arquitectura visigoda, con su característico **arco de herradura**."
-          }
+          ]
         }
       ]
     },
@@ -2071,7 +2215,7 @@
       "id": 2,
       "tipo": "teoria",
       "titulo": "2. Presentación: El origen y la evolución de Al-Ándalus",
-      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
+      "descripcion": "Nueve diapositivas con imágenes y explicación por voz.",
       "icono": "📖",
       "fichas": [
         {
@@ -2183,14 +2327,19 @@
               "texto": "El Patio de los Leones",
               "locucion": "Esta fotografía muestra el Patio de los Leones, dentro de la Alhambra. Fíjate en las columnas, los arcos y la fuente central. La Alhambra no era un único edificio: tenía patios, salas y jardines. Sus construcciones nos recuerdan el papel de Granada como capital del reino nazarí.",
               "puntos": []
+            },
+            {
+              "nombre": "Recuerda: la cronología de al-Ándalus",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a10_cronologia_alandalus.jpg",
+              "texto": "711 → 1492",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "🕰️",
-            "titulo": "La línea del tiempo de al-Ándalus",
-            "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
-            "texto": "**711** Guadalete y emirato dependiente · **756** emirato independiente · **929** califato de Córdoba · **1031** taifas · **siglo XIII** reino nazarí de Granada · **1492** fin de al-Ándalus"
-          }
+          ]
         }
       ]
     },
@@ -2458,7 +2607,7 @@
               "icono": "🤝",
               "color": "#10b981",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/b05_musicos_cantigas.jpg",
-              "texto": "Músicos de las Cantigas de Santa María",
+              "texto": "Músicos de las Cantigas",
               "locucion": "Esta miniatura del siglo trece pertenece a las Cantigas de Santa María, una obra de la corte de Alfonso Décimo. Muestra a dos músicos tocando instrumentos. En muchas ciudades de la Península vivían cristianos, musulmanes y judíos. A veces comerciaban o compartían espacios, aunque también hubo conflictos y las normas no eran iguales para todos.",
               "puntos": []
             },
@@ -2472,13 +2621,7 @@
               "locucion": "A los musulmanes que permanecían en territorios gobernados por reyes cristianos se les llamaba mudéjares. Podían conservar su religión y algunas costumbres, aunque vivían bajo nuevas autoridades y sus derechos podían ser distintos. Esta torre de la iglesia de Santo Tomé, en Toledo, es un ejemplo de arte mudéjar: un estilo que incorporó técnicas y formas artísticas andalusíes.",
               "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "⚔️",
-            "titulo": "La Batalla de Las Navas de Tolosa (1212)",
-            "locucion": "En mil doscientos doce, los ejércitos de varios reinos cristianos vencieron al ejército almohade en Las Navas de Tolosa. Fue una batalla importante, pero el reino nazarí de Granada continuó existiendo hasta mil cuatrocientos noventa y dos.",
-            "texto": "La victoria cristiana fue importante, aunque Granada siguió siendo un reino independiente durante casi tres siglos más."
-          }
+          ]
         }
       ]
     },
@@ -2677,7 +2820,7 @@
       "id": 2,
       "tipo": "teoria",
       "titulo": "2. Presentación: El origen y la evolución de Al-Ándalus",
-      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
+      "descripcion": "Nueve diapositivas con imágenes y explicación por voz.",
       "icono": "📖",
       "fichas": [
         {
@@ -2789,14 +2932,19 @@
               "texto": "El Patio de los Leones",
               "locucion": "Esta fotografía muestra el Patio de los Leones, dentro de la Alhambra. Fíjate en las columnas, los arcos y la fuente central. La Alhambra no era un único edificio: tenía patios, salas y jardines. Sus construcciones nos recuerdan el papel de Granada como capital del reino nazarí.",
               "puntos": []
+            },
+            {
+              "nombre": "Recuerda: la cronología de al-Ándalus",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a10_cronologia_alandalus.jpg",
+              "texto": "711 → 1492",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "🕰️",
-            "titulo": "La línea del tiempo de al-Ándalus",
-            "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
-            "texto": "**711** Guadalete y emirato dependiente · **756** emirato independiente · **929** califato de Córdoba · **1031** taifas · **siglo XIII** reino nazarí de Granada · **1492** fin de al-Ándalus"
-          }
+          ]
         }
       ]
     },
@@ -3064,7 +3212,7 @@
               "icono": "🤝",
               "color": "#10b981",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/b05_musicos_cantigas.jpg",
-              "texto": "Músicos de las Cantigas de Santa María",
+              "texto": "Músicos de las Cantigas",
               "locucion": "Esta miniatura del siglo trece pertenece a las Cantigas de Santa María, una obra de la corte de Alfonso Décimo. Muestra a dos músicos tocando instrumentos. En muchas ciudades de la Península vivían cristianos, musulmanes y judíos. A veces comerciaban o compartían espacios, aunque también hubo conflictos y las normas no eran iguales para todos.",
               "puntos": []
             },
@@ -3078,13 +3226,7 @@
               "locucion": "A los musulmanes que permanecían en territorios gobernados por reyes cristianos se les llamaba mudéjares. Podían conservar su religión y algunas costumbres, aunque vivían bajo nuevas autoridades y sus derechos podían ser distintos. Esta torre de la iglesia de Santo Tomé, en Toledo, es un ejemplo de arte mudéjar: un estilo que incorporó técnicas y formas artísticas andalusíes.",
               "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "⚔️",
-            "titulo": "La Batalla de Las Navas de Tolosa (1212)",
-            "locucion": "En mil doscientos doce, los ejércitos de varios reinos cristianos vencieron al ejército almohade en Las Navas de Tolosa. Fue una batalla importante, pero el reino nazarí de Granada continuó existiendo hasta mil cuatrocientos noventa y dos.",
-            "texto": "La victoria cristiana fue importante, aunque Granada siguió siendo un reino independiente durante casi tres siglos más."
-          }
+          ]
         }
       ]
     },
