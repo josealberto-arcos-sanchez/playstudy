@@ -1,0 +1,211 @@
+{
+  "nota": "Imágenes descargadas de Wikimedia Commons y guardadas localmente para uso sin conexión. Respeta la licencia indicada y consulta cada página para más detalles. Las portadas, líneas del tiempo y resúmenes son composiciones propias de PlayStudy.",
+  "creditos": [
+    {
+      "archivo": "a01_portada_prehistoria.jpg",
+      "titulo": "Reproduction cave of Altamira 01.jpg",
+      "autor": "MatthiasKabel",
+      "licencia": "CC BY 2.5",
+      "url_licencia": "https://creativecommons.org/licenses/by/2.5",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Reproduction_cave_of_Altamira_01.jpg"
+    },
+    {
+      "archivo": "a02_linea_tiempo.jpg",
+      "titulo": "Línea del tiempo de la Prehistoria",
+      "autor": "Composición PlayStudy",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": null
+    },
+    {
+      "archivo": "a03_paleolitico.jpg",
+      "titulo": "Paleolithic period.png",
+      "autor": "Charles Robert Knight",
+      "licencia": "Public domain",
+      "url_licencia": null,
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Paleolithic_period.png"
+    },
+    {
+      "archivo": "a04_altamira.jpg",
+      "titulo": "Altamira, bison, museum.JPG",
+      "autor": "HTO",
+      "licencia": "Public domain",
+      "url_licencia": null,
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Altamira,_bison,_museum.JPG"
+    },
+    {
+      "archivo": "a05_neolitico.jpg",
+      "titulo": "Neolithic house.JPG",
+      "autor": "Prof saxx",
+      "licencia": "CC BY-SA 3.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Neolithic_house.JPG"
+    },
+    {
+      "archivo": "a06_poblado.jpg",
+      "titulo": "Vaso neolítico con asa-pitorro y decoración impresa cardial. Museu de Prehistòria de València.jpg",
+      "autor": "Dorieo",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Vaso_neol%C3%ADtico_con_asa-pitorro_y_decoraci%C3%B3n_impresa_cardial._Museu_de_Prehist%C3%B2ria_de_Val%C3%A8ncia.jpg"
+    },
+    {
+      "archivo": "a07_metales.jpg",
+      "titulo": "Composición: la Edad de los Metales",
+      "autor": "Composición PlayStudy a partir de tres fotografías",
+      "licencia": "CC BY-SA 4.0 (composición; las fotografías mantienen sus licencias)",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "Ver las tres fuentes indicadas en el campo fuentes",
+      "fuentes": [
+        {
+          "titulo": "Vitoria - Bibat (objetos de la Edad del Cobre).jpg",
+          "autor": "Zarateman",
+          "licencia": "CC0",
+          "url_licencia": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "pagina_origen": "https://commons.wikimedia.org/wiki/File:Vitoria_-_Bibat_(objetos_de_la_Edad_del_Cobre).jpg"
+        },
+        {
+          "titulo": "Espadas da Idade de Bronce.jpg",
+          "autor": "Froaringus",
+          "licencia": "CC BY-SA 4.0",
+          "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+          "pagina_origen": "https://commons.wikimedia.org/wiki/File:Espadas_da_Idade_de_Bronce.jpg"
+        },
+        {
+          "titulo": "Espadas de hierro de Cueva Massana. Cultura postalayótica - M.A.N.jpg",
+          "autor": "Dorieo",
+          "licencia": "CC BY-SA 4.0",
+          "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+          "pagina_origen": "https://commons.wikimedia.org/wiki/File:Espadas_de_hierro_de_Cueva_Massana._Cultura_postalay%C3%B3tica_-_M.A.N.jpg"
+        }
+      ]
+    },
+    {
+      "archivo": "a08_atapuerca.jpg",
+      "titulo": "Atapuerca, vista de la trinchera.jpg",
+      "autor": "Malopez 21",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Atapuerca,_vista_de_la_trinchera.jpg"
+    },
+    {
+      "archivo": "a09_resumen_prehistoria.jpg",
+      "titulo": "Resumen: las tres etapas de la Prehistoria",
+      "autor": "Composición PlayStudy",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": null
+    },
+    {
+      "archivo": "b01_portada_historia.jpg",
+      "titulo": "Tablets with cuneiform texts in the British Museum.jpg",
+      "autor": "Unknown artist",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Tablets_with_cuneiform_texts_in_the_British_Museum.jpg"
+    },
+    {
+      "archivo": "b02_escritura.jpg",
+      "titulo": "Cuneiform tablet BM62788.jpg",
+      "autor": "Desconocido (British Museum)",
+      "licencia": "CC BY-SA 3.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Cuneiform_tablet_BM62788.jpg"
+    },
+    {
+      "archivo": "b03_edad_antigua.jpg",
+      "titulo": "Composición: Egipto, Grecia y Roma",
+      "autor": "Composición PlayStudy a partir de tres fotografías",
+      "licencia": "CC BY-SA 4.0 (composición; las fotografías mantienen sus licencias)",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": "Ver las tres fuentes indicadas en el campo fuentes",
+      "fuentes": [
+        {
+          "titulo": "Great Sphinx of Giza and Pyramid of Cheops.jpg",
+          "autor": "kallerna",
+          "licencia": "CC BY-SA 4.0",
+          "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+          "pagina_origen": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_of_Giza_and_Pyramid_of_Cheops.jpg"
+        },
+        {
+          "titulo": "Parthenon from west.jpg",
+          "autor": "User:Mountain",
+          "licencia": "Public domain",
+          "url_licencia": null,
+          "pagina_origen": "https://commons.wikimedia.org/wiki/File:Parthenon_from_west.jpg"
+        },
+        {
+          "titulo": "Colosseum in Rome, Italy - April 2007.jpg",
+          "autor": "Diliff",
+          "licencia": "CC BY-SA 2.5",
+          "url_licencia": "https://creativecommons.org/licenses/by-sa/2.5",
+          "pagina_origen": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg"
+        }
+      ]
+    },
+    {
+      "archivo": "b04_hispania.jpg",
+      "titulo": "Acueducto de Segovia 01.jpg",
+      "autor": "David Corral Gadea",
+      "licencia": "CC BY-SA 3.0 es",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0/es/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Acueducto_de_Segovia_01.jpg"
+    },
+    {
+      "archivo": "b05_edad_media.jpg",
+      "titulo": "Castillo de Loarre, Loarre, Huesca, España, 2015-01-06, DD 05.JPG",
+      "autor": "Diego Delso",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Castillo_de_Loarre,_Loarre,_Huesca,_Espa%C3%B1a,_2015-01-06,_DD_05.JPG"
+    },
+    {
+      "archivo": "b06_visigodos.jpg",
+      "titulo": "Corona votiva Recesvinto.jpg",
+      "autor": "Magnificus",
+      "licencia": "CC BY-SA 3.0 es",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/3.0/es/",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Corona_votiva_Recesvinto.jpg"
+    },
+    {
+      "archivo": "b07_al_andalus.jpg",
+      "titulo": "Mezquita cordoba arcos flotantes.jpg",
+      "autor": "Alvaro.vinuela.carnicero",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Mezquita_cordoba_arcos_flotantes.jpg"
+    },
+    {
+      "archivo": "b08_edad_moderna.jpg",
+      "titulo": "Santa Maria replica ship.jpg",
+      "autor": "Xrzt",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0",
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:Santa_Maria_replica_ship.jpg"
+    },
+    {
+      "archivo": "b09_contemporanea.jpg",
+      "titulo": "El tres de mayo de 1808 en Madrid.jpg",
+      "autor": "Francisco Goya",
+      "licencia": "Public domain",
+      "url_licencia": null,
+      "pagina_origen": "https://commons.wikimedia.org/wiki/File:El_tres_de_mayo_de_1808_en_Madrid.jpg"
+    },
+    {
+      "archivo": "b10_resumen_edades.jpg",
+      "titulo": "Resumen: las cuatro edades de la Historia",
+      "autor": "Composición PlayStudy",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": null
+    },
+    {
+      "archivo": "puzzle.jpg",
+      "titulo": "Puzzle: las edades de la Historia",
+      "autor": "Composición PlayStudy",
+      "licencia": "CC BY-SA 4.0",
+      "url_licencia": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "pagina_origen": null
+    }
+  ]
+}

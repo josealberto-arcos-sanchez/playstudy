@@ -1,0 +1,316 @@
+/* ==========================================================================
+   ESTILOS DEL MINIJUEGO DE LÍNEA DEL TIEMPO
+   ========================================================================== */
+
+.timeline-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(59, 130, 246, 0.28), transparent 42%),
+    radial-gradient(circle at 90% 90%, rgba(236, 72, 153, 0.2), transparent 45%),
+    linear-gradient(160deg, #0f172a 0%, #1e293b 55%, #1e1b4b 100%);
+  color: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HUD compacta: los títulos largos nunca deben tapar los marcadores */
+.timeline-wrapper .game-hud {
+  height: auto;
+  min-height: 64px;
+  padding: 6px 10px;
+  gap: 8px;
+}
+
+.timeline-wrapper .hud-center {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.timeline-wrapper .game-title {
+  width: 100%;
+  font-size: clamp(0.82rem, 2.1vw, 1.05rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.timeline-wrapper .hud-stats {
+  gap: 8px;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.timeline-wrapper .stat-pill {
+  font-size: 0.74rem;
+}
+
+.timeline-wrapper .btn-hud {
+  padding: 6px 9px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.timeline-wrapper .hud-actions {
+  gap: 6px;
+}
+
+.btn-dates {
+  background: #0f766e;
+  color: #ecfeff;
+  border: 1px solid #2dd4bf;
+}
+
+.btn-dates:hover {
+  background: #115e59;
+}
+
+.timeline-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 24px 18px;
+}
+
+.timeline-instructions {
+  flex-shrink: 0;
+  background: rgba(15, 23, 42, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.timeline-instructions strong {
+  color: #fde68a;
+}
+
+/* Carril horizontal con las tarjetas */
+.timeline-track {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 16px 6px 24px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #f59e0b rgba(15, 23, 42, 0.5);
+}
+
+.timeline-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timeline-track::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: var(--radius-full);
+}
+
+.timeline-track::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: var(--radius-full);
+}
+
+.timeline-slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+/* Tarjeta de acontecimiento */
+.timeline-card {
+  --event-color: #3b82f6;
+  width: clamp(100px, 13.5vw, 168px);
+  min-height: clamp(146px, 28vh, 205px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 15px 8px 10px;
+  border: 3px solid var(--event-color);
+  border-top-width: 8px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
+  color: #f8fafc;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  position: relative;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+}
+
+.timeline-card:focus-visible {
+  outline: 3px solid #fde68a;
+  outline-offset: 3px;
+}
+
+.timeline-card.selected {
+  border-color: #facc15;
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 0 0 5px rgba(250, 204, 21, 0.32), 0 18px 32px rgba(0, 0, 0, 0.5);
+  animation: timeline-selected-pulse 1.1s infinite ease-in-out;
+}
+
+.timeline-card.timeline-wrong {
+  border-color: #ef4444;
+  animation: timeline-shake 0.45s ease-in-out;
+}
+
+.timeline-card-position {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--event-color);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 900;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+.timeline-card-icon {
+  font-size: clamp(1.7rem, 4vh, 2.7rem);
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.timeline-card-label {
+  font-size: clamp(0.72rem, 1.9vw, 0.88rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #f8fafc;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.timeline-card-date {
+  margin-top: auto;
+  padding: 3px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(148, 163, 184, 0.16);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  color: #fde68a;
+  font-size: clamp(0.66rem, 1.7vw, 0.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.timeline-card-date.timeline-date-hidden {
+  color: #94a3b8;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.timeline-arrow {
+  flex: 0 0 auto;
+  color: #fbbf24;
+  font-size: 1.45rem;
+  font-weight: 900;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+.timeline-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(15, 23, 42, 0.66);
+  border: 1px solid rgba(148, 163, 184, 0.26);
+}
+
+.timeline-status {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.timeline-actions .btn-primary {
+  flex-shrink: 0;
+}
+
+.timeline-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  font-size: 1rem;
+  padding: 24px;
+  text-align: center;
+}
+
+@keyframes timeline-selected-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.28), 0 18px 32px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(250, 204, 21, 0.18), 0 18px 32px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes timeline-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+@media (max-height: 620px) {
+  .timeline-stage {
+    padding: 8px 16px 10px;
+    gap: 8px;
+  }
+
+  .timeline-instructions {
+    padding: 5px 14px;
+    font-size: 0.82rem;
+  }
+
+  .timeline-track {
+    padding: 12px 4px 16px;
+  }
+
+  .timeline-card {
+    min-height: 132px;
+    padding: 12px 8px 9px;
+  }
+
+  .timeline-card-icon {
+    font-size: 1.8rem;
+  }
+
+  .timeline-card-label {
+    font-size: 0.78rem;
+  }
+
+  .timeline-actions {
+    padding: 6px 12px;
+  }
+}

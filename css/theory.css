@@ -57,6 +57,7 @@
   padding: 18px 24px;
   max-width: 1020px;
   width: 100%;
+  margin: auto;
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
@@ -443,6 +444,31 @@
 .presentation-visual-frame {
   min-height: 260px;
   aspect-ratio: 4 / 3;
+}
+
+/* --------------------------------------------------------------------------
+   Imágenes con texto o esquemas (infografías, líneas del tiempo, resúmenes):
+   se muestran completas y a mayor tamaño, con el rótulo debajo.
+   Se activan desde el contenido con "ajuste_imagen": "completo".
+   -------------------------------------------------------------------------- */
+.presentation-body.has-image.is-full-image {
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 4px;
+}
+
+.presentation-body.is-full-image .presentation-visual-frame {
+  width: min(100%, calc(46vh * 16 / 9));
+  max-height: none;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+}
+
+.presentation-body.is-full-image .presentation-main-image {
+  max-height: none;
+  object-fit: contain;
 }
 
 .presentation-image-caption {

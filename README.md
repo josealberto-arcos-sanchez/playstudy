@@ -23,7 +23,43 @@ data/cursos/{curso}/{asignatura}/{tema}/{capitulo}/
     └── creditos_imagenes.json
 ```
 
-El capítulo habitual contiene seis casillas: parejas, teoría, quiz, puzzle, teoría y quiz final. La cantidad de diapositivas y preguntas puede variar según el material.
+El capítulo habitual contiene seis casillas: dos juegos, teoría, quiz, teoría y quiz final. La cantidad de diapositivas y preguntas puede variar según el material.
+
+## Juegos elegidos por tema
+
+Cada tema decide qué **dos** minijuegos aparecen en todos sus capítulos. La elección se guarda en el tema de `data/catalogo.json`:
+
+```json
+{
+  "id": "tema_06_castillos",
+  "titulo": "Tema 6: Caminando entre castillos",
+  "juegos": ["parejas", "linea_tiempo"]
+}
+```
+
+- La lista debe tener **exactamente dos subtipos**. El orden no importa: después los juegos se barajan entre las dos paradas de juego.
+- Cada capítulo conserva en su `contenido.json` un catálogo `juegos` con el material de todos sus minijuegos, indexado por subtipo. Así se puede cambiar la pareja de juegos del tema sin reescribir los capítulos.
+- Las dos casillas `"tipo": "minijuego"` del capítulo son solo **paradas**: el cargador coloca en ellas los juegos que el tema tenga configurados. Si un capítulo no define alguno de los juegos pedidos, se avisa por consola y se usan los juegos disponibles.
+- El material de un juego que ya no se muestra (por ejemplo, el puzzle) puede seguir guardado en el catálogo `juegos` para recuperarlo más adelante.
+
+### Línea del tiempo (`linea_tiempo`)
+
+Ordena acontecimientos del más antiguo al más reciente. Se juega tocando dos tarjetas para intercambiarlas y pulsando **Comprobar orden**. Las fechas se pueden ocultar para aumentar el reto.
+
+```json
+{
+  "subtipo": "linea_tiempo",
+  "titulo": "Línea del Tiempo de las Edades",
+  "descripcion": "Ordena las etapas de la Historia.",
+  "icono": "🕰️",
+  "eventos": [
+    { "id": "paleolitico", "etiqueta": "Paleolítico", "fecha": "Hace 2,5 millones de años", "icono": "🔥", "color": "#ef4444" },
+    { "id": "neolitico", "etiqueta": "Neolítico", "fecha": "Hacia 8000 a.C.", "icono": "🌾", "color": "#10b981" }
+  ]
+}
+```
+
+El **orden del array `eventos` es el orden correcto**: escríbelos del más antiguo al más reciente. Cada evento necesita `id`, `etiqueta`, `fecha` e `icono`; `color` es opcional. Puedes añadir `"mostrar_fechas": false` para que el juego empiece con las fechas ocultas.
 
 ## Formato de teoría: presentación con imágenes y voz
 
@@ -87,8 +123,8 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
 ## Añadir un capítulo
 
 1. **Elige un ID único** para el capítulo, siguiendo el orden del tema (por ejemplo, `cap_05_nombre_corto`).
-2. **Crea la carpeta y los recursos** bajo `data/cursos/{curso}/{asignatura}/{tema}/{capitulo}/`. Añade `contenido.json`, `assets/puzzle.jpg`, las imágenes locales de las diapositivas y `assets/creditos_imagenes.json`.
-3. **Crea las casillas** en `contenido.json`. Sigue el circuito habitual de seis casillas y usa el formato de presentación ilustrada y narrada descrito arriba para la teoría. Los juegos (`"tipo": "minijuego"`) se barajan al entrar en el circuito entre las paradas de juego; la teoría y los quizzes conservan su orden. Para añadir juegos nuevos, usa un `subtipo` propio: el barajado funciona con cualquier número de juegos.
+2. **Crea la carpeta y los recursos** bajo `data/cursos/{curso}/{asignatura}/{tema}/{capitulo}/`. Añade `contenido.json`, las imágenes locales de las diapositivas, `assets/creditos_imagenes.json` y los recursos que necesiten sus juegos (por ejemplo, `assets/puzzle.jpg` si el capítulo conserva el puzzle).
+3. **Crea el catálogo de juegos y las casillas** en `contenido.json`. Añade un objeto `juegos` con el material de cada minijuego (clave = subtipo) y deja dos casillas `"tipo": "minijuego"` como paradas. El tema decide cuáles de esos juegos se montan en las paradas; después se barajan entre ellas. La teoría y los quizzes conservan su orden. Para añadir un juego nuevo, crea su material en `juegos` y añade su subtipo a la lista `juegos` del tema.
 4. **Registra el capítulo** en el array `capitulos` del tema correspondiente en `data/catalogo.json`. Ejemplo:
 
    ```json
@@ -112,14 +148,16 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
    ```
 
    El script genera [`data/catalogo_data.js`](data/catalogo_data.js), que permite cargar los capítulos desde `file://`. No edites ese archivo a mano.
-7. **Comprueba el capítulo:** que el JSON sea válido, estén las seis casillas, cada ruta de imagen exista, las locuciones correspondan con las imágenes y los créditos incluyan todos los recursos.
+7. **Comprueba el capítulo:** que el JSON sea válido, estén las seis casillas, el tema tenga exactamente dos juegos y el capítulo defina su material, cada ruta de imagen exista, las locuciones correspondan con las imágenes y los créditos incluyan todos los recursos.
 
 ## Archivos principales
 
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
-- `data/cursos/.../contenido.json`: parejas, presentaciones, quizzes y puzzle de cada capítulo.
+- `data/cursos/.../contenido.json`: catálogo de juegos (parejas, línea del tiempo, puzzle…), presentaciones y quizzes de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
-- `src/gameOrder.js`: barajado genérico de los juegos del circuito al entrar (la teoría y los quizzes no se mueven).
+- `src/gameOrder.js`: monta los dos juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
+- `src/games/timelineGame.js`: minijuego de línea del tiempo.
+- `css/timeline.css`: estilos de la línea del tiempo.
 - `src/views/theoryView.js`: lógica modular de la presentación teórica.
 - `src/speech.js` y `src/views/settingsView.js`: selección, prueba y preferencia persistente de voces.
 - `src/aiTutor.js`: tutor con IA opcional; guarda la clave de API en `localStorage` y llama al proveedor elegido.

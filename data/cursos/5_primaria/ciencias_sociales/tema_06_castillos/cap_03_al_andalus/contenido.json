@@ -9,12 +9,10 @@
   "color_primario": "#10b981",
   "color_secundario": "#059669",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas Medievales",
+      "titulo": "Parejas Medievales",
       "descripcion": "Encuentra las 7 parejas entre los protagonistas, lugares y conceptos clave.",
       "icono": "🃏",
       "parejas": [
@@ -26,6 +24,37 @@
         { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f97316" },
         { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XIII)", "color": "#ec4899" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo de la Reconquista",
+      "descripcion": "Ordena los grandes acontecimientos de al-Ándalus y los reinos cristianos.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "guadalete", "etiqueta": "Llegada de los musulmanes", "fecha": "711", "icono": "🕌", "color": "#10b981" },
+        { "id": "covadonga", "etiqueta": "Batalla de Covadonga", "fecha": "722", "icono": "🛡️", "color": "#3b82f6" },
+        { "id": "emirato", "etiqueta": "Emirato independiente de Córdoba", "fecha": "756", "icono": "🏛️", "color": "#06b6d4" },
+        { "id": "califato", "etiqueta": "Califato de Córdoba", "fecha": "929", "icono": "👑", "color": "#8b5cf6" },
+        { "id": "taifas", "etiqueta": "Reinos de Taifas", "fecha": "1031", "icono": "🏰", "color": "#f97316" },
+        { "id": "navas", "etiqueta": "Batalla de Las Navas de Tolosa", "fecha": "1212", "icono": "⚔️", "color": "#ef4444" },
+        { "id": "granada", "etiqueta": "Fin de al-Ándalus", "fecha": "1492", "icono": "🌺", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡Al-Ándalus Medieval!",
+      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -331,11 +360,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡Al-Ándalus Medieval!",
-      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,

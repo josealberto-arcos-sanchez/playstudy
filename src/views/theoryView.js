@@ -55,6 +55,7 @@ export class TheoryView {
             puntos: t.puntos || [],
             locucion: t.locucion || '',
             imagen: t.imagen || null,
+            ajusteImagen: t.ajuste_imagen || 'recorte',
             texto: t.texto || ''
           });
         });
@@ -297,7 +298,7 @@ export class TheoryView {
           ${this.getNarratorBarHtml()}
         </header>
 
-        <div class="presentation-body ${slide.imagen ? 'has-image' : ''}">
+        <div class="presentation-body ${slide.imagen ? 'has-image' : ''} ${slide.imagen && slide.ajusteImagen === 'completo' ? 'is-full-image' : ''}">
           ${slide.imagen ? `
             <div class="presentation-visual-frame">
               <img class="presentation-main-image" src="${slide.imagen}" alt="${slide.nombre}" />

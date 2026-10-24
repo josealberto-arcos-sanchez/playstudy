@@ -25,6 +25,7 @@ export const defaultCatalogo = {
               "subtitulo": "La Prehistoria y las Edades de la Historia",
               "icono": "🏰",
               "color": "#8b5cf6",
+              "juegos": ["parejas", "linea_tiempo"],
               "capitulos": [
                 {
                   "id": "cap_01_edades",
