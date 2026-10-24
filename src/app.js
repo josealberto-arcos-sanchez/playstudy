@@ -43,12 +43,22 @@ class App {
 
   showMenu() {
     this.cleanupCurrentView();
+    if (!this.catalogo) {
+      this.root.innerHTML = `
+        <div class="error-panel">
+          <h2>No se han podido cargar los datos</h2>
+          <p>Ejecuta <code>scripts/actualizar_datos.ps1</code> para sincronizar <code>data/catalogo_data.js</code> y vuelve a abrir el juego.</p>
+        </div>
+      `;
+      return;
+    }
     const menuView = new MenuView(
       this.catalogo,
       async (capituloObj, temaObj) => {
         // Cargar capítulo seleccionado y mostrar su circuito.
         // El tema aporta la lista de juegos que debe mostrar el capítulo.
         const capituloData = await DataLoader.loadCapitulo(capituloObj, temaObj);
+        if (!capituloData) return;
         this.currentCapitulo = capituloData;
         this.showMap();
       }

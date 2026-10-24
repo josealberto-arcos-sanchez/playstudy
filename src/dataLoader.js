@@ -1,7 +1,10 @@
 /**
  * Cargador de Catálogo y Capítulos Educativos
+ *
+ * El contenido vive siempre en `data/` (contenido.json y catalogo.json).
+ * `data/catalogo_data.js` es la copia generada por scripts/actualizar_datos.ps1
+ * para que el juego funcione también desde file://.
  */
-import { defaultCatalogo, defaultHistoriaData } from './defaultData.js';
 import { montarJuegosDelTema, prepararCapituloParaCircuito } from './gameOrder.js';
 
 export class DataLoader {
@@ -21,18 +24,22 @@ export class DataLoader {
       return window.CATALOGO_DATA;
     }
 
-    return defaultCatalogo;
+    console.error(
+      '[Datos] No se ha encontrado el catálogo. Ejecuta scripts/actualizar_datos.ps1 o abre el juego desde un servidor web.'
+    );
+    return null;
   }
 
   static async loadCapitulo(capituloObj, temaObj = null) {
     const capitulo = await DataLoader.cargarCapituloSinBarajar(capituloObj);
+    if (!capitulo) return null;
     // El tema decide qué dos juegos se muestran; después se barajan las paradas.
     const conJuegos = montarJuegosDelTema(capitulo, temaObj);
     return prepararCapituloParaCircuito(conJuegos);
   }
 
   static async cargarCapituloSinBarajar(capituloObj) {
-    if (!capituloObj) return defaultHistoriaData;
+    if (!capituloObj) return null;
 
     // 1. Probar carga vía fetch (servidores HTTP)
     if (capituloObj.archivo) {
@@ -56,6 +63,9 @@ export class DataLoader {
       }
     }
 
-    return defaultHistoriaData;
+    console.error(
+      `[Datos] No se ha encontrado el contenido de «${capituloObj.id || capituloObj.archivo}». Sincroniza los datos con scripts/actualizar_datos.ps1.`
+    );
+    return null;
   }
 }

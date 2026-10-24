@@ -60,7 +60,7 @@
       "id": 2,
       "tipo": "teoria",
       "titulo": "2. Presentación: El origen y la evolución de Al-Ándalus",
-      "descripcion": "Ocho diapositivas con imágenes y explicación por voz.",
+      "descripcion": "Nueve diapositivas con imágenes y explicación por voz.",
       "icono": "📖",
       "fichas": [
         {
@@ -172,14 +172,19 @@
               "texto": "El Patio de los Leones",
               "locucion": "Esta fotografía muestra el Patio de los Leones, dentro de la Alhambra. Fíjate en las columnas, los arcos y la fuente central. La Alhambra no era un único edificio: tenía patios, salas y jardines. Sus construcciones nos recuerdan el papel de Granada como capital del reino nazarí.",
               "puntos": []
+            },
+            {
+              "nombre": "Recuerda: la cronología de al-Ándalus",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/a10_cronologia_alandalus.jpg",
+              "texto": "711 → 1492",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "🕰️",
-            "titulo": "La línea del tiempo de al-Ándalus",
-            "locucion": "Recuerda estas fechas. En el año setecientos once, los musulmanes vencieron a Don Rodrigo en Guadalete y llamaron al-Ándalus a su territorio. Al principio, al-Ándalus fue un emirato dependiente del califato omeya. En setecientos cincuenta y seis, Abd al-Rahman Primero creó el emirato independiente. En novecientos veintinueve, Abd al-Rahman Tercero proclamó el califato de Córdoba. En mil treinta y uno, el califato se dividió en taifas. Desde el siglo trece, solo quedó el reino nazarí de Granada, que terminó en mil cuatrocientos noventa y dos.",
-            "texto": "**711** Guadalete y emirato dependiente · **756** emirato independiente · **929** califato de Córdoba · **1031** taifas · **siglo XIII** reino nazarí de Granada · **1492** fin de al-Ándalus"
-          }
+          ]
         }
       ]
     },
@@ -447,7 +452,7 @@
               "icono": "🤝",
               "color": "#10b981",
               "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/b05_musicos_cantigas.jpg",
-              "texto": "Músicos de las Cantigas de Santa María",
+              "texto": "Músicos de las Cantigas",
               "locucion": "Esta miniatura del siglo trece pertenece a las Cantigas de Santa María, una obra de la corte de Alfonso Décimo. Muestra a dos músicos tocando instrumentos. En muchas ciudades de la Península vivían cristianos, musulmanes y judíos. A veces comerciaban o compartían espacios, aunque también hubo conflictos y las normas no eran iguales para todos.",
               "puntos": []
             },
@@ -461,13 +466,7 @@
               "locucion": "A los musulmanes que permanecían en territorios gobernados por reyes cristianos se les llamaba mudéjares. Podían conservar su religión y algunas costumbres, aunque vivían bajo nuevas autoridades y sus derechos podían ser distintos. Esta torre de la iglesia de Santo Tomé, en Toledo, es un ejemplo de arte mudéjar: un estilo que incorporó técnicas y formas artísticas andalusíes.",
               "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "⚔️",
-            "titulo": "La Batalla de Las Navas de Tolosa (1212)",
-            "locucion": "En mil doscientos doce, los ejércitos de varios reinos cristianos vencieron al ejército almohade en Las Navas de Tolosa. Fue una batalla importante, pero el reino nazarí de Granada continuó existiendo hasta mil cuatrocientos noventa y dos.",
-            "texto": "La victoria cristiana fue importante, aunque Granada siguió siendo un reino independiente durante casi tres siglos más."
-          }
+          ]
         }
       ]
     },

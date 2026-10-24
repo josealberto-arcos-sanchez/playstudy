@@ -7,24 +7,23 @@
 
 - Las casillas 2 y 5 ya son presentaciones narradas: **9 + 10 diapositivas**.
 - Se creó `cap_01_edades/assets/` con **19 imágenes** locales, `puzzle.jpg` y `creditos_imagenes.json`.
-- Se sustituyeron los dos `destacado` por diapositivas finales de resumen con imagen y voz.
+- Cada presentación cierra con una diapositiva de resumen con infografía propia y locución.
 - Se corrigió la ruta del puzzle a `assets/puzzle.jpg`.
 - Se ejecutó `scripts/actualizar_datos.ps1` y se probó el circuito completo en local.
-- Los minijuegos y los quizzes (10 y 13 preguntas) no se modificaron.
+- Los quizzes (10 y 13 preguntas) y el contenido de las parejas no se modificaron.
+- El catálogo de juegos se normalizó al formato de los demás capítulos y se añadió la línea del tiempo que pide el tema (7 acontecimientos); el puzzle queda guardado en el catálogo.
 
 ---
 
-## 1. Diagnóstico
+## 1. Formato aplicado
 
-Antes de la implementación, el capítulo 1 seguía el formato antiguo de **fichas con tarjetas densas**:
+Las dos casillas de teoría del capítulo son **presentaciones narradas** con el mismo esquema que los capítulos 3 y 4:
 
-- La casilla 2 («Ficha: La Prehistoria») tenía 3 tarjetas + 1 destacado.
-- La casilla 5 («Ficha: La Historia») tenía 4 tarjetas + 1 destacado.
-- Ninguna tarjeta usaba `imagen`, `texto` ni `locucion`.
-- No existía la carpeta `cap_01_edades/assets/`. El único recurso era `puzzle.jpg`, situado en la raíz del capítulo, y la ruta del JSON apuntaba a `assets/puzzle.jpg` (ruta inexistente; el puzzle no se muestra porque el tema usa `parejas` y `linea_tiempo`).
-- El resultado eran 9 diapositivas solo de texto, con párrafos largos en pantalla. No se aprovechaba la vista de presentación con imagen ni la narración por voz.
+- Cada tarjeta de `fichas` es una diapositiva con `imagen` local y `locucion`.
+- El cierre de cada presentación es una diapositiva de resumen con infografía propia.
+- La estructura de 6 casillas y los quizzes no cambian.
 
-**Objetivo de la propuesta:** convertir las dos fichas en **dos presentaciones narradas** con el mismo esquema que los capítulos 3 y 4, sin tocar la estructura de 6 casillas ni los quizzes.
+El capítulo tiene ahora `cap_01_edades/assets/` con todas las imágenes del capítulo, `puzzle.jpg` y `creditos_imagenes.json`.
 
 ---
 
@@ -35,10 +34,10 @@ Se mantienen las 6 casillas y los minijuegos actuales. Solo cambian las dos casi
 | # | Tipo | Título actual | Título propuesto | Cambio |
 |---|---|---|---|---|
 | 1 | Minijuego · Parejas | 1. Juego | 1. Parejas del Tiempo | Sin cambios de contenido |
-| 2 | **Teoría** | 2. Ficha: La Prehistoria | **2. Presentación: La Prehistoria** | 9 diapositivas narradas |
+| 2 | **Teoría** | 2. Presentación: La Prehistoria | **2. Presentación: La Prehistoria** | 9 diapositivas narradas |
 | 3 | Quiz | 3. Quiz: Prehistoria | 3. Quiz: Prehistoria | Sin cambios (10 preguntas) |
 | 4 | Minijuego · Línea del tiempo | 4. Juego | 4. Línea del Tiempo de las Edades | Sin cambios de contenido |
-| 5 | **Teoría** | 5. Ficha: La Historia | **5. Presentación: Las Edades de la Historia** | 10 diapositivas narradas |
+| 5 | **Teoría** | 5. Presentación: Las Edades de la Historia | **5. Presentación: Las Edades de la Historia** | 10 diapositivas narradas |
 | 6 | Quiz | 6. Quiz: La Historia | 6. Quiz: La Historia | Sin cambios (13 preguntas) |
 
 **Formato de cada diapositiva:** una idea · una imagen · rótulo de 6 palabras como máximo · locución de 45–80 palabras.
@@ -66,7 +65,7 @@ Se mantienen las 6 casillas y los minijuegos actuales. Solo cambian las dos casi
 | A8 | Un tesoro en España | Vista de la trinchera del yacimiento de la **Sierra de Atapuerca** (Burgos) | **Atapuerca (Burgos)** | En Atapuerca se han encontrado fósiles humanos muy antiguos. Gracias a ellos sabemos cómo eran y cómo vivían los primeros habitantes de Europa. |
 | A9 | Resumen | Infografía de tres pasos: Paleolítico → Neolítico → Metales | **Recuerda** | Recuerda: primero fueron nómadas cazadores, después agricultores y ganaderos sedentarios, y al final aprendieron a trabajar los metales. |
 
-**Cierre:** se elimina el `destacado` actual y se sustituye por la diapositiva A9, para que el resumen también tenga imagen y voz. Si se prefiere conservar el `destacado`, habría que añadirle soporte de imagen en `theoryView.js` y `game_bundle.js`; no es necesario para esta propuesta.
+**Cierre:** la presentación termina con la diapositiva A9, un resumen con infografía y voz.
 
 ---
 
@@ -122,16 +121,16 @@ Solo se reescriben las casillas 2 y 5. Ejemplo del nuevo esquema:
 
 **No se tocan:**
 
-- `juegos.parejas` (7 parejas).
-- `juegos.linea_tiempo` (7 eventos).
 - Las preguntas de los quizzes 3 y 6.
 - La estructura de 6 casillas y las 18 estrellas.
+- El material de `juegos.parejas` (7 parejas) y de `juegos.puzzle`.
 
 **Sí se actualizan:**
 
 - Títulos y descripciones de las casillas 2 y 5.
 - Las tarjetas de teoría (9 + 10).
-- La ruta del puzzle a `assets/puzzle.jpg`, si se quiere dejar coherente, aunque no se muestre.
+- El catálogo `juegos`: las dos casillas de juego quedan como paradas (`"tipo": "minijuego"`) y el material de cada juego se guarda por subtipo, igual que en los capítulos 2, 3 y 4.
+- Se añade `juegos.linea_tiempo` con **7 acontecimientos** (Prehistoria → Neolítico → Metales → Antigua → Media → Moderna → Contemporánea), que es el juego que pide el tema junto con las parejas. El puzzle queda guardado en `juegos.puzzle` para poder recuperarlo más adelante.
 
 ---
 
@@ -210,7 +209,7 @@ Antes de implementar hay que verificar autor, licencia y que la imagen se vea co
 
 ## 8. Criterios de aceptación
 
-- ✅ Las dos casillas de teoría se ven como presentaciones, no como fichas de texto.
+- ✅ Las dos casillas de teoría se ven como presentaciones narradas.
 - ✅ Cada diapositiva tiene una imagen local y un rótulo de **6 palabras o menos**.
 - ✅ La voz explica la idea con frases cortas y adecuadas a 10 años.
 - ✅ Lo que nombra la voz se distingue en la imagen (por ejemplo, el fuego, el arco, la corona o el acueducto).
@@ -223,5 +222,5 @@ Antes de implementar hay que verificar autor, licencia y que la imagen se vea co
 ## 9. Decisiones tomadas
 
 1. **19 diapositivas (9 + 10).** Se mantiene una idea por diapositiva en lugar de fusionar A5+A6 o B3+B4.
-2. **Sustituir los `destacado` por diapositivas de resumen.** Así el cierre también tiene imagen y voz.
-3. **El capítulo 2 sigue pendiente.** Continúa en formato antiguo y puede migrarse después con el mismo criterio.
+2. **Cerrar con diapositivas de resumen.** Así el repaso final también tiene imagen y voz.
+3. **Mismo criterio para los demás capítulos.** El capítulo 2 se migró después con este formato (ver `docs/propuesta_diapositivas_cap_02_visigodos.md`).

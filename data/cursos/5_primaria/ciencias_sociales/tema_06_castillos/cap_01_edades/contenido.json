@@ -9,12 +9,10 @@
   "color_primario": "#f59e0b",
   "color_secundario": "#d97706",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas del Tiempo",
+      "titulo": "Parejas del Tiempo",
       "descripcion": "Encuentra las 7 parejas entre las 14 cartas misteriosas.",
       "icono": "🃏",
       "parejas": [
@@ -26,6 +24,37 @@
         { "id": "moderna", "etiqueta": "Edad Moderna", "icono": "⛵", "detalle": "Llegada a América (1492)", "color": "#06b6d4" },
         { "id": "contemporanea", "etiqueta": "Edad Contemporánea", "icono": "🚀", "detalle": "Desde 1789 hasta hoy", "color": "#ec4899" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo de las Edades",
+      "descripcion": "Ordena las etapas de la Historia, desde la Prehistoria hasta hoy.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "prehistoria", "etiqueta": "Prehistoria", "fecha": "Hace 2,5 millones de años", "icono": "🦴", "color": "#ef4444" },
+        { "id": "neolitico", "etiqueta": "Neolítico", "fecha": "Hacia 8000 a.C.", "icono": "🌾", "color": "#10b981" },
+        { "id": "metales", "etiqueta": "Edad de los Metales", "fecha": "Hacia 5000 a.C.", "icono": "⚔️", "color": "#f97316" },
+        { "id": "antigua", "etiqueta": "Edad Antigua", "fecha": "3500 a.C. - 476", "icono": "🏛️", "color": "#3b82f6" },
+        { "id": "media", "etiqueta": "Edad Media", "fecha": "476 - 1492", "icono": "🏰", "color": "#8b5cf6" },
+        { "id": "moderna", "etiqueta": "Edad Moderna", "fecha": "1492 - 1789", "icono": "⛵", "color": "#06b6d4" },
+        { "id": "contemporanea", "etiqueta": "Edad Contemporánea", "fecha": "Desde 1789", "icono": "🚀", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡Desafío de la Cueva!",
+      "descripcion": "Ordena las 6 piezas del dibujo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -258,11 +287,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡Desafío de la Cueva!",
-      "descripcion": "Ordena las 6 piezas del dibujo.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,

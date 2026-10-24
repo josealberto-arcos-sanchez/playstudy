@@ -143,7 +143,8 @@ Se reutiliza el esquema actual de `fichas → tarjetas` y se añaden dos campos:
 
 - `locucion` → lo que dice la voz.
 - `texto` → rótulo corto visible (poco texto, como pediste).
-- `puntos` → se mantiene como **texto de apoyo/accesibilidad** y respaldo si una diapositiva no tuviera imagen.
+- `imagen` → ruta local obligatoria; cada diapositiva necesita su imagen dentro de `assets/`.
+- `puntos` → **texto de apoyo/accesibilidad** opcional; nunca sustituye a la imagen ni a la locución.
 - Para narraciones dirigidas a niños de 10 años, preferir frases cortas y palabras comunes; explicar los términos históricos necesarios con una definición sencilla.
 - Comprobar que cada detalle visual nombrado por la voz (por ejemplo, el rosetón) aparezca de forma clara en la imagen de esa diapositiva. Si se mencionan varios detalles, usar una composición de imágenes o ajustar la narración.
 
