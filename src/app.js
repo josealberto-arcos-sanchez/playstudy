@@ -12,6 +12,7 @@ import { TheoryView } from './views/theoryView.js';
 import { QuizView } from './views/quizView.js';
 import { MemoryGame } from './games/memoryGame.js';
 import { PuzzleGame } from './games/puzzleGame.js';
+import { TimelineGame } from './games/timelineGame.js';
 
 class App {
   constructor() {
@@ -44,9 +45,10 @@ class App {
     this.cleanupCurrentView();
     const menuView = new MenuView(
       this.catalogo,
-      async (capituloObj) => {
-        // Cargar capítulo seleccionado y mostrar su circuito
-        const capituloData = await DataLoader.loadCapitulo(capituloObj);
+      async (capituloObj, temaObj) => {
+        // Cargar capítulo seleccionado y mostrar su circuito.
+        // El tema aporta la lista de juegos que debe mostrar el capítulo.
+        const capituloData = await DataLoader.loadCapitulo(capituloObj, temaObj);
         this.currentCapitulo = capituloData;
         this.showMap();
       }
@@ -86,6 +88,12 @@ class App {
         } else if (casillaData.subtipo === 'puzzle') {
           this.currentViewInstance = new PuzzleGame(this.currentCapitulo, casillaData, onStepComplete, onExit);
           this.currentViewInstance.render(this.root);
+        } else if (casillaData.subtipo === 'linea_tiempo') {
+          this.currentViewInstance = new TimelineGame(this.currentCapitulo, casillaData, onStepComplete, onExit);
+          this.currentViewInstance.render(this.root);
+        } else {
+          console.warn('Subtipo de minijuego desconocido:', casillaData.subtipo);
+          this.showMap();
         }
         break;
 

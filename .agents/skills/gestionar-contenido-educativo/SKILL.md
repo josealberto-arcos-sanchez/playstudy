@@ -8,7 +8,7 @@ description: >-
 
 # 📚 Skill: Gestión y Adición de Contenido Educativo en PlayStudy
 
-Esta skill describe el procedimiento estándar para añadir nuevo material didáctico al juego: desde crear un nuevo curso completo hasta incorporar capítulos específicos con teoría, cuestionarios (quizzes), juegos de memoria y puzzles personalizados.
+Esta skill describe el procedimiento estándar para añadir nuevo material didáctico al juego: desde crear un nuevo curso completo hasta incorporar capítulos específicos con teoría, cuestionarios (quizzes), juegos de memoria, líneas del tiempo y puzzles personalizados.
 
 ---
 
@@ -26,7 +26,7 @@ El sistema se estructura en 4 niveles descendentes:
 Toda la estructura visible del menú se registra centralmente en:
 👉 `data/catalogo.json`
 
-Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas de teoría y puzzle) se guardan en su propio archivo:
+Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas de teoría, línea del tiempo y puzzle) se guardan en su propio archivo:
 👉 `data/cursos/{curso_id}/{asig_id}/{tema_id}/{cap_id}/contenido.json`
 
 ---
@@ -43,12 +43,13 @@ Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas
    ```
    *Ejemplo*: `data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/`
 
-2. **Añadir la imagen del puzzle**:
-   Guardar la imagen del puzzle en:
-   `data/cursos/{curso_id}/{asig_id}/{tema_id}/{cap_id}/assets/puzzle.jpg` (proporción óptima ~ 3:2 o 4:3).
+2. **Añadir los recursos de los juegos**:
+   - Si el tema usa el puzzle, guarda `assets/puzzle.jpg` (proporción óptima ~ 3:2 o 4:3).
+   - Si usa la línea del tiempo, no hacen falta imágenes: los eventos se definen como texto e iconos.
+   - Añade también las imágenes de las diapositivas de teoría y su `assets/creditos_imagenes.json`.
 
 3. **Crear el archivo `contenido.json`**:
-   Crear `data/cursos/.../{cap_id}/contenido.json` siguiendo la plantilla de 6 paradas (ver sección 3).
+   Crea `data/cursos/.../{cap_id}/contenido.json` con el catálogo `juegos` (material de cada minijuego) y las 6 paradas del circuito (ver sección 3).
 
 4. **Registrar el capítulo en `data/catalogo.json`**:
    Localizar el tema correspondiente e incorporar el objeto del capítulo en la lista `"capitulos"`:
@@ -87,6 +88,7 @@ Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas
      "subtitulo": "La expansión cristiana y la sociedad medieval",
      "icono": "🛡️",
      "color": "#3b82f6",
+     "juegos": ["parejas", "linea_tiempo"],
      "capitulos": []
    }
    ```
@@ -132,7 +134,9 @@ Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas
 
 Cada capítulo consta de un circuito interactivo continuo de 6 paradas (3 estrellas por parada = 18 estrellas).
 
-Los minijuegos (`"tipo": "minijuego"`) se barajan aleatoriamente entre las paradas de juego cada vez que se entra en el circuito; la teoría y los quizzes mantienen siempre su posición. Para añadir un juego nuevo, crea una casilla con `"tipo": "minijuego"` y un `"subtipo"` propio: el barajado (`src/gameOrder.js`) funciona con cualquier número de juegos.
+Cada tema elige **exactamente dos** minijuegos con la propiedad `"juegos": ["parejas", "linea_tiempo"]` del catálogo. El capítulo guarda en su objeto `juegos` el material de todos sus minijuegos, indexado por subtipo; las dos casillas `"tipo": "minijuego"` son solo paradas donde el cargador monta los juegos elegidos. Después, los juegos se barajan entre las paradas y la teoría y los quizzes mantienen su posición.
+
+Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo, y el material de un juego que no se muestra (por ejemplo, el puzzle) queda guardado para recuperarlo después.
 
 ```json
 {
@@ -146,12 +150,10 @@ Los minijuegos (`"tipo": "minijuego"`) se barajan aleatoriamente entre las parad
   "color_primario": "#8b5cf6",
   "color_secundario": "#7c3aed",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas Memorables",
+      "titulo": "Parejas Memorables",
       "descripcion": "Encuentra las 7 parejas entre las 14 cartas.",
       "icono": "🃏",
       "parejas": [
@@ -163,6 +165,33 @@ Los minijuegos (`"tipo": "minijuego"`) se barajan aleatoriamente entre las parad
         { "id": "p6", "etiqueta": "Concepto 6", "icono": "🏛️", "detalle": "Explicación breve", "color": "#06b6d4" },
         { "id": "p7", "etiqueta": "Concepto 7", "icono": "🗺️", "detalle": "Explicación breve", "color": "#ec4899" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo",
+      "descripcion": "Ordena los acontecimientos del más antiguo al más reciente.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "e1", "etiqueta": "Acontecimiento 1", "fecha": "500 a.C.", "icono": "🏛️", "color": "#3b82f6" },
+        { "id": "e2", "etiqueta": "Acontecimiento 2", "fecha": "711", "icono": "⚔️", "color": "#ef4444" },
+        { "id": "e3", "etiqueta": "Acontecimiento 3", "fecha": "1492", "icono": "⛵", "color": "#10b981" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡Desafío Visual!",
+      "descripcion": "Ordena las 6 piezas del dibujo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_XX_nombre/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -218,11 +247,9 @@ Los minijuegos (`"tipo": "minijuego"`) se barajan aleatoriamente entre las parad
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡Desafío Visual!",
-      "descripcion": "Ordena las 6 piezas del dibujo.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_XX_nombre/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -308,3 +335,15 @@ Los minijuegos (`"tipo": "minijuego"`) se barajan aleatoriamente entre las parad
    - Ámbar/Amarillo: `#f59e0b`
    - Cyan: `#06b6d4`
    - Rosa: `#ec4899`
+7. **Dos juegos por tema**:
+   - La lista `"juegos"` del tema debe contener exactamente dos subtipos.
+   - Cada capítulo del tema debe definir el material de esos dos juegos en su objeto `juegos`. Si falta alguno, el cargador lo avisa por consola y usa los juegos disponibles.
+   - No borres el material de un juego que dejas de mostrar: puede volver a activarse cambiando la lista del tema.
+8. **Línea del tiempo**:
+   - El orden del array `eventos` es el orden cronológico correcto; escríbelo del más antiguo al más reciente.
+   - Cada evento necesita `id`, `etiqueta`, `fecha` e `icono`; `color` es opcional.
+   - Usa entre 5 y 7 acontecimientos para que las tarjetas se lean bien en tablet y móvil.
+9. **Imágenes con texto o esquemas**:
+   - Si la imagen de una diapositiva es una infografía, línea del tiempo, mapa o esquema (no una fotografía), añade `"ajuste_imagen": "completo"` a la tarjeta.
+   - Con ese ajuste la imagen se muestra entera y a mayor tamaño, con el rótulo debajo, para que el texto no quede recortado por los lados.
+   - En fotografías no lo pongas: se recortan ligeramente para llenar el marco y se ven mejor.

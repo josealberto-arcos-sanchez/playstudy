@@ -9,12 +9,10 @@
   "color_primario": "#f97316",
   "color_secundario": "#ea580c",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas del Arte Medieval",
+      "titulo": "Parejas del Arte Medieval",
       "descripcion": "Relaciona los estilos, edificios y elementos de la Edad Media.",
       "icono": "🃏",
       "parejas": [
@@ -26,6 +24,35 @@
         { "id": "romanico", "etiqueta": "Arte románico", "icono": "⛪", "detalle": "Muros gruesos, ventanas pequeñas y arco de medio punto", "color": "#8b5cf6" },
         { "id": "gotico", "etiqueta": "Arte gótico", "icono": "🌈", "detalle": "Catedrales altas, arcos apuntados y vidrieras", "color": "#ef4444" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo del Arte Medieval",
+      "descripcion": "Ordena los estilos y momentos clave del arte medieval.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "andalusi", "etiqueta": "Comienza el arte andalusí", "fecha": "711", "icono": "🕌", "color": "#10b981" },
+        { "id": "califato", "etiqueta": "Califato de Córdoba", "fecha": "929", "icono": "🏛️", "color": "#f59e0b" },
+        { "id": "romanico", "etiqueta": "Arte románico", "fecha": "Siglos XI – XII", "icono": "⛪", "color": "#8b5cf6" },
+        { "id": "gotico", "etiqueta": "Arte gótico", "fecha": "Siglos XIII – XV", "icono": "🌈", "color": "#ef4444" },
+        { "id": "fin_medieval", "etiqueta": "Fin de la Edad Media", "fecha": "1492", "icono": "🏰", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: Tres Estilos Medievales",
+      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -180,11 +207,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: Tres Estilos Medievales",
-      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,

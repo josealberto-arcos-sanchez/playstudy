@@ -2,7 +2,7 @@
  * Cargador de Catálogo y Capítulos Educativos
  */
 import { defaultCatalogo, defaultHistoriaData } from './defaultData.js';
-import { prepararCapituloParaCircuito } from './gameOrder.js';
+import { montarJuegosDelTema, prepararCapituloParaCircuito } from './gameOrder.js';
 
 export class DataLoader {
   static async loadCatalogo() {
@@ -24,10 +24,11 @@ export class DataLoader {
     return defaultCatalogo;
   }
 
-  static async loadCapitulo(capituloObj) {
+  static async loadCapitulo(capituloObj, temaObj = null) {
     const capitulo = await DataLoader.cargarCapituloSinBarajar(capituloObj);
-    // Cada entrada al circuito baraja los juegos entre sus paradas.
-    return prepararCapituloParaCircuito(capitulo);
+    // El tema decide qué dos juegos se muestran; después se barajan las paradas.
+    const conJuegos = montarJuegosDelTema(capitulo, temaObj);
+    return prepararCapituloParaCircuito(conJuegos);
   }
 
   static async cargarCapituloSinBarajar(capituloObj) {

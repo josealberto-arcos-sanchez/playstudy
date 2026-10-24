@@ -9,12 +9,10 @@
   "color_primario": "#8b5cf6",
   "color_secundario": "#7c3aed",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas Visigodas",
+      "titulo": "Parejas Visigodas",
       "descripcion": "Encuentra las 7 parejas entre los reyes, pueblos y conceptos visigodos.",
       "icono": "🃏",
       "parejas": [
@@ -26,6 +24,35 @@
         { "id": "campesinado", "etiqueta": "Campesinado", "icono": "🌾", "detalle": "Mayoría de la población", "color": "#f59e0b" },
         { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🏛️", "detalle": "Arte visigodo característico", "color": "#06b6d4" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo Visigoda",
+      "descripcion": "Ordena los acontecimientos del reino visigodo en Hispania.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "invasiones", "etiqueta": "Invasiones germánicas", "fecha": "409", "icono": "🌊", "color": "#ef4444" },
+        { "id": "fin_roma", "etiqueta": "Fin del Imperio Romano de Occidente", "fecha": "476", "icono": "🏛️", "color": "#3b82f6" },
+        { "id": "leovigildo", "etiqueta": "Leovigildo conquista a los suevos", "fecha": "585", "icono": "👑", "color": "#8b5cf6" },
+        { "id": "recaredo", "etiqueta": "Recaredo se convierte al catolicismo", "fecha": "589", "icono": "✝️", "color": "#ec4899" },
+        { "id": "guadalete", "etiqueta": "Batalla de Guadalete", "fecha": "711", "icono": "⚔️", "color": "#f97316" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡La Península Visigoda!",
+      "descripcion": "Ordena las 6 piezas del mapa visigodo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -178,11 +205,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡La Península Visigoda!",
-      "descripcion": "Ordena las 6 piezas del mapa visigodo.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,

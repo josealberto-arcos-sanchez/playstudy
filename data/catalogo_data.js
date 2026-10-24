@@ -25,6 +25,7 @@
               "subtitulo": "La Prehistoria y las Edades de la Historia",
               "icono": "🏰",
               "color": "#8b5cf6",
+              "juegos": ["parejas", "linea_tiempo"],
               "capitulos": [
                 {
                   "id": "cap_01_edades",
@@ -108,51 +109,109 @@
     {
       "id": 2,
       "tipo": "teoria",
-      "titulo": "2. Ficha: La Prehistoria",
-      "descripcion": "Aprende las 3 etapas antes de que se inventara la escritura.",
+      "titulo": "2. Presentación: La Prehistoria",
+      "descripcion": "Nueve diapositivas con imágenes y explicación por voz.",
       "icono": "🦴",
       "fichas": [
         {
-          "titulo": "La Prehistoria (Hace 2,5 mill. de años - 3500 a.C.)",
-          "subtitulo": "Desde la aparición de los primeros humanos hasta inventar la escritura",
+          "titulo": "La Prehistoria",
+          "subtitulo": "Desde los primeros humanos hasta la invención de la escritura",
           "icono": "🦴",
           "tarjetas": [
             {
-              "nombre": "Paleolítico",
-              "fecha": "Hace 2,5 mill. de años",
+              "nombre": "La Prehistoria",
+              "fecha": "Hace 2,5 millones de años - 3500 a.C.",
+              "icono": "🦴",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a01_portada_prehistoria.jpg",
+              "texto": "La Prehistoria",
+              "locucion": "¡Bienvenidos a la Prehistoria! Es la etapa más larga de la humanidad. Empieza hace unos dos millones y medio de años, con la aparición de los primeros seres humanos, y termina cuando se inventa la escritura, hacia el año tres mil quinientos antes de Cristo.",
+              "puntos": []
+            },
+            {
+              "nombre": "Una etapa sin escritura",
+              "fecha": "2,5 millones de años - 3500 a.C.",
+              "icono": "⏳",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a02_linea_tiempo.jpg",
+              "texto": "Antes de la escritura",
+              "ajuste_imagen": "completo",
+              "locucion": "La Prehistoria dura muchísimo tiempo. Como entonces nadie escribía, no tenemos libros ni documentos de esa época. Para conocerla, los arqueólogos estudian los fósiles, las herramientas y las pinturas que se han conservado en cuevas y yacimientos. Gracias a esos restos podemos reconstruir cómo vivían.",
+              "puntos": []
+            },
+            {
+              "nombre": "Nómadas: cazar y recolectar",
+              "fecha": "Paleolítico",
               "icono": "🔥",
               "color": "#ef4444",
-              "puntos": [
-                "Eran **nómadas**: se desplazaban para cazar, pescar y recolectar frutos.",
-                "Descubrieron el dominio del **fuego** y pintaban en cuevas."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a03_paleolitico.jpg",
+              "texto": "Nómadas: cazar y recolectar",
+              "locucion": "En el Paleolítico, las personas eran nómadas: no vivían siempre en el mismo lugar. Se trasladaban siguiendo a los animales que cazaban y buscando frutos, raíces y agua. Se refugiaban en cuevas o en campamentos sencillos y fabricaban herramientas con piedra, hueso y madera. También pescaban en los ríos.",
+              "puntos": []
             },
             {
-              "nombre": "Neolítico",
-              "fecha": "8.000 a.C.",
+              "nombre": "El fuego y las pinturas rupestres",
+              "fecha": "Paleolítico",
+              "icono": "🎨",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a04_altamira.jpg",
+              "texto": "Fuego y pinturas rupestres",
+              "locucion": "Dominar el fuego fue un gran avance: les permitía calentarse, cocinar los alimentos y proteger la entrada de la cueva. También pintaron animales en las paredes usando carbón y pigmentos de colores. Esas pinturas se llaman rupestres. En la cueva de Altamira, en Cantabria, hay bisontes pintados hace miles de años.",
+              "puntos": []
+            },
+            {
+              "nombre": "La agricultura y la ganadería",
+              "fecha": "Neolítico - Hacia 8000 a.C.",
               "icono": "🌾",
               "color": "#10b981",
-              "puntos": [
-                "Nació la **agricultura** y la **ganadería**.",
-                "Se hicieron **sedentarios** (vivían en un sitio fijo) y crearon poblados."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a05_neolitico.jpg",
+              "texto": "8000 a.C.: agricultura",
+              "locucion": "Hacia el año ocho mil antes de Cristo, las personas aprendieron a cultivar plantas y a criar animales. Ya no dependían solo de lo que encontraban: podían producir su propio alimento. Ese cambio se llama revolución neolítica y transformó por completo la vida de los seres humanos.",
+              "puntos": []
             },
             {
-              "nombre": "Edad de los Metales",
-              "fecha": "5.000 a.C.",
+              "nombre": "Sedentarios: los primeros poblados",
+              "fecha": "Neolítico",
+              "icono": "🏡",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a06_poblado.jpg",
+              "texto": "Sedentarios: los primeros poblados",
+              "locucion": "Al cuidar los cultivos y los rebaños, las personas se quedaron a vivir en un lugar fijo. Se hicieron sedentarias y construyeron poblados con casas de barro, madera o piedra. También aprendieron a hacer cerámica, a moler el grano y a repartir las tareas entre los habitantes del poblado.",
+              "puntos": []
+            },
+            {
+              "nombre": "La Edad de los Metales",
+              "fecha": "Hacia 5000 a.C.",
               "icono": "⚔️",
               "color": "#f97316",
-              "puntos": [
-                "Aprendieron a moldear metales: **Cobre**, **Bronce** y **Hierro**.",
-                "Fabricaron herramientas, armas y vasijas más resistentes."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a07_metales.jpg",
+              "texto": "Cobre → bronce → hierro",
+              "ajuste_imagen": "completo",
+              "locucion": "Más tarde, las personas descubrieron que podían fundir metales y darles forma. Primero usaron el cobre, después el bronce y finalmente el hierro. Con ellos fabricaron herramientas, armas y recipientes más resistentes. También aumentó el comercio, porque los metales se buscaban y se llevaban de un lugar a otro.",
+              "puntos": []
+            },
+            {
+              "nombre": "Atapuerca, un tesoro en Burgos",
+              "fecha": "Yacimiento arqueológico",
+              "icono": "🦴",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a08_atapuerca.jpg",
+              "texto": "Atapuerca (Burgos)",
+              "locucion": "En la Sierra de Atapuerca, en Burgos, se han encontrado fósiles humanos muy antiguos. Gracias a ellos, los científicos saben cómo eran y cómo vivían algunos de los primeros habitantes de Europa. Atapuerca es uno de los yacimientos más importantes del mundo para estudiar la Prehistoria.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: las tres etapas",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a09_resumen_prehistoria.jpg",
+              "texto": "Recuerda",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda las tres etapas de la Prehistoria. Primero, el Paleolítico: nómadas que cazaban, pescaban y recolectaban. Después, el Neolítico: agricultores y ganaderos que vivían en poblados. Y al final, la Edad de los Metales: aprendieron a trabajar el cobre, el bronce y el hierro. Cada etapa supuso un gran cambio.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "📍",
-            "titulo": "Tesoros prehistóricos en España",
-            "texto": "Destacan los fósiles humanos de **Atapuerca** (Burgos) y las pinturas rupestres de **Altamira** (Cantabria)."
-          }
+          ]
         }
       ]
     },
@@ -287,62 +346,118 @@
     {
       "id": 5,
       "tipo": "teoria",
-      "titulo": "5. Ficha: La Historia",
-      "descripcion": "Las 4 grandes edades desde que el ser humano aprendió a escribir.",
+      "titulo": "5. Presentación: Las Edades de la Historia",
+      "descripcion": "Diez diapositivas con imágenes y explicación por voz.",
       "icono": "📜",
       "fichas": [
         {
-          "titulo": "La Historia (Desde 3500 a.C. hasta la actualidad)",
-          "subtitulo": "Comienza oficialmente con la invención de la escritura",
+          "titulo": "Las Edades de la Historia",
+          "subtitulo": "Desde la invención de la escritura hasta la actualidad",
           "icono": "📜",
           "tarjetas": [
             {
-              "nombre": "Edad Antigua",
-              "fecha": "3500 a.C. - 476 d.C.",
+              "nombre": "La Historia",
+              "fecha": "Desde 3500 a.C. hasta hoy",
+              "icono": "📜",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b01_portada_historia.jpg",
+              "texto": "La Historia",
+              "locucion": "Cuando los seres humanos aprendieron a escribir, empezó la Historia. Desde entonces tenemos textos que nos cuentan lo que ocurrió: leyes, cartas, libros y documentos. La escritura apareció hacia el año tres mil quinientos antes de Cristo, y esa fecha marca el final de la Prehistoria.",
+              "puntos": []
+            },
+            {
+              "nombre": "La escritura",
+              "fecha": "3500 a.C.",
+              "icono": "✍️",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b02_escritura.jpg",
+              "texto": "3500 a.C.: la escritura",
+              "locucion": "La escritura se inventó hacia el año tres mil quinientos antes de Cristo, primero en Mesopotamia y después en otros lugares. Al principio se escribía sobre tablillas de barro con signos en forma de cuña. Gracias a esos textos podemos saber cómo vivían, qué pensaban y qué gobernantes tenían los pueblos antiguos.",
+              "puntos": []
+            },
+            {
+              "nombre": "Egipto, Grecia y Roma",
+              "fecha": "Edad Antigua - 3500 a.C. a 476 d.C.",
               "icono": "🏛️",
               "color": "#3b82f6",
-              "puntos": [
-                "Civilizaciones: **Egipto, Grecia y Roma**.",
-                "Los romanos ocuparon la península y la llamaron **Hispania**."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b03_edad_antigua.jpg",
+              "texto": "Egipto · Grecia · Roma",
+              "ajuste_imagen": "completo",
+              "locucion": "En la Edad Antigua florecieron grandes civilizaciones. Egipto construyó pirámides y templos junto al Nilo. Grecia creó la democracia, el teatro y la filosofía. Roma levantó ciudades, calzadas y acueductos por todo el Mediterráneo. Muchas de sus ideas todavía nos acompañan hoy. Fue una época de grandes inventos y descubrimientos.",
+              "puntos": []
             },
             {
-              "nombre": "Edad Media",
-              "fecha": "476 - 1492",
+              "nombre": "Hispania, la península romana",
+              "fecha": "Edad Antigua",
+              "icono": "🏗️",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b04_hispania.jpg",
+              "texto": "Hispania",
+              "locucion": "Los romanos conquistaron la península ibérica y la llamaron Hispania. Construyeron calzadas para viajar, acueductos para llevar agua a las ciudades y teatros para divertirse. El acueducto de Segovia es un ejemplo impresionante de cómo construían. De Hispania viene la palabra España. Su legado todavía se puede visitar.",
+              "puntos": []
+            },
+            {
+              "nombre": "Castillos y señores feudales",
+              "fecha": "Edad Media - 476 a 1492",
               "icono": "🏰",
               "color": "#8b5cf6",
-              "puntos": [
-                "Comenzó con la **caída del Imperio romano**.",
-                "Época de señores feudales, castillos y el **reino visigodo**.",
-                "En el siglo VII nació el **islam** en Arabia; en el **711** los musulmanes entraron en la Península y llamaron **al-Ándalus** a su territorio."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b05_edad_media.jpg",
+              "texto": "476: castillos y señores",
+              "locucion": "En el año cuatrocientos setenta y seis cayó el Imperio romano de Occidente y comenzó la Edad Media. Fue la época de los castillos, los señores feudales y los caballeros. La sociedad estaba muy dividida: unos pocos nobles tenían tierras y poder, mientras la mayoría de la población trabajaba en el campo.",
+              "puntos": []
             },
             {
-              "nombre": "Edad Moderna",
-              "fecha": "1492 - 1789",
+              "nombre": "El reino visigodo",
+              "fecha": "Siglos V - VIII",
+              "icono": "👑",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b06_visigodos.jpg",
+              "texto": "El reino visigodo",
+              "locucion": "Después de los romanos, los visigodos crearon un reino con capital en Toledo. Gobernaron casi toda la Península durante varios siglos. En el año quinientos ochenta y nueve, el rey Recaredo se convirtió al catolicismo. De esa época conservamos iglesias y joyas, como las coronas votivas del tesoro de Guarrazar.",
+              "puntos": []
+            },
+            {
+              "nombre": "711: llega el islam",
+              "fecha": "Edad Media",
+              "icono": "🕌",
+              "color": "#06b6d4",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b07_al_andalus.jpg",
+              "texto": "711: al-Ándalus",
+              "locucion": "En el año setecientos once, los musulmanes entraron en la península ibérica y llamaron al-Ándalus a su territorio. Córdoba se convirtió en una ciudad muy importante, con una gran mezquita de columnas y arcos de dos colores. Durante siglos convivieron en la Península personas de culturas y religiones diferentes.",
+              "puntos": []
+            },
+            {
+              "nombre": "1492: un nuevo continente",
+              "fecha": "Edad Moderna - 1492 a 1789",
               "icono": "⛵",
               "color": "#06b6d4",
-              "puntos": [
-                "Comenzó con la **llegada de Colón a América** (1492).",
-                "Destacó el reinado de los **Reyes Católicos** en España."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b08_edad_moderna.jpg",
+              "texto": "1492: América",
+              "locucion": "En mil cuatrocientos noventa y dos, Cristóbal Colón llegó a América. Con los Reyes Católicos comenzó en España la Edad Moderna. Los viajes por mar permitieron conocer nuevas tierras, comerciar con otros pueblos y llevar productos de un continente a otro. Fue un cambio enorme para el mundo.",
+              "puntos": []
             },
             {
-              "nombre": "Contemporánea",
-              "fecha": "1789 - Actualidad",
+              "nombre": "1789: una nueva era",
+              "fecha": "Edad Contemporánea - Desde 1789",
               "icono": "🚀",
               "color": "#ec4899",
-              "puntos": [
-                "Inició con la **Revolución francesa**.",
-                "España luchó en la Guerra de Independencia. Llega hasta hoy."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b09_contemporanea.jpg",
+              "texto": "1789: una nueva era",
+              "locucion": "En mil setecientos ochenta y nueve estalló la Revolución francesa. Poco después, España luchó contra las tropas de Napoleón en la Guerra de la Independencia. Comenzó así la Edad Contemporánea, la etapa en la que vivimos hoy. En ella han ocurrido cambios muy rápidos: la industrialización, los coches, los aviones e Internet.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: las cuatro edades",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b10_resumen_edades.jpg",
+              "texto": "Las cuatro edades",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda el orden de las cuatro edades de la Historia. La Edad Antigua empieza con la escritura, hacia el año tres mil quinientos antes de Cristo. La Edad Media comienza en el cuatrocientos setenta y seis. La Edad Moderna, en mil cuatrocientos noventa y dos. Y la Edad Contemporánea, en mil setecientos ochenta y nueve, llega hasta hoy.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "💡",
-            "titulo": "Dato Clave de la Historia",
-            "texto": "¡La invención de la **escritura** marca la frontera entre la Prehistoria y la Historia!"
-          }
+          ]
         }
       ]
     },
@@ -533,51 +648,109 @@
     {
       "id": 2,
       "tipo": "teoria",
-      "titulo": "2. Ficha: La Prehistoria",
-      "descripcion": "Aprende las 3 etapas antes de que se inventara la escritura.",
+      "titulo": "2. Presentación: La Prehistoria",
+      "descripcion": "Nueve diapositivas con imágenes y explicación por voz.",
       "icono": "🦴",
       "fichas": [
         {
-          "titulo": "La Prehistoria (Hace 2,5 mill. de años - 3500 a.C.)",
-          "subtitulo": "Desde la aparición de los primeros humanos hasta inventar la escritura",
+          "titulo": "La Prehistoria",
+          "subtitulo": "Desde los primeros humanos hasta la invención de la escritura",
           "icono": "🦴",
           "tarjetas": [
             {
-              "nombre": "Paleolítico",
-              "fecha": "Hace 2,5 mill. de años",
+              "nombre": "La Prehistoria",
+              "fecha": "Hace 2,5 millones de años - 3500 a.C.",
+              "icono": "🦴",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a01_portada_prehistoria.jpg",
+              "texto": "La Prehistoria",
+              "locucion": "¡Bienvenidos a la Prehistoria! Es la etapa más larga de la humanidad. Empieza hace unos dos millones y medio de años, con la aparición de los primeros seres humanos, y termina cuando se inventa la escritura, hacia el año tres mil quinientos antes de Cristo.",
+              "puntos": []
+            },
+            {
+              "nombre": "Una etapa sin escritura",
+              "fecha": "2,5 millones de años - 3500 a.C.",
+              "icono": "⏳",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a02_linea_tiempo.jpg",
+              "texto": "Antes de la escritura",
+              "ajuste_imagen": "completo",
+              "locucion": "La Prehistoria dura muchísimo tiempo. Como entonces nadie escribía, no tenemos libros ni documentos de esa época. Para conocerla, los arqueólogos estudian los fósiles, las herramientas y las pinturas que se han conservado en cuevas y yacimientos. Gracias a esos restos podemos reconstruir cómo vivían.",
+              "puntos": []
+            },
+            {
+              "nombre": "Nómadas: cazar y recolectar",
+              "fecha": "Paleolítico",
               "icono": "🔥",
               "color": "#ef4444",
-              "puntos": [
-                "Eran **nómadas**: se desplazaban para cazar, pescar y recolectar frutos.",
-                "Descubrieron el dominio del **fuego** y pintaban en cuevas."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a03_paleolitico.jpg",
+              "texto": "Nómadas: cazar y recolectar",
+              "locucion": "En el Paleolítico, las personas eran nómadas: no vivían siempre en el mismo lugar. Se trasladaban siguiendo a los animales que cazaban y buscando frutos, raíces y agua. Se refugiaban en cuevas o en campamentos sencillos y fabricaban herramientas con piedra, hueso y madera. También pescaban en los ríos.",
+              "puntos": []
             },
             {
-              "nombre": "Neolítico",
-              "fecha": "8.000 a.C.",
+              "nombre": "El fuego y las pinturas rupestres",
+              "fecha": "Paleolítico",
+              "icono": "🎨",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a04_altamira.jpg",
+              "texto": "Fuego y pinturas rupestres",
+              "locucion": "Dominar el fuego fue un gran avance: les permitía calentarse, cocinar los alimentos y proteger la entrada de la cueva. También pintaron animales en las paredes usando carbón y pigmentos de colores. Esas pinturas se llaman rupestres. En la cueva de Altamira, en Cantabria, hay bisontes pintados hace miles de años.",
+              "puntos": []
+            },
+            {
+              "nombre": "La agricultura y la ganadería",
+              "fecha": "Neolítico - Hacia 8000 a.C.",
               "icono": "🌾",
               "color": "#10b981",
-              "puntos": [
-                "Nació la **agricultura** y la **ganadería**.",
-                "Se hicieron **sedentarios** (vivían en un sitio fijo) y crearon poblados."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a05_neolitico.jpg",
+              "texto": "8000 a.C.: agricultura",
+              "locucion": "Hacia el año ocho mil antes de Cristo, las personas aprendieron a cultivar plantas y a criar animales. Ya no dependían solo de lo que encontraban: podían producir su propio alimento. Ese cambio se llama revolución neolítica y transformó por completo la vida de los seres humanos.",
+              "puntos": []
             },
             {
-              "nombre": "Edad de los Metales",
-              "fecha": "5.000 a.C.",
+              "nombre": "Sedentarios: los primeros poblados",
+              "fecha": "Neolítico",
+              "icono": "🏡",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a06_poblado.jpg",
+              "texto": "Sedentarios: los primeros poblados",
+              "locucion": "Al cuidar los cultivos y los rebaños, las personas se quedaron a vivir en un lugar fijo. Se hicieron sedentarias y construyeron poblados con casas de barro, madera o piedra. También aprendieron a hacer cerámica, a moler el grano y a repartir las tareas entre los habitantes del poblado.",
+              "puntos": []
+            },
+            {
+              "nombre": "La Edad de los Metales",
+              "fecha": "Hacia 5000 a.C.",
               "icono": "⚔️",
               "color": "#f97316",
-              "puntos": [
-                "Aprendieron a moldear metales: **Cobre**, **Bronce** y **Hierro**.",
-                "Fabricaron herramientas, armas y vasijas más resistentes."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a07_metales.jpg",
+              "texto": "Cobre → bronce → hierro",
+              "ajuste_imagen": "completo",
+              "locucion": "Más tarde, las personas descubrieron que podían fundir metales y darles forma. Primero usaron el cobre, después el bronce y finalmente el hierro. Con ellos fabricaron herramientas, armas y recipientes más resistentes. También aumentó el comercio, porque los metales se buscaban y se llevaban de un lugar a otro.",
+              "puntos": []
+            },
+            {
+              "nombre": "Atapuerca, un tesoro en Burgos",
+              "fecha": "Yacimiento arqueológico",
+              "icono": "🦴",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a08_atapuerca.jpg",
+              "texto": "Atapuerca (Burgos)",
+              "locucion": "En la Sierra de Atapuerca, en Burgos, se han encontrado fósiles humanos muy antiguos. Gracias a ellos, los científicos saben cómo eran y cómo vivían algunos de los primeros habitantes de Europa. Atapuerca es uno de los yacimientos más importantes del mundo para estudiar la Prehistoria.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: las tres etapas",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/a09_resumen_prehistoria.jpg",
+              "texto": "Recuerda",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda las tres etapas de la Prehistoria. Primero, el Paleolítico: nómadas que cazaban, pescaban y recolectaban. Después, el Neolítico: agricultores y ganaderos que vivían en poblados. Y al final, la Edad de los Metales: aprendieron a trabajar el cobre, el bronce y el hierro. Cada etapa supuso un gran cambio.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "📍",
-            "titulo": "Tesoros prehistóricos en España",
-            "texto": "Destacan los fósiles humanos de **Atapuerca** (Burgos) y las pinturas rupestres de **Altamira** (Cantabria)."
-          }
+          ]
         }
       ]
     },
@@ -712,62 +885,118 @@
     {
       "id": 5,
       "tipo": "teoria",
-      "titulo": "5. Ficha: La Historia",
-      "descripcion": "Las 4 grandes edades desde que el ser humano aprendió a escribir.",
+      "titulo": "5. Presentación: Las Edades de la Historia",
+      "descripcion": "Diez diapositivas con imágenes y explicación por voz.",
       "icono": "📜",
       "fichas": [
         {
-          "titulo": "La Historia (Desde 3500 a.C. hasta la actualidad)",
-          "subtitulo": "Comienza oficialmente con la invención de la escritura",
+          "titulo": "Las Edades de la Historia",
+          "subtitulo": "Desde la invención de la escritura hasta la actualidad",
           "icono": "📜",
           "tarjetas": [
             {
-              "nombre": "Edad Antigua",
-              "fecha": "3500 a.C. - 476 d.C.",
+              "nombre": "La Historia",
+              "fecha": "Desde 3500 a.C. hasta hoy",
+              "icono": "📜",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b01_portada_historia.jpg",
+              "texto": "La Historia",
+              "locucion": "Cuando los seres humanos aprendieron a escribir, empezó la Historia. Desde entonces tenemos textos que nos cuentan lo que ocurrió: leyes, cartas, libros y documentos. La escritura apareció hacia el año tres mil quinientos antes de Cristo, y esa fecha marca el final de la Prehistoria.",
+              "puntos": []
+            },
+            {
+              "nombre": "La escritura",
+              "fecha": "3500 a.C.",
+              "icono": "✍️",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b02_escritura.jpg",
+              "texto": "3500 a.C.: la escritura",
+              "locucion": "La escritura se inventó hacia el año tres mil quinientos antes de Cristo, primero en Mesopotamia y después en otros lugares. Al principio se escribía sobre tablillas de barro con signos en forma de cuña. Gracias a esos textos podemos saber cómo vivían, qué pensaban y qué gobernantes tenían los pueblos antiguos.",
+              "puntos": []
+            },
+            {
+              "nombre": "Egipto, Grecia y Roma",
+              "fecha": "Edad Antigua - 3500 a.C. a 476 d.C.",
               "icono": "🏛️",
               "color": "#3b82f6",
-              "puntos": [
-                "Civilizaciones: **Egipto, Grecia y Roma**.",
-                "Los romanos ocuparon la península y la llamaron **Hispania**."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b03_edad_antigua.jpg",
+              "texto": "Egipto · Grecia · Roma",
+              "ajuste_imagen": "completo",
+              "locucion": "En la Edad Antigua florecieron grandes civilizaciones. Egipto construyó pirámides y templos junto al Nilo. Grecia creó la democracia, el teatro y la filosofía. Roma levantó ciudades, calzadas y acueductos por todo el Mediterráneo. Muchas de sus ideas todavía nos acompañan hoy. Fue una época de grandes inventos y descubrimientos.",
+              "puntos": []
             },
             {
-              "nombre": "Edad Media",
-              "fecha": "476 - 1492",
+              "nombre": "Hispania, la península romana",
+              "fecha": "Edad Antigua",
+              "icono": "🏗️",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b04_hispania.jpg",
+              "texto": "Hispania",
+              "locucion": "Los romanos conquistaron la península ibérica y la llamaron Hispania. Construyeron calzadas para viajar, acueductos para llevar agua a las ciudades y teatros para divertirse. El acueducto de Segovia es un ejemplo impresionante de cómo construían. De Hispania viene la palabra España. Su legado todavía se puede visitar.",
+              "puntos": []
+            },
+            {
+              "nombre": "Castillos y señores feudales",
+              "fecha": "Edad Media - 476 a 1492",
               "icono": "🏰",
               "color": "#8b5cf6",
-              "puntos": [
-                "Comenzó con la **caída del Imperio romano**.",
-                "Época de señores feudales, castillos y el **reino visigodo**.",
-                "En el siglo VII nació el **islam** en Arabia; en el **711** los musulmanes entraron en la Península y llamaron **al-Ándalus** a su territorio."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b05_edad_media.jpg",
+              "texto": "476: castillos y señores",
+              "locucion": "En el año cuatrocientos setenta y seis cayó el Imperio romano de Occidente y comenzó la Edad Media. Fue la época de los castillos, los señores feudales y los caballeros. La sociedad estaba muy dividida: unos pocos nobles tenían tierras y poder, mientras la mayoría de la población trabajaba en el campo.",
+              "puntos": []
             },
             {
-              "nombre": "Edad Moderna",
-              "fecha": "1492 - 1789",
+              "nombre": "El reino visigodo",
+              "fecha": "Siglos V - VIII",
+              "icono": "👑",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b06_visigodos.jpg",
+              "texto": "El reino visigodo",
+              "locucion": "Después de los romanos, los visigodos crearon un reino con capital en Toledo. Gobernaron casi toda la Península durante varios siglos. En el año quinientos ochenta y nueve, el rey Recaredo se convirtió al catolicismo. De esa época conservamos iglesias y joyas, como las coronas votivas del tesoro de Guarrazar.",
+              "puntos": []
+            },
+            {
+              "nombre": "711: llega el islam",
+              "fecha": "Edad Media",
+              "icono": "🕌",
+              "color": "#06b6d4",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b07_al_andalus.jpg",
+              "texto": "711: al-Ándalus",
+              "locucion": "En el año setecientos once, los musulmanes entraron en la península ibérica y llamaron al-Ándalus a su territorio. Córdoba se convirtió en una ciudad muy importante, con una gran mezquita de columnas y arcos de dos colores. Durante siglos convivieron en la Península personas de culturas y religiones diferentes.",
+              "puntos": []
+            },
+            {
+              "nombre": "1492: un nuevo continente",
+              "fecha": "Edad Moderna - 1492 a 1789",
               "icono": "⛵",
               "color": "#06b6d4",
-              "puntos": [
-                "Comenzó con la **llegada de Colón a América** (1492).",
-                "Destacó el reinado de los **Reyes Católicos** en España."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b08_edad_moderna.jpg",
+              "texto": "1492: América",
+              "locucion": "En mil cuatrocientos noventa y dos, Cristóbal Colón llegó a América. Con los Reyes Católicos comenzó en España la Edad Moderna. Los viajes por mar permitieron conocer nuevas tierras, comerciar con otros pueblos y llevar productos de un continente a otro. Fue un cambio enorme para el mundo.",
+              "puntos": []
             },
             {
-              "nombre": "Contemporánea",
-              "fecha": "1789 - Actualidad",
+              "nombre": "1789: una nueva era",
+              "fecha": "Edad Contemporánea - Desde 1789",
               "icono": "🚀",
               "color": "#ec4899",
-              "puntos": [
-                "Inició con la **Revolución francesa**.",
-                "España luchó en la Guerra de Independencia. Llega hasta hoy."
-              ]
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b09_contemporanea.jpg",
+              "texto": "1789: una nueva era",
+              "locucion": "En mil setecientos ochenta y nueve estalló la Revolución francesa. Poco después, España luchó contra las tropas de Napoleón en la Guerra de la Independencia. Comenzó así la Edad Contemporánea, la etapa en la que vivimos hoy. En ella han ocurrido cambios muy rápidos: la industrialización, los coches, los aviones e Internet.",
+              "puntos": []
+            },
+            {
+              "nombre": "Recuerda: las cuatro edades",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_01_edades/assets/b10_resumen_edades.jpg",
+              "texto": "Las cuatro edades",
+              "ajuste_imagen": "completo",
+              "locucion": "Recuerda el orden de las cuatro edades de la Historia. La Edad Antigua empieza con la escritura, hacia el año tres mil quinientos antes de Cristo. La Edad Media comienza en el cuatrocientos setenta y seis. La Edad Moderna, en mil cuatrocientos noventa y dos. Y la Edad Contemporánea, en mil setecientos ochenta y nueve, llega hasta hoy.",
+              "puntos": []
             }
-          ],
-          "destacado": {
-            "icono": "💡",
-            "titulo": "Dato Clave de la Historia",
-            "texto": "¡La invención de la **escritura** marca la frontera entre la Prehistoria y la Historia!"
-          }
+          ]
         }
       ]
     },
@@ -937,12 +1166,10 @@
   "color_primario": "#8b5cf6",
   "color_secundario": "#7c3aed",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas Visigodas",
+      "titulo": "Parejas Visigodas",
       "descripcion": "Encuentra las 7 parejas entre los reyes, pueblos y conceptos visigodos.",
       "icono": "🃏",
       "parejas": [
@@ -954,6 +1181,35 @@
         { "id": "campesinado", "etiqueta": "Campesinado", "icono": "🌾", "detalle": "Mayoría de la población", "color": "#f59e0b" },
         { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🏛️", "detalle": "Arte visigodo característico", "color": "#06b6d4" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo Visigoda",
+      "descripcion": "Ordena los acontecimientos del reino visigodo en Hispania.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "invasiones", "etiqueta": "Invasiones germánicas", "fecha": "409", "icono": "🌊", "color": "#ef4444" },
+        { "id": "fin_roma", "etiqueta": "Fin del Imperio Romano de Occidente", "fecha": "476", "icono": "🏛️", "color": "#3b82f6" },
+        { "id": "leovigildo", "etiqueta": "Leovigildo conquista a los suevos", "fecha": "585", "icono": "👑", "color": "#8b5cf6" },
+        { "id": "recaredo", "etiqueta": "Recaredo se convierte al catolicismo", "fecha": "589", "icono": "✝️", "color": "#ec4899" },
+        { "id": "guadalete", "etiqueta": "Batalla de Guadalete", "fecha": "711", "icono": "⚔️", "color": "#f97316" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡La Península Visigoda!",
+      "descripcion": "Ordena las 6 piezas del mapa visigodo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -1106,11 +1362,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡La Península Visigoda!",
-      "descripcion": "Ordena las 6 piezas del mapa visigodo.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -1339,12 +1593,10 @@
   "color_primario": "#8b5cf6",
   "color_secundario": "#7c3aed",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas Visigodas",
+      "titulo": "Parejas Visigodas",
       "descripcion": "Encuentra las 7 parejas entre los reyes, pueblos y conceptos visigodos.",
       "icono": "🃏",
       "parejas": [
@@ -1356,6 +1608,35 @@
         { "id": "campesinado", "etiqueta": "Campesinado", "icono": "🌾", "detalle": "Mayoría de la población", "color": "#f59e0b" },
         { "id": "herradura", "etiqueta": "Arco de herradura", "icono": "🏛️", "detalle": "Arte visigodo característico", "color": "#06b6d4" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo Visigoda",
+      "descripcion": "Ordena los acontecimientos del reino visigodo en Hispania.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "invasiones", "etiqueta": "Invasiones germánicas", "fecha": "409", "icono": "🌊", "color": "#ef4444" },
+        { "id": "fin_roma", "etiqueta": "Fin del Imperio Romano de Occidente", "fecha": "476", "icono": "🏛️", "color": "#3b82f6" },
+        { "id": "leovigildo", "etiqueta": "Leovigildo conquista a los suevos", "fecha": "585", "icono": "👑", "color": "#8b5cf6" },
+        { "id": "recaredo", "etiqueta": "Recaredo se convierte al catolicismo", "fecha": "589", "icono": "✝️", "color": "#ec4899" },
+        { "id": "guadalete", "etiqueta": "Batalla de Guadalete", "fecha": "711", "icono": "⚔️", "color": "#f97316" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡La Península Visigoda!",
+      "descripcion": "Ordena las 6 piezas del mapa visigodo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -1508,11 +1789,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡La Península Visigoda!",
-      "descripcion": "Ordena las 6 piezas del mapa visigodo.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_02_visigodos/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -1741,12 +2020,10 @@
   "color_primario": "#10b981",
   "color_secundario": "#059669",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas Medievales",
+      "titulo": "Parejas Medievales",
       "descripcion": "Encuentra las 7 parejas entre los protagonistas, lugares y conceptos clave.",
       "icono": "🃏",
       "parejas": [
@@ -1758,6 +2035,37 @@
         { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f97316" },
         { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XIII)", "color": "#ec4899" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo de la Reconquista",
+      "descripcion": "Ordena los grandes acontecimientos de al-Ándalus y los reinos cristianos.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "guadalete", "etiqueta": "Llegada de los musulmanes", "fecha": "711", "icono": "🕌", "color": "#10b981" },
+        { "id": "covadonga", "etiqueta": "Batalla de Covadonga", "fecha": "722", "icono": "🛡️", "color": "#3b82f6" },
+        { "id": "emirato", "etiqueta": "Emirato independiente de Córdoba", "fecha": "756", "icono": "🏛️", "color": "#06b6d4" },
+        { "id": "califato", "etiqueta": "Califato de Córdoba", "fecha": "929", "icono": "👑", "color": "#8b5cf6" },
+        { "id": "taifas", "etiqueta": "Reinos de Taifas", "fecha": "1031", "icono": "🏰", "color": "#f97316" },
+        { "id": "navas", "etiqueta": "Batalla de Las Navas de Tolosa", "fecha": "1212", "icono": "⚔️", "color": "#ef4444" },
+        { "id": "granada", "etiqueta": "Fin de al-Ándalus", "fecha": "1492", "icono": "🌺", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡Al-Ándalus Medieval!",
+      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -2063,11 +2371,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡Al-Ándalus Medieval!",
-      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -2320,12 +2626,10 @@
   "color_primario": "#10b981",
   "color_secundario": "#059669",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas Medievales",
+      "titulo": "Parejas Medievales",
       "descripcion": "Encuentra las 7 parejas entre los protagonistas, lugares y conceptos clave.",
       "icono": "🃏",
       "parejas": [
@@ -2337,6 +2641,37 @@
         { "id": "taifas", "etiqueta": "Reinos de Taifas", "icono": "🏰", "detalle": "División de al-Ándalus (1031)", "color": "#f97316" },
         { "id": "granada", "etiqueta": "Reino de Granada", "icono": "🌺", "detalle": "Último territorio nazarí (siglo XIII)", "color": "#ec4899" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo de la Reconquista",
+      "descripcion": "Ordena los grandes acontecimientos de al-Ándalus y los reinos cristianos.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "guadalete", "etiqueta": "Llegada de los musulmanes", "fecha": "711", "icono": "🕌", "color": "#10b981" },
+        { "id": "covadonga", "etiqueta": "Batalla de Covadonga", "fecha": "722", "icono": "🛡️", "color": "#3b82f6" },
+        { "id": "emirato", "etiqueta": "Emirato independiente de Córdoba", "fecha": "756", "icono": "🏛️", "color": "#06b6d4" },
+        { "id": "califato", "etiqueta": "Califato de Córdoba", "fecha": "929", "icono": "👑", "color": "#8b5cf6" },
+        { "id": "taifas", "etiqueta": "Reinos de Taifas", "fecha": "1031", "icono": "🏰", "color": "#f97316" },
+        { "id": "navas", "etiqueta": "Batalla de Las Navas de Tolosa", "fecha": "1212", "icono": "⚔️", "color": "#ef4444" },
+        { "id": "granada", "etiqueta": "Fin de al-Ándalus", "fecha": "1492", "icono": "🌺", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: ¡Al-Ándalus Medieval!",
+      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -2642,11 +2977,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: ¡Al-Ándalus Medieval!",
-      "descripcion": "Ordena las 6 piezas del mapa, monumentos y sabios de al-Ándalus.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_03_al_andalus/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -2899,12 +3232,10 @@
   "color_primario": "#f97316",
   "color_secundario": "#ea580c",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas del Arte Medieval",
+      "titulo": "Parejas del Arte Medieval",
       "descripcion": "Relaciona los estilos, edificios y elementos de la Edad Media.",
       "icono": "🃏",
       "parejas": [
@@ -2916,6 +3247,35 @@
         { "id": "romanico", "etiqueta": "Arte románico", "icono": "⛪", "detalle": "Muros gruesos, ventanas pequeñas y arco de medio punto", "color": "#8b5cf6" },
         { "id": "gotico", "etiqueta": "Arte gótico", "icono": "🌈", "detalle": "Catedrales altas, arcos apuntados y vidrieras", "color": "#ef4444" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo del Arte Medieval",
+      "descripcion": "Ordena los estilos y momentos clave del arte medieval.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "andalusi", "etiqueta": "Comienza el arte andalusí", "fecha": "711", "icono": "🕌", "color": "#10b981" },
+        { "id": "califato", "etiqueta": "Califato de Córdoba", "fecha": "929", "icono": "🏛️", "color": "#f59e0b" },
+        { "id": "romanico", "etiqueta": "Arte románico", "fecha": "Siglos XI – XII", "icono": "⛪", "color": "#8b5cf6" },
+        { "id": "gotico", "etiqueta": "Arte gótico", "fecha": "Siglos XIII – XV", "icono": "🌈", "color": "#ef4444" },
+        { "id": "fin_medieval", "etiqueta": "Fin de la Edad Media", "fecha": "1492", "icono": "🏰", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: Tres Estilos Medievales",
+      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -3070,11 +3430,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: Tres Estilos Medievales",
-      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,
@@ -3285,12 +3643,10 @@
   "color_primario": "#f97316",
   "color_secundario": "#ea580c",
   "es_circular": true,
-  "casillas": [
-    {
-      "id": 1,
-      "tipo": "minijuego",
+  "juegos": {
+    "parejas": {
       "subtipo": "parejas",
-      "titulo": "1. Parejas del Arte Medieval",
+      "titulo": "Parejas del Arte Medieval",
       "descripcion": "Relaciona los estilos, edificios y elementos de la Edad Media.",
       "icono": "🃏",
       "parejas": [
@@ -3302,6 +3658,35 @@
         { "id": "romanico", "etiqueta": "Arte románico", "icono": "⛪", "detalle": "Muros gruesos, ventanas pequeñas y arco de medio punto", "color": "#8b5cf6" },
         { "id": "gotico", "etiqueta": "Arte gótico", "icono": "🌈", "detalle": "Catedrales altas, arcos apuntados y vidrieras", "color": "#ef4444" }
       ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del Tiempo del Arte Medieval",
+      "descripcion": "Ordena los estilos y momentos clave del arte medieval.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "andalusi", "etiqueta": "Comienza el arte andalusí", "fecha": "711", "icono": "🕌", "color": "#10b981" },
+        { "id": "califato", "etiqueta": "Califato de Córdoba", "fecha": "929", "icono": "🏛️", "color": "#f59e0b" },
+        { "id": "romanico", "etiqueta": "Arte románico", "fecha": "Siglos XI – XII", "icono": "⛪", "color": "#8b5cf6" },
+        { "id": "gotico", "etiqueta": "Arte gótico", "fecha": "Siglos XIII – XV", "icono": "🌈", "color": "#ef4444" },
+        { "id": "fin_medieval", "etiqueta": "Fin de la Edad Media", "fecha": "1492", "icono": "🏰", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: Tres Estilos Medievales",
+      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 2,
@@ -3456,11 +3841,9 @@
     {
       "id": 4,
       "tipo": "minijuego",
-      "subtipo": "puzzle",
-      "titulo": "4. Puzzle: Tres Estilos Medievales",
-      "descripcion": "Reconstruye una imagen con monumentos andalusíes, románicos y góticos.",
-      "icono": "🧩",
-      "imagen": "data/cursos/5_primaria/ciencias_sociales/tema_06_castillos/cap_04_arte_medieval/assets/puzzle.jpg"
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
     },
     {
       "id": 5,

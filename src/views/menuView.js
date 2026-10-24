@@ -290,7 +290,7 @@ export class MenuView {
         audio.playClick();
         const capId = card.dataset.id;
         const capituloObj = capitulos.find(c => c.id === capId);
-        this.onSelectCapitulo(capituloObj);
+        this.onSelectCapitulo(capituloObj, this.selectedTema);
       });
     });
   }

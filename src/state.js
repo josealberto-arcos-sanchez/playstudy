@@ -7,7 +7,7 @@
  */
 class StateManager {
   constructor() {
-    this.storageKey = 'aventura_educativa_state_v1';
+    this.storageKey = 'aventura_educativa_state_v3';
     this.state = this.loadState();
   }
 
@@ -22,7 +22,7 @@ class StateManager {
     }
     return {
       temas: {}, // { [temaId]: { casillaDesbloqueada: 1, estrellas: { 1: 3, 2: 3 } } }
-      temaActualId: 'edades_historia',
+      temaActualId: 'cap_01_edades',
       estrellasTotales: 0
     };
   }

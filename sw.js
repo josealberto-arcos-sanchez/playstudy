@@ -9,7 +9,7 @@
      internet, sin tocar ninguna versión de caché.
    ============================================================ */
 
-const CACHE_NAME = 'playstudy-v15';
+const CACHE_NAME = 'playstudy-v17';
 
 // Recursos que se cachean en la instalación (shell de la app)
 const PRECACHE_URLS = [
@@ -21,6 +21,7 @@ const PRECACHE_URLS = [
   '/playstudy/css/map.css',
   '/playstudy/css/memory.css',
   '/playstudy/css/puzzle.css',
+  '/playstudy/css/timeline.css',
   '/playstudy/css/theory.css',
   '/playstudy/css/quiz.css',
   '/playstudy/css/settings.css',
