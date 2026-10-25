@@ -230,12 +230,12 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
         {
           "enunciado": "¿Pregunta sobre la teoría vista?",
           "opciones": [
-            "Opción correcta (siempre en la posición 0, el juego las mezcla automáticamente)",
+            "Texto exacto de la opción correcta",
             "Opción incorrecta 1",
             "Opción incorrecta 2",
             "Opción incorrecta 3"
           ],
-          "correcta": 0,
+          "correcta": "Texto exacto de la opción correcta",
           "explicacion": "¡Correcto! Explicación formativa y motivadora."
         }
       ]
@@ -283,12 +283,12 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
         {
           "enunciado": "¿Segunda pregunta final?",
           "opciones": [
-            "Opción correcta",
+            "Texto exacto de la opción correcta",
             "Opción incorrecta A",
             "Opción incorrecta B",
             "Opción incorrecta C"
           ],
-          "correcta": 0,
+          "correcta": "Texto exacto de la opción correcta",
           "explicacion": "¡Sensacional! Retroalimentación positiva."
         }
       ]
@@ -303,8 +303,8 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
 
 > **La teoría es siempre una presentación narrada.** Cada objeto de `tarjetas` es **una diapositiva** y necesita obligatoriamente `imagen` (ruta local en `assets/`) y `locucion`. El rótulo visible va en `texto` (idealmente 6 palabras o menos); `nombre` y `fecha` encabezan la diapositiva. `puntos` es opcional y sirve de apoyo escrito o accesible: no sustituye a la imagen ni a la locución. Para cerrar con un resumen, añade una última tarjeta con su propia imagen (por ejemplo, una infografía `*_resumen.jpg`) y su locución. El reproductor avisa por consola (`[Teoría]`) si alguna tarjeta no tiene imagen o locución.
 
-1. **La opción correcta siempre va en el índice `0`**:
-   En el archivo `contenido.json`, define siempre la respuesta verdadera en `opciones[0]` con `"correcta": 0`. El motor del juego baraja las respuestas al azar al mostrarlas al niño.
+1. **La respuesta correcta se marca con su texto**:
+   En `contenido.json`, escribe en `correcta` el texto exacto de una de las opciones, por ejemplo `"correcta": "El dominio del fuego"`. Así el quiz sigue siendo correcto aunque se reordenen las opciones y el JSON se entiende sin conocer ninguna convención. El motor baraja las respuestas al azar al mostrarlas al niño. Las opciones de una misma pregunta deben ser distintas. El formato heredado `"correcta": 0` (con la respuesta en `opciones[0]`) se sigue aceptando, pero no se usa en material nuevo.
 2. **Imágenes para el puzzle**:
    - Guardar como JPG en formato apaisado (`assets/puzzle.jpg`).
    - Peso recomendado: entre 100 KB y 600 KB para que cargue al instante.

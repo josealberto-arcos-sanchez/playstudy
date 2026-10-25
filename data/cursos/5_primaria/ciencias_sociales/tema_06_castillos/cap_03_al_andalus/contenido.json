@@ -203,7 +203,7 @@
             "En el siglo XV, en América, fundado por Cristóbal Colón",
             "En el siglo X, en China, fundado por Confucio"
           ],
-          "correcta": 0,
+          "correcta": "En el siglo VII, en Arabia, fundado por Mahoma",
           "explicacion": "¡Correcto! El islam nació a principios del siglo VII en Arabia. Su fundador fue Mahoma y su libro sagrado es el Corán."
         },
         {
@@ -214,7 +214,7 @@
             "La Torá",
             "El Fuero Real"
           ],
-          "correcta": 0,
+          "correcta": "El Corán",
           "explicacion": "¡Exacto! El Corán es el libro sagrado del islam, con todos los preceptos que debe cumplir un musulmán."
         },
         {
@@ -225,7 +225,7 @@
             "Recaredo, la creación de al-Ándalus",
             "Alarico, la invasión de los francos"
           ],
-          "correcta": 0,
+          "correcta": "Don Rodrigo, el fin del reino de Toledo",
           "explicacion": "¡Muy bien! Don Rodrigo fue derrotado en Guadalete en el año 711. Con él terminó el reino visigodo de Toledo y los musulmanes conquistaron casi toda la Península."
         },
         {
@@ -236,7 +236,7 @@
             "Lusitania",
             "Tarraconense"
           ],
-          "correcta": 0,
+          "correcta": "Al-Ándalus",
           "explicacion": "¡Genial! Los musulmanes llamaron al-Ándalus a su territorio, y a sus habitantes andalusíes."
         },
         {
@@ -247,7 +247,7 @@
             "Desde Arabia hasta América",
             "Solo la península ibérica"
           ],
-          "correcta": 0,
+          "correcta": "Desde la India hasta el norte de África",
           "explicacion": "¡Muy bien! En su expansión inicial, los musulmanes llegaron desde la India hasta el norte de África. Poco después, en el 711, entraron en la península ibérica."
         },
         {
@@ -258,7 +258,7 @@
             "Una república formada por ciudades libres",
             "Un reino cristiano aliado de los francos"
           ],
-          "correcta": 0,
+          "correcta": "Una provincia (emirato) que dependía del califato omeya de Damasco",
           "explicacion": "¡Exacto! Al principio, al-Ándalus era una provincia del califato omeya. Estaba gobernada por un emir que dependía del califa de Damasco."
         },
         {
@@ -269,7 +269,7 @@
             "Imperio Bizantino",
             "Sultanato"
           ],
-          "correcta": 0,
+          "correcta": "Califato",
           "explicacion": "¡Correcto! Al-Ándalus pertenecía al califato omeya, el imperio islámico con capital en Damasco."
         },
         {
@@ -280,7 +280,7 @@
             "El sultán",
             "El papa"
           ],
-          "correcta": 0,
+          "correcta": "El califa",
           "explicacion": "¡Muy bien! El califa era la máxima autoridad del califato: dirigía el imperio y también era la cabeza religiosa."
         },
         {
@@ -291,7 +291,7 @@
             "Fue derrotada por los reinos cristianos",
             "Se convirtió en la familia real de Córdoba"
           ],
-          "correcta": 0,
+          "correcta": "Fue derrocada y algunos miembros huyeron a al-Ándalus",
           "explicacion": "¡Así es! En el año 750, los abasíes derrocaron a los omeyas. Algunos miembros de la familia huyeron; uno de ellos, Abd al-Rahman I, llegó a al-Ándalus."
         },
         {
@@ -302,7 +302,7 @@
             "El rey visigodo derrotado en Guadalete",
             "El califa que proclamó el califato de Córdoba en 929"
           ],
-          "correcta": 0,
+          "correcta": "Un príncipe omeya que huyó a al-Ándalus y creó el emirato independiente de Córdoba en 756",
           "explicacion": "¡Perfecto! Abd al-Rahman I era un príncipe de la familia Omeya. Tras la derrota de su familia, huyó a al-Ándalus y en 756 creó el emirato independiente de Córdoba."
         },
         {
@@ -313,7 +313,7 @@
             "929",
             "1031"
           ],
-          "correcta": 0,
+          "correcta": "756",
           "explicacion": "¡Perfecto! En el año 756, Abd al-Rahman I independizó al-Ándalus del califato abasí y creó el emirato independiente de Córdoba."
         },
         {
@@ -324,7 +324,7 @@
             "La rendición ante los cristianos",
             "La división en taifas"
           ],
-          "correcta": 0,
+          "correcta": "El califato de Córdoba",
           "explicacion": "¡Así es! En el año 929, Abd al-Rahman III se proclamó califa y creó el califato de Córdoba, su época de máximo esplendor."
         },
         {
@@ -335,7 +335,7 @@
             "Pasó a formar parte del imperio bizantino",
             "Se convirtió en el reino nazarí de Granada"
           ],
-          "correcta": 0,
+          "correcta": "Se fragmentó en pequeños reinos llamados taifas",
           "explicacion": "¡Estupendo! En 1031 el califato de Córdoba se dividió en numerosos reinos pequeños llamados taifas."
         },
         {
@@ -346,7 +346,7 @@
             "Los alanos y los celtas",
             "Los francos y los normandos"
           ],
-          "correcta": 0,
+          "correcta": "Los almorávides y los almohades",
           "explicacion": "¡Correcto! Los reyes de taifas solicitaron auxilio a los almorávides y más tarde a los almohades."
         },
         {
@@ -357,7 +357,7 @@
             "Las taifas del norte",
             "El califato de Córdoba"
           ],
-          "correcta": 0,
+          "correcta": "El reino nazarí de Granada",
           "explicacion": "¡Excelente! Desde el siglo XIII, el territorio musulmán se redujo al reino nazarí de Granada, que resistió hasta 1492."
         }
       ]
@@ -485,7 +485,7 @@
             "Jaime I el Conquistador",
             "Don Rodrigo"
           ],
-          "correcta": 0,
+          "correcta": "Don Pelayo",
           "explicacion": "¡Genial! Don Pelayo lideró a los astures en Covadonga en el 722, dando origen al reino de Asturias."
         },
         {
@@ -496,7 +496,7 @@
             "Valencia, Baleares y Murcia",
             "Toledo, Córdoba y Granada"
           ],
-          "correcta": 0,
+          "correcta": "Castilla, Portugal y León",
           "explicacion": "¡Exacto! Con el tiempo se formaron en el oeste peninsular los reinos de León, Castilla y Portugal."
         },
         {
@@ -507,7 +507,7 @@
             "Granada",
             "Sevilla"
           ],
-          "correcta": 0,
+          "correcta": "Toledo",
           "explicacion": "¡Muy bien! En 1085, Alfonso VI conquistó la histórica ciudad de Toledo para el reino cristiano."
         },
         {
@@ -518,7 +518,7 @@
             "En 1212",
             "En 1492"
           ],
-          "correcta": 0,
+          "correcta": "En 1137",
           "explicacion": "¡Perfecto! En 1137 se formalizó la unión dinástica entre Aragón y el condado de Barcelona."
         },
         {
@@ -529,7 +529,7 @@
             "Batalla de Guadalete",
             "Batalla de Roncesvalles"
           ],
-          "correcta": 0,
+          "correcta": "Batalla de Las Navas de Tolosa",
           "explicacion": "¡Así es! La batalla de Las Navas de Tolosa (1212) fue el punto de inflexión decisivo de la Reconquista."
         },
         {
@@ -540,7 +540,7 @@
             "Don Pelayo",
             "Fernando el Católico"
           ],
-          "correcta": 0,
+          "correcta": "Jaime I el Conquistador",
           "explicacion": "¡Estupendo! Jaime I el Conquistador expandió la Corona de Aragón por Valencia, Baleares y el mar Mediterráneo."
         },
         {
@@ -551,7 +551,7 @@
             "En 1031",
             "En 1085"
           ],
-          "correcta": 0,
+          "correcta": "En 1230",
           "explicacion": "¡Correcto! En 1230 se unieron definitivamente Castilla y León formando la poderosa Corona de Castilla."
         },
         {
@@ -562,7 +562,7 @@
             "Visigodos",
             "Andalusíes"
           ],
-          "correcta": 0,
+          "correcta": "Mudéjares",
           "explicacion": "¡Genial! Los mudéjares eran los musulmanes que conservaron su religión viviendo bajo dominio cristiano."
         },
         {
@@ -573,7 +573,7 @@
             "Celtas, iberos y fenicios",
             "Suevos, alanos y vándalos"
           ],
-          "correcta": 0,
+          "correcta": "Cristianos, musulmanes y judíos",
           "explicacion": "¡Excelente! La época medieval peninsular destacó por la enriquecedora convivencia entre cristianos, musulmanes y judíos."
         },
         {
@@ -584,7 +584,7 @@
             "Navas de Tolosa (1212) ➡️ Conquista de Toledo (1085) ➡️ Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722)",
             "Batalla de Guadalete (711) ➡️ Navas de Tolosa (1212) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085)"
           ],
-          "correcta": 0,
+          "correcta": "Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085) ➡️ Navas de Tolosa (1212)",
           "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
         },
         {
@@ -595,7 +595,7 @@
             "Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente ➡️ Reino nazarí",
             "Reino nazarí ➡️ Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente"
           ],
-          "correcta": 0,
+          "correcta": "Emirato dependiente ➡️ Emirato independiente (756) ➡️ Califato (929) ➡️ Taifas (1031) ➡️ Reino nazarí (siglo XIII)",
           "explicacion": "¡Brillante! Primero al-Ándalus dependía del califato; en 756 se hizo emirato independiente; en 929 se proclamó el califato de Córdoba; en 1031 se dividió en taifas; y desde el siglo XIII solo quedó el reino nazarí de Granada."
         }
       ]

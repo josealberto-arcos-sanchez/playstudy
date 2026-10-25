@@ -2642,6 +2642,41 @@ ${lines.join("\n")}`;
     }
   };
 
+  // src/quiz.js
+  function resolverRespuestaCorrecta(pregunta) {
+    const opciones = Array.isArray(pregunta?.opciones) ? pregunta.opciones : [];
+    const correcta = pregunta?.correcta;
+    if (typeof correcta === "string") {
+      const indice = opciones.indexOf(correcta);
+      if (indice === -1) {
+        return {
+          indice: -1,
+          error: `la respuesta correcta \xAB${correcta}\xBB no coincide con ninguna opcion`
+        };
+      }
+      if (opciones.indexOf(correcta, indice + 1) !== -1) {
+        return {
+          indice: -1,
+          error: `la respuesta correcta \xAB${correcta}\xBB aparece en varias opciones`
+        };
+      }
+      return { indice };
+    }
+    if (Number.isInteger(correcta)) {
+      if (correcta < 0 || correcta >= opciones.length) {
+        return {
+          indice: -1,
+          error: `el indice de la respuesta correcta (${correcta}) no apunta a ninguna opcion`
+        };
+      }
+      return { indice: correcta };
+    }
+    return {
+      indice: -1,
+      error: "'correcta' debe ser el texto exacto de una opcion o su indice numerico"
+    };
+  }
+
   // src/views/quizView.js
   var QuizView = class {
     constructor(tema, casillaData, onComplete, onExit) {
@@ -2657,9 +2692,10 @@ ${lines.join("\n")}`;
     prepararPreguntas(preguntasOriginales) {
       if (!preguntasOriginales || !preguntasOriginales.length) return [];
       const preguntasPreparadas = preguntasOriginales.map((q) => {
+        const { indice: indiceCorrecto } = resolverRespuestaCorrecta(q);
         const opcionesConInfo = q.opciones.map((texto, idx) => ({
           texto,
-          esCorrecta: idx === q.correcta
+          esCorrecta: idx === indiceCorrecto
         }));
         for (let i = opcionesConInfo.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));

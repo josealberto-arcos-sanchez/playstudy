@@ -139,7 +139,7 @@
             "Vikingos, celtas, iberos y tartesios",
             "Francos, hunos, sajones y normandos"
           ],
-          "correcta": 0,
+          "correcta": "Alanos, suevos, vándalos y visigodos",
           "explicacion": "¡Muy bien! Alanos, suevos, vándalos y visigodos invadieron Hispania procedentes del norte y el este de Europa."
         },
         {
@@ -150,7 +150,7 @@
             "Los vándalos y los francos",
             "Los romanos y los griegos"
           ],
-          "correcta": 0,
+          "correcta": "Los cántabros y los vascones",
           "explicacion": "¡Exacto! Los cántabros y los vascones mantuvieron su independencia y no fueron sometidos por los visigodos."
         },
         {
@@ -161,7 +161,7 @@
             "Para que enseñaran latín a los demás pueblos",
             "Porque los visigodos tenían los mejores barcos"
           ],
-          "correcta": 0,
+          "correcta": "Necesitaba ayuda para frenar la invasión de otros pueblos",
           "explicacion": "¡Correcto! Roma negoció con los visigodos: podían instalarse en Hispania a cambio de expulsar a los otros invasores."
         },
         {
@@ -172,7 +172,7 @@
             "Sevilla (Hispalis)",
             "Zaragoza (Caesaraugusta)"
           ],
-          "correcta": 0,
+          "correcta": "Toledo (Toletum)",
           "explicacion": "¡Genial! Toledo, llamada Toletum en latín, fue la capital del reino visigodo durante todo su período."
         },
         {
@@ -183,7 +183,7 @@
             "Pamplona, en el norte",
             "Mérida, en el suroeste"
           ],
-          "correcta": 0,
+          "correcta": "Braga (Bracara Augusta), en el noroeste",
           "explicacion": "¡Perfecto! Los suevos establecieron su capital en Braga (Bracara Augusta), en el noroeste de la Península."
         },
         {
@@ -194,7 +194,7 @@
             "Recesvinto",
             "Ataulfo"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo",
           "explicacion": "¡Estupendo! Leovigildo conquistó el reino suevo en el 585, logrando unificar toda la Península Ibérica."
         },
         {
@@ -205,7 +205,7 @@
             "Procedían del norte de África",
             "Venían de la India y Asia Central"
           ],
-          "correcta": 0,
+          "correcta": "Procedían de la región del Cáucaso y eran de origen escandinavo",
           "explicacion": "¡Así es! Los visigodos (y otros pueblos germánicos) procedían del Cáucaso y tenían origen escandinavo."
         },
         {
@@ -216,7 +216,7 @@
             "Recesvinto ➡️ Recaredo ➡️ Leovigildo",
             "Leovigildo ➡️ Recesvinto ➡️ Recaredo"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo ➡️ Recaredo ➡️ Recesvinto",
           "explicacion": "¡Correcto! Primero Leovigildo unificó el reino, después Recaredo se convirtió al catolicismo, y más tarde Recesvinto creó leyes comunes."
         }
       ]
@@ -341,7 +341,7 @@
             "Ambos grupos eran católicos desde el principio",
             "Los visigodos eran budistas y los hispanorromanos paganos"
           ],
-          "correcta": 0,
+          "correcta": "Los hispanorromanos eran católicos y los visigodos arrianos",
           "explicacion": "¡Muy bien! Los hispanorromanos eran católicos mientras que los visigodos seguían el arrianismo, lo que generaba división en el reino."
         },
         {
@@ -352,7 +352,7 @@
             "Declaró el islam como religión oficial",
             "Prohibió todas las religiones en el reino"
           ],
-          "correcta": 0,
+          "correcta": "Se convirtió al catolicismo, abandonando el arrianismo",
           "explicacion": "¡Exacto! En el 589, Recaredo adoptó el catolicismo, lo que unificó religiosamente a visigodos e hispanorromanos."
         },
         {
@@ -363,7 +363,7 @@
             "Se desarrollaron mucho la industria y las fábricas",
             "Todo siguió exactamente igual que con los romanos"
           ],
-          "correcta": 0,
+          "correcta": "Disminuyó el comercio pero aumentó la agricultura y la ganadería",
           "explicacion": "¡Correcto! Con los visigodos el comercio y la artesanía decayeron, pero creció la importancia del mundo rural: la agricultura y ganadería."
         },
         {
@@ -374,7 +374,7 @@
             "Los artesanos, que controlaban el comercio",
             "Los esclavos, que dirigían el ejército"
           ],
-          "correcta": 0,
+          "correcta": "La nobleza, que ocupaba los cargos políticos y de la Iglesia",
           "explicacion": "¡Genial! La nobleza era una minoría que ostentaba los principales cargos políticos y religiosos del reino."
         },
         {
@@ -385,7 +385,7 @@
             "Los mercaderes, que viajaban por Europa",
             "Los soldados, que vigilaban las fronteras"
           ],
-          "correcta": 0,
+          "correcta": "El campesinado, que trabajaba las tierras",
           "explicacion": "¡Correcto! La mayoría de la población eran campesinos que trabajaban la tierra. También había esclavos."
         },
         {
@@ -396,7 +396,7 @@
             "Recaredo",
             "Ataulfo"
           ],
-          "correcta": 0,
+          "correcta": "Recesvinto",
           "explicacion": "¡Así es! Durante el reinado de Recesvinto se elaboraron leyes comunes para todos los habitantes del reino visigodo."
         },
         {
@@ -407,7 +407,7 @@
             "Los enormes acueductos y anfiteatros como los romanos",
             "Los rascacielos con cúpulas doradas"
           ],
-          "correcta": 0,
+          "correcta": "Las pequeñas iglesias rurales con arcos de herradura",
           "explicacion": "¡Perfecto! El arte visigodo se caracterizó por iglesias rurales de pequeño tamaño, pocas ventanas y el arco de herradura."
         },
         {
@@ -418,7 +418,7 @@
             "En la escultura de estatuas de mármol gigantes",
             "En la cerámica pintada de colores vivos"
           ],
-          "correcta": 0,
+          "correcta": "En la orfebrería: piezas artísticas elaboradas con metal",
           "explicacion": "¡Excelente! Los visigodos destacaron en la orfebrería, creando bellas piezas artísticas con metales preciosos."
         },
         {
@@ -429,7 +429,7 @@
             "Sevilla",
             "Granada"
           ],
-          "correcta": 0,
+          "correcta": "Palencia",
           "explicacion": "¡Muy bien! La iglesia de San Juan de Baños de Cerrato, en Palencia, es uno de los mejores ejemplos de arquitectura visigoda conservada."
         },
         {
@@ -440,7 +440,7 @@
             "Fernando, Isabel y Carlos",
             "Pelayo, Alfonso y Sancho"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo, Recaredo y Recesvinto",
           "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
         },
         {
@@ -451,7 +451,7 @@
             "Recaredo",
             "Recesvinto"
           ],
-          "correcta": 0,
+          "correcta": "Don Rodrigo",
           "explicacion": "¡Correcto! Don Rodrigo fue el último rey visigodo. En el año 711 fue derrotado en Guadalete por los musulmanes."
         },
         {
@@ -462,7 +462,7 @@
             "La unión de Castilla y León en un solo reino",
             "La conversión de los visigodos al islam"
           ],
-          "correcta": 0,
+          "correcta": "El fin del reino de Toledo y la conquista musulmana de casi toda la Península",
           "explicacion": "¡Muy bien! Tras Guadalete, el reino visigodo de Toledo desapareció y los musulmanes conquistaron casi toda la Península. A ese territorio llamaron al-Ándalus."
         }
       ]

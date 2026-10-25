@@ -19,12 +19,15 @@
  * - 6 casillas por capítulo y exactamente 2 juegos por tema.
  * - Teoría como presentación: cada tarjeta con imagen local y locución.
  * - Rutas de imagen existentes y créditos completos.
- * - La respuesta correcta de cada quiz en opciones[0] ("correcta": 0).
+ * - La respuesta correcta de cada quiz, indicada por el texto de una opción
+ *   (formato recomendado) o por su índice (formato heredado).
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import { resolverRespuestaCorrecta } from '../src/quiz.js';
 
 /** Raíz del proyecto (este archivo vive en scripts/). */
 export const RAIZ_PROYECTO = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -223,18 +226,31 @@ export function validarContenido({ raiz = RAIZ_PROYECTO } = {}) {
         continue;
       }
 
-      for (const pregunta of preguntas) {
+      for (const [numero, pregunta] of preguntas.entries()) {
         if (!pregunta || typeof pregunta !== 'object') {
           errores.push(`${donde} · casilla ${casilla.id}: una pregunta no es un objeto`);
           continue;
         }
-        if (pregunta.correcta !== 0) {
+
+        const etiqueta = `${donde} · casilla ${casilla.id} · pregunta ${numero + 1}`;
+        const opciones = Array.isArray(pregunta.opciones) ? pregunta.opciones : [];
+
+        if (opciones.length < 2) {
+          errores.push(`${etiqueta}: una pregunta tiene menos de dos opciones`);
+        }
+
+        const repetidas = opciones.filter(
+          (opcion, indice) => opciones.indexOf(opcion) !== indice
+        );
+        if (repetidas.length > 0) {
           errores.push(
-            `${donde} · casilla ${casilla.id}: la respuesta correcta debe estar en opciones[0]`
+            `${etiqueta}: las opciones deben ser distintas; se repite «${repetidas[0]}»`
           );
         }
-        if (!Array.isArray(pregunta.opciones) || pregunta.opciones.length < 2) {
-          errores.push(`${donde} · casilla ${casilla.id}: una pregunta tiene menos de dos opciones`);
+
+        const { error } = resolverRespuestaCorrecta(pregunta);
+        if (error) {
+          errores.push(`${etiqueta}: ${error}`);
         }
       }
     }
