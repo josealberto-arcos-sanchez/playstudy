@@ -7,19 +7,11 @@ Registro de mejoras pendientes. Las propuestas completadas se eliminan de esta l
 - ✅ **P0 — Una sola fuente de verdad**: `src/game_bundle.js` se genera con esbuild desde los módulos de `src/` (`scripts/empaquetar.ps1`); el workflow *Bundle sincronizado* comprueba en cada PR que el bundle subido coincide con los módulos. No hay copias editables a mano.
 - ✅ **P1 — Registro de juegos y tipos**: `GAME_REGISTRY` / `TYPE_REGISTRY` en `src/app.js`; añadir un minijuego = crear su módulo + 1 línea de registro + su material en `contenido.json`.
 - ✅ **P1 — Tests para la lógica pura**: `tests/` con `node --test` (sin dependencias) cubre `barajarJuegosCircuito`, `montarJuegosDelTema` y `StateManager` (mock de `localStorage` en `tests/helpers.js`). `npm test` en local y workflow *Tests* en cada PR.
+- ✅ **P1 — Versionado automático de la caché del SW**: `scripts/versionar.ps1` genera `sw_version.js` con `CACHE_NAME = playstudy-<hash>` (hash del contenido del shell) y la lista de `PRECACHE_URLS` escaneando `css/`, `icons/`, `index.html`, `manifest.json` y el bundle. `sw.js` la carga con `importScripts` y deriva `BASE` de `self.registration.scope`, así que no queda ningún `/playstudy/` escrito a mano. `jugar.bat` lo regenera al arrancar y el workflow *Versionado SW* comprueba en cada PR que el artefacto coincide. Sin tareas manuales: añadir un CSS o un icono mueve la versión solo.
 
 ---
 
 ## Pendientes
-
-### 🟠 P1 — Automatizar el versionado de la caché del SW
-
-`sw.js` depende de dos tareas humanas propensas a error:
-
-1. **`CACHE_NAME = 'playstudy-v20'`**: hay que *acordarse* de subir el número (el README lo advierte). Propuesta: derivar la versión de un hash de los archivos del shell (p. ej. en `scripts/empaquetar.ps1`, que escriba `sw.js` con `playstudy-<hash>`), o en su defecto un `scripts/versionar.ps1`.
-2. **`PRECACHE_URLS` manual**: 18 rutas escritas a mano; cada CSS nuevo hay que recordarlo. Se puede generar la lista escaneando `css/`, `src/`, `icons/` en el mismo script.
-
-Detallito adicional: `/playstudy/` está repetido como prefijo literal en cada ruta. Con `const BASE = '/playstudy/'` (o derivándolo de `self.registration.scope`) el SW sobrevive a un cambio de ruta de despliegue.
 
 ### 🟡 P2 — Pipeline de datos: validar antes de sincronizar
 
@@ -59,7 +51,7 @@ La convención *«la correcta va en `opciones[0]` con `correcta: 0`»* es invisi
 ## Roadmap sugerido
 
 1. ~~**P1 tests**~~ ✔ hecho (`tests/` + workflow *Tests*).
-2. **P1 versionado del SW** (un cambio pequeño, gran reducción de fricción).
+2. ~~**P1 versionado del SW**~~ ✔ hecho (`scripts/versionar.ps1` + `sw_version.js` + workflow *Versionado SW*).
 3. **P2 pipeline de datos** (validar→sincronizar en un comando) y **P2 storage** con migración.
 4. **P3** según crezca el equipo/contenido.
 

@@ -199,6 +199,7 @@ Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de 
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
 - `scripts/validar_contenido.ps1`: comprueba que todos los capítulos usan el formato de presentaciones narradas (imagen y locución en cada diapositiva) y que las rutas y los créditos están completos.
 - `scripts/empaquetar.ps1`: genera `src/game_bundle.js` a partir de los módulos de `src/`; con `-Check` solo comprueba que están sincronizados.
+- `scripts/versionar.ps1`: genera `sw_version.js` (versión `playstudy-<hash>` de la caché + lista de precache) escaneando el shell de la PWA; con `-Check` solo comprueba que está sincronizado. `jugar.bat` lo ejecuta al arrancar.
 - `src/app.js`: orquestador del juego. Su `GAME_REGISTRY` / `TYPE_REGISTRY` mapan cada subtipo de minijuego y tipo de casilla a su clase; para añadir un minijuego nuevo, crea su módulo en `src/games/` y súmalo a `GAME_REGISTRY`.
 - `src/gameOrder.js`: monta los dos juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
 - `src/games/timelineGame.js`: minijuego de línea del tiempo.
@@ -210,4 +211,4 @@ Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de 
 - `css/theory.css`: estilos de las diapositivas.
 - `.agents/skills/gestionar-contenido-educativo/SKILL.md`: pautas ampliadas para incorporar contenido educativo.
 
-Si modificas el código o los estilos que forman parte de la shell de la PWA (el bundle regenerado o CSS), actualiza la versión `CACHE_NAME` en `sw.js`. Añadir datos e imágenes de un capítulo no requiere modificarla.
+La versión de la caché de la PWA y la lista de recursos precacheados las genera `scripts/versionar.ps1` en `sw_version.js` a partir del contenido de la shell (`index.html`, `manifest.json`, `css/`, `src/game_bundle.js` e `icons/`). No hay que tocar ningún número a mano: `jugar.bat` regenera el archivo al arrancar y el workflow *Versionado SW* falla si el `sw_version.js` subido no coincide con el shell. Añadir un CSS o un icono nuevo basta para que entrada y versión se actualicen solas; añadir datos e imágenes de un capítulo no requiere regenerar nada.

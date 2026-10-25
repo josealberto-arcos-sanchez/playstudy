@@ -1,0 +1,24 @@
+name: Versionado SW
+
+# Comprueba en cada PR y push a main que sw_version.js (la version de la cache
+# y la lista de precache que sw.js carga con importScripts) coincide con lo
+# que genera scripts/versionar.ps1 a partir del contenido del shell de la PWA
+# (index.html, manifest.json, css/, src/game_bundle.js, icons/). Asi ninguna
+# de las dos piezas puede desincronizarse: si difiere, el workflow falla con
+# instrucciones para regenerarla.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-sw-version:
+    runs-on: windows-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Regenerar sw_version.js y compararlo con el subido
+        shell: pwsh
+        run: ./scripts/versionar.ps1 -Check

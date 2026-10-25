@@ -2,3 +2,7 @@
 # (scripts/empaquetar.ps1 -Check), asi que sus finales de linea deben ser
 # siempre LF en todos los sistemas.
 src/game_bundle.js text eol=lf
+
+# sw_version.js lo genera scripts/versionar.ps1 comparando su contenido con
+# -Check en CI; LF fijo evita diffs falsos entre sistemas.
+sw_version.js text eol=lf
