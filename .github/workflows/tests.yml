@@ -1,0 +1,26 @@
+name: Tests
+
+# Ejecuta en cada PR y push a main los tests de la logica pura de src/
+# (tests/). Son el mismo `node --test` que se puede correr en local con
+# `npm test`; no hay dependencias que instalar (package.json solo declara
+# el script). El resto del proyecto (jugar) no depende de Node en runtime.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Ejecutar los tests
+        run: npm test
