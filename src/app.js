@@ -66,7 +66,7 @@ class App {
       this.root.innerHTML = `
         <div class="error-panel">
           <h2>No se han podido cargar los datos</h2>
-          <p>Ejecuta <code>scripts/actualizar_datos.ps1</code> para sincronizar <code>data/catalogo_data.js</code> y vuelve a abrir el juego.</p>
+          <p>Ejecuta <code>npm run datos</code> para validar y sincronizar <code>data/catalogo_data.js</code>, y vuelve a abrir el juego.</p>
         </div>
       `;
       return;

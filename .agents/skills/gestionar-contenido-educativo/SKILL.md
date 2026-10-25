@@ -66,12 +66,12 @@ Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas
    }
    ```
 
-5. **Sincronizar datos**:
-   Ejecutar el script de sincronización para que funcione 100% offline con doble clic:
+5. **Validar y sincronizar datos**:
+   Ejecutar el pipeline, que valida **antes** de escribir y aborta si hay errores:
    ```powershell
-   powershell -ExecutionPolicy Bypass -File "scripts/actualizar_datos.ps1"
+   npm run datos
    ```
-   *(Nota: `jugar.bat` ejecuta este script automáticamente al arrancar).*
+   *(Nota: `jugar.bat` lo ejecuta automáticamente al arrancar. `npm run datos:validar` solo revisa y `npm run datos:check` comprueba que el artefacto subido está sincronizado).*
 
 ---
 
@@ -317,9 +317,9 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
    - Si una imagen no muestra todos los elementos mencionados, añadir una segunda imagen o un pequeño montaje, o ajustar la locución para que describa lo que sí se ve.
    - Mantener el texto en pantalla breve; la explicación más completa va en la locución.
 5. **Sincronizar y validar antes de dar el material por terminado**:
-   - Ejecutar `scripts/actualizar_datos.ps1` o arrancar desde `jugar.bat`.
+   - Ejecutar `npm run datos` (o arrancar desde `jugar.bat`): primero valida todo el contenido y, solo si no hay errores, regenera `data/catalogo_data.js`.
    - Si se añade un capítulo y se recarga el navegador sin ejecutar la sincronización, el archivo `data/catalogo_data.js` no contendrá los nuevos datos cuando se acceda vía `file://`.
-   - Ejecutar `powershell -ExecutionPolicy Bypass -File "scripts/validar_contenido.ps1"`: comprueba que cada diapositiva tiene imagen y locución, que las rutas existen, que los créditos están completos y que ninguna ficha usa bloques de texto sin imagen.
+   - El validador comprueba que cada diapositiva tiene imagen y locución, que las rutas existen, que los créditos están completos y que ninguna ficha usa bloques de texto sin imagen. Se puede ejecutar solo con `npm run datos:validar`; `npm run datos:check` añade la comprobación de que el artefacto subido está sincronizado.
 6. **Paleta de colores para las tarjetas**:
    - Rojo: `#ef4444`
    - Verde: `#10b981`

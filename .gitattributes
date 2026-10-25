@@ -6,3 +6,7 @@ src/game_bundle.js text eol=lf
 # sw_version.js lo genera scripts/versionar.ps1 comparando su contenido con
 # -Check en CI; LF fijo evita diffs falsos entre sistemas.
 sw_version.js text eol=lf
+
+# catalogo_data.js lo genera scripts/datos.mjs con LF y el workflow Tests
+# compara su contenido con "npm run datos:check"; fijar LF evita diffs falsos.
+data/catalogo_data.js text eol=lf

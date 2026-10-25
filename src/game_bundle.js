@@ -121,7 +121,7 @@
         return window.CATALOGO_DATA;
       }
       console.error(
-        "[Datos] No se ha encontrado el cat\xE1logo. Ejecuta scripts/actualizar_datos.ps1 o abre el juego desde un servidor web."
+        '[Datos] No se ha encontrado el cat\xE1logo. Ejecuta "npm run datos" o abre el juego desde un servidor web.'
       );
       return null;
     }
@@ -151,7 +151,7 @@
         }
       }
       console.error(
-        `[Datos] No se ha encontrado el contenido de \xAB${capituloObj.id || capituloObj.archivo}\xBB. Sincroniza los datos con scripts/actualizar_datos.ps1.`
+        `[Datos] No se ha encontrado el contenido de \xAB${capituloObj.id || capituloObj.archivo}\xBB. Sincroniza los datos con "npm run datos".`
       );
       return null;
     }
@@ -3798,7 +3798,7 @@ ${lines.join("\n")}`;
         this.root.innerHTML = `
         <div class="error-panel">
           <h2>No se han podido cargar los datos</h2>
-          <p>Ejecuta <code>scripts/actualizar_datos.ps1</code> para sincronizar <code>data/catalogo_data.js</code> y vuelve a abrir el juego.</p>
+          <p>Ejecuta <code>npm run datos</code> para validar y sincronizar <code>data/catalogo_data.js</code>, y vuelve a abrir el juego.</p>
         </div>
       `;
         return;
