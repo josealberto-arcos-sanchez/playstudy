@@ -1,0 +1,30 @@
+name: Lint
+
+# Revisa el JavaScript con ESLint en cada PR y push a main. Es una comprobacion
+# de desarrollo: el juego no carga ESLint ni necesita Node para jugar. Los
+# artefactos generados (src/game_bundle.js, sw_version.js y data/) se excluyen
+# en eslint.config.js porque se generan con sus propios scripts.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias de desarrollo
+        run: npm ci
+
+      - name: Ejecutar ESLint
+        run: npm run lint

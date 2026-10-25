@@ -8,6 +8,12 @@
     "test": "node --test tests/*.test.js",
     "datos": "node scripts/datos.mjs",
     "datos:validar": "node scripts/datos.mjs validar",
-    "datos:check": "node scripts/datos.mjs check"
+    "datos:check": "node scripts/datos.mjs check",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^15.15.0"
   }
 }

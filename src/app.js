@@ -3,7 +3,6 @@
  * Controla el ciclo de vida, el menú jerárquico y el tablero de juego
  */
 import { DataLoader } from './dataLoader.js';
-import { gameState } from './state.js';
 import { audio } from './audio.js';
 import { speechManager } from './speech.js';
 import { MenuView } from './views/menuView.js';

@@ -269,83 +269,6 @@
   }
   migrarClavesAntiguas();
 
-  // src/state.js
-  var StateManager = class {
-    constructor() {
-      this.storageKey = CLAVES.progreso;
-      this.state = this.loadState();
-    }
-    loadState() {
-      const saved = leerJSON(this.storageKey, null);
-      if (saved && typeof saved === "object") {
-        delete saved.temaActualId;
-        return saved;
-      }
-      return {
-        temas: {},
-        // { [temaId]: { casillaDesbloqueada: 1, estrellas: { 1: 3, 2: 3 } } }
-        estrellasTotales: 0
-      };
-    }
-    saveState() {
-      this.recalcularEstrellasTotales();
-      guardarJSON(this.storageKey, this.state);
-    }
-    recalcularEstrellasTotales() {
-      let total = 0;
-      Object.values(this.state.temas).forEach((t) => {
-        if (t.estrellas) {
-          Object.values(t.estrellas).forEach((cant) => {
-            total += Number(cant) || 0;
-          });
-        }
-      });
-      this.state.estrellasTotales = total;
-    }
-    getTemaProgreso(temaId) {
-      if (!this.state.temas[temaId]) {
-        this.state.temas[temaId] = {
-          casillaDesbloqueada: 1,
-          // Casilla 1 empieza desbloqueada
-          estrellas: {}
-        };
-      }
-      return this.state.temas[temaId];
-    }
-    isCasillaDesbloqueada(temaId, casillaId) {
-      const progreso = this.getTemaProgreso(temaId);
-      return casillaId <= progreso.casillaDesbloqueada;
-    }
-    getEstrellasCasilla(temaId, casillaId) {
-      const progreso = this.getTemaProgreso(temaId);
-      return progreso.estrellas[casillaId] || 0;
-    }
-    completarCasilla(temaId, casillaId, estrellas = 3) {
-      const progreso = this.getTemaProgreso(temaId);
-      const actual = progreso.estrellas[casillaId] || 0;
-      if (estrellas > actual) {
-        progreso.estrellas[casillaId] = estrellas;
-      }
-      if (progreso.casillaDesbloqueada <= casillaId) {
-        progreso.casillaDesbloqueada = casillaId + 1;
-      }
-      this.saveState();
-    }
-    reiniciarProgresoTema(temaId) {
-      if (this.state.temas[temaId]) {
-        this.state.temas[temaId] = {
-          casillaDesbloqueada: 1,
-          estrellas: {}
-        };
-        this.saveState();
-      }
-    }
-    getEstrellasTotales() {
-      return this.state.estrellasTotales || 0;
-    }
-  };
-  var gameState = new StateManager();
-
   // src/audio.js
   var AudioManager = class {
     constructor() {
@@ -754,6 +677,83 @@
   };
   var speechManager = new SpeechManager();
 
+  // src/state.js
+  var StateManager = class {
+    constructor() {
+      this.storageKey = CLAVES.progreso;
+      this.state = this.loadState();
+    }
+    loadState() {
+      const saved = leerJSON(this.storageKey, null);
+      if (saved && typeof saved === "object") {
+        delete saved.temaActualId;
+        return saved;
+      }
+      return {
+        temas: {},
+        // { [temaId]: { casillaDesbloqueada: 1, estrellas: { 1: 3, 2: 3 } } }
+        estrellasTotales: 0
+      };
+    }
+    saveState() {
+      this.recalcularEstrellasTotales();
+      guardarJSON(this.storageKey, this.state);
+    }
+    recalcularEstrellasTotales() {
+      let total = 0;
+      Object.values(this.state.temas).forEach((t) => {
+        if (t.estrellas) {
+          Object.values(t.estrellas).forEach((cant) => {
+            total += Number(cant) || 0;
+          });
+        }
+      });
+      this.state.estrellasTotales = total;
+    }
+    getTemaProgreso(temaId) {
+      if (!this.state.temas[temaId]) {
+        this.state.temas[temaId] = {
+          casillaDesbloqueada: 1,
+          // Casilla 1 empieza desbloqueada
+          estrellas: {}
+        };
+      }
+      return this.state.temas[temaId];
+    }
+    isCasillaDesbloqueada(temaId, casillaId) {
+      const progreso = this.getTemaProgreso(temaId);
+      return casillaId <= progreso.casillaDesbloqueada;
+    }
+    getEstrellasCasilla(temaId, casillaId) {
+      const progreso = this.getTemaProgreso(temaId);
+      return progreso.estrellas[casillaId] || 0;
+    }
+    completarCasilla(temaId, casillaId, estrellas = 3) {
+      const progreso = this.getTemaProgreso(temaId);
+      const actual = progreso.estrellas[casillaId] || 0;
+      if (estrellas > actual) {
+        progreso.estrellas[casillaId] = estrellas;
+      }
+      if (progreso.casillaDesbloqueada <= casillaId) {
+        progreso.casillaDesbloqueada = casillaId + 1;
+      }
+      this.saveState();
+    }
+    reiniciarProgresoTema(temaId) {
+      if (this.state.temas[temaId]) {
+        this.state.temas[temaId] = {
+          casillaDesbloqueada: 1,
+          estrellas: {}
+        };
+        this.saveState();
+      }
+    }
+    getEstrellasTotales() {
+      return this.state.estrellasTotales || 0;
+    }
+  };
+  var gameState = new StateManager();
+
   // src/aiTutor.js
   var AI_PROVIDERS = {
     gemini: {
@@ -808,8 +808,7 @@
     let detail = "";
     try {
       detail = (await response.text()).slice(0, 2e3).toLowerCase();
-    } catch (error) {
-      detail = "";
+    } catch {
     }
     console.warn("[Tutor IA] Error HTTP del proveedor:", response.status, detail.slice(0, 300));
     const keyProblem = /api[ _-]?key|api_key_invalid|invalid.*key|unauthorized|permission/.test(detail);
@@ -923,11 +922,14 @@ ${question}`
         return answer.trim();
       } catch (error) {
         if (error.name === "AbortError") {
-          if (signal?.aborted) throw new Error("Solicitud cancelada.");
+          if (signal?.aborted) throw new Error("Solicitud cancelada.", { cause: error });
           console.warn("[Tutor IA] Tiempo de espera agotado:", providerId, model, AI_TIMEOUT_MS);
-          throw new Error(providerId === "gemini" ? "La respuesta ha tardado m\xE1s de 2 minutos. Gemini 3.8 Flash est\xE1 teniendo mucha latencia estos d\xEDas: prueba el modelo gemini-3.6-flash o int\xE9ntalo m\xE1s tarde." : "La respuesta ha tardado m\xE1s de 2 minutos. Int\xE9ntalo de nuevo o cambia de modelo en Configuraci\xF3n.");
+          const mensaje = providerId === "gemini" ? "La respuesta ha tardado m\xE1s de 2 minutos. Gemini 3.8 Flash est\xE1 teniendo mucha latencia estos d\xEDas: prueba el modelo gemini-3.6-flash o int\xE9ntalo m\xE1s tarde." : "La respuesta ha tardado m\xE1s de 2 minutos. Int\xE9ntalo de nuevo o cambia de modelo en Configuraci\xF3n.";
+          throw new Error(mensaje, { cause: error });
         }
-        if (error instanceof TypeError) throw new Error("No se ha podido conectar con el proveedor. Comprueba tu conexi\xF3n a Internet.");
+        if (error instanceof TypeError) {
+          throw new Error("No se ha podido conectar con el proveedor. Comprueba tu conexi\xF3n a Internet.", { cause: error });
+        }
         throw error;
       } finally {
         clearTimeout(timer);
@@ -3723,7 +3725,7 @@ ${lines.join("\n")}`;
     generateBoard() {
       const indices = this.eventos.map((_, index) => index);
       if (indices.length < 2) return indices;
-      let shuffled = indices;
+      let shuffled;
       let intentos = 0;
       do {
         shuffled = indices.slice();
