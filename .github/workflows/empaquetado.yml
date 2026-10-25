@@ -1,0 +1,22 @@
+name: Bundle sincronizado
+
+# Comprueba en cada PR y push a main que src/game_bundle.js (el archivo que
+# carga index.html) coincide byte a byte con lo que generan los modulos de
+# src/ mediante scripts/empaquetar.ps1. Asi el bundle no puede desincronizarse
+# de su fuente: si difiere, el workflow falla con instrucciones para regenerarlo.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-bundle:
+    runs-on: windows-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Regenerar el bundle y compararlo con el subido
+        shell: pwsh
+        run: ./scripts/empaquetar.ps1 -Check

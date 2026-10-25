@@ -1,6 +1,9 @@
 # Material y fuentes de trabajo externas
 fuentes-externas/
 
+# Binarios de build: esbuild descargado por scripts/empaquetar.ps1
+tools/
+
 # Archivos del sistema y editores
 Thumbs.db
 .DS_Store

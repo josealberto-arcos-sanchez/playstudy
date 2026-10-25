@@ -1,0 +1,4 @@
+# El bundle generado se compara byte a byte con el output de esbuild en CI
+# (scripts/empaquetar.ps1 -Check), asi que sus finales de linea deben ser
+# siempre LF en todos los sistemas.
+src/game_bundle.js text eol=lf

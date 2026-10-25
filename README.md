@@ -158,20 +158,35 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
 
    Revisa que el JSON sea válido, que estén las seis casillas, que el tema tenga exactamente dos juegos y el capítulo defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que la respuesta correcta de cada quiz esté en `opciones[0]`.
 
+## Modificar el código del juego
+
+El código vive en los módulos de `src/` (`app.js`, `state.js`, `dataLoader.js`, `gameOrder.js`, `audio.js`, `speech.js`, `aiTutor.js`, `views/` y `games/`). `index.html` no los carga uno a uno porque los módulos ES no funcionan al abrir el juego con doble clic (`file://`): en su lugar carga `src/game_bundle.js`, un único script clásico **generado a partir de esos módulos**. Por eso:
+
+1. **No edites `src/game_bundle.js` a mano.** Edita el módulo correspondiente en `src/` y regenera el bundle:
+
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File "scripts/empaquetar.ps1"
+   ```
+
+2. La primera ejecución descarga automáticamente el binario de esbuild (unos 10 MB) a `tools/`, comprueba su checksum SHA-512 contra el registro de npm y lo reutiliza a partir de ahí. `tools/` está ignorado por git y no hace falta instalar Node.js ni ningún otro paquete.
+3. El workflow **Bundle sincronizado** (`.github/workflows/empaquetado.yml`) comprueba en cada PR que el bundle subido coincide con lo que generan los módulos. Si difiere, regenera el bundle con el comando del paso 1 e inclúyelo en el commit. También puedes comprobarlo en local con `scripts/empaquetar.ps1 -Check`.
+4. El bundle sube a git (los jugadores abren `index.html` sin servidor ni build), al igual que `data/catalogo_data.js`. Ambos son artefactos generados: no se editan directamente.
+
 ## Archivos principales
 
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
 - `data/cursos/.../contenido.json`: catálogo de juegos (parejas, línea del tiempo, puzzle…), presentaciones y quizzes de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
 - `scripts/validar_contenido.ps1`: comprueba que todos los capítulos usan el formato de presentaciones narradas (imagen y locución en cada diapositiva) y que las rutas y los créditos están completos.
+- `scripts/empaquetar.ps1`: genera `src/game_bundle.js` a partir de los módulos de `src/`; con `-Check` solo comprueba que están sincronizados.
 - `src/gameOrder.js`: monta los dos juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
 - `src/games/timelineGame.js`: minijuego de línea del tiempo.
 - `css/timeline.css`: estilos de la línea del tiempo.
 - `src/views/theoryView.js`: lógica modular de la presentación teórica.
 - `src/speech.js` y `src/views/settingsView.js`: selección, prueba y preferencia persistente de voces.
 - `src/aiTutor.js`: tutor con IA opcional; guarda la clave de API en `localStorage` y llama al proveedor elegido.
-- `src/game_bundle.js`: JavaScript que carga el juego; si modificas la lógica de teoría, mantén este bundle y la vista modular sincronizados.
+- `src/game_bundle.js`: único JavaScript que carga `index.html`; se **genera** desde los módulos de `src/` con `scripts/empaquetar.ps1` y no se edita a mano.
 - `css/theory.css`: estilos de las diapositivas.
 - `.agents/skills/gestionar-contenido-educativo/SKILL.md`: pautas ampliadas para incorporar contenido educativo.
 
-Si modificas el código o los estilos que forman parte de la shell de la PWA (`src/game_bundle.js` o CSS), actualiza la versión de caché en `sw.js`. Añadir datos e imágenes de un capítulo no requiere modificarla.
+Si modificas el código o los estilos que forman parte de la shell de la PWA (el bundle regenerado o CSS), actualiza la versión `CACHE_NAME` en `sw.js`. Añadir datos e imágenes de un capítulo no requiere modificarla.
