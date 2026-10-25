@@ -132,11 +132,11 @@ Los detalles del juego para cada capítulo (preguntas, cartas de memoria, fichas
 
 ## 🧩 3. Plantilla Estándar de `contenido.json` (6 Casillas del Circuito)
 
-Cada capítulo consta de un circuito interactivo continuo de 6 paradas (3 estrellas por parada = 18 estrellas).
+Cada capítulo consta de un circuito interactivo continuo de 6 paradas (3 estrellas por parada = 18 estrellas). La composición la decide cada capítulo: el circuito habitual alterna dos juegos, teoría, quiz, teoría y quiz final, pero un tema puede usar más juegos y menos teoría (por ejemplo, cuatro juegos y dos quizzes, útil para vocabulario de idiomas) o al revés.
 
-Cada tema elige **exactamente dos** minijuegos con la propiedad `"juegos": ["parejas", "linea_tiempo"]` del catálogo. El capítulo guarda en su objeto `juegos` el material de todos sus minijuegos, indexado por subtipo; las dos casillas `"tipo": "minijuego"` son solo paradas donde el cargador monta los juegos elegidos. Después, los juegos se barajan entre las paradas y la teoría y los quizzes mantienen su posición.
+Cada tema elige **entre dos y cuatro** minijuegos con la propiedad `"juegos": ["parejas", "linea_tiempo"]` del catálogo. El capítulo guarda en su objeto `juegos` el material de todos sus minijuegos, indexado por subtipo; las casillas `"tipo": "minijuego"` (una por juego de la lista del tema) son solo paradas donde el cargador monta los juegos elegidos. Después, los juegos se barajan entre las paradas y la teoría y los quizzes mantienen su posición.
 
-Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo, y el material de un juego que no se muestra (por ejemplo, el puzzle) queda guardado para recuperarlo después.
+Así se puede cambiar la lista de juegos de un tema sin reescribir el capítulo, y el material de un juego que no se muestra (por ejemplo, el puzzle) queda guardado para recuperarlo después.
 
 ```json
 {
@@ -329,9 +329,10 @@ Así se puede cambiar la pareja de juegos de un tema sin reescribir el capítulo
    - Ámbar/Amarillo: `#f59e0b`
    - Cyan: `#06b6d4`
    - Rosa: `#ec4899`
-7. **Dos juegos por tema**:
-   - La lista `"juegos"` del tema debe contener exactamente dos subtipos.
-   - Cada capítulo del tema debe definir el material de esos dos juegos en su objeto `juegos`. Si falta alguno, el cargador lo avisa por consola y usa los juegos disponibles.
+7. **Entre 2 y 4 juegos por tema**:
+   - La lista `"juegos"` del tema debe contener entre 2 y 4 subtipos distintos.
+   - Cada capítulo del tema debe tener una casilla `"tipo": "minijuego"` por cada juego de la lista (el validador comprueba el ajuste).
+   - Cada capítulo del tema debe definir el material de esos juegos en su objeto `juegos`. Si falta alguno, el cargador lo avisa por consola y usa los juegos disponibles.
    - No borres el material de un juego que dejas de mostrar: puede volver a activarse cambiando la lista del tema.
 8. **Línea del tiempo**:
    - El orden del array `eventos` es el orden cronológico correcto; escríbelo del más antiguo al más reciente.

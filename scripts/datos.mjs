@@ -16,7 +16,10 @@
  * probar casos inválidos sin tocar los datos del juego.
  *
  * Reglas validadas (las mismas que documenta el README):
- * - 6 casillas por capítulo y exactamente 2 juegos por tema.
+ * - 6 casillas por capítulo con composición flexible: cada capítulo decide
+ *   cuántas paradas dedica a juegos, teoría y quizzes.
+ * - Entre 2 y 4 juegos por tema (distintos, aunque el tema no tenga aún
+ *   capítulos) y una parada de minijuego en el capítulo por cada juego.
  * - Teoría como presentación: cada tarjeta con imagen local y locución.
  * - Rutas de imagen existentes y créditos completos.
  * - La respuesta correcta de cada quiz, indicada por el texto de una opción
@@ -37,6 +40,16 @@ export const RUTA_ARTEFACTO = 'data/catalogo_data.js';
 
 const CLAVES_PROHIBIDAS_FICHA = ['destacado', 'secciones', 'puntos'];
 const AJUSTES_IMAGEN = ['recorte', 'completo'];
+
+/**
+ * Un tema activa entre MIN_JUEGOS_TEMA y MAX_JUEGOS_TEMA minijuegos. Cada
+ * capítulo del tema reserva una casilla "minijuego" por cada juego activado:
+ * menos no se puede barajar y más no caben en las 6 casillas dejando sitio a
+ * teoría y quizzes. La composición (cuánta teoría y cuántos quizzes) la decide
+ * cada capítulo.
+ */
+const MIN_JUEGOS_TEMA = 2;
+const MAX_JUEGOS_TEMA = 4;
 const BOM = '\uFEFF';
 
 /** Normaliza finales de línea para que el artefacto no dependa de autocrlf. */
@@ -65,6 +78,17 @@ function* recorrerCapitulos(catalogo) {
         for (const capitulo of tema.capitulos ?? []) {
           yield { curso, asignatura, tema, capitulo };
         }
+      }
+    }
+  }
+}
+
+/** Recorre cursos → asignaturas → temas (también los que aún no tienen capítulos). */
+function* recorrerTemas(catalogo) {
+  for (const curso of catalogo.cursos ?? []) {
+    for (const asignatura of curso.asignaturas ?? []) {
+      for (const tema of asignatura.temas ?? []) {
+        yield { curso, asignatura, tema };
       }
     }
   }
@@ -106,6 +130,28 @@ export function validarContenido({ raiz = RAIZ_PROYECTO } = {}) {
     return { errores, avisos, totalCapitulos, totalDiapositivas };
   }
 
+  // Reglas de tema: la lista de juegos se valida aunque el tema aún no tenga
+  // capítulos, para detectar errores antes de escribir el contenido.
+  for (const { tema } of recorrerTemas(catalogo)) {
+    const dondeTema = tema.id ?? '(tema sin id)';
+    const juegos = Array.isArray(tema.juegos) ? tema.juegos : [];
+
+    if (juegos.length < MIN_JUEGOS_TEMA || juegos.length > MAX_JUEGOS_TEMA) {
+      errores.push(
+        `${dondeTema}: el tema debe definir entre ${MIN_JUEGOS_TEMA} y ${MAX_JUEGOS_TEMA} juegos (tiene ${juegos.length})`
+      );
+    }
+
+    if (juegos.some(juego => typeof juego !== 'string' || !juego.trim())) {
+      errores.push(`${dondeTema}: cada juego del tema debe ser un nombre de minijuego no vacio`);
+    }
+
+    const repetidos = juegos.filter((juego, indice) => juegos.indexOf(juego) !== indice);
+    if (repetidos.length > 0) {
+      errores.push(`${dondeTema}: los juegos del tema deben ser distintos (se repite '${repetidos[0]}')`);
+    }
+  }
+
   for (const { tema, capitulo } of recorrerCapitulos(catalogo)) {
     totalCapitulos++;
     const donde = capitulo.id ?? '(capitulo sin id)';
@@ -135,8 +181,11 @@ export function validarContenido({ raiz = RAIZ_PROYECTO } = {}) {
     }
 
     const juegosTema = Array.isArray(tema.juegos) ? tema.juegos : [];
-    if (juegosTema.length !== 2) {
-      errores.push(`${donde}: el tema ${tema.id} debe tener exactamente dos juegos`);
+    const paradasJuego = casillas.filter(casilla => casilla?.tipo === 'minijuego').length;
+    if (paradasJuego !== juegosTema.length) {
+      errores.push(
+        `${donde}: tiene ${paradasJuego} paradas de minijuego pero el tema ${tema.id} define ${juegosTema.length} juegos`
+      );
     }
     if (contenido.juegos) {
       for (const juego of juegosTema) {

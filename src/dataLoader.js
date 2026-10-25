@@ -33,7 +33,7 @@ export class DataLoader {
   static async loadCapitulo(capituloObj, temaObj = null) {
     const capitulo = await DataLoader.cargarCapituloSinBarajar(capituloObj);
     if (!capitulo) return null;
-    // El tema decide qué dos juegos se muestran; después se barajan las paradas.
+    // El tema decide qué juegos se muestran; después se barajan las paradas.
     const conJuegos = montarJuegosDelTema(capitulo, temaObj);
     return prepararCapituloParaCircuito(conJuegos);
   }

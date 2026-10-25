@@ -1640,6 +1640,10 @@ ${question}`
     }
     renderTemas(grid) {
       const temas = this.selectedAsignatura.temas || [];
+      if (temas.length === 0) {
+        this.renderEstadoVacio(grid, "Esta asignatura est\xE1 de camino: \xA1muy pronto tendr\xE1 sus juegos!");
+        return;
+      }
       grid.innerHTML = temas.map((tema) => `
       <div class="menu-card menu-card-topic" data-id="${tema.id}" style="--accent: ${tema.color || "#8b5cf6"};">
         <div class="card-hero-icon">${tema.icono}</div>
@@ -1666,6 +1670,10 @@ ${question}`
     }
     renderCapitulos(grid) {
       const capitulos = this.selectedTema.capitulos || [];
+      if (capitulos.length === 0) {
+        this.renderEstadoVacio(grid, "Este tema est\xE1 en preparaci\xF3n: \xA1muy pronto podr\xE1s jugarlo!");
+        return;
+      }
       grid.innerHTML = capitulos.map((cap) => {
         const progreso = gameState.getTemaProgreso(cap.id);
         const estrellas = Object.values(progreso.estrellas || {}).reduce((a, b) => a + b, 0);
@@ -1698,6 +1706,15 @@ ${question}`
           this.onSelectCapitulo(capituloObj, this.selectedTema);
         });
       });
+    }
+    /** Mensaje amable cuando una asignatura o un tema aún no tienen contenido. */
+    renderEstadoVacio(grid, mensaje) {
+      grid.innerHTML = `
+      <div class="menu-empty-state">
+        <span class="menu-empty-icon">\u{1F6A7}</span>
+        <p class="menu-empty-text">${mensaje}</p>
+      </div>
+    `;
     }
   };
 
