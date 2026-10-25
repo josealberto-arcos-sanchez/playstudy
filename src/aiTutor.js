@@ -68,8 +68,8 @@ async function httpErrorFromResponse(response) {
   let detail = '';
   try {
     detail = (await response.text()).slice(0, 2000).toLowerCase();
-  } catch (error) {
-    detail = '';
+  } catch {
+    // Respuesta sin cuerpo legible: se usa el mensaje genérico según el estado.
   }
   console.warn('[Tutor IA] Error HTTP del proveedor:', response.status, detail.slice(0, 300));
   const keyProblem = /api[ _-]?key|api_key_invalid|invalid.*key|unauthorized|permission/.test(detail);
@@ -193,13 +193,16 @@ export class AiTutor {
       return answer.trim();
     } catch (error) {
       if (error.name === 'AbortError') {
-        if (signal?.aborted) throw new Error('Solicitud cancelada.');
+        if (signal?.aborted) throw new Error('Solicitud cancelada.', { cause: error });
         console.warn('[Tutor IA] Tiempo de espera agotado:', providerId, model, AI_TIMEOUT_MS);
-        throw new Error(providerId === 'gemini'
+        const mensaje = providerId === 'gemini'
           ? 'La respuesta ha tardado más de 2 minutos. Gemini 3.8 Flash está teniendo mucha latencia estos días: prueba el modelo gemini-3.6-flash o inténtalo más tarde.'
-          : 'La respuesta ha tardado más de 2 minutos. Inténtalo de nuevo o cambia de modelo en Configuración.');
+          : 'La respuesta ha tardado más de 2 minutos. Inténtalo de nuevo o cambia de modelo en Configuración.';
+        throw new Error(mensaje, { cause: error });
       }
-      if (error instanceof TypeError) throw new Error('No se ha podido conectar con el proveedor. Comprueba tu conexión a Internet.');
+      if (error instanceof TypeError) {
+        throw new Error('No se ha podido conectar con el proveedor. Comprueba tu conexión a Internet.', { cause: error });
+      }
       throw error;
     } finally {
       clearTimeout(timer);

@@ -4,6 +4,9 @@ fuentes-externas/
 # Binarios de build: esbuild descargado por scripts/empaquetar.ps1
 tools/
 
+# Dependencias de desarrollo (ESLint); se instalan con npm ci
+node_modules/
+
 # Archivos del sistema y editores
 Thumbs.db
 .DS_Store

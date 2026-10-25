@@ -224,6 +224,23 @@ $env:Path = "$PWD\tools\node;$env:Path"; npm test
 
 Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de nodejs.org, descomprimirlo en `tools/node/` y usar `tools\node\node.exe`. No se sube a git ni afecta al juego: es solo tooling de desarrollo.
 
+## Lint
+
+El código JavaScript se revisa con **ESLint**, instalado solo como dependencia de desarrollo. No se carga al jugar ni hace falta para abrir el juego:
+
+```powershell
+npm ci        # solo la primera vez o cuando cambien las dependencias
+npm run lint
+```
+
+[`eslint.config.js`](eslint.config.js) aplica el preset recomendado y declara el entorno de cada zona: navegador en `src/`, Node en `scripts/` y `tests/`, y service worker en `sw.js`. Quedan excluidos los artefactos generados (`src/game_bundle.js`, `sw_version.js` y `data/`), que se revisan con sus propios scripts. Los `catch` vacíos se permiten a propósito: si falla el audio, el almacenamiento o la red, el juego prefiere seguir funcionando antes que romper la partida.
+
+El workflow **Lint** (`.github/workflows/lint.yml`) ejecuta `npm ci` y `npm run lint` en cada PR. ESLint necesita Node ≥ 20.19 o ≥ 22.13; para jugar y para los tests sigue bastando Node ≥ 18. Con el Node portable:
+
+```powershell
+$env:Path = "$PWD\tools\node;$env:Path"; npm run lint
+```
+
 ## Estilo y formato
 
 [`.editorconfig`](.editorconfig) fija el formato que comparten todos los editores sin instalar nada: UTF-8, finales de línea LF, indentación de dos espacios, salto de línea final y sin espacios al final (en Markdown se respetan porque dos espacios fuerzan un salto de línea). Lo aplican al guardar VS Code, Visual Studio, JetBrains, Sublime y la mayoría de editores; no cambia nada en tiempo de ejecución ni añade dependencias.
@@ -233,6 +250,7 @@ Los tres artefactos que CI compara byte a byte —`src/game_bundle.js`, `sw_vers
 ## Archivos principales
 
 - `.editorconfig`: formato compartido de todos los archivos (UTF-8, LF, dos espacios y salto final); no es una dependencia.
+- `eslint.config.js`: reglas de ESLint para el JavaScript escrito a mano (`npm run lint`); excluye los artefactos generados y es solo de desarrollo.
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
 - `data/cursos/.../contenido.json`: catálogo de juegos (parejas, línea del tiempo, puzzle…), presentaciones y quizzes de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con `scripts/datos.mjs` y CI comprueba que está sincronizado.

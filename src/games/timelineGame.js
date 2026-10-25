@@ -185,7 +185,7 @@ export class TimelineGame {
     const indices = this.eventos.map((_, index) => index);
     if (indices.length < 2) return indices;
 
-    let shuffled = indices;
+    let shuffled;
     let intentos = 0;
 
     do {
