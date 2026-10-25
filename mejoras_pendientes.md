@@ -6,20 +6,11 @@ Registro de mejoras pendientes. Las propuestas completadas se eliminan de esta l
 
 - ✅ **P0 — Una sola fuente de verdad**: `src/game_bundle.js` se genera con esbuild desde los módulos de `src/` (`scripts/empaquetar.ps1`); el workflow *Bundle sincronizado* comprueba en cada PR que el bundle subido coincide con los módulos. No hay copias editables a mano.
 - ✅ **P1 — Registro de juegos y tipos**: `GAME_REGISTRY` / `TYPE_REGISTRY` en `src/app.js`; añadir un minijuego = crear su módulo + 1 línea de registro + su material en `contenido.json`.
+- ✅ **P1 — Tests para la lógica pura**: `tests/` con `node --test` (sin dependencias) cubre `barajarJuegosCircuito`, `montarJuegosDelTema` y `StateManager` (mock de `localStorage` en `tests/helpers.js`). `npm test` en local y workflow *Tests* en cada PR.
 
 ---
 
 ## Pendientes
-
-### 🟠 P1 — Tests para la lógica pura (ya está diseñada para testearse)
-
-`src/gameOrder.js` acepta `random` **inyectable** — está escrito *para* tener tests, pero no hay ninguno (no existe `package.json`, ni un solo test en el repo). Las funciones que codifican reglas didácticas críticas son las candidatas ideales:
-
-- `barajarJuegosCircuito`: teoría y quizzes no se mueven, los `id` de parada se conservan, renumeración de títulos.
-- `montarJuegosDelTema`: selección, avisos cuando faltan juegos, compatibilidad con capítulos antiguos.
-- `StateManager` (`src/state.js`): desbloqueo progresivo, mejores estrellas, conteo total.
-
-Con `node --test` (incluido en Node ≥18, sin dependencias) bastaría. Los tests se ejecutarían contra los módulos de `src/`, que son la única fuente desde la P0.
 
 ### 🟠 P1 — Automatizar el versionado de la caché del SW
 
@@ -67,7 +58,7 @@ La convención *«la correcta va en `opciones[0]` con `correcta: 0`»* es invisi
 
 ## Roadmap sugerido
 
-1. **P1 tests** sobre los módulos de `src/` (ya son la única fuente).
+1. ~~**P1 tests**~~ ✔ hecho (`tests/` + workflow *Tests*).
 2. **P1 versionado del SW** (un cambio pequeño, gran reducción de fricción).
 3. **P2 pipeline de datos** (validar→sincronizar en un comando) y **P2 storage** con migración.
 4. **P3** según crezca el equipo/contenido.

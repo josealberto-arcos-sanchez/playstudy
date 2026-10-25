@@ -172,6 +172,26 @@ El código vive en los módulos de `src/` (`app.js`, `state.js`, `dataLoader.js`
 3. El workflow **Bundle sincronizado** (`.github/workflows/empaquetado.yml`) comprueba en cada PR que el bundle subido coincide con lo que generan los módulos. Si difiere, regenera el bundle con el comando del paso 1 e inclúyelo en el commit. También puedes comprobarlo en local con `scripts/empaquetar.ps1 -Check`.
 4. El bundle sube a git (los jugadores abren `index.html` sin servidor ni build), al igual que `data/catalogo_data.js`. Ambos son artefactos generados: no se editan directamente.
 
+## Tests
+
+La lógica didáctica pura (el barajado de juegos, el montaje por tema y el progreso del jugador) tiene tests en `tests/`:
+
+```powershell
+npm test
+```
+
+Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. `state.js` persiste en `localStorage`, así que los tests usan un mock en memoria (`tests/helpers.js`) instalado antes de importar el módulo. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR.
+
+**Node portable en `tools/node/`**: si la máquina no tiene Node en el `PATH`, este repositorio ya reserva `tools/` (ignorado por git) para binarios de desarrollo — además del esbuild de `scripts/empaquetar.ps1`, ahí hay un Node portable (`tools/node/node.exe`, win-x64, descargado de <https://nodejs.org/dist/>). Sin instalar nada:
+
+```powershell
+tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js
+# o, para usar npm:
+$env:Path = "$PWD\tools\node;$env:Path"; npm test
+```
+
+Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de nodejs.org, descomprimirlo en `tools/node/` y usar `tools\node\node.exe`. No se sube a git ni afecta al juego: es solo tooling de desarrollo.
+
 ## Archivos principales
 
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.

@@ -1,0 +1,10 @@
+{
+  "name": "playstudy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PlayStudy: videojuego educativo offline. Sin dependencias en runtime.",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}
