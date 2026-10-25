@@ -39,19 +39,33 @@ function Get-CanonicalContent([string]$path) {
 }
 
 # ── Hash del contenido del shell → version de la cache ──────────────────────
+# Los archivos de texto se normalizan a LF (asi el hash no depende de autocrlf);
+# los binarios (iconos) se hashean byte a byte, porque leerlos como texto no es
+# portable: PowerShell 5.1 y 7 decodifican distinto los bytes no validos.
+$ExtensionesTexto = @('.html', '.json', '.css', '.js')
+
 function Get-ShellHash([string[]]$files) {
-  $sb = New-Object System.Text.StringBuilder
-  foreach ($f in $files) {
-    $ruta = Join-Path $ProjectRoot ($f -replace '/', '\')
-    if (-not (Test-Path $ruta)) { throw "Falta un archivo del shell: $f" }
-    [void]$sb.Append($f); [void]$sb.Append("`n")
-    [void]$sb.Append((Get-CanonicalContent $ruta)); [void]$sb.Append("`n")
-  }
   $sha = [System.Security.Cryptography.SHA256]::Create()
+  $ms = New-Object System.IO.MemoryStream
   try {
-    $bytes = [System.Text.Encoding]::UTF8.GetBytes($sb.ToString())
-    $hex = ($sha.ComputeHash($bytes) | ForEach-Object { $_.ToString('x2') }) -join ''
-  } finally { $sha.Dispose() }
+    $lf = [byte[]]@(10)
+    foreach ($f in $files) {
+      $ruta = Join-Path $ProjectRoot ($f -replace '/', '\')
+      if (-not (Test-Path $ruta)) { throw "Falta un archivo del shell: $f" }
+      $ext = [System.IO.Path]::GetExtension($f).ToLower()
+      if ($ExtensionesTexto -contains $ext) {
+        $texto = Get-CanonicalContent $ruta
+        $contenido = [System.Text.Encoding]::UTF8.GetBytes($texto)
+      } else {
+        $contenido = [System.IO.File]::ReadAllBytes($ruta)
+      }
+      $cabecera = [System.Text.Encoding]::UTF8.GetBytes($f + "`n")
+      $ms.Write($cabecera, 0, $cabecera.Length)
+      $ms.Write($contenido, 0, $contenido.Length)
+      $ms.Write($lf, 0, 1)
+    }
+    $hex = ($sha.ComputeHash($ms.ToArray()) | ForEach-Object { $_.ToString('x2') }) -join ''
+  } finally { $sha.Dispose(); $ms.Dispose() }
   return $hex.Substring(0, 8)
 }
 
@@ -91,6 +105,8 @@ if ($Check) {
     exit 0
   }
   Write-Host "DESINCRONIZADO: sw_version.js no coincide con el contenido actual del shell." -ForegroundColor Red
+  $enArchivo = if ($subido -match "cacheName:\s*'([^']+)'") { $Matches[1] } else { 'desconocida' }
+  Write-Host "  version en el archivo: $enArchivo / version esperada: playstudy-$hash" -ForegroundColor Red
   Write-Host "Regeneralo antes de subir:" -ForegroundColor Red
   Write-Host "  powershell -ExecutionPolicy Bypass -File scripts/versionar.ps1"
   exit 1
