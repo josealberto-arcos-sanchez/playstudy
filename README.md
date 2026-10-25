@@ -179,6 +179,7 @@ El código vive en los módulos de `src/` (`app.js`, `state.js`, `dataLoader.js`
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
 - `scripts/validar_contenido.ps1`: comprueba que todos los capítulos usan el formato de presentaciones narradas (imagen y locución en cada diapositiva) y que las rutas y los créditos están completos.
 - `scripts/empaquetar.ps1`: genera `src/game_bundle.js` a partir de los módulos de `src/`; con `-Check` solo comprueba que están sincronizados.
+- `src/app.js`: orquestador del juego. Su `GAME_REGISTRY` / `TYPE_REGISTRY` mapan cada subtipo de minijuego y tipo de casilla a su clase; para añadir un minijuego nuevo, crea su módulo en `src/games/` y súmalo a `GAME_REGISTRY`.
 - `src/gameOrder.js`: monta los dos juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
 - `src/games/timelineGame.js`: minijuego de línea del tiempo.
 - `css/timeline.css`: estilos de la línea del tiempo.
