@@ -8,6 +8,7 @@ import { audio } from '../audio.js';
 import { gameState } from '../state.js';
 import { speechManager } from '../speech.js';
 import { aiTutor, AI_MAX_QUESTION_LENGTH, AI_MAX_CONTEXT_LENGTH } from '../aiTutor.js';
+import { CLAVES, leerBooleano, guardarBooleano } from '../storage.js';
 import { SettingsView } from './settingsView.js';
 
 export class TheoryView {
@@ -23,7 +24,7 @@ export class TheoryView {
     // Estado del narrador de voz
     this.isSpeaking = false;
     this.isVoicePaused = false;
-    this.isVoiceMuted = localStorage.getItem('playstudy_theory_mute') === 'true';
+    this.isVoiceMuted = leerBooleano(CLAVES.teoriaVozSilenciada, false);
     this.currentUtterance = null;
     this.speechRequestId = 0;
     this.aiPanel = null;
@@ -314,7 +315,7 @@ export class TheoryView {
       muteBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         this.isVoiceMuted = !this.isVoiceMuted;
-        localStorage.setItem('playstudy_theory_mute', this.isVoiceMuted);
+        guardarBooleano(CLAVES.teoriaVozSilenciada, this.isVoiceMuted);
         if (this.isVoiceMuted) {
           this.stopSpeaking();
         } else {
