@@ -2,36 +2,28 @@
    sw.js — Service Worker para "PlayStudy" (PWA)
    Estrategia:
    - Shell de la app (HTML/CSS/JS del juego): cache-first con red
-     como fallback. → Sube CACHE_NAME cuando cambies CSS o código.
+     como fallback. → La versión de la caché (playstudy-<hash>) y
+     la lista de precache se generan con scripts/versionar.ps1 a
+     partir del contenido del shell: cualquier cambio de código o
+     CSS mueve la versión solo, nadie la sube a mano.
    - Datos (data/*.json y data/catalogo_data.js): primero red,
      con la caché como respaldo sin conexión. → Los capítulos,
      quizzes y fichas nuevos aparecen solos al abrir la app con
      internet, sin tocar ninguna versión de caché.
    ============================================================ */
 
-const CACHE_NAME = 'playstudy-v20';
+// Versión de caché y lista de precache generadas (ver banner del archivo).
+importScripts('sw_version.js');
 
-// Recursos que se cachean en la instalación (shell de la app)
-const PRECACHE_URLS = [
-  '/playstudy/',
-  '/playstudy/index.html',
-  '/playstudy/manifest.json',
-  '/playstudy/css/main.css',
-  '/playstudy/css/menu.css',
-  '/playstudy/css/map.css',
-  '/playstudy/css/memory.css',
-  '/playstudy/css/puzzle.css',
-  '/playstudy/css/timeline.css',
-  '/playstudy/css/theory.css',
-  '/playstudy/css/quiz.css',
-  '/playstudy/css/settings.css',
-  '/playstudy/src/game_bundle.js',
-  '/playstudy/icons/icon-192.png',
-  '/playstudy/icons/icon-512.png',
-  '/playstudy/icons/icon-180.png',
-  '/playstudy/icons/favicon-32.png',
-  '/playstudy/icons/favicon-16.png',
-];
+// Ruta base derivada del scope real con el que se registró este SW:
+// no hay '/playstudy/' escrito a mano, así que sobrevive a un cambio
+// de ruta de despliegue.
+const BASE = new URL(self.registration.scope).pathname;
+
+const CACHE_NAME = self.PLAYSTUDY_SW.cacheName;
+const PRECACHE_URLS = [BASE].concat(
+  self.PLAYSTUDY_SW.precacheUrls.map(ruta => BASE + ruta)
+);
 
 // ── Instalación: pre-cachear el shell de la aplicación ──────
 self.addEventListener('install', event => {
@@ -68,7 +60,7 @@ self.addEventListener('fetch', event => {
   const ruta = url.pathname;
   const esDato =
     (ruta.includes('/data/') && (ruta.endsWith('.json') || ruta.endsWith('.js'))) ||
-    (ruta.startsWith('/playstudy/') && ruta.endsWith('.json'));
+    (ruta.startsWith(BASE) && ruta.endsWith('.json'));
   const nav = event.request.mode === 'navigate';
 
   if (esDato && !nav && navigator.onLine !== false) {

@@ -57,7 +57,10 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/playstudy/sw.js')
+        // updateViaCache: 'none' fuerza a revisar también los scripts importados
+        // (sw.js carga sw_version.js con importScripts), de modo que un cambio
+        // de versión de caché se detecta al instante.
+        navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
           .then(reg => console.log('[SW] Registrado:', reg.scope))
           .catch(err => console.warn('[SW] Error al registrar:', err));
       });
