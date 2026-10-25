@@ -181,6 +181,48 @@ test('montarJuegosDelTema: coloca los juegos pedidos en las paradas, conservando
   assert.equal(resultado.casillas[1].tipo, 'minijuego');
 });
 
+test('montarJuegosDelTema: coloca tres juegos del tema en tres paradas sin avisos', () => {
+  const avisos = [];
+  const warnOriginal = console.warn;
+  console.warn = (...args) => avisos.push(args.join(' '));
+  try {
+    const capitulo = {
+      id: 'cap_vocabulario',
+      casillas: [
+        casillaFija('teoria', 'Teoria'),
+        casillaJuego(1, 'Parejas'),
+        casillaJuego(2, 'Ahorcado'),
+        casillaJuego(3, 'Sopa'),
+        casillaFija('quiz', 'Quiz')
+      ],
+      juegos: {
+        parejas: { titulo: 'Parejas', instrucciones: 'Junta las parejas.' },
+        ahorcado: { titulo: 'Ahorcado', instrucciones: 'Adivina la palabra.' },
+        sopa: { titulo: 'Sopa de letras', instrucciones: 'Encuentra las palabras.' }
+      }
+    };
+    const resultado = montarJuegosDelTema(capitulo, { juegos: ['sopa', 'parejas', 'ahorcado'] });
+
+    // Sin avisos: hay tantos juegos en el tema como paradas de juego.
+    assert.deepEqual(avisos, []);
+
+    // El orden lo marca la lista del tema y cada titulo se numera con su parada.
+    assert.equal(resultado.casillas[1].subtipo, 'sopa');
+    assert.equal(resultado.casillas[1].titulo, '1. Sopa de letras');
+    assert.equal(resultado.casillas[1].instrucciones, 'Encuentra las palabras.');
+    assert.equal(resultado.casillas[2].subtipo, 'parejas');
+    assert.equal(resultado.casillas[2].titulo, '2. Parejas');
+    assert.equal(resultado.casillas[3].subtipo, 'ahorcado');
+    assert.equal(resultado.casillas[3].titulo, '3. Ahorcado');
+
+    // La teoria y el quiz no se tocan.
+    assert.equal(resultado.casillas[0], capitulo.casillas[0]);
+    assert.equal(resultado.casillas[4], capitulo.casillas[4]);
+  } finally {
+    console.warn = warnOriginal;
+  }
+});
+
 test('montarJuegosDelTema: avisa si el tema pide juegos que el capitulo no define', () => {
   const avisos = [];
   const warnOriginal = console.warn;

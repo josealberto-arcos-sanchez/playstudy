@@ -254,7 +254,90 @@ test('detecta circuitos y temas mal montados', t => {
 
   const errores = erroresDe(validarContenido({ raiz }));
   assert.match(errores, /5 casillas \(se esperan 6\)/);
-  assert.match(errores, /debe tener exactamente dos juegos/);
+  assert.match(errores, /debe definir entre 2 y 4 juegos \(tiene 1\)/);
+  assert.match(errores, /2 paradas de minijuego pero el tema .* define 1 juegos/);
+});
+
+test('acepta circuitos con mas juegos que teoria (composicion variable)', t => {
+  const contenido = capituloValido();
+  // Circuito "casi todo juegos": cuatro paradas de juego y dos quizzes, sin teoria.
+  contenido.juegos = {
+    parejas: { titulo: 'Parejas' },
+    linea_tiempo: { titulo: 'Linea del tiempo' },
+    puzzle: { titulo: 'Puzzle' },
+    ahorcado: { titulo: 'Ahorcado' }
+  };
+  contenido.casillas = [
+    { id: 1, tipo: 'minijuego' },
+    { id: 2, tipo: 'minijuego' },
+    { ...contenido.casillas[2], id: 3 },
+    { id: 4, tipo: 'minijuego' },
+    { id: 5, tipo: 'minijuego' },
+    { ...contenido.casillas[5], id: 6 }
+  ];
+  const catalogo = catalogoValido();
+  catalogo.cursos[0].asignaturas[0].temas[0].juegos = ['parejas', 'linea_tiempo', 'puzzle', 'ahorcado'];
+  const raiz = crearProyecto(t, { contenido, catalogo });
+
+  const informe = validarContenido({ raiz });
+  assert.deepEqual(informe.errores, []);
+  assert.deepEqual(informe.avisos, []);
+  assert.equal(informe.totalCapitulos, 1);
+});
+
+test('acepta temas con tres juegos si el capitulo tiene tres paradas', t => {
+  const contenido = capituloValido();
+  contenido.juegos = {
+    parejas: { titulo: 'Parejas' },
+    linea_tiempo: { titulo: 'Linea del tiempo' },
+    puzzle: { titulo: 'Puzzle' }
+  };
+  // Sustituye la segunda teoria por una parada de juego: quedan 3 juegos y 1 teoria.
+  contenido.casillas[4] = { id: 5, tipo: 'minijuego' };
+  const catalogo = catalogoValido();
+  catalogo.cursos[0].asignaturas[0].temas[0].juegos = ['parejas', 'linea_tiempo', 'puzzle'];
+  const raiz = crearProyecto(t, { contenido, catalogo });
+
+  const informe = validarContenido({ raiz });
+  assert.deepEqual(informe.errores, []);
+  assert.deepEqual(informe.avisos, []);
+});
+
+test('detecta desajustes entre las paradas de juego y los juegos del tema', t => {
+  const catalogo = catalogoValido();
+  catalogo.cursos[0].asignaturas[0].temas[0].juegos = ['parejas', 'linea_tiempo', 'puzzle'];
+  // capituloValido() solo tiene 2 paradas de minijuego.
+  const raiz = crearProyecto(t, { catalogo });
+
+  assert.match(
+    erroresDe(validarContenido({ raiz })),
+    /2 paradas de minijuego pero el tema .* define 3 juegos/
+  );
+});
+
+test('detecta temas con pocos, demasiados o repetidos juegos', t => {
+  const catalogoPocos = catalogoValido();
+  catalogoPocos.cursos[0].asignaturas[0].temas[0].juegos = ['parejas'];
+  const raizPocos = crearProyecto(t, { catalogo: catalogoPocos });
+  assert.match(erroresDe(validarContenido({ raiz: raizPocos })), /entre 2 y 4 juegos \(tiene 1\)/);
+
+  const catalogoMuchos = catalogoValido();
+  catalogoMuchos.cursos[0].asignaturas[0].temas[0].juegos = ['a', 'b', 'c', 'd', 'e'];
+  const raizMuchos = crearProyecto(t, { catalogo: catalogoMuchos });
+  assert.match(erroresDe(validarContenido({ raiz: raizMuchos })), /entre 2 y 4 juegos \(tiene 5\)/);
+
+  const catalogoRepetidos = catalogoValido();
+  catalogoRepetidos.cursos[0].asignaturas[0].temas[0].juegos = ['parejas', 'parejas'];
+  const raizRepetidos = crearProyecto(t, { catalogo: catalogoRepetidos });
+  assert.match(erroresDe(validarContenido({ raiz: raizRepetidos })), /deben ser distintos \(se repite 'parejas'\)/);
+});
+
+test('valida los juegos de un tema aunque todavia no tenga capitulos', t => {
+  const catalogo = catalogoValido();
+  catalogo.cursos[0].asignaturas[0].temas.push({ id: 'tema_vacio', juegos: ['parejas'], capitulos: [] });
+  const raiz = crearProyecto(t, { catalogo });
+
+  assert.match(erroresDe(validarContenido({ raiz })), /tema_vacio: el tema debe definir entre 2 y 4 juegos/);
 });
 
 test('detecta JSON invalido en un capitulo o en el catalogo', t => {

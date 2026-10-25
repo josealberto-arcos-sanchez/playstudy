@@ -23,11 +23,11 @@ data/cursos/{curso}/{asignatura}/{tema}/{capitulo}/
     └── creditos_imagenes.json
 ```
 
-El capítulo habitual contiene seis casillas: dos juegos, teoría, quiz, teoría y quiz final. La cantidad de diapositivas y preguntas puede variar según el material.
+El capítulo contiene siempre **seis casillas**, pero la composición la decide cada capítulo: el circuito habitual alterna dos juegos, teoría, quiz, teoría y quiz final; un tema con más juegos puede reducir la teoría (por ejemplo, cuatro juegos y dos quizzes) y un tema de gramática puede mantener las presentaciones. La cantidad de diapositivas y preguntas puede variar según el material.
 
 ## Juegos elegidos por tema
 
-Cada tema decide qué **dos** minijuegos aparecen en todos sus capítulos. La elección se guarda en el tema de `data/catalogo.json`:
+Cada tema decide qué **entre dos y cuatro** minijuegos aparecen en todos sus capítulos. La elección se guarda en el tema de `data/catalogo.json`:
 
 ```json
 {
@@ -37,9 +37,9 @@ Cada tema decide qué **dos** minijuegos aparecen en todos sus capítulos. La el
 }
 ```
 
-- La lista debe tener **exactamente dos subtipos**. El orden no importa: después los juegos se barajan entre las dos paradas de juego.
-- Cada capítulo conserva en su `contenido.json` un catálogo `juegos` con el material de todos sus minijuegos, indexado por subtipo. Así se puede cambiar la pareja de juegos del tema sin reescribir los capítulos.
-- Las dos casillas `"tipo": "minijuego"` del capítulo son solo **paradas**: el cargador coloca en ellas los juegos que el tema tenga configurados. Si un capítulo no define alguno de los juegos pedidos, se avisa por consola y se usan los juegos disponibles.
+- La lista debe tener **entre dos y cuatro subtipos distintos**, y cada capítulo del tema debe reservar una casilla `"tipo": "minijuego"` por cada juego de la lista. El orden no importa: después los juegos se barajan entre las paradas de juego.
+- Cada capítulo conserva en su `contenido.json` un catálogo `juegos` con el material de todos sus minijuegos, indexado por subtipo. Así se puede cambiar la lista de juegos del tema sin reescribir los capítulos.
+- Las casillas `"tipo": "minijuego"` del capítulo son solo **paradas**: el cargador coloca en ellas los juegos que el tema tenga configurados. Si un capítulo no define alguno de los juegos pedidos, se avisa por consola y se usan los juegos disponibles.
 - El material de un juego que ya no se muestra (por ejemplo, el puzzle) puede seguir guardado en el catálogo `juegos` para recuperarlo más adelante.
 
 ### Línea del tiempo (`linea_tiempo`)
@@ -187,7 +187,7 @@ La primera vez que se abre esta versión, el módulo traslada automáticamente l
    - `npm run datos:validar` revisa sin escribir nada.
    - `npm run datos:check` valida y comprueba que el `catalogo_data.js` subido está sincronizado (es lo mismo que ejecuta CI).
 
-   La validación comprueba que el JSON sea válido, que estén las seis casillas, que el tema tenga exactamente dos juegos y el capítulo defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que cada quiz indique una respuesta correcta que exista entre sus opciones (por texto o por índice, sin opciones repetidas).
+   La validación comprueba que el JSON sea válido, que estén las seis casillas, que el tema tenga entre dos y cuatro juegos distintos (aunque aún no tenga capítulos), que el capítulo tenga una parada de juego por cada uno de ellos y defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que cada quiz indique una respuesta correcta que exista entre sus opciones (por texto o por índice, sin opciones repetidas).
 
 ## Modificar el código del juego
 
@@ -337,7 +337,7 @@ Un PR debe explicar el problema y la solución, indicar cómo se ha verificado y
 - `scripts/versionar.ps1`: genera `sw_version.js` (versión `playstudy-<hash>` de la caché + lista de precache) escaneando el shell de la PWA; con `-Check` solo comprueba que está sincronizado. `jugar.bat` lo ejecuta al arrancar.
 - `src/storage.js`: claves de `localStorage` centralizadas bajo `playstudy.*`, helpers tolerantes a fallos y migración automática de las claves antiguas.
 - `src/app.js`: orquestador del juego. Su `GAME_REGISTRY` / `TYPE_REGISTRY` mapan cada subtipo de minijuego y tipo de casilla a su clase; para añadir un minijuego nuevo, crea su módulo en `src/games/` y súmalo a `GAME_REGISTRY`.
-- `src/gameOrder.js`: monta los dos juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
+- `src/gameOrder.js`: monta los juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
 - `src/games/timelineGame.js`: minijuego de línea del tiempo.
 - `css/timeline.css`: estilos de la línea del tiempo.
 - `src/views/theoryView.js`: lógica modular de la presentación teórica.

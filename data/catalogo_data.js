@@ -70,6 +70,14 @@
               ]
             }
           ]
+        },
+        {
+          "id": "ingles",
+          "titulo": "Inglés",
+          "subtitulo": "Vocabulario, gramática y conversación",
+          "icono": "🇬🇧",
+          "color": "#06b6d4",
+          "temas": []
         }
       ]
     }

@@ -6,9 +6,9 @@
  * secuencia didáctica (teoría -> quiz) y el progreso sigue asociado a cada
  * parada, no al juego que la ocupa en ese momento.
  *
- * El tema elige sus dos juegos en `juegos` y el capítulo guarda el material
- * de cada minijuego en su catálogo `juegos`. El montaje y el barajado son
- * genéricos: añadir un juego nuevo no requiere tocar este módulo.
+ * El tema elige sus juegos (entre 2 y 4) en `juegos` y el capítulo guarda el
+ * material de cada minijuego en su catálogo `juegos`. El montaje y el barajado
+ * son genéricos: añadir un juego nuevo no requiere tocar este módulo.
  */
 
 /** Tipos de casilla que se consideran juegos y, por tanto, se barajan. */
@@ -42,7 +42,7 @@ function numerarTitulo(titulo, numeroParada) {
 }
 
 /**
- * Coloca en las paradas de juego del capítulo los dos juegos elegidos por el tema.
+ * Coloca en las paradas de juego del capítulo los juegos elegidos por el tema.
  *
  * El capítulo puede definir un catálogo de juegos en `juegos` (clave = subtipo).
  * Así un mismo capítulo conserva material de varios juegos, pero el circuito
