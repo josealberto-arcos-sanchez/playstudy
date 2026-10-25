@@ -224,7 +224,7 @@ export class PuzzleGame {
 
             <div class="modal-actions">
               <button class="btn-primary btn-large" id="btn-puzzle-next">
-                <span>Continuar a la Ficha de Historia 📜 ➡️</span>
+                <span>Continuar al siguiente reto 🗺️ ➡️</span>
               </button>
             </div>
           </div>

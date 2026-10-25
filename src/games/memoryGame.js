@@ -29,8 +29,8 @@ export class MemoryGame {
     this.container.innerHTML = `
       <div class="game-wrapper memory-wrapper">
         <header class="game-hud">
-          <button class="btn-hud btn-back" id="btn-exit-game" title="Volver al mapa">
-            <span>⬅️ Mapa</span>
+          <button class="btn-hud btn-back" id="btn-exit-game" title="Volver al circuito">
+            <span>⬅️ Circuito</span>
           </button>
           
           <div class="hud-center">
@@ -57,7 +57,7 @@ export class MemoryGame {
           <div class="modal-card victory-card">
             <div class="victory-icon">🎉</div>
             <h2 class="victory-title">¡Misión Cumplida!</h2>
-            <p class="victory-subtitle">Has descubierto todas las etapas de la Historia</p>
+            <p class="victory-subtitle">¡Has encontrado todas las parejas!</p>
             
             <div class="stars-awarded" id="victory-stars">
               <span class="star">⭐</span>
@@ -72,7 +72,7 @@ export class MemoryGame {
 
             <div class="modal-actions">
               <button class="btn-primary btn-large" id="btn-next-step">
-                <span>Continuar a la Micro-Ficha 📖 ➡️</span>
+                <span>Continuar al siguiente reto 🗺️ ➡️</span>
               </button>
             </div>
           </div>

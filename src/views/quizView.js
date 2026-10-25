@@ -56,8 +56,8 @@ export class QuizView {
     this.container.innerHTML = `
       <div class="quiz-wrapper">
         <header class="quiz-hud">
-          <button class="btn-hud btn-back" id="btn-quiz-exit" title="Volver al mapa">
-            <span>⬅️ Mapa</span>
+          <button class="btn-hud btn-back" id="btn-quiz-exit" title="Volver al circuito">
+            <span>⬅️ Circuito</span>
           </button>
           
           <div class="quiz-hud-center">
@@ -94,7 +94,7 @@ export class QuizView {
 
             <div class="modal-actions">
               <button class="btn-primary btn-large" id="btn-finish-quiz">
-                <span>Volver al Tablero 🗺️</span>
+                <span>Volver al Circuito 🗺️</span>
               </button>
             </div>
           </div>
@@ -221,11 +221,11 @@ export class QuizView {
     const ratio = this.correctAnswersCount / total;
 
     let stars = 3;
-    let message = "¡Increíble! Dominas perfectamente las Edades de la Historia.";
+    let message = "¡Increíble! Dominas perfectamente este bloque histórico.";
 
     if (ratio < 0.6) {
       stars = 1;
-      message = "¡Buen esfuerzo! Puedes volver a leer las micro-fichas para sacar 3 estrellas.";
+      message = "¡Buen intento! Puedes volver a leer la ficha para sacar 3 estrellas.";
     } else if (ratio < 0.85) {
       stars = 2;
       message = "¡Muy bien! Tienes los conceptos muy claros. ¡Sigue así para las 3 estrellas!";
