@@ -182,6 +182,16 @@ npm test
 
 Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. `state.js` persiste en `localStorage`, así que los tests usan un mock en memoria (`tests/helpers.js`) instalado antes de importar el módulo. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR.
 
+**Node portable en `tools/node/`**: si la máquina no tiene Node en el `PATH`, este repositorio ya reserva `tools/` (ignorado por git) para binarios de desarrollo — además del esbuild de `scripts/empaquetar.ps1`, ahí hay un Node portable (`tools/node/node.exe`, win-x64, descargado de <https://nodejs.org/dist/>). Sin instalar nada:
+
+```powershell
+tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js
+# o, para usar npm:
+$env:Path = "$PWD\tools\node;$env:Path"; npm test
+```
+
+Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de nodejs.org, descomprimirlo en `tools/node/` y usar `tools\node\node.exe`. No se sube a git ni afecta al juego: es solo tooling de desarrollo.
+
 ## Archivos principales
 
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
