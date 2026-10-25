@@ -16,11 +16,13 @@ class StateManager {
   loadState() {
     const saved = leerJSON(this.storageKey, null);
     if (saved && typeof saved === 'object') {
+      // Campo heredado que nunca se leyó (y guardaba un id de capítulo bajo un
+      // nombre de tema). Se descarta al cargar para limpiar progresos antiguos.
+      delete saved.temaActualId;
       return saved;
     }
     return {
       temas: {}, // { [temaId]: { casillaDesbloqueada: 1, estrellas: { 1: 3, 2: 3 } } }
-      temaActualId: 'cap_01_edades',
       estrellasTotales: 0
     };
   }

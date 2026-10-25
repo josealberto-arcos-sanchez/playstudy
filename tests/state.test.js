@@ -16,7 +16,7 @@ const { CLAVES } = await import('../src/storage.js');
 const { gameState } = await import('../src/state.js');
 
 function estadoInicial() {
-  return { temas: {}, temaActualId: 'cap_01_edades', estrellasTotales: 0 };
+  return { temas: {}, estrellasTotales: 0 };
 }
 
 beforeEach(() => {
@@ -116,6 +116,23 @@ test('un localStorage corrupto no tumba el juego: arranca de cero', () => {
   } finally {
     console.warn = warnOriginal;
   }
+});
+
+test('el estado nuevo no incluye el campo muerto temaActualId', () => {
+  assert.deepEqual(Object.keys(gameState.state).sort(), ['estrellasTotales', 'temas']);
+});
+
+test('un progreso antiguo descarta el campo muerto temaActualId al cargarlo', () => {
+  storage.setItem(CLAVES.progreso, JSON.stringify({
+    temas: { tema_1: { casillaDesbloqueada: 2, estrellas: { 1: 3 } } },
+    temaActualId: 'cap_01_edades',
+    estrellasTotales: 3
+  }));
+
+  const estado = gameState.loadState();
+  assert.equal('temaActualId' in estado, false, 'el campo heredado se elimina');
+  assert.equal(estado.temas.tema_1.casillaDesbloqueada, 2, 'el progreso se conserva');
+  assert.equal(estado.estrellasTotales, 3);
 });
 
 test('los temas avanzan de forma independiente', () => {

@@ -63,6 +63,8 @@ test('el progreso antiguo sigue disponible tras la migracion', () => {
   assert.equal(gameState.getEstrellasCasilla('tema_1', 1), 3);
   assert.equal(gameState.isCasillaDesbloqueada('tema_1', 2), true);
   assert.equal(gameState.getEstrellasTotales(), 3);
+  // El progreso antiguo traía un campo que nunca se usó: ya no se conserva.
+  assert.equal('temaActualId' in gameState.state, false);
 });
 
 test('la configuracion antigua de audio y voz se conserva', () => {
