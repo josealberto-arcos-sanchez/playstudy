@@ -61,6 +61,25 @@ Ordena acontecimientos del más antiguo al más reciente. Se juega tocando dos t
 
 El **orden del array `eventos` es el orden correcto**: escríbelos del más antiguo al más reciente. Cada evento necesita `id`, `etiqueta`, `fecha` e `icono`; `color` es opcional. Puedes añadir `"mostrar_fechas": false` para que el juego empiece con las fechas ocultas.
 
+## Preguntas de los quizzes
+
+Cada pregunta indica su respuesta correcta con el **texto exacto** de una de sus opciones:
+
+```json
+{
+  "enunciado": "¿Con qué acontecimiento comenzó la Prehistoria?",
+  "opciones": [
+    "Con la aparición de los primeros seres humanos",
+    "Con la invención de la rueda",
+    "Con la llegada del ser humano a la Luna"
+  ],
+  "correcta": "Con la aparición de los primeros seres humanos",
+  "explicacion": "¡Genial! La Prehistoria comenzó con la aparición del ser humano."
+}
+```
+
+Así el JSON se entiende sin conocer ninguna convención y la respuesta sigue siendo válida aunque se reordenen las opciones; el juego las mezcla igualmente al mostrarlas. El formato antiguo (`"correcta": 0`, con la respuesta en `opciones[0]`) se sigue aceptando, pero el material nuevo debe usar el texto.
+
 ## Formato de teoría: presentación con imágenes y voz
 
 Toda la teoría del juego se presenta como una **secuencia de diapositivas narradas**. Cada diapositiva explica una sola idea con una imagen y una locución, y son **obligatorias las dos**: una tarjeta sin `imagen` o sin `locucion` no cumple el formato de presentación. El alumnado avanza y retrocede con los botones; también puede pausar, repetir o silenciar la voz.
@@ -156,7 +175,7 @@ La primera vez que se abre esta versión, el módulo traslada automáticamente l
    }
    ```
 
-5. **Pon la respuesta correcta en `opciones[0]`** en cada pregunta y define `"correcta": 0`; el juego mezcla las opciones al mostrarlas.
+5. **Marca la respuesta correcta con su texto** en cada pregunta: `"correcta": "texto exacto de una de las opciones"`. El juego mezcla las opciones al mostrarlas, así que la posición no importa y reordenar el array no cambia la respuesta. El formato antiguo (`"correcta": 0`, con la respuesta en `opciones[0]`) sigue siendo válido.
 6. **Valida y sincroniza los datos** con un solo comando desde la raíz del proyecto:
 
    ```powershell
@@ -168,7 +187,7 @@ La primera vez que se abre esta versión, el módulo traslada automáticamente l
    - `npm run datos:validar` revisa sin escribir nada.
    - `npm run datos:check` valida y comprueba que el `catalogo_data.js` subido está sincronizado (es lo mismo que ejecuta CI).
 
-   La validación comprueba que el JSON sea válido, que estén las seis casillas, que el tema tenga exactamente dos juegos y el capítulo defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que la respuesta correcta de cada quiz esté en `opciones[0]`.
+   La validación comprueba que el JSON sea válido, que estén las seis casillas, que el tema tenga exactamente dos juegos y el capítulo defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que cada quiz indique una respuesta correcta que exista entre sus opciones (por texto o por índice, sin opciones repetidas).
 
 ## Modificar el código del juego
 
@@ -192,12 +211,12 @@ La lógica didáctica pura (el barajado de juegos, el montaje por tema y el prog
 npm test
 ```
 
-Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. Los módulos que persisten usan `storage.js`, así que los tests instalan un `localStorage` en memoria (`tests/helpers.js`) antes de importarlos. `tests/storage.test.js` cubre los helpers y la migración, y `tests/migracion.test.js` comprueba de extremo a extremo que un jugador con las claves antiguas conserva progreso, audio, voz y tutor. `tests/contenido.test.js` incluye un test de humo que valida el catálogo real y casos inválidos construidos en un proyecto temporal. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR y, además, `npm run datos:check` valida el contenido y comprueba que `data/catalogo_data.js` está sincronizado.
+Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. Los módulos que persisten usan `storage.js`, así que los tests instalan un `localStorage` en memoria (`tests/helpers.js`) antes de importarlos. `tests/storage.test.js` cubre los helpers y la migración, y `tests/migracion.test.js` comprueba de extremo a extremo que un jugador con las claves antiguas conserva progreso, audio, voz y tutor. `tests/contenido.test.js` incluye un test de humo que valida el catálogo real y casos inválidos construidos en un proyecto temporal; `tests/quiz.test.js` cubre la resolución de la respuesta correcta por texto o por índice. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR y, además, `npm run datos:check` valida el contenido y comprueba que `data/catalogo_data.js` está sincronizado.
 
 **Node portable en `tools/node/`**: si la máquina no tiene Node en el `PATH`, este repositorio ya reserva `tools/` (ignorado por git) para binarios de desarrollo — además del esbuild de `scripts/empaquetar.ps1`, ahí hay un Node portable (`tools/node/node.exe`, win-x64, descargado de <https://nodejs.org/dist/>). Sin instalar nada:
 
 ```powershell
-tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js tests\storage.test.js tests\migracion.test.js tests\contenido.test.js
+tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js tests\storage.test.js tests\migracion.test.js tests\contenido.test.js tests\quiz.test.js
 tools\node\node.exe scripts\datos.mjs
 # o, para usar npm:
 $env:Path = "$PWD\tools\node;$env:Path"; npm test
@@ -210,7 +229,7 @@ Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de 
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
 - `data/cursos/.../contenido.json`: catálogo de juegos (parejas, línea del tiempo, puzzle…), presentaciones y quizzes de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con `scripts/datos.mjs` y CI comprueba que está sincronizado.
-- `scripts/datos.mjs`: valida el catálogo y los capítulos y, solo si no hay errores, regenera `data/catalogo_data.js` (`npm run datos`; `validar` y `check` para los otros modos). Comprueba que cada diapositiva tiene imagen y locución, que las rutas y los créditos están completos y que los quizzes marcan la opción correcta.
+- `scripts/datos.mjs`: valida el catálogo y los capítulos y, solo si no hay errores, regenera `data/catalogo_data.js` (`npm run datos`; `validar` y `check` para los otros modos). Comprueba que cada diapositiva tiene imagen y locución, que las rutas y los créditos están completos y que cada quiz indica una opción correcta existente (por texto o por índice).
 - `scripts/empaquetar.ps1`: genera `src/game_bundle.js` a partir de los módulos de `src/`; con `-Check` solo comprueba que están sincronizados.
 - `scripts/versionar.ps1`: genera `sw_version.js` (versión `playstudy-<hash>` de la caché + lista de precache) escaneando el shell de la PWA; con `-Check` solo comprueba que está sincronizado. `jugar.bat` lo ejecuta al arrancar.
 - `src/storage.js`: claves de `localStorage` centralizadas bajo `playstudy.*`, helpers tolerantes a fallos y migración automática de las claves antiguas.

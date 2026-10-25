@@ -57,7 +57,7 @@ function capituloValido() {
         id: 3,
         tipo: 'quiz',
         preguntas: [
-          { enunciado: 'Pregunta 1', opciones: ['Correcta', 'Incorrecta'], correcta: 0 }
+          { enunciado: 'Pregunta 1', opciones: ['Correcta', 'Incorrecta'], correcta: 'Correcta' }
         ]
       },
       { id: 4, tipo: 'minijuego' },
@@ -82,7 +82,7 @@ function capituloValido() {
         id: 6,
         tipo: 'quiz',
         preguntas: [
-          { enunciado: 'Pregunta 2', opciones: ['Correcta', 'Incorrecta'], correcta: 0 }
+          { enunciado: 'Pregunta 2', opciones: ['Correcta', 'Incorrecta'], correcta: 'Correcta' }
         ]
       }
     ]
@@ -184,12 +184,54 @@ test('detecta diapositivas sin locucion completa', t => {
   assert.match(erroresDe(validarContenido({ raiz })), /no tiene una 'locucion' completa/);
 });
 
-test('detecta quizzes que no marcan la opcion 0 como correcta', t => {
+test('acepta el formato heredado con el indice de la opcion correcta', t => {
+  const contenido = capituloValido();
+  contenido.casillas[2].preguntas[0].correcta = 0;
+  const raiz = crearProyecto(t, { contenido });
+
+  assert.deepEqual(validarContenido({ raiz }).errores, []);
+});
+
+test('acepta indices distintos de cero', t => {
   const contenido = capituloValido();
   contenido.casillas[2].preguntas[0].correcta = 1;
   const raiz = crearProyecto(t, { contenido });
 
-  assert.match(erroresDe(validarContenido({ raiz })), /respuesta correcta debe estar en opciones\[0\]/);
+  assert.deepEqual(validarContenido({ raiz }).errores, []);
+});
+
+test('detecta respuestas correctas que no coinciden con ninguna opcion', t => {
+  const contenido = capituloValido();
+  contenido.casillas[2].preguntas[0].correcta = 'Respuesta inventada';
+  const raiz = crearProyecto(t, { contenido });
+
+  assert.match(erroresDe(validarContenido({ raiz })), /no coincide con ninguna opcion/);
+});
+
+test('detecta indices de respuesta correcta fuera de rango', t => {
+  const contenido = capituloValido();
+  contenido.casillas[2].preguntas[0].correcta = 5;
+  const raiz = crearProyecto(t, { contenido });
+
+  assert.match(erroresDe(validarContenido({ raiz })), /no apunta a ninguna opcion/);
+});
+
+test('detecta tipos invalidos en la respuesta correcta', t => {
+  const contenido = capituloValido();
+  contenido.casillas[2].preguntas[0].correcta = null;
+  const raiz = crearProyecto(t, { contenido });
+
+  assert.match(erroresDe(validarContenido({ raiz })), /debe ser el texto exacto/);
+});
+
+test('detecta opciones repetidas y respuestas ambiguas', t => {
+  const contenido = capituloValido();
+  contenido.casillas[2].preguntas[0].opciones = ['Correcta', 'Correcta', 'Incorrecta'];
+  const raiz = crearProyecto(t, { contenido });
+
+  const errores = erroresDe(validarContenido({ raiz }));
+  assert.match(errores, /las opciones deben ser distintas/);
+  assert.match(errores, /aparece en varias opciones/);
 });
 
 test('detecta creditos incompletos', t => {

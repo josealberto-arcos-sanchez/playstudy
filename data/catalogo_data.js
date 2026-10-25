@@ -259,7 +259,7 @@
             "Con la llegada del ser humano a la Luna",
             "Con la construcción de los primeros castillos"
           ],
-          "correcta": 0,
+          "correcta": "Con la aparición de los primeros seres humanos",
           "explicacion": "¡Genial! La Prehistoria se inició hace 2,5 millones de años con la aparición del ser humano."
         },
         {
@@ -270,7 +270,7 @@
             "Eran sedentarios en castillos de piedra",
             "Viajaban en trenes de vapor entre poblados"
           ],
-          "correcta": 0,
+          "correcta": "Eran nómadas (se desplazaban para cazar, pescar y recolectar)",
           "explicacion": "¡Exacto! En el Paleolítico eran nómadas y se movían continuamente en busca de alimento y refugio."
         },
         {
@@ -281,7 +281,7 @@
             "La máquina de vapor",
             "La brújula magnética"
           ],
-          "correcta": 0,
+          "correcta": "El dominio del fuego",
           "explicacion": "¡Correcto! El dominio del fuego fue fundamental para iluminar las cuevas, cocinar y calentarse."
         },
         {
@@ -292,7 +292,7 @@
             "La pesca con submarinos y la caza con arcos de metal",
             "La navegación a vapor y el comercio espacial"
           ],
-          "correcta": 0,
+          "correcta": "La agricultura y la ganadería",
           "explicacion": "¡Genial! Al cultivar plantas y criar animales, las personas transformaron por completo su modo de vida."
         },
         {
@@ -303,7 +303,7 @@
             "Que vivían únicamente flotando en balsas",
             "Que no podían hablar entre ellos"
           ],
-          "correcta": 0,
+          "correcta": "Que pasaron a vivir en un sitio fijo y crearon poblados",
           "explicacion": "¡Muy bien! Se volvieron sedentarios porque tenían que permanecer cerca de sus cultivos y rebaños."
         },
         {
@@ -314,7 +314,7 @@
             "Edad del Plástico, Edad del Vidrio y Edad del Papel",
             "Edad del Carbón, Edad del Petróleo y Edad del Gas"
           ],
-          "correcta": 0,
+          "correcta": "Edad del Cobre, Edad del Bronce y Edad del Hierro",
           "explicacion": "¡Así es! Aprendieron a fundir y moldear sucesivamente el cobre, el bronce y finalmente el hierro."
         },
         {
@@ -325,7 +325,7 @@
             "Solo servían como juguetes para los niños",
             "Las herramientas de metal se rompían con más facilidad"
           ],
-          "correcta": 0,
+          "correcta": "Fabricar herramientas, armas y vasijas mucho más resistentes",
           "explicacion": "¡Excelente! Los metales permitieron fabricar instrumentos mucho más duraderos, afilados y resistentes."
         },
         {
@@ -336,7 +336,7 @@
             "Valencia",
             "Barcelona"
           ],
-          "correcta": 0,
+          "correcta": "Burgos",
           "explicacion": "¡Perfecto! Atapuerca (Burgos) es un tesoro arqueológico mundial para conocer a los primeros humanos de Europa."
         },
         {
@@ -347,7 +347,7 @@
             "Galicia",
             "Islas Baleares"
           ],
-          "correcta": 0,
+          "correcta": "Cantabria",
           "explicacion": "¡Sensacional! Las pinturas de bisontes de la cueva de Altamira están en Cantabria."
         },
         {
@@ -358,7 +358,7 @@
             "Neolítico ➡️ Paleolítico ➡️ Edad de los Metales",
             "Paleolítico ➡️ Edad de los Metales ➡️ Neolítico"
           ],
-          "correcta": 0,
+          "correcta": "Paleolítico ➡️ Neolítico ➡️ Edad de los Metales",
           "explicacion": "¡Bravo! Primero fue el Paleolítico, después el Neolítico y por último la Edad de los Metales."
         }
       ]
@@ -503,7 +503,7 @@
             "La invención del microscopio",
             "El primer automóvil con motor"
           ],
-          "correcta": 0,
+          "correcta": "La invención de la escritura",
           "explicacion": "¡Muy bien! Cuando el ser humano aprendió a escribir, comenzó oficialmente la Historia."
         },
         {
@@ -514,7 +514,7 @@
             "Porque cada siglo cambia el nombre de los planetas",
             "Para que cada época tuviera una bandera de color distinto"
           ],
-          "correcta": 0,
+          "correcta": "Para facilitar su estudio, separadas por hechos de cambio profundo",
           "explicacion": "¡Exacto! Se divide en edades para ordenar su estudio, delimitadas por cambios profundos en la sociedad."
         },
         {
@@ -525,7 +525,7 @@
             "Los astronautas, los maquinistas y los pilotos",
             "Francia, Reino Unido y Alemania actuales"
           ],
-          "correcta": 0,
+          "correcta": "La egipcia, la griega y la romana",
           "explicacion": "¡Sensacional! Egipto, Grecia y Roma fueron las grandes civilizaciones de la Antigüedad."
         },
         {
@@ -536,7 +536,7 @@
             "Britania",
             "Mesopotamia"
           ],
-          "correcta": 0,
+          "correcta": "Hispania",
           "explicacion": "¡Correcto! Los romanos la bautizaron como Hispania, palabra de la que deriva España."
         },
         {
@@ -547,7 +547,7 @@
             "La Revolución francesa",
             "La invención del teléfono"
           ],
-          "correcta": 0,
+          "correcta": "La caída del Imperio romano",
           "explicacion": "¡Excelente! La caída del Imperio romano en el año 476 dio paso a la Edad Media."
         },
         {
@@ -558,7 +558,7 @@
             "Los antiguos griegos",
             "Los faraones egipcios"
           ],
-          "correcta": 0,
+          "correcta": "El reino visigodo",
           "explicacion": "¡Genial! Los visigodos crearon su reino en la península ibérica durante la Edad Media."
         },
         {
@@ -569,7 +569,7 @@
             "Las fábricas de locomotoras y coches",
             "Los barcos de vapor y los submarinos"
           ],
-          "correcta": 0,
+          "correcta": "Los castillos, los señores feudales y los caballeros",
           "explicacion": "¡Así es! La Edad Media es la época de los grandes castillos feudales, caballeros y reyes."
         },
         {
@@ -580,7 +580,7 @@
             "La caída de la ciudad de Numancia",
             "El inicio de los primeros Juegos Olímpicos"
           ],
-          "correcta": 0,
+          "correcta": "La llegada de Cristóbal Colón a América",
           "explicacion": "¡Perfecto! La expedición de Colón al continente americano en 1492 inició la Edad Moderna."
         },
         {
@@ -591,7 +591,7 @@
             "Los reyes godos de Toledo",
             "Los faraones de Egipto"
           ],
-          "correcta": 0,
+          "correcta": "Los Reyes Católicos (Isabel y Fernando)",
           "explicacion": "¡Muy bien! El reinado de los Reyes Católicos simboliza el paso de España a la Edad Moderna."
         },
         {
@@ -602,7 +602,7 @@
             "La Guerra de Troya",
             "La caída del Imperio egipcio"
           ],
-          "correcta": 0,
+          "correcta": "La Revolución francesa",
           "explicacion": "¡Bravo! La Revolución francesa de 1789 marcó el comienzo de la Edad Contemporánea."
         },
         {
@@ -613,7 +613,7 @@
             "A Grecia",
             "A Japón"
           ],
-          "correcta": 0,
+          "correcta": "A Francia (tropas de Napoleón)",
           "explicacion": "¡Exacto! El pueblo español luchó contra la invasión napoleónica francesa en la Guerra de la Independencia."
         },
         {
@@ -624,7 +624,7 @@
             "Terminó con la llegada del año 2000",
             "Duró solamente 50 años"
           ],
-          "correcta": 0,
+          "correcta": "Hasta la actualidad (nuestros días)",
           "explicacion": "¡Eso es! La Edad Contemporánea llega hasta hoy; ¡nosotros vivimos actualmente en ella!"
         },
         {
@@ -635,7 +635,7 @@
             "Edad Media ➡️ Edad Antigua ➡️ Edad Contemporánea ➡️ Edad Moderna",
             "Edad Antigua ➡️ Edad Moderna ➡️ Edad Media ➡️ Edad Contemporánea"
           ],
-          "correcta": 0,
+          "correcta": "Edad Antigua ➡️ Edad Media ➡️ Edad Moderna ➡️ Edad Contemporánea",
           "explicacion": "¡Magistral! El orden es: Antigua (3500 a.C.), Media (476), Moderna (1492) y Contemporánea (desde 1789)."
         }
       ]
@@ -825,7 +825,7 @@
             "Con la llegada del ser humano a la Luna",
             "Con la construcción de los primeros castillos"
           ],
-          "correcta": 0,
+          "correcta": "Con la aparición de los primeros seres humanos",
           "explicacion": "¡Genial! La Prehistoria se inició hace 2,5 millones de años con la aparición del ser humano."
         },
         {
@@ -836,7 +836,7 @@
             "Eran sedentarios en castillos de piedra",
             "Viajaban en trenes de vapor entre poblados"
           ],
-          "correcta": 0,
+          "correcta": "Eran nómadas (se desplazaban para cazar, pescar y recolectar)",
           "explicacion": "¡Exacto! En el Paleolítico eran nómadas y se movían continuamente en busca de alimento y refugio."
         },
         {
@@ -847,7 +847,7 @@
             "La máquina de vapor",
             "La brújula magnética"
           ],
-          "correcta": 0,
+          "correcta": "El dominio del fuego",
           "explicacion": "¡Correcto! El dominio del fuego fue fundamental para iluminar las cuevas, cocinar y calentarse."
         },
         {
@@ -858,7 +858,7 @@
             "La pesca con submarinos y la caza con arcos de metal",
             "La navegación a vapor y el comercio espacial"
           ],
-          "correcta": 0,
+          "correcta": "La agricultura y la ganadería",
           "explicacion": "¡Genial! Al cultivar plantas y criar animales, las personas transformaron por completo su modo de vida."
         },
         {
@@ -869,7 +869,7 @@
             "Que vivían únicamente flotando en balsas",
             "Que no podían hablar entre ellos"
           ],
-          "correcta": 0,
+          "correcta": "Que pasaron a vivir en un sitio fijo y crearon poblados",
           "explicacion": "¡Muy bien! Se volvieron sedentarios porque tenían que permanecer cerca de sus cultivos y rebaños."
         },
         {
@@ -880,7 +880,7 @@
             "Edad del Plástico, Edad del Vidrio y Edad del Papel",
             "Edad del Carbón, Edad del Petróleo y Edad del Gas"
           ],
-          "correcta": 0,
+          "correcta": "Edad del Cobre, Edad del Bronce y Edad del Hierro",
           "explicacion": "¡Así es! Aprendieron a fundir y moldear sucesivamente el cobre, el bronce y finalmente el hierro."
         },
         {
@@ -891,7 +891,7 @@
             "Solo servían como juguetes para los niños",
             "Las herramientas de metal se rompían con más facilidad"
           ],
-          "correcta": 0,
+          "correcta": "Fabricar herramientas, armas y vasijas mucho más resistentes",
           "explicacion": "¡Excelente! Los metales permitieron fabricar instrumentos mucho más duraderos, afilados y resistentes."
         },
         {
@@ -902,7 +902,7 @@
             "Valencia",
             "Barcelona"
           ],
-          "correcta": 0,
+          "correcta": "Burgos",
           "explicacion": "¡Perfecto! Atapuerca (Burgos) es un tesoro arqueológico mundial para conocer a los primeros humanos de Europa."
         },
         {
@@ -913,7 +913,7 @@
             "Galicia",
             "Islas Baleares"
           ],
-          "correcta": 0,
+          "correcta": "Cantabria",
           "explicacion": "¡Sensacional! Las pinturas de bisontes de la cueva de Altamira están en Cantabria."
         },
         {
@@ -924,7 +924,7 @@
             "Neolítico ➡️ Paleolítico ➡️ Edad de los Metales",
             "Paleolítico ➡️ Edad de los Metales ➡️ Neolítico"
           ],
-          "correcta": 0,
+          "correcta": "Paleolítico ➡️ Neolítico ➡️ Edad de los Metales",
           "explicacion": "¡Bravo! Primero fue el Paleolítico, después el Neolítico y por último la Edad de los Metales."
         }
       ]
@@ -1069,7 +1069,7 @@
             "La invención del microscopio",
             "El primer automóvil con motor"
           ],
-          "correcta": 0,
+          "correcta": "La invención de la escritura",
           "explicacion": "¡Muy bien! Cuando el ser humano aprendió a escribir, comenzó oficialmente la Historia."
         },
         {
@@ -1080,7 +1080,7 @@
             "Porque cada siglo cambia el nombre de los planetas",
             "Para que cada época tuviera una bandera de color distinto"
           ],
-          "correcta": 0,
+          "correcta": "Para facilitar su estudio, separadas por hechos de cambio profundo",
           "explicacion": "¡Exacto! Se divide en edades para ordenar su estudio, delimitadas por cambios profundos en la sociedad."
         },
         {
@@ -1091,7 +1091,7 @@
             "Los astronautas, los maquinistas y los pilotos",
             "Francia, Reino Unido y Alemania actuales"
           ],
-          "correcta": 0,
+          "correcta": "La egipcia, la griega y la romana",
           "explicacion": "¡Sensacional! Egipto, Grecia y Roma fueron las grandes civilizaciones de la Antigüedad."
         },
         {
@@ -1102,7 +1102,7 @@
             "Britania",
             "Mesopotamia"
           ],
-          "correcta": 0,
+          "correcta": "Hispania",
           "explicacion": "¡Correcto! Los romanos la bautizaron como Hispania, palabra de la que deriva España."
         },
         {
@@ -1113,7 +1113,7 @@
             "La Revolución francesa",
             "La invención del teléfono"
           ],
-          "correcta": 0,
+          "correcta": "La caída del Imperio romano",
           "explicacion": "¡Excelente! La caída del Imperio romano en el año 476 dio paso a la Edad Media."
         },
         {
@@ -1124,7 +1124,7 @@
             "Los antiguos griegos",
             "Los faraones egipcios"
           ],
-          "correcta": 0,
+          "correcta": "El reino visigodo",
           "explicacion": "¡Genial! Los visigodos crearon su reino en la península ibérica durante la Edad Media."
         },
         {
@@ -1135,7 +1135,7 @@
             "Las fábricas de locomotoras y coches",
             "Los barcos de vapor y los submarinos"
           ],
-          "correcta": 0,
+          "correcta": "Los castillos, los señores feudales y los caballeros",
           "explicacion": "¡Así es! La Edad Media es la época de los grandes castillos feudales, caballeros y reyes."
         },
         {
@@ -1146,7 +1146,7 @@
             "La caída de la ciudad de Numancia",
             "El inicio de los primeros Juegos Olímpicos"
           ],
-          "correcta": 0,
+          "correcta": "La llegada de Cristóbal Colón a América",
           "explicacion": "¡Perfecto! La expedición de Colón al continente americano en 1492 inició la Edad Moderna."
         },
         {
@@ -1157,7 +1157,7 @@
             "Los reyes godos de Toledo",
             "Los faraones de Egipto"
           ],
-          "correcta": 0,
+          "correcta": "Los Reyes Católicos (Isabel y Fernando)",
           "explicacion": "¡Muy bien! El reinado de los Reyes Católicos simboliza el paso de España a la Edad Moderna."
         },
         {
@@ -1168,7 +1168,7 @@
             "La Guerra de Troya",
             "La caída del Imperio egipcio"
           ],
-          "correcta": 0,
+          "correcta": "La Revolución francesa",
           "explicacion": "¡Bravo! La Revolución francesa de 1789 marcó el comienzo de la Edad Contemporánea."
         },
         {
@@ -1179,7 +1179,7 @@
             "A Grecia",
             "A Japón"
           ],
-          "correcta": 0,
+          "correcta": "A Francia (tropas de Napoleón)",
           "explicacion": "¡Exacto! El pueblo español luchó contra la invasión napoleónica francesa en la Guerra de la Independencia."
         },
         {
@@ -1190,7 +1190,7 @@
             "Terminó con la llegada del año 2000",
             "Duró solamente 50 años"
           ],
-          "correcta": 0,
+          "correcta": "Hasta la actualidad (nuestros días)",
           "explicacion": "¡Eso es! La Edad Contemporánea llega hasta hoy; ¡nosotros vivimos actualmente en ella!"
         },
         {
@@ -1201,7 +1201,7 @@
             "Edad Media ➡️ Edad Antigua ➡️ Edad Contemporánea ➡️ Edad Moderna",
             "Edad Antigua ➡️ Edad Moderna ➡️ Edad Media ➡️ Edad Contemporánea"
           ],
-          "correcta": 0,
+          "correcta": "Edad Antigua ➡️ Edad Media ➡️ Edad Moderna ➡️ Edad Contemporánea",
           "explicacion": "¡Magistral! El orden es: Antigua (3500 a.C.), Media (476), Moderna (1492) y Contemporánea (desde 1789)."
         }
       ]
@@ -1350,7 +1350,7 @@
             "Vikingos, celtas, iberos y tartesios",
             "Francos, hunos, sajones y normandos"
           ],
-          "correcta": 0,
+          "correcta": "Alanos, suevos, vándalos y visigodos",
           "explicacion": "¡Muy bien! Alanos, suevos, vándalos y visigodos invadieron Hispania procedentes del norte y el este de Europa."
         },
         {
@@ -1361,7 +1361,7 @@
             "Los vándalos y los francos",
             "Los romanos y los griegos"
           ],
-          "correcta": 0,
+          "correcta": "Los cántabros y los vascones",
           "explicacion": "¡Exacto! Los cántabros y los vascones mantuvieron su independencia y no fueron sometidos por los visigodos."
         },
         {
@@ -1372,7 +1372,7 @@
             "Para que enseñaran latín a los demás pueblos",
             "Porque los visigodos tenían los mejores barcos"
           ],
-          "correcta": 0,
+          "correcta": "Necesitaba ayuda para frenar la invasión de otros pueblos",
           "explicacion": "¡Correcto! Roma negoció con los visigodos: podían instalarse en Hispania a cambio de expulsar a los otros invasores."
         },
         {
@@ -1383,7 +1383,7 @@
             "Sevilla (Hispalis)",
             "Zaragoza (Caesaraugusta)"
           ],
-          "correcta": 0,
+          "correcta": "Toledo (Toletum)",
           "explicacion": "¡Genial! Toledo, llamada Toletum en latín, fue la capital del reino visigodo durante todo su período."
         },
         {
@@ -1394,7 +1394,7 @@
             "Pamplona, en el norte",
             "Mérida, en el suroeste"
           ],
-          "correcta": 0,
+          "correcta": "Braga (Bracara Augusta), en el noroeste",
           "explicacion": "¡Perfecto! Los suevos establecieron su capital en Braga (Bracara Augusta), en el noroeste de la Península."
         },
         {
@@ -1405,7 +1405,7 @@
             "Recesvinto",
             "Ataulfo"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo",
           "explicacion": "¡Estupendo! Leovigildo conquistó el reino suevo en el 585, logrando unificar toda la Península Ibérica."
         },
         {
@@ -1416,7 +1416,7 @@
             "Procedían del norte de África",
             "Venían de la India y Asia Central"
           ],
-          "correcta": 0,
+          "correcta": "Procedían de la región del Cáucaso y eran de origen escandinavo",
           "explicacion": "¡Así es! Los visigodos (y otros pueblos germánicos) procedían del Cáucaso y tenían origen escandinavo."
         },
         {
@@ -1427,7 +1427,7 @@
             "Recesvinto ➡️ Recaredo ➡️ Leovigildo",
             "Leovigildo ➡️ Recesvinto ➡️ Recaredo"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo ➡️ Recaredo ➡️ Recesvinto",
           "explicacion": "¡Correcto! Primero Leovigildo unificó el reino, después Recaredo se convirtió al catolicismo, y más tarde Recesvinto creó leyes comunes."
         }
       ]
@@ -1552,7 +1552,7 @@
             "Ambos grupos eran católicos desde el principio",
             "Los visigodos eran budistas y los hispanorromanos paganos"
           ],
-          "correcta": 0,
+          "correcta": "Los hispanorromanos eran católicos y los visigodos arrianos",
           "explicacion": "¡Muy bien! Los hispanorromanos eran católicos mientras que los visigodos seguían el arrianismo, lo que generaba división en el reino."
         },
         {
@@ -1563,7 +1563,7 @@
             "Declaró el islam como religión oficial",
             "Prohibió todas las religiones en el reino"
           ],
-          "correcta": 0,
+          "correcta": "Se convirtió al catolicismo, abandonando el arrianismo",
           "explicacion": "¡Exacto! En el 589, Recaredo adoptó el catolicismo, lo que unificó religiosamente a visigodos e hispanorromanos."
         },
         {
@@ -1574,7 +1574,7 @@
             "Se desarrollaron mucho la industria y las fábricas",
             "Todo siguió exactamente igual que con los romanos"
           ],
-          "correcta": 0,
+          "correcta": "Disminuyó el comercio pero aumentó la agricultura y la ganadería",
           "explicacion": "¡Correcto! Con los visigodos el comercio y la artesanía decayeron, pero creció la importancia del mundo rural: la agricultura y ganadería."
         },
         {
@@ -1585,7 +1585,7 @@
             "Los artesanos, que controlaban el comercio",
             "Los esclavos, que dirigían el ejército"
           ],
-          "correcta": 0,
+          "correcta": "La nobleza, que ocupaba los cargos políticos y de la Iglesia",
           "explicacion": "¡Genial! La nobleza era una minoría que ostentaba los principales cargos políticos y religiosos del reino."
         },
         {
@@ -1596,7 +1596,7 @@
             "Los mercaderes, que viajaban por Europa",
             "Los soldados, que vigilaban las fronteras"
           ],
-          "correcta": 0,
+          "correcta": "El campesinado, que trabajaba las tierras",
           "explicacion": "¡Correcto! La mayoría de la población eran campesinos que trabajaban la tierra. También había esclavos."
         },
         {
@@ -1607,7 +1607,7 @@
             "Recaredo",
             "Ataulfo"
           ],
-          "correcta": 0,
+          "correcta": "Recesvinto",
           "explicacion": "¡Así es! Durante el reinado de Recesvinto se elaboraron leyes comunes para todos los habitantes del reino visigodo."
         },
         {
@@ -1618,7 +1618,7 @@
             "Los enormes acueductos y anfiteatros como los romanos",
             "Los rascacielos con cúpulas doradas"
           ],
-          "correcta": 0,
+          "correcta": "Las pequeñas iglesias rurales con arcos de herradura",
           "explicacion": "¡Perfecto! El arte visigodo se caracterizó por iglesias rurales de pequeño tamaño, pocas ventanas y el arco de herradura."
         },
         {
@@ -1629,7 +1629,7 @@
             "En la escultura de estatuas de mármol gigantes",
             "En la cerámica pintada de colores vivos"
           ],
-          "correcta": 0,
+          "correcta": "En la orfebrería: piezas artísticas elaboradas con metal",
           "explicacion": "¡Excelente! Los visigodos destacaron en la orfebrería, creando bellas piezas artísticas con metales preciosos."
         },
         {
@@ -1640,7 +1640,7 @@
             "Sevilla",
             "Granada"
           ],
-          "correcta": 0,
+          "correcta": "Palencia",
           "explicacion": "¡Muy bien! La iglesia de San Juan de Baños de Cerrato, en Palencia, es uno de los mejores ejemplos de arquitectura visigoda conservada."
         },
         {
@@ -1651,7 +1651,7 @@
             "Fernando, Isabel y Carlos",
             "Pelayo, Alfonso y Sancho"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo, Recaredo y Recesvinto",
           "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
         },
         {
@@ -1662,7 +1662,7 @@
             "Recaredo",
             "Recesvinto"
           ],
-          "correcta": 0,
+          "correcta": "Don Rodrigo",
           "explicacion": "¡Correcto! Don Rodrigo fue el último rey visigodo. En el año 711 fue derrotado en Guadalete por los musulmanes."
         },
         {
@@ -1673,7 +1673,7 @@
             "La unión de Castilla y León en un solo reino",
             "La conversión de los visigodos al islam"
           ],
-          "correcta": 0,
+          "correcta": "El fin del reino de Toledo y la conquista musulmana de casi toda la Península",
           "explicacion": "¡Muy bien! Tras Guadalete, el reino visigodo de Toledo desapareció y los musulmanes conquistaron casi toda la Península. A ese territorio llamaron al-Ándalus."
         }
       ]
@@ -1822,7 +1822,7 @@
             "Vikingos, celtas, iberos y tartesios",
             "Francos, hunos, sajones y normandos"
           ],
-          "correcta": 0,
+          "correcta": "Alanos, suevos, vándalos y visigodos",
           "explicacion": "¡Muy bien! Alanos, suevos, vándalos y visigodos invadieron Hispania procedentes del norte y el este de Europa."
         },
         {
@@ -1833,7 +1833,7 @@
             "Los vándalos y los francos",
             "Los romanos y los griegos"
           ],
-          "correcta": 0,
+          "correcta": "Los cántabros y los vascones",
           "explicacion": "¡Exacto! Los cántabros y los vascones mantuvieron su independencia y no fueron sometidos por los visigodos."
         },
         {
@@ -1844,7 +1844,7 @@
             "Para que enseñaran latín a los demás pueblos",
             "Porque los visigodos tenían los mejores barcos"
           ],
-          "correcta": 0,
+          "correcta": "Necesitaba ayuda para frenar la invasión de otros pueblos",
           "explicacion": "¡Correcto! Roma negoció con los visigodos: podían instalarse en Hispania a cambio de expulsar a los otros invasores."
         },
         {
@@ -1855,7 +1855,7 @@
             "Sevilla (Hispalis)",
             "Zaragoza (Caesaraugusta)"
           ],
-          "correcta": 0,
+          "correcta": "Toledo (Toletum)",
           "explicacion": "¡Genial! Toledo, llamada Toletum en latín, fue la capital del reino visigodo durante todo su período."
         },
         {
@@ -1866,7 +1866,7 @@
             "Pamplona, en el norte",
             "Mérida, en el suroeste"
           ],
-          "correcta": 0,
+          "correcta": "Braga (Bracara Augusta), en el noroeste",
           "explicacion": "¡Perfecto! Los suevos establecieron su capital en Braga (Bracara Augusta), en el noroeste de la Península."
         },
         {
@@ -1877,7 +1877,7 @@
             "Recesvinto",
             "Ataulfo"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo",
           "explicacion": "¡Estupendo! Leovigildo conquistó el reino suevo en el 585, logrando unificar toda la Península Ibérica."
         },
         {
@@ -1888,7 +1888,7 @@
             "Procedían del norte de África",
             "Venían de la India y Asia Central"
           ],
-          "correcta": 0,
+          "correcta": "Procedían de la región del Cáucaso y eran de origen escandinavo",
           "explicacion": "¡Así es! Los visigodos (y otros pueblos germánicos) procedían del Cáucaso y tenían origen escandinavo."
         },
         {
@@ -1899,7 +1899,7 @@
             "Recesvinto ➡️ Recaredo ➡️ Leovigildo",
             "Leovigildo ➡️ Recesvinto ➡️ Recaredo"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo ➡️ Recaredo ➡️ Recesvinto",
           "explicacion": "¡Correcto! Primero Leovigildo unificó el reino, después Recaredo se convirtió al catolicismo, y más tarde Recesvinto creó leyes comunes."
         }
       ]
@@ -2024,7 +2024,7 @@
             "Ambos grupos eran católicos desde el principio",
             "Los visigodos eran budistas y los hispanorromanos paganos"
           ],
-          "correcta": 0,
+          "correcta": "Los hispanorromanos eran católicos y los visigodos arrianos",
           "explicacion": "¡Muy bien! Los hispanorromanos eran católicos mientras que los visigodos seguían el arrianismo, lo que generaba división en el reino."
         },
         {
@@ -2035,7 +2035,7 @@
             "Declaró el islam como religión oficial",
             "Prohibió todas las religiones en el reino"
           ],
-          "correcta": 0,
+          "correcta": "Se convirtió al catolicismo, abandonando el arrianismo",
           "explicacion": "¡Exacto! En el 589, Recaredo adoptó el catolicismo, lo que unificó religiosamente a visigodos e hispanorromanos."
         },
         {
@@ -2046,7 +2046,7 @@
             "Se desarrollaron mucho la industria y las fábricas",
             "Todo siguió exactamente igual que con los romanos"
           ],
-          "correcta": 0,
+          "correcta": "Disminuyó el comercio pero aumentó la agricultura y la ganadería",
           "explicacion": "¡Correcto! Con los visigodos el comercio y la artesanía decayeron, pero creció la importancia del mundo rural: la agricultura y ganadería."
         },
         {
@@ -2057,7 +2057,7 @@
             "Los artesanos, que controlaban el comercio",
             "Los esclavos, que dirigían el ejército"
           ],
-          "correcta": 0,
+          "correcta": "La nobleza, que ocupaba los cargos políticos y de la Iglesia",
           "explicacion": "¡Genial! La nobleza era una minoría que ostentaba los principales cargos políticos y religiosos del reino."
         },
         {
@@ -2068,7 +2068,7 @@
             "Los mercaderes, que viajaban por Europa",
             "Los soldados, que vigilaban las fronteras"
           ],
-          "correcta": 0,
+          "correcta": "El campesinado, que trabajaba las tierras",
           "explicacion": "¡Correcto! La mayoría de la población eran campesinos que trabajaban la tierra. También había esclavos."
         },
         {
@@ -2079,7 +2079,7 @@
             "Recaredo",
             "Ataulfo"
           ],
-          "correcta": 0,
+          "correcta": "Recesvinto",
           "explicacion": "¡Así es! Durante el reinado de Recesvinto se elaboraron leyes comunes para todos los habitantes del reino visigodo."
         },
         {
@@ -2090,7 +2090,7 @@
             "Los enormes acueductos y anfiteatros como los romanos",
             "Los rascacielos con cúpulas doradas"
           ],
-          "correcta": 0,
+          "correcta": "Las pequeñas iglesias rurales con arcos de herradura",
           "explicacion": "¡Perfecto! El arte visigodo se caracterizó por iglesias rurales de pequeño tamaño, pocas ventanas y el arco de herradura."
         },
         {
@@ -2101,7 +2101,7 @@
             "En la escultura de estatuas de mármol gigantes",
             "En la cerámica pintada de colores vivos"
           ],
-          "correcta": 0,
+          "correcta": "En la orfebrería: piezas artísticas elaboradas con metal",
           "explicacion": "¡Excelente! Los visigodos destacaron en la orfebrería, creando bellas piezas artísticas con metales preciosos."
         },
         {
@@ -2112,7 +2112,7 @@
             "Sevilla",
             "Granada"
           ],
-          "correcta": 0,
+          "correcta": "Palencia",
           "explicacion": "¡Muy bien! La iglesia de San Juan de Baños de Cerrato, en Palencia, es uno de los mejores ejemplos de arquitectura visigoda conservada."
         },
         {
@@ -2123,7 +2123,7 @@
             "Fernando, Isabel y Carlos",
             "Pelayo, Alfonso y Sancho"
           ],
-          "correcta": 0,
+          "correcta": "Leovigildo, Recaredo y Recesvinto",
           "explicacion": "¡Estupendo! Leovigildo unificó el territorio, Recaredo introdujo el catolicismo y Recesvinto creó leyes comunes para todos."
         },
         {
@@ -2134,7 +2134,7 @@
             "Recaredo",
             "Recesvinto"
           ],
-          "correcta": 0,
+          "correcta": "Don Rodrigo",
           "explicacion": "¡Correcto! Don Rodrigo fue el último rey visigodo. En el año 711 fue derrotado en Guadalete por los musulmanes."
         },
         {
@@ -2145,7 +2145,7 @@
             "La unión de Castilla y León en un solo reino",
             "La conversión de los visigodos al islam"
           ],
-          "correcta": 0,
+          "correcta": "El fin del reino de Toledo y la conquista musulmana de casi toda la Península",
           "explicacion": "¡Muy bien! Tras Guadalete, el reino visigodo de Toledo desapareció y los musulmanes conquistaron casi toda la Península. A ese territorio llamaron al-Ándalus."
         }
       ]
@@ -2358,7 +2358,7 @@
             "En el siglo XV, en América, fundado por Cristóbal Colón",
             "En el siglo X, en China, fundado por Confucio"
           ],
-          "correcta": 0,
+          "correcta": "En el siglo VII, en Arabia, fundado por Mahoma",
           "explicacion": "¡Correcto! El islam nació a principios del siglo VII en Arabia. Su fundador fue Mahoma y su libro sagrado es el Corán."
         },
         {
@@ -2369,7 +2369,7 @@
             "La Torá",
             "El Fuero Real"
           ],
-          "correcta": 0,
+          "correcta": "El Corán",
           "explicacion": "¡Exacto! El Corán es el libro sagrado del islam, con todos los preceptos que debe cumplir un musulmán."
         },
         {
@@ -2380,7 +2380,7 @@
             "Recaredo, la creación de al-Ándalus",
             "Alarico, la invasión de los francos"
           ],
-          "correcta": 0,
+          "correcta": "Don Rodrigo, el fin del reino de Toledo",
           "explicacion": "¡Muy bien! Don Rodrigo fue derrotado en Guadalete en el año 711. Con él terminó el reino visigodo de Toledo y los musulmanes conquistaron casi toda la Península."
         },
         {
@@ -2391,7 +2391,7 @@
             "Lusitania",
             "Tarraconense"
           ],
-          "correcta": 0,
+          "correcta": "Al-Ándalus",
           "explicacion": "¡Genial! Los musulmanes llamaron al-Ándalus a su territorio, y a sus habitantes andalusíes."
         },
         {
@@ -2402,7 +2402,7 @@
             "Desde Arabia hasta América",
             "Solo la península ibérica"
           ],
-          "correcta": 0,
+          "correcta": "Desde la India hasta el norte de África",
           "explicacion": "¡Muy bien! En su expansión inicial, los musulmanes llegaron desde la India hasta el norte de África. Poco después, en el 711, entraron en la península ibérica."
         },
         {
@@ -2413,7 +2413,7 @@
             "Una república formada por ciudades libres",
             "Un reino cristiano aliado de los francos"
           ],
-          "correcta": 0,
+          "correcta": "Una provincia (emirato) que dependía del califato omeya de Damasco",
           "explicacion": "¡Exacto! Al principio, al-Ándalus era una provincia del califato omeya. Estaba gobernada por un emir que dependía del califa de Damasco."
         },
         {
@@ -2424,7 +2424,7 @@
             "Imperio Bizantino",
             "Sultanato"
           ],
-          "correcta": 0,
+          "correcta": "Califato",
           "explicacion": "¡Correcto! Al-Ándalus pertenecía al califato omeya, el imperio islámico con capital en Damasco."
         },
         {
@@ -2435,7 +2435,7 @@
             "El sultán",
             "El papa"
           ],
-          "correcta": 0,
+          "correcta": "El califa",
           "explicacion": "¡Muy bien! El califa era la máxima autoridad del califato: dirigía el imperio y también era la cabeza religiosa."
         },
         {
@@ -2446,7 +2446,7 @@
             "Fue derrotada por los reinos cristianos",
             "Se convirtió en la familia real de Córdoba"
           ],
-          "correcta": 0,
+          "correcta": "Fue derrocada y algunos miembros huyeron a al-Ándalus",
           "explicacion": "¡Así es! En el año 750, los abasíes derrocaron a los omeyas. Algunos miembros de la familia huyeron; uno de ellos, Abd al-Rahman I, llegó a al-Ándalus."
         },
         {
@@ -2457,7 +2457,7 @@
             "El rey visigodo derrotado en Guadalete",
             "El califa que proclamó el califato de Córdoba en 929"
           ],
-          "correcta": 0,
+          "correcta": "Un príncipe omeya que huyó a al-Ándalus y creó el emirato independiente de Córdoba en 756",
           "explicacion": "¡Perfecto! Abd al-Rahman I era un príncipe de la familia Omeya. Tras la derrota de su familia, huyó a al-Ándalus y en 756 creó el emirato independiente de Córdoba."
         },
         {
@@ -2468,7 +2468,7 @@
             "929",
             "1031"
           ],
-          "correcta": 0,
+          "correcta": "756",
           "explicacion": "¡Perfecto! En el año 756, Abd al-Rahman I independizó al-Ándalus del califato abasí y creó el emirato independiente de Córdoba."
         },
         {
@@ -2479,7 +2479,7 @@
             "La rendición ante los cristianos",
             "La división en taifas"
           ],
-          "correcta": 0,
+          "correcta": "El califato de Córdoba",
           "explicacion": "¡Así es! En el año 929, Abd al-Rahman III se proclamó califa y creó el califato de Córdoba, su época de máximo esplendor."
         },
         {
@@ -2490,7 +2490,7 @@
             "Pasó a formar parte del imperio bizantino",
             "Se convirtió en el reino nazarí de Granada"
           ],
-          "correcta": 0,
+          "correcta": "Se fragmentó en pequeños reinos llamados taifas",
           "explicacion": "¡Estupendo! En 1031 el califato de Córdoba se dividió en numerosos reinos pequeños llamados taifas."
         },
         {
@@ -2501,7 +2501,7 @@
             "Los alanos y los celtas",
             "Los francos y los normandos"
           ],
-          "correcta": 0,
+          "correcta": "Los almorávides y los almohades",
           "explicacion": "¡Correcto! Los reyes de taifas solicitaron auxilio a los almorávides y más tarde a los almohades."
         },
         {
@@ -2512,7 +2512,7 @@
             "Las taifas del norte",
             "El califato de Córdoba"
           ],
-          "correcta": 0,
+          "correcta": "El reino nazarí de Granada",
           "explicacion": "¡Excelente! Desde el siglo XIII, el territorio musulmán se redujo al reino nazarí de Granada, que resistió hasta 1492."
         }
       ]
@@ -2640,7 +2640,7 @@
             "Jaime I el Conquistador",
             "Don Rodrigo"
           ],
-          "correcta": 0,
+          "correcta": "Don Pelayo",
           "explicacion": "¡Genial! Don Pelayo lideró a los astures en Covadonga en el 722, dando origen al reino de Asturias."
         },
         {
@@ -2651,7 +2651,7 @@
             "Valencia, Baleares y Murcia",
             "Toledo, Córdoba y Granada"
           ],
-          "correcta": 0,
+          "correcta": "Castilla, Portugal y León",
           "explicacion": "¡Exacto! Con el tiempo se formaron en el oeste peninsular los reinos de León, Castilla y Portugal."
         },
         {
@@ -2662,7 +2662,7 @@
             "Granada",
             "Sevilla"
           ],
-          "correcta": 0,
+          "correcta": "Toledo",
           "explicacion": "¡Muy bien! En 1085, Alfonso VI conquistó la histórica ciudad de Toledo para el reino cristiano."
         },
         {
@@ -2673,7 +2673,7 @@
             "En 1212",
             "En 1492"
           ],
-          "correcta": 0,
+          "correcta": "En 1137",
           "explicacion": "¡Perfecto! En 1137 se formalizó la unión dinástica entre Aragón y el condado de Barcelona."
         },
         {
@@ -2684,7 +2684,7 @@
             "Batalla de Guadalete",
             "Batalla de Roncesvalles"
           ],
-          "correcta": 0,
+          "correcta": "Batalla de Las Navas de Tolosa",
           "explicacion": "¡Así es! La batalla de Las Navas de Tolosa (1212) fue el punto de inflexión decisivo de la Reconquista."
         },
         {
@@ -2695,7 +2695,7 @@
             "Don Pelayo",
             "Fernando el Católico"
           ],
-          "correcta": 0,
+          "correcta": "Jaime I el Conquistador",
           "explicacion": "¡Estupendo! Jaime I el Conquistador expandió la Corona de Aragón por Valencia, Baleares y el mar Mediterráneo."
         },
         {
@@ -2706,7 +2706,7 @@
             "En 1031",
             "En 1085"
           ],
-          "correcta": 0,
+          "correcta": "En 1230",
           "explicacion": "¡Correcto! En 1230 se unieron definitivamente Castilla y León formando la poderosa Corona de Castilla."
         },
         {
@@ -2717,7 +2717,7 @@
             "Visigodos",
             "Andalusíes"
           ],
-          "correcta": 0,
+          "correcta": "Mudéjares",
           "explicacion": "¡Genial! Los mudéjares eran los musulmanes que conservaron su religión viviendo bajo dominio cristiano."
         },
         {
@@ -2728,7 +2728,7 @@
             "Celtas, iberos y fenicios",
             "Suevos, alanos y vándalos"
           ],
-          "correcta": 0,
+          "correcta": "Cristianos, musulmanes y judíos",
           "explicacion": "¡Excelente! La época medieval peninsular destacó por la enriquecedora convivencia entre cristianos, musulmanes y judíos."
         },
         {
@@ -2739,7 +2739,7 @@
             "Navas de Tolosa (1212) ➡️ Conquista de Toledo (1085) ➡️ Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722)",
             "Batalla de Guadalete (711) ➡️ Navas de Tolosa (1212) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085)"
           ],
-          "correcta": 0,
+          "correcta": "Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085) ➡️ Navas de Tolosa (1212)",
           "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
         },
         {
@@ -2750,7 +2750,7 @@
             "Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente ➡️ Reino nazarí",
             "Reino nazarí ➡️ Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente"
           ],
-          "correcta": 0,
+          "correcta": "Emirato dependiente ➡️ Emirato independiente (756) ➡️ Califato (929) ➡️ Taifas (1031) ➡️ Reino nazarí (siglo XIII)",
           "explicacion": "¡Brillante! Primero al-Ándalus dependía del califato; en 756 se hizo emirato independiente; en 929 se proclamó el califato de Córdoba; en 1031 se dividió en taifas; y desde el siglo XIII solo quedó el reino nazarí de Granada."
         }
       ]
@@ -2963,7 +2963,7 @@
             "En el siglo XV, en América, fundado por Cristóbal Colón",
             "En el siglo X, en China, fundado por Confucio"
           ],
-          "correcta": 0,
+          "correcta": "En el siglo VII, en Arabia, fundado por Mahoma",
           "explicacion": "¡Correcto! El islam nació a principios del siglo VII en Arabia. Su fundador fue Mahoma y su libro sagrado es el Corán."
         },
         {
@@ -2974,7 +2974,7 @@
             "La Torá",
             "El Fuero Real"
           ],
-          "correcta": 0,
+          "correcta": "El Corán",
           "explicacion": "¡Exacto! El Corán es el libro sagrado del islam, con todos los preceptos que debe cumplir un musulmán."
         },
         {
@@ -2985,7 +2985,7 @@
             "Recaredo, la creación de al-Ándalus",
             "Alarico, la invasión de los francos"
           ],
-          "correcta": 0,
+          "correcta": "Don Rodrigo, el fin del reino de Toledo",
           "explicacion": "¡Muy bien! Don Rodrigo fue derrotado en Guadalete en el año 711. Con él terminó el reino visigodo de Toledo y los musulmanes conquistaron casi toda la Península."
         },
         {
@@ -2996,7 +2996,7 @@
             "Lusitania",
             "Tarraconense"
           ],
-          "correcta": 0,
+          "correcta": "Al-Ándalus",
           "explicacion": "¡Genial! Los musulmanes llamaron al-Ándalus a su territorio, y a sus habitantes andalusíes."
         },
         {
@@ -3007,7 +3007,7 @@
             "Desde Arabia hasta América",
             "Solo la península ibérica"
           ],
-          "correcta": 0,
+          "correcta": "Desde la India hasta el norte de África",
           "explicacion": "¡Muy bien! En su expansión inicial, los musulmanes llegaron desde la India hasta el norte de África. Poco después, en el 711, entraron en la península ibérica."
         },
         {
@@ -3018,7 +3018,7 @@
             "Una república formada por ciudades libres",
             "Un reino cristiano aliado de los francos"
           ],
-          "correcta": 0,
+          "correcta": "Una provincia (emirato) que dependía del califato omeya de Damasco",
           "explicacion": "¡Exacto! Al principio, al-Ándalus era una provincia del califato omeya. Estaba gobernada por un emir que dependía del califa de Damasco."
         },
         {
@@ -3029,7 +3029,7 @@
             "Imperio Bizantino",
             "Sultanato"
           ],
-          "correcta": 0,
+          "correcta": "Califato",
           "explicacion": "¡Correcto! Al-Ándalus pertenecía al califato omeya, el imperio islámico con capital en Damasco."
         },
         {
@@ -3040,7 +3040,7 @@
             "El sultán",
             "El papa"
           ],
-          "correcta": 0,
+          "correcta": "El califa",
           "explicacion": "¡Muy bien! El califa era la máxima autoridad del califato: dirigía el imperio y también era la cabeza religiosa."
         },
         {
@@ -3051,7 +3051,7 @@
             "Fue derrotada por los reinos cristianos",
             "Se convirtió en la familia real de Córdoba"
           ],
-          "correcta": 0,
+          "correcta": "Fue derrocada y algunos miembros huyeron a al-Ándalus",
           "explicacion": "¡Así es! En el año 750, los abasíes derrocaron a los omeyas. Algunos miembros de la familia huyeron; uno de ellos, Abd al-Rahman I, llegó a al-Ándalus."
         },
         {
@@ -3062,7 +3062,7 @@
             "El rey visigodo derrotado en Guadalete",
             "El califa que proclamó el califato de Córdoba en 929"
           ],
-          "correcta": 0,
+          "correcta": "Un príncipe omeya que huyó a al-Ándalus y creó el emirato independiente de Córdoba en 756",
           "explicacion": "¡Perfecto! Abd al-Rahman I era un príncipe de la familia Omeya. Tras la derrota de su familia, huyó a al-Ándalus y en 756 creó el emirato independiente de Córdoba."
         },
         {
@@ -3073,7 +3073,7 @@
             "929",
             "1031"
           ],
-          "correcta": 0,
+          "correcta": "756",
           "explicacion": "¡Perfecto! En el año 756, Abd al-Rahman I independizó al-Ándalus del califato abasí y creó el emirato independiente de Córdoba."
         },
         {
@@ -3084,7 +3084,7 @@
             "La rendición ante los cristianos",
             "La división en taifas"
           ],
-          "correcta": 0,
+          "correcta": "El califato de Córdoba",
           "explicacion": "¡Así es! En el año 929, Abd al-Rahman III se proclamó califa y creó el califato de Córdoba, su época de máximo esplendor."
         },
         {
@@ -3095,7 +3095,7 @@
             "Pasó a formar parte del imperio bizantino",
             "Se convirtió en el reino nazarí de Granada"
           ],
-          "correcta": 0,
+          "correcta": "Se fragmentó en pequeños reinos llamados taifas",
           "explicacion": "¡Estupendo! En 1031 el califato de Córdoba se dividió en numerosos reinos pequeños llamados taifas."
         },
         {
@@ -3106,7 +3106,7 @@
             "Los alanos y los celtas",
             "Los francos y los normandos"
           ],
-          "correcta": 0,
+          "correcta": "Los almorávides y los almohades",
           "explicacion": "¡Correcto! Los reyes de taifas solicitaron auxilio a los almorávides y más tarde a los almohades."
         },
         {
@@ -3117,7 +3117,7 @@
             "Las taifas del norte",
             "El califato de Córdoba"
           ],
-          "correcta": 0,
+          "correcta": "El reino nazarí de Granada",
           "explicacion": "¡Excelente! Desde el siglo XIII, el territorio musulmán se redujo al reino nazarí de Granada, que resistió hasta 1492."
         }
       ]
@@ -3245,7 +3245,7 @@
             "Jaime I el Conquistador",
             "Don Rodrigo"
           ],
-          "correcta": 0,
+          "correcta": "Don Pelayo",
           "explicacion": "¡Genial! Don Pelayo lideró a los astures en Covadonga en el 722, dando origen al reino de Asturias."
         },
         {
@@ -3256,7 +3256,7 @@
             "Valencia, Baleares y Murcia",
             "Toledo, Córdoba y Granada"
           ],
-          "correcta": 0,
+          "correcta": "Castilla, Portugal y León",
           "explicacion": "¡Exacto! Con el tiempo se formaron en el oeste peninsular los reinos de León, Castilla y Portugal."
         },
         {
@@ -3267,7 +3267,7 @@
             "Granada",
             "Sevilla"
           ],
-          "correcta": 0,
+          "correcta": "Toledo",
           "explicacion": "¡Muy bien! En 1085, Alfonso VI conquistó la histórica ciudad de Toledo para el reino cristiano."
         },
         {
@@ -3278,7 +3278,7 @@
             "En 1212",
             "En 1492"
           ],
-          "correcta": 0,
+          "correcta": "En 1137",
           "explicacion": "¡Perfecto! En 1137 se formalizó la unión dinástica entre Aragón y el condado de Barcelona."
         },
         {
@@ -3289,7 +3289,7 @@
             "Batalla de Guadalete",
             "Batalla de Roncesvalles"
           ],
-          "correcta": 0,
+          "correcta": "Batalla de Las Navas de Tolosa",
           "explicacion": "¡Así es! La batalla de Las Navas de Tolosa (1212) fue el punto de inflexión decisivo de la Reconquista."
         },
         {
@@ -3300,7 +3300,7 @@
             "Don Pelayo",
             "Fernando el Católico"
           ],
-          "correcta": 0,
+          "correcta": "Jaime I el Conquistador",
           "explicacion": "¡Estupendo! Jaime I el Conquistador expandió la Corona de Aragón por Valencia, Baleares y el mar Mediterráneo."
         },
         {
@@ -3311,7 +3311,7 @@
             "En 1031",
             "En 1085"
           ],
-          "correcta": 0,
+          "correcta": "En 1230",
           "explicacion": "¡Correcto! En 1230 se unieron definitivamente Castilla y León formando la poderosa Corona de Castilla."
         },
         {
@@ -3322,7 +3322,7 @@
             "Visigodos",
             "Andalusíes"
           ],
-          "correcta": 0,
+          "correcta": "Mudéjares",
           "explicacion": "¡Genial! Los mudéjares eran los musulmanes que conservaron su religión viviendo bajo dominio cristiano."
         },
         {
@@ -3333,7 +3333,7 @@
             "Celtas, iberos y fenicios",
             "Suevos, alanos y vándalos"
           ],
-          "correcta": 0,
+          "correcta": "Cristianos, musulmanes y judíos",
           "explicacion": "¡Excelente! La época medieval peninsular destacó por la enriquecedora convivencia entre cristianos, musulmanes y judíos."
         },
         {
@@ -3344,7 +3344,7 @@
             "Navas de Tolosa (1212) ➡️ Conquista de Toledo (1085) ➡️ Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722)",
             "Batalla de Guadalete (711) ➡️ Navas de Tolosa (1212) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085)"
           ],
-          "correcta": 0,
+          "correcta": "Batalla de Guadalete (711) ➡️ Batalla de Covadonga (722) ➡️ Conquista de Toledo (1085) ➡️ Navas de Tolosa (1212)",
           "explicacion": "¡Brillante! Primero la llegada en Guadalete (711), el inicio de la resistencia en Covadonga (722), la toma de Toledo (1085) y la gran victoria en Las Navas de Tolosa (1212)."
         },
         {
@@ -3355,7 +3355,7 @@
             "Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente ➡️ Reino nazarí",
             "Reino nazarí ➡️ Taifas (1031) ➡️ Califato (929) ➡️ Emirato independiente (756) ➡️ Emirato dependiente"
           ],
-          "correcta": 0,
+          "correcta": "Emirato dependiente ➡️ Emirato independiente (756) ➡️ Califato (929) ➡️ Taifas (1031) ➡️ Reino nazarí (siglo XIII)",
           "explicacion": "¡Brillante! Primero al-Ándalus dependía del califato; en 756 se hizo emirato independiente; en 929 se proclamó el califato de Córdoba; en 1031 se dividió en taifas; y desde el siglo XIII solo quedó el reino nazarí de Granada."
         }
       ]
@@ -3528,43 +3528,43 @@
         {
           "enunciado": "¿Qué materiales se utilizaban mucho en el arte andalusí?",
           "opciones": ["Ladrillo y yeso", "Hormigón y acero", "Mármol y cristal únicamente", "Plástico y madera"],
-          "correcta": 0,
+          "correcta": "Ladrillo y yeso",
           "explicacion": "¡Correcto! En muchas construcciones andalusíes se usaban ladrillo y yeso, y se decoraban mucho."
         },
         {
           "enunciado": "¿Qué forma tenía el arco más frecuente en el arte andalusí?",
           "opciones": ["De herradura", "Apuntado", "De medio punto", "Triangular"],
-          "correcta": 0,
+          "correcta": "De herradura",
           "explicacion": "¡Muy bien! El arco de herradura es uno de los rasgos más reconocibles del arte islámico peninsular."
         },
         {
           "enunciado": "¿Qué gran edificio se construyó en Córdoba, capital de al-Ándalus durante una parte de la Edad Media?",
           "opciones": ["La Mezquita de Córdoba", "La catedral de Burgos", "La basílica de San Vicente", "La catedral de León"],
-          "correcta": 0,
+          "correcta": "La Mezquita de Córdoba",
           "explicacion": "¡Exacto! La Mezquita de Córdoba es una de las construcciones más destacadas del arte andalusí."
         },
         {
           "enunciado": "¿Qué era la Aljafería de Zaragoza?",
           "opciones": ["Un palacio residencial", "Un monasterio románico", "Una catedral gótica", "Una ruta de peregrinación"],
-          "correcta": 0,
+          "correcta": "Un palacio residencial",
           "explicacion": "¡Correcto! La Aljafería fue un palacio residencial construido en época de los reinos de taifas."
         },
         {
           "enunciado": "¿Qué edificio de Sevilla fue la torre de una antigua mezquita?",
           "opciones": ["La Giralda", "La Aljafería", "La Alhambra", "Medina Azahara"],
-          "correcta": 0,
+          "correcta": "La Giralda",
           "explicacion": "¡Bien! La Giralda fue la torre de la antigua mezquita de Sevilla."
         },
         {
           "enunciado": "¿En qué ciudad fijaron su residencia los nazaríes?",
           "opciones": ["En Granada, en la Alhambra", "En Toledo, en la Giralda", "En Córdoba, en la Aljafería", "En Burgos, en la mezquita"],
-          "correcta": 0,
+          "correcta": "En Granada, en la Alhambra",
           "explicacion": "¡Así es! Los nazaríes establecieron su residencia en la Alhambra de Granada."
         },
         {
           "enunciado": "¿Cómo eran muchos techos andalusíes?",
           "opciones": ["Planos y de madera, aunque también hubo cúpulas", "Siempre puntiagudos y de vidrio", "Todos estaban hechos de hierro", "No tenían techo"],
-          "correcta": 0,
+          "correcta": "Planos y de madera, aunque también hubo cúpulas",
           "explicacion": "¡Excelente! Había techos planos de madera y también destacó la construcción de cúpulas."
         }
       ]
@@ -3712,61 +3712,61 @@
         {
           "enunciado": "¿Por qué ruta llegó el románico a la Península?",
           "opciones": ["Por el Camino de Santiago", "Por la Ruta de la Seda", "Por el Camino de Roma", "Por el Camino de las Islas"],
-          "correcta": 0,
+          "correcta": "Por el Camino de Santiago",
           "explicacion": "¡Correcto! La peregrinación por el Camino de Santiago favoreció la llegada del románico."
         },
         {
           "enunciado": "¿Qué tipo de arco era el más frecuente en el románico?",
           "opciones": ["El arco de medio punto", "El arco apuntado", "El arco de herradura", "El arco triangular"],
-          "correcta": 0,
+          "correcta": "El arco de medio punto",
           "explicacion": "¡Muy bien! El arco románico más habitual tiene forma semicircular y se llama de medio punto."
         },
         {
           "enunciado": "¿Cómo eran los muros y las ventanas de las iglesias románicas?",
           "opciones": ["Muros gruesos y ventanas pequeñas", "Muros finos y ventanas enormes", "Muros de cristal y sin ventanas", "Muros de madera y rosetones grandes"],
-          "correcta": 0,
+          "correcta": "Muros gruesos y ventanas pequeñas",
           "explicacion": "¡Exacto! Los muros gruesos y las ventanas pequeñas hacían que los interiores románicos fueran oscuros."
         },
         {
           "enunciado": "¿Cómo se llama la parte posterior de una iglesia románica, normalmente semicircular?",
           "opciones": ["El ábside", "El rosetón", "La cúpula", "El claustro"],
-          "correcta": 0,
+          "correcta": "El ábside",
           "explicacion": "¡Correcto! El ábside es la parte posterior del edificio y suele tener forma semicircular."
         },
         {
           "enunciado": "¿En qué siglos fue típico el estilo gótico?",
           "opciones": ["Siglos XIII, XIV y XV", "Siglos VIII, IX y X", "Siglos V, VI y VII", "Siglos XVI, XVII y XVIII"],
-          "correcta": 0,
+          "correcta": "Siglos XIII, XIV y XV",
           "explicacion": "¡Así es! El gótico fue característico de los siglos trece, catorce y quince."
         },
         {
           "enunciado": "¿Qué forma tenían los arcos típicos del gótico?",
           "opciones": ["Apuntada, con un vértice", "Semicircular, de medio punto", "En forma de herradura", "Triangular y plano"],
-          "correcta": 0,
+          "correcta": "Apuntada, con un vértice",
           "explicacion": "¡Muy bien! Los arcos apuntados terminan en un vértice en el centro."
         },
         {
           "enunciado": "¿Qué ayudaba a que las catedrales góticas fueran muy luminosas?",
           "opciones": ["Las grandes ventanas con vidrieras de colores", "Los muros más gruesos", "Las ventanas muy pequeñas", "Los techos planos de madera"],
-          "correcta": 0,
+          "correcta": "Las grandes ventanas con vidrieras de colores",
           "explicacion": "¡Correcto! Las vidrieras dejaban entrar la luz y llenaban el interior de colores."
         },
         {
           "enunciado": "¿Dónde se desarrollaba principalmente la cultura cristiana medieval?",
           "opciones": ["En los monasterios", "En los mercados", "En los castillos únicamente", "En los puertos"],
-          "correcta": 0,
+          "correcta": "En los monasterios",
           "explicacion": "¡Exacto! Los monasterios eran centros importantes de cultura y conservación de libros."
         },
         {
           "enunciado": "¿Con qué rey se relaciona la Escuela de Traductores de Toledo?",
           "opciones": ["Alfonso X el Sabio", "Don Pelayo", "Abd al-Rahman III", "Jaime I"],
-          "correcta": 0,
+          "correcta": "Alfonso X el Sabio",
           "explicacion": "¡Muy bien! Alfonso X el Sabio impulsó el trabajo de traducción en Toledo."
         },
         {
           "enunciado": "¿De qué lengua proceden el castellano, el catalán y el portugués?",
           "opciones": ["Del latín", "Del griego", "Del árabe únicamente", "Del germánico"],
-          "correcta": 0,
+          "correcta": "Del latín",
           "explicacion": "¡Correcto! El castellano, el catalán y el portugués son lenguas romances derivadas del latín."
         }
       ]
@@ -3939,43 +3939,43 @@
         {
           "enunciado": "¿Qué materiales se utilizaban mucho en el arte andalusí?",
           "opciones": ["Ladrillo y yeso", "Hormigón y acero", "Mármol y cristal únicamente", "Plástico y madera"],
-          "correcta": 0,
+          "correcta": "Ladrillo y yeso",
           "explicacion": "¡Correcto! En muchas construcciones andalusíes se usaban ladrillo y yeso, y se decoraban mucho."
         },
         {
           "enunciado": "¿Qué forma tenía el arco más frecuente en el arte andalusí?",
           "opciones": ["De herradura", "Apuntado", "De medio punto", "Triangular"],
-          "correcta": 0,
+          "correcta": "De herradura",
           "explicacion": "¡Muy bien! El arco de herradura es uno de los rasgos más reconocibles del arte islámico peninsular."
         },
         {
           "enunciado": "¿Qué gran edificio se construyó en Córdoba, capital de al-Ándalus durante una parte de la Edad Media?",
           "opciones": ["La Mezquita de Córdoba", "La catedral de Burgos", "La basílica de San Vicente", "La catedral de León"],
-          "correcta": 0,
+          "correcta": "La Mezquita de Córdoba",
           "explicacion": "¡Exacto! La Mezquita de Córdoba es una de las construcciones más destacadas del arte andalusí."
         },
         {
           "enunciado": "¿Qué era la Aljafería de Zaragoza?",
           "opciones": ["Un palacio residencial", "Un monasterio románico", "Una catedral gótica", "Una ruta de peregrinación"],
-          "correcta": 0,
+          "correcta": "Un palacio residencial",
           "explicacion": "¡Correcto! La Aljafería fue un palacio residencial construido en época de los reinos de taifas."
         },
         {
           "enunciado": "¿Qué edificio de Sevilla fue la torre de una antigua mezquita?",
           "opciones": ["La Giralda", "La Aljafería", "La Alhambra", "Medina Azahara"],
-          "correcta": 0,
+          "correcta": "La Giralda",
           "explicacion": "¡Bien! La Giralda fue la torre de la antigua mezquita de Sevilla."
         },
         {
           "enunciado": "¿En qué ciudad fijaron su residencia los nazaríes?",
           "opciones": ["En Granada, en la Alhambra", "En Toledo, en la Giralda", "En Córdoba, en la Aljafería", "En Burgos, en la mezquita"],
-          "correcta": 0,
+          "correcta": "En Granada, en la Alhambra",
           "explicacion": "¡Así es! Los nazaríes establecieron su residencia en la Alhambra de Granada."
         },
         {
           "enunciado": "¿Cómo eran muchos techos andalusíes?",
           "opciones": ["Planos y de madera, aunque también hubo cúpulas", "Siempre puntiagudos y de vidrio", "Todos estaban hechos de hierro", "No tenían techo"],
-          "correcta": 0,
+          "correcta": "Planos y de madera, aunque también hubo cúpulas",
           "explicacion": "¡Excelente! Había techos planos de madera y también destacó la construcción de cúpulas."
         }
       ]
@@ -4123,61 +4123,61 @@
         {
           "enunciado": "¿Por qué ruta llegó el románico a la Península?",
           "opciones": ["Por el Camino de Santiago", "Por la Ruta de la Seda", "Por el Camino de Roma", "Por el Camino de las Islas"],
-          "correcta": 0,
+          "correcta": "Por el Camino de Santiago",
           "explicacion": "¡Correcto! La peregrinación por el Camino de Santiago favoreció la llegada del románico."
         },
         {
           "enunciado": "¿Qué tipo de arco era el más frecuente en el románico?",
           "opciones": ["El arco de medio punto", "El arco apuntado", "El arco de herradura", "El arco triangular"],
-          "correcta": 0,
+          "correcta": "El arco de medio punto",
           "explicacion": "¡Muy bien! El arco románico más habitual tiene forma semicircular y se llama de medio punto."
         },
         {
           "enunciado": "¿Cómo eran los muros y las ventanas de las iglesias románicas?",
           "opciones": ["Muros gruesos y ventanas pequeñas", "Muros finos y ventanas enormes", "Muros de cristal y sin ventanas", "Muros de madera y rosetones grandes"],
-          "correcta": 0,
+          "correcta": "Muros gruesos y ventanas pequeñas",
           "explicacion": "¡Exacto! Los muros gruesos y las ventanas pequeñas hacían que los interiores románicos fueran oscuros."
         },
         {
           "enunciado": "¿Cómo se llama la parte posterior de una iglesia románica, normalmente semicircular?",
           "opciones": ["El ábside", "El rosetón", "La cúpula", "El claustro"],
-          "correcta": 0,
+          "correcta": "El ábside",
           "explicacion": "¡Correcto! El ábside es la parte posterior del edificio y suele tener forma semicircular."
         },
         {
           "enunciado": "¿En qué siglos fue típico el estilo gótico?",
           "opciones": ["Siglos XIII, XIV y XV", "Siglos VIII, IX y X", "Siglos V, VI y VII", "Siglos XVI, XVII y XVIII"],
-          "correcta": 0,
+          "correcta": "Siglos XIII, XIV y XV",
           "explicacion": "¡Así es! El gótico fue característico de los siglos trece, catorce y quince."
         },
         {
           "enunciado": "¿Qué forma tenían los arcos típicos del gótico?",
           "opciones": ["Apuntada, con un vértice", "Semicircular, de medio punto", "En forma de herradura", "Triangular y plano"],
-          "correcta": 0,
+          "correcta": "Apuntada, con un vértice",
           "explicacion": "¡Muy bien! Los arcos apuntados terminan en un vértice en el centro."
         },
         {
           "enunciado": "¿Qué ayudaba a que las catedrales góticas fueran muy luminosas?",
           "opciones": ["Las grandes ventanas con vidrieras de colores", "Los muros más gruesos", "Las ventanas muy pequeñas", "Los techos planos de madera"],
-          "correcta": 0,
+          "correcta": "Las grandes ventanas con vidrieras de colores",
           "explicacion": "¡Correcto! Las vidrieras dejaban entrar la luz y llenaban el interior de colores."
         },
         {
           "enunciado": "¿Dónde se desarrollaba principalmente la cultura cristiana medieval?",
           "opciones": ["En los monasterios", "En los mercados", "En los castillos únicamente", "En los puertos"],
-          "correcta": 0,
+          "correcta": "En los monasterios",
           "explicacion": "¡Exacto! Los monasterios eran centros importantes de cultura y conservación de libros."
         },
         {
           "enunciado": "¿Con qué rey se relaciona la Escuela de Traductores de Toledo?",
           "opciones": ["Alfonso X el Sabio", "Don Pelayo", "Abd al-Rahman III", "Jaime I"],
-          "correcta": 0,
+          "correcta": "Alfonso X el Sabio",
           "explicacion": "¡Muy bien! Alfonso X el Sabio impulsó el trabajo de traducción en Toledo."
         },
         {
           "enunciado": "¿De qué lengua proceden el castellano, el catalán y el portugués?",
           "opciones": ["Del latín", "Del griego", "Del árabe únicamente", "Del germánico"],
-          "correcta": 0,
+          "correcta": "Del latín",
           "explicacion": "¡Correcto! El castellano, el catalán y el portugués son lenguas romances derivadas del latín."
         }
       ]

@@ -5,6 +5,7 @@
  */
 import { audio } from '../audio.js';
 import { gameState } from '../state.js';
+import { resolverRespuestaCorrecta } from '../quiz.js';
 
 export class QuizView {
   constructor(tema, casillaData, onComplete, onExit) {
@@ -24,9 +25,10 @@ export class QuizView {
 
     // 1. Clonar cada pregunta y mezclar aleatoriamente sus opciones ajustando el índice correcto
     const preguntasPreparadas = preguntasOriginales.map(q => {
+      const { indice: indiceCorrecto } = resolverRespuestaCorrecta(q);
       const opcionesConInfo = q.opciones.map((texto, idx) => ({
         texto,
-        esCorrecta: idx === q.correcta
+        esCorrecta: idx === indiceCorrecto
       }));
 
       // Fisher-Yates para barajar las opciones

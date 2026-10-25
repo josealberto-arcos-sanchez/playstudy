@@ -180,7 +180,7 @@
             "Con la llegada del ser humano a la Luna",
             "Con la construcción de los primeros castillos"
           ],
-          "correcta": 0,
+          "correcta": "Con la aparición de los primeros seres humanos",
           "explicacion": "¡Genial! La Prehistoria se inició hace 2,5 millones de años con la aparición del ser humano."
         },
         {
@@ -191,7 +191,7 @@
             "Eran sedentarios en castillos de piedra",
             "Viajaban en trenes de vapor entre poblados"
           ],
-          "correcta": 0,
+          "correcta": "Eran nómadas (se desplazaban para cazar, pescar y recolectar)",
           "explicacion": "¡Exacto! En el Paleolítico eran nómadas y se movían continuamente en busca de alimento y refugio."
         },
         {
@@ -202,7 +202,7 @@
             "La máquina de vapor",
             "La brújula magnética"
           ],
-          "correcta": 0,
+          "correcta": "El dominio del fuego",
           "explicacion": "¡Correcto! El dominio del fuego fue fundamental para iluminar las cuevas, cocinar y calentarse."
         },
         {
@@ -213,7 +213,7 @@
             "La pesca con submarinos y la caza con arcos de metal",
             "La navegación a vapor y el comercio espacial"
           ],
-          "correcta": 0,
+          "correcta": "La agricultura y la ganadería",
           "explicacion": "¡Genial! Al cultivar plantas y criar animales, las personas transformaron por completo su modo de vida."
         },
         {
@@ -224,7 +224,7 @@
             "Que vivían únicamente flotando en balsas",
             "Que no podían hablar entre ellos"
           ],
-          "correcta": 0,
+          "correcta": "Que pasaron a vivir en un sitio fijo y crearon poblados",
           "explicacion": "¡Muy bien! Se volvieron sedentarios porque tenían que permanecer cerca de sus cultivos y rebaños."
         },
         {
@@ -235,7 +235,7 @@
             "Edad del Plástico, Edad del Vidrio y Edad del Papel",
             "Edad del Carbón, Edad del Petróleo y Edad del Gas"
           ],
-          "correcta": 0,
+          "correcta": "Edad del Cobre, Edad del Bronce y Edad del Hierro",
           "explicacion": "¡Así es! Aprendieron a fundir y moldear sucesivamente el cobre, el bronce y finalmente el hierro."
         },
         {
@@ -246,7 +246,7 @@
             "Solo servían como juguetes para los niños",
             "Las herramientas de metal se rompían con más facilidad"
           ],
-          "correcta": 0,
+          "correcta": "Fabricar herramientas, armas y vasijas mucho más resistentes",
           "explicacion": "¡Excelente! Los metales permitieron fabricar instrumentos mucho más duraderos, afilados y resistentes."
         },
         {
@@ -257,7 +257,7 @@
             "Valencia",
             "Barcelona"
           ],
-          "correcta": 0,
+          "correcta": "Burgos",
           "explicacion": "¡Perfecto! Atapuerca (Burgos) es un tesoro arqueológico mundial para conocer a los primeros humanos de Europa."
         },
         {
@@ -268,7 +268,7 @@
             "Galicia",
             "Islas Baleares"
           ],
-          "correcta": 0,
+          "correcta": "Cantabria",
           "explicacion": "¡Sensacional! Las pinturas de bisontes de la cueva de Altamira están en Cantabria."
         },
         {
@@ -279,7 +279,7 @@
             "Neolítico ➡️ Paleolítico ➡️ Edad de los Metales",
             "Paleolítico ➡️ Edad de los Metales ➡️ Neolítico"
           ],
-          "correcta": 0,
+          "correcta": "Paleolítico ➡️ Neolítico ➡️ Edad de los Metales",
           "explicacion": "¡Bravo! Primero fue el Paleolítico, después el Neolítico y por último la Edad de los Metales."
         }
       ]
@@ -424,7 +424,7 @@
             "La invención del microscopio",
             "El primer automóvil con motor"
           ],
-          "correcta": 0,
+          "correcta": "La invención de la escritura",
           "explicacion": "¡Muy bien! Cuando el ser humano aprendió a escribir, comenzó oficialmente la Historia."
         },
         {
@@ -435,7 +435,7 @@
             "Porque cada siglo cambia el nombre de los planetas",
             "Para que cada época tuviera una bandera de color distinto"
           ],
-          "correcta": 0,
+          "correcta": "Para facilitar su estudio, separadas por hechos de cambio profundo",
           "explicacion": "¡Exacto! Se divide en edades para ordenar su estudio, delimitadas por cambios profundos en la sociedad."
         },
         {
@@ -446,7 +446,7 @@
             "Los astronautas, los maquinistas y los pilotos",
             "Francia, Reino Unido y Alemania actuales"
           ],
-          "correcta": 0,
+          "correcta": "La egipcia, la griega y la romana",
           "explicacion": "¡Sensacional! Egipto, Grecia y Roma fueron las grandes civilizaciones de la Antigüedad."
         },
         {
@@ -457,7 +457,7 @@
             "Britania",
             "Mesopotamia"
           ],
-          "correcta": 0,
+          "correcta": "Hispania",
           "explicacion": "¡Correcto! Los romanos la bautizaron como Hispania, palabra de la que deriva España."
         },
         {
@@ -468,7 +468,7 @@
             "La Revolución francesa",
             "La invención del teléfono"
           ],
-          "correcta": 0,
+          "correcta": "La caída del Imperio romano",
           "explicacion": "¡Excelente! La caída del Imperio romano en el año 476 dio paso a la Edad Media."
         },
         {
@@ -479,7 +479,7 @@
             "Los antiguos griegos",
             "Los faraones egipcios"
           ],
-          "correcta": 0,
+          "correcta": "El reino visigodo",
           "explicacion": "¡Genial! Los visigodos crearon su reino en la península ibérica durante la Edad Media."
         },
         {
@@ -490,7 +490,7 @@
             "Las fábricas de locomotoras y coches",
             "Los barcos de vapor y los submarinos"
           ],
-          "correcta": 0,
+          "correcta": "Los castillos, los señores feudales y los caballeros",
           "explicacion": "¡Así es! La Edad Media es la época de los grandes castillos feudales, caballeros y reyes."
         },
         {
@@ -501,7 +501,7 @@
             "La caída de la ciudad de Numancia",
             "El inicio de los primeros Juegos Olímpicos"
           ],
-          "correcta": 0,
+          "correcta": "La llegada de Cristóbal Colón a América",
           "explicacion": "¡Perfecto! La expedición de Colón al continente americano en 1492 inició la Edad Moderna."
         },
         {
@@ -512,7 +512,7 @@
             "Los reyes godos de Toledo",
             "Los faraones de Egipto"
           ],
-          "correcta": 0,
+          "correcta": "Los Reyes Católicos (Isabel y Fernando)",
           "explicacion": "¡Muy bien! El reinado de los Reyes Católicos simboliza el paso de España a la Edad Moderna."
         },
         {
@@ -523,7 +523,7 @@
             "La Guerra de Troya",
             "La caída del Imperio egipcio"
           ],
-          "correcta": 0,
+          "correcta": "La Revolución francesa",
           "explicacion": "¡Bravo! La Revolución francesa de 1789 marcó el comienzo de la Edad Contemporánea."
         },
         {
@@ -534,7 +534,7 @@
             "A Grecia",
             "A Japón"
           ],
-          "correcta": 0,
+          "correcta": "A Francia (tropas de Napoleón)",
           "explicacion": "¡Exacto! El pueblo español luchó contra la invasión napoleónica francesa en la Guerra de la Independencia."
         },
         {
@@ -545,7 +545,7 @@
             "Terminó con la llegada del año 2000",
             "Duró solamente 50 años"
           ],
-          "correcta": 0,
+          "correcta": "Hasta la actualidad (nuestros días)",
           "explicacion": "¡Eso es! La Edad Contemporánea llega hasta hoy; ¡nosotros vivimos actualmente en ella!"
         },
         {
@@ -556,7 +556,7 @@
             "Edad Media ➡️ Edad Antigua ➡️ Edad Contemporánea ➡️ Edad Moderna",
             "Edad Antigua ➡️ Edad Moderna ➡️ Edad Media ➡️ Edad Contemporánea"
           ],
-          "correcta": 0,
+          "correcta": "Edad Antigua ➡️ Edad Media ➡️ Edad Moderna ➡️ Edad Contemporánea",
           "explicacion": "¡Magistral! El orden es: Antigua (3500 a.C.), Media (476), Moderna (1492) y Contemporánea (desde 1789)."
         }
       ]

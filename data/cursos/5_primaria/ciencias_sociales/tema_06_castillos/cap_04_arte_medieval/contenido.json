@@ -163,43 +163,43 @@
         {
           "enunciado": "¿Qué materiales se utilizaban mucho en el arte andalusí?",
           "opciones": ["Ladrillo y yeso", "Hormigón y acero", "Mármol y cristal únicamente", "Plástico y madera"],
-          "correcta": 0,
+          "correcta": "Ladrillo y yeso",
           "explicacion": "¡Correcto! En muchas construcciones andalusíes se usaban ladrillo y yeso, y se decoraban mucho."
         },
         {
           "enunciado": "¿Qué forma tenía el arco más frecuente en el arte andalusí?",
           "opciones": ["De herradura", "Apuntado", "De medio punto", "Triangular"],
-          "correcta": 0,
+          "correcta": "De herradura",
           "explicacion": "¡Muy bien! El arco de herradura es uno de los rasgos más reconocibles del arte islámico peninsular."
         },
         {
           "enunciado": "¿Qué gran edificio se construyó en Córdoba, capital de al-Ándalus durante una parte de la Edad Media?",
           "opciones": ["La Mezquita de Córdoba", "La catedral de Burgos", "La basílica de San Vicente", "La catedral de León"],
-          "correcta": 0,
+          "correcta": "La Mezquita de Córdoba",
           "explicacion": "¡Exacto! La Mezquita de Córdoba es una de las construcciones más destacadas del arte andalusí."
         },
         {
           "enunciado": "¿Qué era la Aljafería de Zaragoza?",
           "opciones": ["Un palacio residencial", "Un monasterio románico", "Una catedral gótica", "Una ruta de peregrinación"],
-          "correcta": 0,
+          "correcta": "Un palacio residencial",
           "explicacion": "¡Correcto! La Aljafería fue un palacio residencial construido en época de los reinos de taifas."
         },
         {
           "enunciado": "¿Qué edificio de Sevilla fue la torre de una antigua mezquita?",
           "opciones": ["La Giralda", "La Aljafería", "La Alhambra", "Medina Azahara"],
-          "correcta": 0,
+          "correcta": "La Giralda",
           "explicacion": "¡Bien! La Giralda fue la torre de la antigua mezquita de Sevilla."
         },
         {
           "enunciado": "¿En qué ciudad fijaron su residencia los nazaríes?",
           "opciones": ["En Granada, en la Alhambra", "En Toledo, en la Giralda", "En Córdoba, en la Aljafería", "En Burgos, en la mezquita"],
-          "correcta": 0,
+          "correcta": "En Granada, en la Alhambra",
           "explicacion": "¡Así es! Los nazaríes establecieron su residencia en la Alhambra de Granada."
         },
         {
           "enunciado": "¿Cómo eran muchos techos andalusíes?",
           "opciones": ["Planos y de madera, aunque también hubo cúpulas", "Siempre puntiagudos y de vidrio", "Todos estaban hechos de hierro", "No tenían techo"],
-          "correcta": 0,
+          "correcta": "Planos y de madera, aunque también hubo cúpulas",
           "explicacion": "¡Excelente! Había techos planos de madera y también destacó la construcción de cúpulas."
         }
       ]
@@ -347,61 +347,61 @@
         {
           "enunciado": "¿Por qué ruta llegó el románico a la Península?",
           "opciones": ["Por el Camino de Santiago", "Por la Ruta de la Seda", "Por el Camino de Roma", "Por el Camino de las Islas"],
-          "correcta": 0,
+          "correcta": "Por el Camino de Santiago",
           "explicacion": "¡Correcto! La peregrinación por el Camino de Santiago favoreció la llegada del románico."
         },
         {
           "enunciado": "¿Qué tipo de arco era el más frecuente en el románico?",
           "opciones": ["El arco de medio punto", "El arco apuntado", "El arco de herradura", "El arco triangular"],
-          "correcta": 0,
+          "correcta": "El arco de medio punto",
           "explicacion": "¡Muy bien! El arco románico más habitual tiene forma semicircular y se llama de medio punto."
         },
         {
           "enunciado": "¿Cómo eran los muros y las ventanas de las iglesias románicas?",
           "opciones": ["Muros gruesos y ventanas pequeñas", "Muros finos y ventanas enormes", "Muros de cristal y sin ventanas", "Muros de madera y rosetones grandes"],
-          "correcta": 0,
+          "correcta": "Muros gruesos y ventanas pequeñas",
           "explicacion": "¡Exacto! Los muros gruesos y las ventanas pequeñas hacían que los interiores románicos fueran oscuros."
         },
         {
           "enunciado": "¿Cómo se llama la parte posterior de una iglesia románica, normalmente semicircular?",
           "opciones": ["El ábside", "El rosetón", "La cúpula", "El claustro"],
-          "correcta": 0,
+          "correcta": "El ábside",
           "explicacion": "¡Correcto! El ábside es la parte posterior del edificio y suele tener forma semicircular."
         },
         {
           "enunciado": "¿En qué siglos fue típico el estilo gótico?",
           "opciones": ["Siglos XIII, XIV y XV", "Siglos VIII, IX y X", "Siglos V, VI y VII", "Siglos XVI, XVII y XVIII"],
-          "correcta": 0,
+          "correcta": "Siglos XIII, XIV y XV",
           "explicacion": "¡Así es! El gótico fue característico de los siglos trece, catorce y quince."
         },
         {
           "enunciado": "¿Qué forma tenían los arcos típicos del gótico?",
           "opciones": ["Apuntada, con un vértice", "Semicircular, de medio punto", "En forma de herradura", "Triangular y plano"],
-          "correcta": 0,
+          "correcta": "Apuntada, con un vértice",
           "explicacion": "¡Muy bien! Los arcos apuntados terminan en un vértice en el centro."
         },
         {
           "enunciado": "¿Qué ayudaba a que las catedrales góticas fueran muy luminosas?",
           "opciones": ["Las grandes ventanas con vidrieras de colores", "Los muros más gruesos", "Las ventanas muy pequeñas", "Los techos planos de madera"],
-          "correcta": 0,
+          "correcta": "Las grandes ventanas con vidrieras de colores",
           "explicacion": "¡Correcto! Las vidrieras dejaban entrar la luz y llenaban el interior de colores."
         },
         {
           "enunciado": "¿Dónde se desarrollaba principalmente la cultura cristiana medieval?",
           "opciones": ["En los monasterios", "En los mercados", "En los castillos únicamente", "En los puertos"],
-          "correcta": 0,
+          "correcta": "En los monasterios",
           "explicacion": "¡Exacto! Los monasterios eran centros importantes de cultura y conservación de libros."
         },
         {
           "enunciado": "¿Con qué rey se relaciona la Escuela de Traductores de Toledo?",
           "opciones": ["Alfonso X el Sabio", "Don Pelayo", "Abd al-Rahman III", "Jaime I"],
-          "correcta": 0,
+          "correcta": "Alfonso X el Sabio",
           "explicacion": "¡Muy bien! Alfonso X el Sabio impulsó el trabajo de traducción en Toledo."
         },
         {
           "enunciado": "¿De qué lengua proceden el castellano, el catalán y el portugués?",
           "opciones": ["Del latín", "Del griego", "Del árabe únicamente", "Del germánico"],
-          "correcta": 0,
+          "correcta": "Del latín",
           "explicacion": "¡Correcto! El castellano, el catalán y el portugués son lenguas romances derivadas del latín."
         }
       ]
