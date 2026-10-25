@@ -21,6 +21,9 @@ importScripts('sw_version.js');
 const BASE = new URL(self.registration.scope).pathname;
 
 const CACHE_NAME = self.PLAYSTUDY_SW.cacheName;
+// Prefijo propio de la app: en un origen compartido (por ejemplo, una página
+// de usuario de GitHub Pages) no debemos borrar las cachés de otras PWAs.
+const CACHE_PREFIX = 'playstudy-';
 const PRECACHE_URLS = [BASE].concat(
   self.PLAYSTUDY_SW.precacheUrls.map(ruta => BASE + ruta)
 );
@@ -40,7 +43,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(key => key !== CACHE_NAME)
+          .filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
           .map(key => caches.delete(key))
       )
     ).then(() => self.clients.claim())
@@ -53,6 +56,10 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
+
+  // La Cache Storage API es por origen: no interceptamos ni cacheamos
+  // peticiones a terceros (por ejemplo, las del tutor con IA).
+  if (url.origin !== self.location.origin) return;
 
   // ── Datos del juego: primero red, caché como respaldo offline ──
   // (JSON de capítulos y flashcards de datos compilados; las imágenes
@@ -78,8 +85,13 @@ self.addEventListener('fetch', event => {
           // Sin conexión: servir la copia cacheada si existe
           caches.match(event.request, { ignoreSearch: true }).then(cached => {
             if (cached) return cached;
-            // Primer arranque sin conexión: reintentar ignorando la red
-            return fetch(event.request).catch(err => { throw err; });
+            // Sin red y sin copia: no reintentamos una petición que ya falló.
+            // El juego usará sus datos incrustados (catalogo_data.js) si los hay.
+            return new Response('Sin conexión y sin copia en caché.', {
+              status: 503,
+              statusText: 'Offline',
+              headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+            });
           })
         )
     );

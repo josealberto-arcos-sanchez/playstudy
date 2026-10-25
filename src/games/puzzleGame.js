@@ -24,6 +24,7 @@ export class PuzzleGame {
     this.timerSeconds = 0;
     this.timerInterval = null;
     this.isVictory = false;
+    this.pendingTimeouts = new Set();
 
     // Gestión de imagen: intentar cargar la imagen del capítulo o fallback a SVG
     this.imageSrc = casillaData.imagen || null;
@@ -281,6 +282,7 @@ export class PuzzleGame {
   }
 
   startNewPuzzle() {
+    this.clearPendingTimeouts();
     this.stopTimer();
     this.timerSeconds = 0;
     this.moves = 0;
@@ -432,8 +434,8 @@ export class PuzzleGame {
 
     // 2. Efectos sonoros alegres
     audio.playBoing();
-    setTimeout(() => audio.playGiggle(), 350);
-    setTimeout(() => audio.playVictory(), 900);
+    this.scheduleTimeout(() => audio.playGiggle(), 350);
+    this.scheduleTimeout(() => audio.playVictory(), 900);
 
     // Calcular estrellas
     let stars = 3;
@@ -446,7 +448,7 @@ export class PuzzleGame {
     gameState.completarCasilla(this.tema.id, this.casillaData.id, stars);
 
     // 3. MOSTRAR LA IMAGEN TERMINADA DURANTE 2.5 SEGUNDOS ANTES DEL MODAL
-    setTimeout(() => {
+    this.scheduleTimeout(() => {
       this.showVictoryModal();
     }, 2500);
   }
@@ -479,6 +481,30 @@ export class PuzzleGame {
       clearInterval(this.timerInterval);
       this.timerInterval = null;
     }
+  }
+
+  /**
+   * Programa un timeout que se cancela al reiniciar o abandonar el puzzle.
+   * Evita que la animación de victoria o los sonidos se ejecuten sobre una
+   * partida nueva o después de volver al circuito.
+   */
+  scheduleTimeout(callback, delay) {
+    const id = setTimeout(() => {
+      this.pendingTimeouts.delete(id);
+      callback();
+    }, delay);
+    this.pendingTimeouts.add(id);
+    return id;
+  }
+
+  clearPendingTimeouts() {
+    this.pendingTimeouts.forEach(clearTimeout);
+    this.pendingTimeouts.clear();
+  }
+
+  cleanup() {
+    this.stopTimer();
+    this.clearPendingTimeouts();
   }
 
   formatTime(totalSec) {
