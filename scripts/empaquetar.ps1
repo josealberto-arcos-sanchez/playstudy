@@ -107,5 +107,5 @@ if ($Check) {
 } else {
   Invoke-Build $BundleFile
   Write-Host "Bundle regenerado: $BundleFile" -ForegroundColor Green
-  Write-Host "Recuerda: si cambia la shell de la PWA (este bundle o CSS), sube la version CACHE_NAME en sw.js." -ForegroundColor Yellow
+  Write-Host "Recuerda: si cambia la shell de la PWA (este bundle o CSS), regenera sw_version.js con scripts/versionar.ps1." -ForegroundColor Yellow
 }

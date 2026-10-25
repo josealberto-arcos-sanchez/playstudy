@@ -9,7 +9,7 @@
 - Se creó `cap_01_edades/assets/` con **19 imágenes** locales, `puzzle.jpg` y `creditos_imagenes.json`.
 - Cada presentación cierra con una diapositiva de resumen con infografía propia y locución.
 - Se corrigió la ruta del puzzle a `assets/puzzle.jpg`.
-- Se ejecutó `scripts/actualizar_datos.ps1` y se probó el circuito completo en local.
+- Se ejecutó `npm run datos` (valida y sincroniza) y se probó el circuito completo en local.
 - Los quizzes (10 y 13 preguntas) y el contenido de las parejas no se modificaron.
 - El catálogo de juegos se normalizó al formato de los demás capítulos y se añadió la línea del tiempo que pide el tema (7 acontecimientos); el puzzle queda guardado en el catálogo.
 
@@ -200,7 +200,7 @@ Antes de implementar hay que verificar autor, licencia y que la imagen se vea co
 4. ✅ Reescribir las casillas 2 y 5 de `contenido.json` con `imagen`, `texto`, `locucion` y `puntos`.
 5. ✅ Crear `assets/creditos_imagenes.json`.
 6. ✅ Mover `puzzle.jpg` a `assets/` y corregir su ruta.
-7. ✅ Ejecutar `scripts/actualizar_datos.ps1`.
+7. ✅ Ejecutar `npm run datos` (valida el contenido y regenera `data/catalogo_data.js`).
 8. ✅ Probar en local: las 19 diapositivas cargan, la voz se activa, se pausa, se repite y se silencia; el circuito conserva las 18 estrellas.
 
 **Tiempo real:** unas 4 horas, principalmente búsqueda y revisión de imágenes, composición de infografías y redacción de locuciones.

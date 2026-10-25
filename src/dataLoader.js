@@ -2,7 +2,7 @@
  * Cargador de Catálogo y Capítulos Educativos
  *
  * El contenido vive siempre en `data/` (contenido.json y catalogo.json).
- * `data/catalogo_data.js` es la copia generada por scripts/actualizar_datos.ps1
+ * `data/catalogo_data.js` es la copia generada por scripts/datos.mjs
  * para que el juego funcione también desde file://.
  */
 import { montarJuegosDelTema, prepararCapituloParaCircuito } from './gameOrder.js';
@@ -25,7 +25,7 @@ export class DataLoader {
     }
 
     console.error(
-      '[Datos] No se ha encontrado el catálogo. Ejecuta scripts/actualizar_datos.ps1 o abre el juego desde un servidor web.'
+      '[Datos] No se ha encontrado el catálogo. Ejecuta "npm run datos" o abre el juego desde un servidor web.'
     );
     return null;
   }
@@ -64,7 +64,7 @@ export class DataLoader {
     }
 
     console.error(
-      `[Datos] No se ha encontrado el contenido de «${capituloObj.id || capituloObj.archivo}». Sincroniza los datos con scripts/actualizar_datos.ps1.`
+      `[Datos] No se ha encontrado el contenido de «${capituloObj.id || capituloObj.archivo}». Sincroniza los datos con "npm run datos".`
     );
     return null;
   }

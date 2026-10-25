@@ -1,9 +1,10 @@
 name: Tests
 
-# Ejecuta en cada PR y push a main los tests de la logica pura de src/
-# (tests/). Son el mismo `node --test` que se puede correr en local con
-# `npm test`; no hay dependencias que instalar (package.json solo declara
-# el script). El resto del proyecto (jugar) no depende de Node en runtime.
+# Ejecuta en cada PR y push a main los tests de la logica pura de src/ y la
+# comprobacion del pipeline de datos (scripts/datos.mjs): el catalogo real
+# debe validar y data/catalogo_data.js debe estar sincronizado. Es el mismo
+# Node que se usa en local con `npm test` y `npm run datos:check`; jugar no
+# depende de Node en runtime.
 
 on:
   push:
@@ -24,3 +25,6 @@ jobs:
 
       - name: Ejecutar los tests
         run: npm test
+
+      - name: Validar el contenido y comprobar los datos sincronizados
+        run: npm run datos:check

@@ -92,4 +92,4 @@ cap_02_visigodos/
 - ✅ Lo que nombra la voz se distingue en la imagen (por ejemplo, el arco de herradura, la corona o el mapa del 526).
 - ✅ Las diapositivas con mapas o infografías usan `"ajuste_imagen": "completo"`.
 - ✅ Los quizzes y los minijuegos no cambian y el circuito suma las mismas 18 estrellas.
-- ✅ `scripts/actualizar_datos.ps1` regenera `data/catalogo_data.js` con el capítulo actualizado.
+- ✅ `npm run datos` valida el contenido y regenera `data/catalogo_data.js` con el capítulo actualizado.

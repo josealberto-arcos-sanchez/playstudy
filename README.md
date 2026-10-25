@@ -4,10 +4,10 @@ PlayStudy es un videojuego educativo modular para PC, tablet y móvil. El conten
 
 ## Jugar
 
-- **Windows:** ejecuta [`jugar.bat`](jugar.bat). El script sincroniza los datos antes de abrir el juego.
+- **Windows:** ejecuta [`jugar.bat`](jugar.bat). El script valida el contenido y sincroniza los datos antes de abrir el juego; si no encuentra Node.js, abre el catálogo ya sincronizado que viene en el repositorio.
 - También puedes abrir [`index.html`](index.html) directamente. Para probar la versión PWA, abre el proyecto desde un servidor web seguro (HTTPS o localhost).
 - **Tablet / iPad:** usa Safari o Chrome en horizontal.
-- No necesita instalar Node.js, Python ni otros paquetes para jugar.
+- Para **jugar** no hay que instalar Node.js ni ningún otro paquete: el catálogo sincronizado y el bundle ya están en el repositorio. Node.js ≥ 18 (o el Node portable de `tools/`) solo hace falta para autorar contenido o tocar el código.
 
 ## Organización del contenido
 
@@ -143,20 +143,18 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
    ```
 
 5. **Pon la respuesta correcta en `opciones[0]`** en cada pregunta y define `"correcta": 0`; el juego mezcla las opciones al mostrarlas.
-6. **Sincroniza los datos** desde la raíz del proyecto:
+6. **Valida y sincroniza los datos** con un solo comando desde la raíz del proyecto:
 
    ```powershell
-   powershell -ExecutionPolicy Bypass -File "scripts/actualizar_datos.ps1"
+   npm run datos
    ```
 
-   El script genera [`data/catalogo_data.js`](data/catalogo_data.js), que permite cargar los capítulos desde `file://`. No edites ese archivo a mano.
-7. **Comprueba el capítulo** con el validador de contenido:
+   El comando revisa todo el catálogo y, **solo si no hay errores**, regenera [`data/catalogo_data.js`](data/catalogo_data.js), que permite cargar los capítulos desde `file://`. Si algo falla, muestra los `[ERROR]` y **no modifica** el artefacto. También puedes ejecutarlo sin npm con `node scripts/datos.mjs`.
 
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File "scripts/validar_contenido.ps1"
-   ```
+   - `npm run datos:validar` revisa sin escribir nada.
+   - `npm run datos:check` valida y comprueba que el `catalogo_data.js` subido está sincronizado (es lo mismo que ejecuta CI).
 
-   Revisa que el JSON sea válido, que estén las seis casillas, que el tema tenga exactamente dos juegos y el capítulo defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que la respuesta correcta de cada quiz esté en `opciones[0]`.
+   La validación comprueba que el JSON sea válido, que estén las seis casillas, que el tema tenga exactamente dos juegos y el capítulo defina su material, que **cada diapositiva tenga `imagen` y `locucion`**, que existan todas las rutas de imagen, que los créditos incluyan todos los recursos y que la respuesta correcta de cada quiz esté en `opciones[0]`.
 
 ## Modificar el código del juego
 
@@ -170,22 +168,23 @@ El código vive en los módulos de `src/` (`app.js`, `state.js`, `dataLoader.js`
 
 2. La primera ejecución descarga automáticamente el binario de esbuild (unos 10 MB) a `tools/`, comprueba su checksum SHA-512 contra el registro de npm y lo reutiliza a partir de ahí. `tools/` está ignorado por git y no hace falta instalar Node.js ni ningún otro paquete.
 3. El workflow **Bundle sincronizado** (`.github/workflows/empaquetado.yml`) comprueba en cada PR que el bundle subido coincide con lo que generan los módulos. Si difiere, regenera el bundle con el comando del paso 1 e inclúyelo en el commit. También puedes comprobarlo en local con `scripts/empaquetar.ps1 -Check`.
-4. El bundle sube a git (los jugadores abren `index.html` sin servidor ni build), al igual que `data/catalogo_data.js`. Ambos son artefactos generados: no se editan directamente.
+4. El bundle sube a git (los jugadores abren `index.html` sin servidor ni build), al igual que `data/catalogo_data.js`. Ambos son artefactos generados: no se editan directamente. El workflow **Tests** ejecuta `npm run datos:check`, que falla si el catálogo no valida o si `data/catalogo_data.js` no coincide con los datos.
 
 ## Tests
 
-La lógica didáctica pura (el barajado de juegos, el montaje por tema y el progreso del jugador) tiene tests en `tests/`:
+La lógica didáctica pura (el barajado de juegos, el montaje por tema y el progreso del jugador) y el pipeline de contenido tienen tests en `tests/`:
 
 ```powershell
 npm test
 ```
 
-Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. `state.js` persiste en `localStorage`, así que los tests usan un mock en memoria (`tests/helpers.js`) instalado antes de importar el módulo. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR.
+Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. `state.js` persiste en `localStorage`, así que los tests usan un mock en memoria (`tests/helpers.js`) instalado antes de importar el módulo. `tests/contenido.test.js` incluye un test de humo que valida el catálogo real y casos inválidos construidos en un proyecto temporal. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR y, además, `npm run datos:check` valida el contenido y comprueba que `data/catalogo_data.js` está sincronizado.
 
 **Node portable en `tools/node/`**: si la máquina no tiene Node en el `PATH`, este repositorio ya reserva `tools/` (ignorado por git) para binarios de desarrollo — además del esbuild de `scripts/empaquetar.ps1`, ahí hay un Node portable (`tools/node/node.exe`, win-x64, descargado de <https://nodejs.org/dist/>). Sin instalar nada:
 
 ```powershell
-tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js
+tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js tests\contenido.test.js
+tools\node\node.exe scripts\datos.mjs
 # o, para usar npm:
 $env:Path = "$PWD\tools\node;$env:Path"; npm test
 ```
@@ -196,8 +195,8 @@ Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de 
 
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
 - `data/cursos/.../contenido.json`: catálogo de juegos (parejas, línea del tiempo, puzzle…), presentaciones y quizzes de cada capítulo.
-- `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con el script.
-- `scripts/validar_contenido.ps1`: comprueba que todos los capítulos usan el formato de presentaciones narradas (imagen y locución en cada diapositiva) y que las rutas y los créditos están completos.
+- `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con `scripts/datos.mjs` y CI comprueba que está sincronizado.
+- `scripts/datos.mjs`: valida el catálogo y los capítulos y, solo si no hay errores, regenera `data/catalogo_data.js` (`npm run datos`; `validar` y `check` para los otros modos). Comprueba que cada diapositiva tiene imagen y locución, que las rutas y los créditos están completos y que los quizzes marcan la opción correcta.
 - `scripts/empaquetar.ps1`: genera `src/game_bundle.js` a partir de los módulos de `src/`; con `-Check` solo comprueba que están sincronizados.
 - `scripts/versionar.ps1`: genera `sw_version.js` (versión `playstudy-<hash>` de la caché + lista de precache) escaneando el shell de la PWA; con `-Check` solo comprueba que está sincronizado. `jugar.bat` lo ejecuta al arrancar.
 - `src/app.js`: orquestador del juego. Su `GAME_REGISTRY` / `TYPE_REGISTRY` mapan cada subtipo de minijuego y tipo de casilla a su clase; para añadir un minijuego nuevo, crea su módulo en `src/games/` y súmalo a `GAME_REGISTRY`.

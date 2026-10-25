@@ -5,6 +5,9 @@
   "type": "module",
   "description": "PlayStudy: videojuego educativo offline. Sin dependencias en runtime.",
   "scripts": {
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "datos": "node scripts/datos.mjs",
+    "datos:validar": "node scripts/datos.mjs validar",
+    "datos:check": "node scripts/datos.mjs check"
   }
 }
