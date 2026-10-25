@@ -224,8 +224,15 @@ $env:Path = "$PWD\tools\node;$env:Path"; npm test
 
 Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de nodejs.org, descomprimirlo en `tools/node/` y usar `tools\node\node.exe`. No se sube a git ni afecta al juego: es solo tooling de desarrollo.
 
+## Estilo y formato
+
+[`.editorconfig`](.editorconfig) fija el formato que comparten todos los editores sin instalar nada: UTF-8, finales de línea LF, indentación de dos espacios, salto de línea final y sin espacios al final (en Markdown se respetan porque dos espacios fuerzan un salto de línea). Lo aplican al guardar VS Code, Visual Studio, JetBrains, Sublime y la mayoría de editores; no cambia nada en tiempo de ejecución ni añade dependencias.
+
+Los tres artefactos que CI compara byte a byte —`src/game_bundle.js`, `sw_version.js` y `data/catalogo_data.js`— tienen además `eol=lf` forzado en `.gitattributes`, así que un editor con finales de línea CRLF no puede provocar diferencias falsas.
+
 ## Archivos principales
 
+- `.editorconfig`: formato compartido de todos los archivos (UTF-8, LF, dos espacios y salto final); no es una dependencia.
 - `data/catalogo.json`: cursos, asignaturas, temas y capítulos disponibles.
 - `data/cursos/.../contenido.json`: catálogo de juegos (parejas, línea del tiempo, puzzle…), presentaciones y quizzes de cada capítulo.
 - `data/catalogo_data.js`: catálogo sincronizado para uso offline; se genera con `scripts/datos.mjs` y CI comprueba que está sincronizado.

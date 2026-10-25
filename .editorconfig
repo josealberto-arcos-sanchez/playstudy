@@ -1,0 +1,18 @@
+# Reglas de formato compartidas por todos los editores e IDE.
+# No sustituyen a un linter ni añaden dependencias: fijan lo que cualquier
+# editor aplica al guardar. Los artefactos que CI compara byte a byte
+# (game_bundle.js, sw_version.js y catalogo_data.js) tienen además eol=lf
+# forzado en .gitattributes.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+# En Markdown, dos espacios al final de una línea fuerzan un salto de línea.
+trim_trailing_whitespace = false
