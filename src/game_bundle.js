@@ -2898,6 +2898,7 @@ ${lines.join("\n")}`;
       this.timerSeconds = 0;
       this.timerInterval = null;
       this.isLocked = false;
+      this.pendingTimeouts = /* @__PURE__ */ new Set();
     }
     render(container) {
       this.container = container;
@@ -2973,6 +2974,7 @@ ${lines.join("\n")}`;
       });
     }
     startNewGame() {
+      this.clearPendingTimeouts();
       this.stopTimer();
       this.timerSeconds = 0;
       this.moves = 0;
@@ -3057,7 +3059,7 @@ ${lines.join("\n")}`;
       const [first, second] = this.flippedCards;
       this.isLocked = true;
       if (first.card.id === second.card.id) {
-        setTimeout(() => {
+        this.scheduleTimeout(() => {
           audio.playMatch();
           first.card.isMatched = true;
           second.card.isMatched = true;
@@ -3072,11 +3074,11 @@ ${lines.join("\n")}`;
           }
         }, 400);
       } else {
-        setTimeout(() => {
+        this.scheduleTimeout(() => {
           audio.playMismatch();
           first.el.classList.add("shake");
           second.el.classList.add("shake");
-          setTimeout(() => {
+          this.scheduleTimeout(() => {
             first.card.isFlipped = false;
             second.card.isFlipped = false;
             first.el.classList.remove("flipped", "shake");
@@ -3120,6 +3122,27 @@ ${lines.join("\n")}`;
         this.timerInterval = null;
       }
     }
+    /**
+     * Programa un timeout que se cancela al reiniciar o abandonar la partida.
+     * Así una animación pendiente no puede alterar una partida nueva ni
+     * guardar estrellas después de volver al circuito.
+     */
+    scheduleTimeout(callback, delay) {
+      const id = setTimeout(() => {
+        this.pendingTimeouts.delete(id);
+        callback();
+      }, delay);
+      this.pendingTimeouts.add(id);
+      return id;
+    }
+    clearPendingTimeouts() {
+      this.pendingTimeouts.forEach(clearTimeout);
+      this.pendingTimeouts.clear();
+    }
+    cleanup() {
+      this.stopTimer();
+      this.clearPendingTimeouts();
+    }
     formatTime(totalSec) {
       const mins = Math.floor(totalSec / 60);
       const secs = totalSec % 60;
@@ -3149,6 +3172,7 @@ ${lines.join("\n")}`;
       this.timerSeconds = 0;
       this.timerInterval = null;
       this.isVictory = false;
+      this.pendingTimeouts = /* @__PURE__ */ new Set();
       this.imageSrc = casillaData.imagen || null;
       this.useCustomImage = false;
       this.svgIllustration = this.generateFunnyMammothSVG();
@@ -3390,6 +3414,7 @@ ${lines.join("\n")}`;
       });
     }
     startNewPuzzle() {
+      this.clearPendingTimeouts();
       this.stopTimer();
       this.timerSeconds = 0;
       this.moves = 0;
@@ -3511,8 +3536,8 @@ ${lines.join("\n")}`;
       }
       this.renderBoard();
       audio.playBoing();
-      setTimeout(() => audio.playGiggle(), 350);
-      setTimeout(() => audio.playVictory(), 900);
+      this.scheduleTimeout(() => audio.playGiggle(), 350);
+      this.scheduleTimeout(() => audio.playVictory(), 900);
       let stars = 3;
       if (this.moves > 14) {
         stars = 1;
@@ -3521,7 +3546,7 @@ ${lines.join("\n")}`;
       }
       this.calculatedStars = stars;
       gameState.completarCasilla(this.tema.id, this.casillaData.id, stars);
-      setTimeout(() => {
+      this.scheduleTimeout(() => {
         this.showVictoryModal();
       }, 2500);
     }
@@ -3547,6 +3572,27 @@ ${lines.join("\n")}`;
         clearInterval(this.timerInterval);
         this.timerInterval = null;
       }
+    }
+    /**
+     * Programa un timeout que se cancela al reiniciar o abandonar el puzzle.
+     * Evita que la animación de victoria o los sonidos se ejecuten sobre una
+     * partida nueva o después de volver al circuito.
+     */
+    scheduleTimeout(callback, delay) {
+      const id = setTimeout(() => {
+        this.pendingTimeouts.delete(id);
+        callback();
+      }, delay);
+      this.pendingTimeouts.add(id);
+      return id;
+    }
+    clearPendingTimeouts() {
+      this.pendingTimeouts.forEach(clearTimeout);
+      this.pendingTimeouts.clear();
+    }
+    cleanup() {
+      this.stopTimer();
+      this.clearPendingTimeouts();
     }
     formatTime(totalSec) {
       const mins = Math.floor(totalSec / 60);

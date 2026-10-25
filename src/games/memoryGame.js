@@ -22,6 +22,7 @@ export class MemoryGame {
     this.timerSeconds = 0;
     this.timerInterval = null;
     this.isLocked = false;
+    this.pendingTimeouts = new Set();
   }
 
   render(container) {
@@ -103,6 +104,7 @@ export class MemoryGame {
   }
 
   startNewGame() {
+    this.clearPendingTimeouts();
     this.stopTimer();
     this.timerSeconds = 0;
     this.moves = 0;
@@ -211,7 +213,7 @@ export class MemoryGame {
 
     if (first.card.id === second.card.id) {
       // ¡Acierto!
-      setTimeout(() => {
+      this.scheduleTimeout(() => {
         audio.playMatch();
         first.card.isMatched = true;
         second.card.isMatched = true;
@@ -229,12 +231,12 @@ export class MemoryGame {
       }, 400);
     } else {
       // Fallo: voltear de nuevo tras breve pausa
-      setTimeout(() => {
+      this.scheduleTimeout(() => {
         audio.playMismatch();
         first.el.classList.add('shake');
         second.el.classList.add('shake');
 
-        setTimeout(() => {
+        this.scheduleTimeout(() => {
           first.card.isFlipped = false;
           second.card.isFlipped = false;
           first.el.classList.remove('flipped', 'shake');
@@ -289,6 +291,30 @@ export class MemoryGame {
       clearInterval(this.timerInterval);
       this.timerInterval = null;
     }
+  }
+
+  /**
+   * Programa un timeout que se cancela al reiniciar o abandonar la partida.
+   * Así una animación pendiente no puede alterar una partida nueva ni
+   * guardar estrellas después de volver al circuito.
+   */
+  scheduleTimeout(callback, delay) {
+    const id = setTimeout(() => {
+      this.pendingTimeouts.delete(id);
+      callback();
+    }, delay);
+    this.pendingTimeouts.add(id);
+    return id;
+  }
+
+  clearPendingTimeouts() {
+    this.pendingTimeouts.forEach(clearTimeout);
+    this.pendingTimeouts.clear();
+  }
+
+  cleanup() {
+    this.stopTimer();
+    this.clearPendingTimeouts();
   }
 
   formatTime(totalSec) {
