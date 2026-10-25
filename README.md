@@ -247,6 +247,84 @@ $env:Path = "$PWD\tools\node;$env:Path"; npm run lint
 
 Los tres artefactos que CI compara byte a byte —`src/game_bundle.js`, `sw_version.js` y `data/catalogo_data.js`— tienen además `eol=lf` forzado en `.gitattributes`, así que un editor con finales de línea CRLF no puede provocar diferencias falsas.
 
+## Pull requests
+
+Los cambios llegan a `main` mediante PR pequeñas y de un solo tema. Este es el flujo completo, pensado también para que futuras sesiones de desarrollo no tengan que redescubrir el entorno.
+
+1. **Crea la rama desde `main` actualizado.** Usa un prefijo acorde al cambio (`feature/`, `fix/`, `docs/`, `refactor/` o `chore/`):
+
+   ```powershell
+   git switch main
+   git pull --ff-only
+   git switch -c fix/descripcion-corta
+   ```
+
+2. **Haz commits con el formato del historial**: `tipo(ámbito): resumen en imperativo`. Por ejemplo:
+
+   ```powershell
+   git add src/games/memoryGame.js src/game_bundle.js
+   git commit -m "fix(juegos): cancelar timers al salir de la partida"
+   ```
+
+3. **Regenera los artefactos que correspondan antes de subir**; CI compara los tres byte a byte:
+   - `src/` (JavaScript) → `powershell -ExecutionPolicy Bypass -File scripts/empaquetar.ps1`
+   - shell de la PWA (`index.html`, `css/`, `icons/` o el bundle) → `powershell -ExecutionPolicy Bypass -File scripts/versionar.ps1`
+   - `data/` (catálogo o capítulos) → `npm run datos`
+
+   Añade los archivos generados al commit. No edites `src/game_bundle.js`, `sw_version.js` ni `data/catalogo_data.js` a mano.
+
+4. **Sube la rama**:
+
+   ```powershell
+   git push -u origin fix/descripcion-corta
+   ```
+
+   GitHub devuelve una URL `https://github.com/josealberto-arcos-sanchez/playstudy/pull/new/fix/descripcion-corta`. También puedes abrir el PR desde ahí.
+
+5. **Crea el PR por la API si no tienes `gh`.** En este entorno **`gh` no está instalado**, así que no pierdas tiempo buscándolo. Git Credential Manager ya tiene las credenciales; este bloque las usa sin imprimir el token. Es importante escribir el JSON en UTF-8 y enviarlo con `curl.exe`: `Invoke-RestMethod` con PowerShell 5.1 puede devolver HTTP 400 o corromper los acentos.
+
+   ```powershell
+   $cred = "protocol=https`nhost=github.com`n`n" | git credential fill 2>$null
+   $token = ($cred | Where-Object { $_ -like 'password=*' } | Select-Object -First 1) -replace '^password=', ''
+   $token = "$token".Trim()
+   if (-not $token) { throw 'No hay credenciales HTTPS de GitHub disponibles.' }
+
+   $payload = @{
+     title = 'fix: resumen del cambio'
+     head  = 'fix/descripcion-corta'
+     base  = 'main'
+     body  = "## Resumen`n`nQué cambia y por qué.`n`n## Verificación`n`n- Tests, lint y comprobaciones ejecutadas."
+   } | ConvertTo-Json
+
+   $json = Join-Path $env:TEMP 'pr.json'
+   $respuesta = Join-Path $env:TEMP 'pr-response.json'
+   [System.IO.File]::WriteAllText($json, $payload, (New-Object System.Text.UTF8Encoding($false)))
+
+   curl.exe -sS -o $respuesta -w "HTTP %{http_code}`n" -X POST `
+     "https://api.github.com/repos/josealberto-arcos-sanchez/playstudy/pulls" `
+     -H "Authorization: Bearer $token" `
+     -H "Accept: application/vnd.github+json" `
+     -H "X-GitHub-Api-Version: 2022-11-28" `
+     -H "User-Agent: playstudy" `
+     -H "Content-Type: application/json; charset=utf-8" `
+     --data-binary "@$json"
+
+   Get-Content $respuesta -Raw -Encoding UTF8
+   Remove-Item $json, $respuesta -Force
+   ```
+
+   Un `HTTP 201` indica que el PR se ha creado; el cuerpo de la respuesta incluye `html_url`. Si el remoto no usa HTTPS o el gestor no tiene credenciales, abre el PR desde la URL del paso 4.
+
+6. **Espera a que CI esté en verde** antes de fusionar. Los cuatro workflows son **Tests**, **Lint**, **Bundle sincronizado** y **Versionado SW**. Para consultarlos sin `gh`:
+
+   ```powershell
+   $sha = git rev-parse HEAD
+   curl.exe -s -H "Accept: application/vnd.github+json" `
+     "https://api.github.com/repos/josealberto-arcos-sanchez/playstudy/commits/$sha/check-runs"
+   ```
+
+Un PR debe explicar el problema y la solución, indicar cómo se ha verificado y no mezclar temas distintos. Nunca incluyas tokens, claves de API ni datos personales.
+
 ## Archivos principales
 
 - `.editorconfig`: formato compartido de todos los archivos (UTF-8, LF, dos espacios y salto final); no es una dependencia.
