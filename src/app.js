@@ -14,6 +14,25 @@ import { MemoryGame } from './games/memoryGame.js';
 import { PuzzleGame } from './games/puzzleGame.js';
 import { TimelineGame } from './games/timelineGame.js';
 
+/**
+ * Registros de vistas por tipo de casilla.
+ *
+ * `GAME_REGISTRY` mapea cada subtipo de minijuego a su clase y `TYPE_REGISTRY`
+ * cada tipo de casilla fija a su vista. Para añadir un minijuego nuevo basta con
+ * crear su archivo en src/games/, importarlo aquí y sumar una línea a este
+ * registro; el material se define en el `contenido.json` del capítulo.
+ */
+const GAME_REGISTRY = {
+  parejas: MemoryGame,
+  puzzle: PuzzleGame,
+  linea_tiempo: TimelineGame
+};
+
+const TYPE_REGISTRY = {
+  teoria: TheoryView,
+  quiz: QuizView
+};
+
 class App {
   constructor() {
     this.root = document.getElementById('app-root');
@@ -90,38 +109,18 @@ class App {
       this.showMap();
     };
 
-    switch (casillaData.tipo) {
-      case 'minijuego':
-        if (casillaData.subtipo === 'parejas') {
-          this.currentViewInstance = new MemoryGame(this.currentCapitulo, casillaData, onStepComplete, onExit);
-          this.currentViewInstance.render(this.root);
-        } else if (casillaData.subtipo === 'puzzle') {
-          this.currentViewInstance = new PuzzleGame(this.currentCapitulo, casillaData, onStepComplete, onExit);
-          this.currentViewInstance.render(this.root);
-        } else if (casillaData.subtipo === 'linea_tiempo') {
-          this.currentViewInstance = new TimelineGame(this.currentCapitulo, casillaData, onStepComplete, onExit);
-          this.currentViewInstance.render(this.root);
-        } else {
-          console.warn('Subtipo de minijuego desconocido:', casillaData.subtipo);
-          this.showMap();
-        }
-        break;
+    const ViewClass = casillaData.tipo === 'minijuego'
+      ? GAME_REGISTRY[casillaData.subtipo]
+      : TYPE_REGISTRY[casillaData.tipo];
 
-      case 'teoria':
-        this.currentViewInstance = new TheoryView(this.currentCapitulo, casillaData, onStepComplete, onExit);
-        this.currentViewInstance.render(this.root);
-        break;
-
-      case 'quiz':
-        this.currentViewInstance = new QuizView(this.currentCapitulo, casillaData, onStepComplete, onExit);
-        this.currentViewInstance.render(this.root);
-        break;
-
-      default:
-        console.warn("Tipo de casilla desconocido:", casillaData.tipo);
-        this.showMap();
-        break;
+    if (!ViewClass) {
+      console.warn('Tipo o subtipo de casilla no registrado:', casillaData.tipo, casillaData.subtipo);
+      this.showMap();
+      return;
     }
+
+    this.currentViewInstance = new ViewClass(this.currentCapitulo, casillaData, onStepComplete, onExit);
+    this.currentViewInstance.render(this.root);
   }
 
   cleanupCurrentView() {
