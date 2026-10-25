@@ -1,24 +1,22 @@
+import { CLAVES, leerJSON, guardarJSON } from './storage.js';
+
 /**
  * Gestor de Estado y Progreso del Jugador
- * Guarda y recupera de forma persistente en localStorage:
+ * Guarda y recupera de forma persistente con los helpers de `storage.js`:
  * - Progreso por tema (casillas desbloqueadas)
  * - Estrellas ganadas por casilla
  * - Puntuaciones máximas
  */
 class StateManager {
   constructor() {
-    this.storageKey = 'aventura_educativa_state_v3';
+    this.storageKey = CLAVES.progreso;
     this.state = this.loadState();
   }
 
   loadState() {
-    try {
-      const saved = localStorage.getItem(this.storageKey);
-      if (saved) {
-        return JSON.parse(saved);
-      }
-    } catch (e) {
-      console.warn("No se pudo cargar el progreso, iniciando nuevo:", e);
+    const saved = leerJSON(this.storageKey, null);
+    if (saved && typeof saved === 'object') {
+      return saved;
     }
     return {
       temas: {}, // { [temaId]: { casillaDesbloqueada: 1, estrellas: { 1: 3, 2: 3 } } }
@@ -28,12 +26,8 @@ class StateManager {
   }
 
   saveState() {
-    try {
-      this.recalcularEstrellasTotales();
-      localStorage.setItem(this.storageKey, JSON.stringify(this.state));
-    } catch (e) {
-      console.warn("No se pudo guardar el progreso:", e);
-    }
+    this.recalcularEstrellasTotales();
+    guardarJSON(this.storageKey, this.state);
   }
 
   recalcularEstrellasTotales() {

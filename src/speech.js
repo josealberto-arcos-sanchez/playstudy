@@ -1,4 +1,5 @@
-const SETTINGS_KEY = 'playstudy_voice_settings_v1';
+import { CLAVES, leerJSON, guardarJSON } from './storage.js';
+
 const DEFAULT_RATE = 0.94;
 const DEFAULT_PREFERENCE = { version: 1, mode: 'auto', voice: null, rate: DEFAULT_RATE };
 
@@ -27,26 +28,22 @@ class SpeechManager {
   }
 
   loadPreference() {
-    try {
-      const value = JSON.parse(localStorage.getItem(SETTINGS_KEY) || 'null');
-      if (value?.version === 1 && value.mode === 'auto') {
-        return { ...DEFAULT_PREFERENCE, rate: normalizeRate(value.rate) };
-      }
-      if (value?.version === 1 && value.mode === 'selected' && value.voice &&
-          typeof value.voice.name === 'string' && typeof value.voice.lang === 'string') {
-        return {
-          version: 1,
-          mode: 'selected',
-          rate: normalizeRate(value.rate),
-          voice: {
-            voiceURI: typeof value.voice.voiceURI === 'string' ? value.voice.voiceURI : '',
-            name: value.voice.name,
-            lang: value.voice.lang
-          }
-        };
-      }
-    } catch (error) {
-      console.warn('No se pudo cargar la preferencia de voz:', error);
+    const value = leerJSON(CLAVES.preferenciasVoz, null);
+    if (value?.version === 1 && value.mode === 'auto') {
+      return { ...DEFAULT_PREFERENCE, rate: normalizeRate(value.rate) };
+    }
+    if (value?.version === 1 && value.mode === 'selected' && value.voice &&
+        typeof value.voice.name === 'string' && typeof value.voice.lang === 'string') {
+      return {
+        version: 1,
+        mode: 'selected',
+        rate: normalizeRate(value.rate),
+        voice: {
+          voiceURI: typeof value.voice.voiceURI === 'string' ? value.voice.voiceURI : '',
+          name: value.voice.name,
+          lang: value.voice.lang
+        }
+      };
     }
     return { ...DEFAULT_PREFERENCE };
   }
@@ -136,13 +133,7 @@ class SpeechManager {
 
     if (next.mode === 'selected' && (!next.voice.name || !next.voice.lang)) return false;
     this.preference = next;
-    try {
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify(next));
-      return true;
-    } catch (error) {
-      console.warn('No se pudo guardar la preferencia de voz:', error);
-      return false;
-    }
+    return guardarJSON(CLAVES.preferenciasVoz, next);
   }
 
   findPreferredVoice(voices, descriptor) {

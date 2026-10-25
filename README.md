@@ -122,6 +122,20 @@ El botón **Probar conexión** guarda la configuración y lanza una pregunta de 
 
 Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a ese dispositivo y al navegador puede leer la clave guardada. Usa una clave con límite de gasto bajo, no la configures en equipos compartidos y revócala si se filtra. El resto del juego sigue funcionando sin conexión; solo el tutor necesita Internet.
 
+## Qué se guarda en el navegador
+
+Todo el estado persistente pasa por [`src/storage.js`](src/storage.js), con las claves agrupadas bajo el prefijo `playstudy.*`:
+
+| Clave | Contenido |
+|---|---|
+| `playstudy.progreso.v3` | Progreso por tema, estrellas por casilla y total de estrellas. |
+| `playstudy.sonido` | Si están activados los efectos de sonido. |
+| `playstudy.teoria.voz_silenciada` | Si la locución de la teoría está silenciada. |
+| `playstudy.tutor_ia.v1` | Proveedor, modelos y claves de API del tutor. |
+| `playstudy.voces.v1` | Voz y velocidad elegidas para las explicaciones. |
+
+La primera vez que se abre esta versión, el módulo traslada automáticamente las claves antiguas (`aventura_educativa_state_v3`, `sound_enabled`, `playstudy_theory_mute`…) a las nuevas y conserva el progreso y la configuración. Para borrar todo el estado del juego basta con eliminar las claves `playstudy.*` del `localStorage` de ese navegador.
+
 ## Añadir un capítulo
 
 1. **Elige un ID único** para el capítulo, siguiendo el orden del tema (por ejemplo, `cap_05_nombre_corto`).
@@ -158,7 +172,7 @@ Ten en cuenta que PlayStudy es una web estática: cualquier persona con acceso a
 
 ## Modificar el código del juego
 
-El código vive en los módulos de `src/` (`app.js`, `state.js`, `dataLoader.js`, `gameOrder.js`, `audio.js`, `speech.js`, `aiTutor.js`, `views/` y `games/`). `index.html` no los carga uno a uno porque los módulos ES no funcionan al abrir el juego con doble clic (`file://`): en su lugar carga `src/game_bundle.js`, un único script clásico **generado a partir de esos módulos**. Por eso:
+El código vive en los módulos de `src/` (`app.js`, `state.js`, `storage.js`, `dataLoader.js`, `gameOrder.js`, `audio.js`, `speech.js`, `aiTutor.js`, `views/` y `games/`). `index.html` no los carga uno a uno porque los módulos ES no funcionan al abrir el juego con doble clic (`file://`): en su lugar carga `src/game_bundle.js`, un único script clásico **generado a partir de esos módulos**. Por eso:
 
 1. **No edites `src/game_bundle.js` a mano.** Edita el módulo correspondiente en `src/` y regenera el bundle:
 
@@ -178,12 +192,12 @@ La lógica didáctica pura (el barajado de juegos, el montaje por tema y el prog
 npm test
 ```
 
-Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. `state.js` persiste en `localStorage`, así que los tests usan un mock en memoria (`tests/helpers.js`) instalado antes de importar el módulo. `tests/contenido.test.js` incluye un test de humo que valida el catálogo real y casos inválidos construidos en un proyecto temporal. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR y, además, `npm run datos:check` valida el contenido y comprueba que `data/catalogo_data.js` está sincronizado.
+Solo necesitan Node.js ≥ 18 en la máquina de desarrollo (es la herramienta de `node --test`, sin dependencias que instalar); jugar sigue sin requerir Node. Los módulos que persisten usan `storage.js`, así que los tests instalan un `localStorage` en memoria (`tests/helpers.js`) antes de importarlos. `tests/storage.test.js` cubre los helpers y la migración, y `tests/migracion.test.js` comprueba de extremo a extremo que un jugador con las claves antiguas conserva progreso, audio, voz y tutor. `tests/contenido.test.js` incluye un test de humo que valida el catálogo real y casos inválidos construidos en un proyecto temporal. El workflow **Tests** (`.github/workflows/tests.yml`) los ejecuta en cada PR y, además, `npm run datos:check` valida el contenido y comprueba que `data/catalogo_data.js` está sincronizado.
 
 **Node portable en `tools/node/`**: si la máquina no tiene Node en el `PATH`, este repositorio ya reserva `tools/` (ignorado por git) para binarios de desarrollo — además del esbuild de `scripts/empaquetar.ps1`, ahí hay un Node portable (`tools/node/node.exe`, win-x64, descargado de <https://nodejs.org/dist/>). Sin instalar nada:
 
 ```powershell
-tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js tests\contenido.test.js
+tools\node\node.exe --test tests\gameOrder.test.js tests\state.test.js tests\storage.test.js tests\migracion.test.js tests\contenido.test.js
 tools\node\node.exe scripts\datos.mjs
 # o, para usar npm:
 $env:Path = "$PWD\tools\node;$env:Path"; npm test
@@ -199,6 +213,7 @@ Si no estuviera (p. ej. recién clonado), basta con descargar el zip de Node de 
 - `scripts/datos.mjs`: valida el catálogo y los capítulos y, solo si no hay errores, regenera `data/catalogo_data.js` (`npm run datos`; `validar` y `check` para los otros modos). Comprueba que cada diapositiva tiene imagen y locución, que las rutas y los créditos están completos y que los quizzes marcan la opción correcta.
 - `scripts/empaquetar.ps1`: genera `src/game_bundle.js` a partir de los módulos de `src/`; con `-Check` solo comprueba que están sincronizados.
 - `scripts/versionar.ps1`: genera `sw_version.js` (versión `playstudy-<hash>` de la caché + lista de precache) escaneando el shell de la PWA; con `-Check` solo comprueba que está sincronizado. `jugar.bat` lo ejecuta al arrancar.
+- `src/storage.js`: claves de `localStorage` centralizadas bajo `playstudy.*`, helpers tolerantes a fallos y migración automática de las claves antiguas.
 - `src/app.js`: orquestador del juego. Su `GAME_REGISTRY` / `TYPE_REGISTRY` mapan cada subtipo de minijuego y tipo de casilla a su clase; para añadir un minijuego nuevo, crea su módulo en `src/games/` y súmalo a `GAME_REGISTRY`.
 - `src/gameOrder.js`: monta los dos juegos elegidos por el tema y baraja las paradas del circuito (la teoría y los quizzes no se mueven).
 - `src/games/timelineGame.js`: minijuego de línea del tiempo.

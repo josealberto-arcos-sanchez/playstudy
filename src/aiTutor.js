@@ -9,7 +9,7 @@
  * confianza y con claves de bajo límite de gasto.
  */
 
-const CONFIG_KEY = 'playstudy_ai_tutor_v1';
+import { CLAVES, leerJSON, guardarJSON } from './storage.js';
 
 export const AI_PROVIDERS = {
   gemini: {
@@ -92,20 +92,11 @@ function normalizeConfig(raw) {
 
 export class AiTutor {
   load() {
-    try {
-      return normalizeConfig(JSON.parse(localStorage.getItem(CONFIG_KEY) || 'null'));
-    } catch (error) {
-      return normalizeConfig(null);
-    }
+    return normalizeConfig(leerJSON(CLAVES.tutorIa, null));
   }
 
   save(config) {
-    try {
-      localStorage.setItem(CONFIG_KEY, JSON.stringify(normalizeConfig(config)));
-      return true;
-    } catch (error) {
-      return false;
-    }
+    return guardarJSON(CLAVES.tutorIa, normalizeConfig(config));
   }
 
   getProvider(providerId) {

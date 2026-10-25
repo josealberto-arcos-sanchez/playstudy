@@ -157,20 +157,128 @@
     }
   };
 
+  // src/storage.js
+  var CLAVES = {
+    /** Progreso del jugador: casillas desbloqueadas y estrellas. */
+    progreso: "playstudy.progreso.v3",
+    /** Sonido de efectos activado (booleano como texto). */
+    sonido: "playstudy.sonido",
+    /** Voz de la teoría silenciada (booleano como texto). */
+    teoriaVozSilenciada: "playstudy.teoria.voz_silenciada",
+    /** Configuración del tutor con IA (proveedor, claves y modelos). */
+    tutorIa: "playstudy.tutor_ia.v1",
+    /** Voz y velocidad elegidas para las explicaciones. */
+    preferenciasVoz: "playstudy.voces.v1",
+    /** Marca interna: las claves antiguas ya se migraron. */
+    migracion: "playstudy.migracion.v1"
+  };
+  var CLAVES_ANTIGUAS = {
+    aventura_educativa_state_v3: CLAVES.progreso,
+    sound_enabled: CLAVES.sonido,
+    playstudy_theory_mute: CLAVES.teoriaVozSilenciada,
+    playstudy_ai_tutor_v1: CLAVES.tutorIa,
+    playstudy_voice_settings_v1: CLAVES.preferenciasVoz
+  };
+  function obtenerAlmacen() {
+    try {
+      return globalThis.localStorage || null;
+    } catch (error) {
+      return null;
+    }
+  }
+  function leerTexto(clave, porDefecto = null) {
+    const almacen = obtenerAlmacen();
+    if (!almacen) return porDefecto;
+    try {
+      const valor = almacen.getItem(clave);
+      return valor === null ? porDefecto : valor;
+    } catch (error) {
+      console.warn(`No se pudo leer \xAB${clave}\xBB del almacenamiento local:`, error);
+      return porDefecto;
+    }
+  }
+  function guardarTexto(clave, valor) {
+    const almacen = obtenerAlmacen();
+    if (!almacen) return false;
+    try {
+      almacen.setItem(clave, String(valor));
+      return true;
+    } catch (error) {
+      console.warn(`No se pudo guardar \xAB${clave}\xBB en el almacenamiento local:`, error);
+      return false;
+    }
+  }
+  function leerJSON(clave, porDefecto = null) {
+    const texto = leerTexto(clave, null);
+    if (texto === null) return porDefecto;
+    try {
+      return JSON.parse(texto);
+    } catch (error) {
+      console.warn(`El valor guardado en \xAB${clave}\xBB no es JSON v\xE1lido; se usa el valor por defecto:`, error);
+      return porDefecto;
+    }
+  }
+  function guardarJSON(clave, valor) {
+    try {
+      return guardarTexto(clave, JSON.stringify(valor));
+    } catch (error) {
+      console.warn(`No se pudo serializar el valor de \xAB${clave}\xBB:`, error);
+      return false;
+    }
+  }
+  function leerBooleano(clave, porDefecto = false) {
+    const valor = leerTexto(clave, null);
+    if (valor === null) return porDefecto;
+    return valor !== "false" && valor !== "0";
+  }
+  function guardarBooleano(clave, valor) {
+    return guardarTexto(clave, valor ? "true" : "false");
+  }
+  function migrarClavesAntiguas(almacen = obtenerAlmacen()) {
+    const resultado = { migradas: [], error: null };
+    if (!almacen) return resultado;
+    try {
+      if (almacen.getItem(CLAVES.migracion) === "1") return resultado;
+    } catch (error) {
+      resultado.error = error;
+      return resultado;
+    }
+    for (const [antigua, nueva] of Object.entries(CLAVES_ANTIGUAS)) {
+      try {
+        const valor = almacen.getItem(antigua);
+        if (valor === null) continue;
+        if (almacen.getItem(nueva) === null) almacen.setItem(nueva, valor);
+        almacen.removeItem(antigua);
+        resultado.migradas.push(antigua);
+      } catch (error) {
+        resultado.error = error;
+        console.warn(`No se pudo migrar la clave \xAB${antigua}\xBB:`, error);
+      }
+    }
+    if (!resultado.error) {
+      try {
+        almacen.setItem(CLAVES.migracion, "1");
+      } catch (error) {
+        resultado.error = error;
+      }
+    }
+    if (resultado.migradas.length) {
+      console.info(`[Almacenamiento] Claves migradas: ${resultado.migradas.join(", ")}`);
+    }
+    return resultado;
+  }
+  migrarClavesAntiguas();
+
   // src/state.js
   var StateManager = class {
     constructor() {
-      this.storageKey = "aventura_educativa_state_v3";
+      this.storageKey = CLAVES.progreso;
       this.state = this.loadState();
     }
     loadState() {
-      try {
-        const saved = localStorage.getItem(this.storageKey);
-        if (saved) {
-          return JSON.parse(saved);
-        }
-      } catch (e) {
-        console.warn("No se pudo cargar el progreso, iniciando nuevo:", e);
+      const saved = leerJSON(this.storageKey, null);
+      if (saved && typeof saved === "object") {
+        return saved;
       }
       return {
         temas: {},
@@ -180,12 +288,8 @@
       };
     }
     saveState() {
-      try {
-        this.recalcularEstrellasTotales();
-        localStorage.setItem(this.storageKey, JSON.stringify(this.state));
-      } catch (e) {
-        console.warn("No se pudo guardar el progreso:", e);
-      }
+      this.recalcularEstrellasTotales();
+      guardarJSON(this.storageKey, this.state);
     }
     recalcularEstrellasTotales() {
       let total = 0;
@@ -246,7 +350,7 @@
   var AudioManager = class {
     constructor() {
       this.ctx = null;
-      this.enabled = localStorage.getItem("sound_enabled") !== "false";
+      this.enabled = leerBooleano(CLAVES.sonido, true);
     }
     init() {
       if (!this.ctx) {
@@ -261,7 +365,7 @@
     }
     toggleSound() {
       this.enabled = !this.enabled;
-      localStorage.setItem("sound_enabled", this.enabled);
+      guardarBooleano(CLAVES.sonido, this.enabled);
       if (this.enabled) {
         this.init();
         this.playClick();
@@ -492,7 +596,6 @@
   var audio = new AudioManager();
 
   // src/speech.js
-  var SETTINGS_KEY = "playstudy_voice_settings_v1";
   var DEFAULT_RATE = 0.94;
   var DEFAULT_PREFERENCE = { version: 1, mode: "auto", voice: null, rate: DEFAULT_RATE };
   function normalizeRate(value) {
@@ -514,25 +617,21 @@
       this.voicesChangedHandler = null;
     }
     loadPreference() {
-      try {
-        const value = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "null");
-        if (value?.version === 1 && value.mode === "auto") {
-          return { ...DEFAULT_PREFERENCE, rate: normalizeRate(value.rate) };
-        }
-        if (value?.version === 1 && value.mode === "selected" && value.voice && typeof value.voice.name === "string" && typeof value.voice.lang === "string") {
-          return {
-            version: 1,
-            mode: "selected",
-            rate: normalizeRate(value.rate),
-            voice: {
-              voiceURI: typeof value.voice.voiceURI === "string" ? value.voice.voiceURI : "",
-              name: value.voice.name,
-              lang: value.voice.lang
-            }
-          };
-        }
-      } catch (error) {
-        console.warn("No se pudo cargar la preferencia de voz:", error);
+      const value = leerJSON(CLAVES.preferenciasVoz, null);
+      if (value?.version === 1 && value.mode === "auto") {
+        return { ...DEFAULT_PREFERENCE, rate: normalizeRate(value.rate) };
+      }
+      if (value?.version === 1 && value.mode === "selected" && value.voice && typeof value.voice.name === "string" && typeof value.voice.lang === "string") {
+        return {
+          version: 1,
+          mode: "selected",
+          rate: normalizeRate(value.rate),
+          voice: {
+            voiceURI: typeof value.voice.voiceURI === "string" ? value.voice.voiceURI : "",
+            name: value.voice.name,
+            lang: value.voice.lang
+          }
+        };
       }
       return { ...DEFAULT_PREFERENCE };
     }
@@ -611,13 +710,7 @@
       } : { ...DEFAULT_PREFERENCE, rate: normalizeRate(preference?.rate) };
       if (next.mode === "selected" && (!next.voice.name || !next.voice.lang)) return false;
       this.preference = next;
-      try {
-        localStorage.setItem(SETTINGS_KEY, JSON.stringify(next));
-        return true;
-      } catch (error) {
-        console.warn("No se pudo guardar la preferencia de voz:", error);
-        return false;
-      }
+      return guardarJSON(CLAVES.preferenciasVoz, next);
     }
     findPreferredVoice(voices, descriptor) {
       if (!descriptor) return null;
@@ -662,7 +755,6 @@
   var speechManager = new SpeechManager();
 
   // src/aiTutor.js
-  var CONFIG_KEY = "playstudy_ai_tutor_v1";
   var AI_PROVIDERS = {
     gemini: {
       id: "gemini",
@@ -738,19 +830,10 @@
   }
   var AiTutor = class {
     load() {
-      try {
-        return normalizeConfig(JSON.parse(localStorage.getItem(CONFIG_KEY) || "null"));
-      } catch (error) {
-        return normalizeConfig(null);
-      }
+      return normalizeConfig(leerJSON(CLAVES.tutorIa, null));
     }
     save(config) {
-      try {
-        localStorage.setItem(CONFIG_KEY, JSON.stringify(normalizeConfig(config)));
-        return true;
-      } catch (error) {
-        return false;
-      }
+      return guardarJSON(CLAVES.tutorIa, normalizeConfig(config));
     }
     getProvider(providerId) {
       return AI_PROVIDERS[providerId] || AI_PROVIDERS.gemini;
@@ -1877,7 +1960,7 @@ ${question}`
       this.currentIndex = 0;
       this.isSpeaking = false;
       this.isVoicePaused = false;
-      this.isVoiceMuted = localStorage.getItem("playstudy_theory_mute") === "true";
+      this.isVoiceMuted = leerBooleano(CLAVES.teoriaVozSilenciada, false);
       this.currentUtterance = null;
       this.speechRequestId = 0;
       this.aiPanel = null;
@@ -2139,7 +2222,7 @@ ${question}`
         muteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           this.isVoiceMuted = !this.isVoiceMuted;
-          localStorage.setItem("playstudy_theory_mute", this.isVoiceMuted);
+          guardarBooleano(CLAVES.teoriaVozSilenciada, this.isVoiceMuted);
           if (this.isVoiceMuted) {
             this.stopSpeaking();
           } else {

@@ -12,6 +12,7 @@ import { instalarLocalStorageGlobal } from './helpers.js';
 
 // El singleton `gameState` se crea en el import: primero el localStorage falso.
 const storage = instalarLocalStorageGlobal();
+const { CLAVES } = await import('../src/storage.js');
 const { gameState } = await import('../src/state.js');
 
 function estadoInicial() {
@@ -67,7 +68,7 @@ test('getEstrellasTotales suma las estrellas de todos los temas', () => {
 
   assert.equal(gameState.getEstrellasTotales(), 6);
   // Y queda persistido (saveState recalcula antes de guardar).
-  const guardado = JSON.parse(storage.getItem('aventura_educativa_state_v3'));
+  const guardado = JSON.parse(storage.getItem(CLAVES.progreso));
   assert.equal(guardado.estrellasTotales, 6);
 });
 
@@ -92,11 +93,11 @@ test('reiniciarProgresoTema borra estrellas y vuelve a la casilla 1', () => {
 
 test('el progreso se persiste en localStorage y se recupera al cargar', async () => {
   gameState.completarCasilla('tema_1', 1, 3);
-  const guardado = storage.getItem('aventura_educativa_state_v3');
+  const guardado = storage.getItem(CLAVES.progreso);
   assert.ok(guardado, 'saveState escribe en localStorage');
 
   // Recargar el modulo simula una vuelta del jugador otro dia.
-  assert.equal(storage.getItem('aventura_educativa_state_v3'), guardado);
+  assert.equal(storage.getItem(CLAVES.progreso), guardado);
 
   const recarga = await import('../src/state.js');
   assert.equal(recarga.gameState, gameState, 'el modulo cachea el singleton');
@@ -104,14 +105,14 @@ test('el progreso se persiste en localStorage y se recupera al cargar', async ()
 });
 
 test('un localStorage corrupto no tumba el juego: arranca de cero', () => {
-  storage.setItem('aventura_educativa_state_v3', '{esto no es json');
+  storage.setItem(CLAVES.progreso, '{esto no es json');
   const avisos = [];
   const warnOriginal = console.warn;
   console.warn = (...args) => avisos.push(args.join(' '));
   try {
     const estado = gameState.loadState();
     assert.deepEqual(estado, estadoInicial());
-    assert.ok(avisos.some(a => a.includes('No se pudo cargar')), 'avisa del fallo');
+    assert.ok(avisos.some(a => a.includes('JSON válido')), 'avisa del fallo');
   } finally {
     console.warn = warnOriginal;
   }

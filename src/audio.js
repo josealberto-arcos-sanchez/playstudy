@@ -1,3 +1,5 @@
+import { CLAVES, leerBooleano, guardarBooleano } from './storage.js';
+
 /**
  * Gestor de Audio Web: Generador de efectos de sonido sintetizados
  * No requiere descargar archivos de audio externos (funciona 100% offline y al instante)
@@ -5,7 +7,7 @@
 class AudioManager {
   constructor() {
     this.ctx = null;
-    this.enabled = localStorage.getItem('sound_enabled') !== 'false';
+    this.enabled = leerBooleano(CLAVES.sonido, true);
   }
 
   init() {
@@ -22,7 +24,7 @@ class AudioManager {
 
   toggleSound() {
     this.enabled = !this.enabled;
-    localStorage.setItem('sound_enabled', this.enabled);
+    guardarBooleano(CLAVES.sonido, this.enabled);
     if (this.enabled) {
       this.init();
       this.playClick();
