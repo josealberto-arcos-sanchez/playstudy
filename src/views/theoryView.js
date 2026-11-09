@@ -61,7 +61,13 @@ export class TheoryView {
           locucion: t.locucion || '',
           imagen: t.imagen || null,
           ajusteImagen: t.ajuste_imagen || 'recorte',
-          texto: t.texto || ''
+          texto: t.texto || '',
+          video: t.video && typeof t.video === 'object' && t.video.url
+            ? {
+                titulo: t.video.titulo || 'Ver el vídeo',
+                url: t.video.url
+              }
+            : null
         });
       });
     });
@@ -259,6 +265,12 @@ export class TheoryView {
               <div class="presentation-bullet-text">${this.formatMarkdown(p)}</div>
             </div>
           `).join('')}
+          ${slide.video ? `
+            <a class="presentation-video-link" href="${slide.video.url}" target="_blank" rel="noopener noreferrer" title="Se abre en YouTube">
+              <span class="presentation-video-icon" aria-hidden="true">▶</span>
+              <span>${slide.video.titulo}</span>
+            </a>
+          ` : ''}
         </div>
       </div>
     `;

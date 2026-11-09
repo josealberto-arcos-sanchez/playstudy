@@ -176,6 +176,28 @@ test('detecta imagenes que no existen', t => {
   assert.match(erroresDe(validarContenido({ raiz })), /no existe la imagen/);
 });
 
+test('acepta un video recomendado con titulo y URL http(s)', t => {
+  const contenido = capituloValido();
+  contenido.casillas[1].fichas[0].tarjetas[0].video = {
+    titulo: 'Vídeo de ejemplo',
+    url: 'https://www.youtube.com/watch?v=ZRFykdf4kDc'
+  };
+  const raiz = crearProyecto(t, { contenido });
+
+  assert.deepEqual(validarContenido({ raiz }).errores, []);
+});
+
+test('detecta videos sin una URL http(s) valida', t => {
+  const contenido = capituloValido();
+  contenido.casillas[1].fichas[0].tarjetas[0].video = {
+    titulo: 'Vídeo de ejemplo',
+    url: 'www.youtube.com/watch?v=ZRFykdf4kDc'
+  };
+  const raiz = crearProyecto(t, { contenido });
+
+  assert.match(erroresDe(validarContenido({ raiz })), /video\.url/);
+});
+
 test('detecta diapositivas sin locucion completa', t => {
   const contenido = capituloValido();
   contenido.casillas[1].fichas[0].tarjetas[0].locucion = 'Corta.';

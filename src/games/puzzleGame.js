@@ -2,7 +2,7 @@
  * Minijuego de Puzzle Divertido (6 piezas: 3 columnas x 2 filas)
  * - Usa la imagen local indicada en `casillaData.imagen` (assets/ del capítulo)
  * - Si no hay imagen, usa por defecto la ilustración divertida del mamut
- * - Al completarse, muestra la imagen resuelta durante 2.5 segundos con animación antes del modal
+ * - Al completarse, mantiene la imagen resuelta fija y despejada hasta que el jugador pulse el botón de continuar
  */
 import { audio } from '../audio.js';
 import { gameState } from '../state.js';
@@ -188,8 +188,14 @@ export class PuzzleGame {
           </div>
         </div>
 
-        <div class="puzzle-tip-bar">
-          <span>💡 <strong>Cómo jugar:</strong> Toca una pieza y luego otra para intercambiarlas de sitio.</span>
+        <div class="puzzle-tip-bar" id="puzzle-tip-bar">
+          <span class="puzzle-tip-text">💡 <strong>Cómo jugar:</strong> Toca una pieza y luego otra para intercambiarlas de sitio.</span>
+          <div class="puzzle-solved-bar hidden" id="puzzle-solved-bar">
+            <span class="puzzle-solved-text">✨ ¡PUZZLE RESUELTO! ✨</span>
+            <button class="btn-primary btn-solved-continue" id="btn-show-victory">
+              <span>🎉 Continuar ➡️</span>
+            </button>
+          </div>
         </div>
 
         <!-- Modal Vista Previa -->
@@ -275,6 +281,11 @@ export class PuzzleGame {
       peekModal.classList.add('hidden');
     });
 
+    this.container.querySelector('#btn-show-victory').addEventListener('click', () => {
+      audio.playClick();
+      this.showVictoryModal();
+    });
+
     this.container.querySelector('#btn-puzzle-next').addEventListener('click', () => {
       audio.playClick();
       this.onComplete(this.calculatedStars);
@@ -293,8 +304,15 @@ export class PuzzleGame {
     const boardEl = this.container.querySelector('#puzzle-board');
     if (boardEl) {
       boardEl.classList.remove('puzzle-completed-reveal');
-      const oldBanner = boardEl.querySelector('.puzzle-solved-banner');
-      if (oldBanner) oldBanner.remove();
+    }
+
+    const tipBar = this.container.querySelector('#puzzle-tip-bar');
+    if (tipBar) {
+      tipBar.classList.remove('is-solved');
+      const tipText = tipBar.querySelector('.puzzle-tip-text');
+      const solvedBar = tipBar.querySelector('#puzzle-solved-bar');
+      if (tipText) tipText.classList.remove('hidden');
+      if (solvedBar) solvedBar.classList.add('hidden');
     }
 
     this.board = [0, 1, 2, 3, 4, 5];
@@ -422,11 +440,6 @@ export class PuzzleGame {
     const boardEl = this.container.querySelector('#puzzle-board');
     if (boardEl) {
       boardEl.classList.add('puzzle-completed-reveal');
-      
-      const banner = document.createElement('div');
-      banner.className = 'puzzle-solved-banner';
-      banner.innerHTML = '<span>✨ ¡PUZZLE RESUELTO! ✨</span>';
-      boardEl.appendChild(banner);
     }
 
     // Volver a renderizar sin los checks para que la imagen se vea perfecta
@@ -447,10 +460,15 @@ export class PuzzleGame {
     this.calculatedStars = stars;
     gameState.completarCasilla(this.tema.id, this.casillaData.id, stars);
 
-    // 3. MOSTRAR LA IMAGEN TERMINADA DURANTE 2.5 SEGUNDOS ANTES DEL MODAL
-    this.scheduleTimeout(() => {
-      this.showVictoryModal();
-    }, 2500);
+    // 3. Mostrar barra inferior con botón para continuar cuando el jugador quiera
+    const tipBar = this.container.querySelector('#puzzle-tip-bar');
+    if (tipBar) {
+      tipBar.classList.add('is-solved');
+      const tipText = tipBar.querySelector('.puzzle-tip-text');
+      const solvedBar = tipBar.querySelector('#puzzle-solved-bar');
+      if (tipText) tipText.classList.add('hidden');
+      if (solvedBar) solvedBar.classList.remove('hidden');
+    }
   }
 
   showVictoryModal() {

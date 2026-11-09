@@ -3,7 +3,7 @@
    del shell (index.html, manifest.json, css/, src/game_bundle.js, icons/).
    Regenera con: powershell -ExecutionPolicy Bypass -File scripts/versionar.ps1 */
 self.PLAYSTUDY_SW = {
-  cacheName: 'playstudy-1f1719e8',
+  cacheName: 'playstudy-3a3154da',
   precacheUrls: [
     'css/main.css',
     'css/map.css',

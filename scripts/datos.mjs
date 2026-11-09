@@ -40,6 +40,7 @@ export const RUTA_ARTEFACTO = 'data/catalogo_data.js';
 
 const CLAVES_PROHIBIDAS_FICHA = ['destacado', 'secciones', 'puntos'];
 const AJUSTES_IMAGEN = ['recorte', 'completo'];
+const PATRON_URL_VIDEO = /^https?:\/\/\S+$/i;
 
 /**
  * Un tema activa entre MIN_JUEGOS_TEMA y MAX_JUEGOS_TEMA minijuegos. Cada
@@ -260,6 +261,20 @@ export function validarContenido({ raiz = RAIZ_PROYECTO } = {}) {
 
           if (tarjeta.ajuste_imagen && !AJUSTES_IMAGEN.includes(tarjeta.ajuste_imagen)) {
             errores.push(`${etiqueta}: 'ajuste_imagen' debe ser 'recorte' o 'completo'`);
+          }
+
+          if (Object.hasOwn(tarjeta, 'video')) {
+            const video = tarjeta.video;
+            if (!video || typeof video !== 'object' || Array.isArray(video)) {
+              errores.push(`${etiqueta}: 'video' debe ser un objeto con 'titulo' y 'url'`);
+            } else {
+              if (typeof video.url !== 'string' || !PATRON_URL_VIDEO.test(video.url.trim())) {
+                errores.push(`${etiqueta}: 'video.url' debe ser una URL http(s) valida`);
+              }
+              if (typeof video.titulo !== 'string' || !video.titulo.trim()) {
+                errores.push(`${etiqueta}: 'video.titulo' no puede estar vacio`);
+              }
+            }
           }
         }
       }

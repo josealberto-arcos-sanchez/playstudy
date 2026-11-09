@@ -335,6 +335,47 @@
   justify-content: center;
 }
 
+/* Enlace opcional a un vídeo recomendado (se abre en YouTube). */
+.presentation-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  max-width: 100%;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.28);
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.presentation-video-link:hover,
+.presentation-video-link:focus-visible {
+  background: #b91c1c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(185, 28, 28, 0.34);
+}
+
+.presentation-video-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 0.72rem;
+  line-height: 1;
+  padding-left: 2px;
+}
+
 .presentation-bullet-card {
   background: #ffffff;
   border: 2px solid #e2e8f0;
