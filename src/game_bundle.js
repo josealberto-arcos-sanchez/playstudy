@@ -2014,7 +2014,11 @@ ${question}`
             locucion: t.locucion || "",
             imagen: t.imagen || null,
             ajusteImagen: t.ajuste_imagen || "recorte",
-            texto: t.texto || ""
+            texto: t.texto || "",
+            video: t.video && typeof t.video === "object" && t.video.url ? {
+              titulo: t.video.titulo || "Ver el v\xEDdeo",
+              url: t.video.url
+            } : null
           });
         });
       });
@@ -2192,6 +2196,12 @@ ${question}`
               <div class="presentation-bullet-text">${this.formatMarkdown(p)}</div>
             </div>
           `).join("")}
+          ${slide.video ? `
+            <a class="presentation-video-link" href="${slide.video.url}" target="_blank" rel="noopener noreferrer" title="Se abre en YouTube">
+              <span class="presentation-video-icon" aria-hidden="true">\u25B6</span>
+              <span>${slide.video.titulo}</span>
+            </a>
+          ` : ""}
         </div>
       </div>
     `;
@@ -3346,8 +3356,14 @@ ${lines.join("\n")}`;
           </div>
         </div>
 
-        <div class="puzzle-tip-bar">
-          <span>\u{1F4A1} <strong>C\xF3mo jugar:</strong> Toca una pieza y luego otra para intercambiarlas de sitio.</span>
+        <div class="puzzle-tip-bar" id="puzzle-tip-bar">
+          <span class="puzzle-tip-text">\u{1F4A1} <strong>C\xF3mo jugar:</strong> Toca una pieza y luego otra para intercambiarlas de sitio.</span>
+          <div class="puzzle-solved-bar hidden" id="puzzle-solved-bar">
+            <span class="puzzle-solved-text">\u2728 \xA1PUZZLE RESUELTO! \u2728</span>
+            <button class="btn-primary btn-solved-continue" id="btn-show-victory">
+              <span>\u{1F389} Continuar \u27A1\uFE0F</span>
+            </button>
+          </div>
         </div>
 
         <!-- Modal Vista Previa -->
@@ -3425,6 +3441,10 @@ ${lines.join("\n")}`;
         audio.playClick();
         peekModal.classList.add("hidden");
       });
+      this.container.querySelector("#btn-show-victory").addEventListener("click", () => {
+        audio.playClick();
+        this.showVictoryModal();
+      });
       this.container.querySelector("#btn-puzzle-next").addEventListener("click", () => {
         audio.playClick();
         this.onComplete(this.calculatedStars);
@@ -3441,8 +3461,14 @@ ${lines.join("\n")}`;
       const boardEl = this.container.querySelector("#puzzle-board");
       if (boardEl) {
         boardEl.classList.remove("puzzle-completed-reveal");
-        const oldBanner = boardEl.querySelector(".puzzle-solved-banner");
-        if (oldBanner) oldBanner.remove();
+      }
+      const tipBar = this.container.querySelector("#puzzle-tip-bar");
+      if (tipBar) {
+        tipBar.classList.remove("is-solved");
+        const tipText = tipBar.querySelector(".puzzle-tip-text");
+        const solvedBar = tipBar.querySelector("#puzzle-solved-bar");
+        if (tipText) tipText.classList.remove("hidden");
+        if (solvedBar) solvedBar.classList.add("hidden");
       }
       this.board = [0, 1, 2, 3, 4, 5];
       do {
@@ -3546,10 +3572,6 @@ ${lines.join("\n")}`;
       const boardEl = this.container.querySelector("#puzzle-board");
       if (boardEl) {
         boardEl.classList.add("puzzle-completed-reveal");
-        const banner = document.createElement("div");
-        banner.className = "puzzle-solved-banner";
-        banner.innerHTML = "<span>\u2728 \xA1PUZZLE RESUELTO! \u2728</span>";
-        boardEl.appendChild(banner);
       }
       this.renderBoard();
       audio.playBoing();
@@ -3563,9 +3585,14 @@ ${lines.join("\n")}`;
       }
       this.calculatedStars = stars;
       gameState.completarCasilla(this.tema.id, this.casillaData.id, stars);
-      this.scheduleTimeout(() => {
-        this.showVictoryModal();
-      }, 2500);
+      const tipBar = this.container.querySelector("#puzzle-tip-bar");
+      if (tipBar) {
+        tipBar.classList.add("is-solved");
+        const tipText = tipBar.querySelector(".puzzle-tip-text");
+        const solvedBar = tipBar.querySelector("#puzzle-solved-bar");
+        if (tipText) tipText.classList.add("hidden");
+        if (solvedBar) solvedBar.classList.remove("hidden");
+      }
     }
     showVictoryModal() {
       const modal = this.container.querySelector("#puzzle-victory-modal");
