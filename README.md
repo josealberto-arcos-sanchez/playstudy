@@ -101,6 +101,15 @@ La configuración ⚙️ está disponible en el menú principal y en el mapa. Al
 }
 ```
 
+Si una diapositiva tiene un vídeo recomendado, añade un objeto `video` con `titulo` y `url`. El reproductor muestra un botón bajo el rótulo que abre el vídeo en otra pestaña; el vídeo no se descarga y necesita conexión:
+
+```json
+"video": {
+  "titulo": "Vídeo: Levels of Organization",
+  "url": "https://www.youtube.com/watch?v=ZRFykdf4kDc"
+}
+```
+
 ### Criterios para las diapositivas
 
 1. **Lenguaje para niños de 10 años:** usa frases cortas, palabras comunes y voz activa. Conserva los términos históricos necesarios, pero explícalos la primera vez (por ejemplo: «una alcazaba era una fortaleza con murallas»).
