@@ -1,0 +1,260 @@
+{
+  "id": "cap_01_niveles_organizacion",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_naturales",
+  "tema_id": "tema_01_somos_humanos",
+  "titulo": "Capítulo 1: Niveles de organización",
+  "subtitulo": "Cómo se construye un ser humano: de la célula al organismo",
+  "icono": "🔬",
+  "color_primario": "#10b981",
+  "color_secundario": "#059669",
+  "es_circular": true,
+  "juegos": {
+    "parejas": {
+      "subtipo": "parejas",
+      "titulo": "Parejas de la organización",
+      "descripcion": "Encuentra las 7 parejas entre las 14 cartas.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "p1", "etiqueta": "Célula", "icono": "🔬", "detalle": "Unidad básica de la vida", "color": "#10b981" },
+        { "id": "p2", "etiqueta": "Tejido", "icono": "🧫", "detalle": "Células que realizan la misma función", "color": "#8b5cf6" },
+        { "id": "p3", "etiqueta": "Órgano", "icono": "🧬", "detalle": "Formado por dos o más tipos de tejido", "color": "#ef4444" },
+        { "id": "p4", "etiqueta": "Sistema de órganos", "icono": "🧩", "detalle": "Órganos que trabajan juntos para realizar una función", "color": "#f59e0b" },
+        { "id": "p5", "etiqueta": "Organismo", "icono": "🧍", "detalle": "El cuerpo humano: los sistemas de órganos nos mantienen vivos", "color": "#3b82f6" },
+        { "id": "p6", "etiqueta": "Bacteria", "icono": "🦠", "detalle": "Ser vivo unicelular", "color": "#06b6d4" },
+        { "id": "p7", "etiqueta": "Pulmones", "icono": "🫁", "detalle": "Órgano del sistema respiratorio", "color": "#ec4899" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: Construyendo un ser humano",
+      "descripcion": "Ordena las 6 piezas del dibujo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Presentación: Las células y los niveles",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📖",
+      "fichas": [
+        {
+          "titulo": "Primera parte",
+          "subtitulo": "De la célula al organismo",
+          "icono": "📖",
+          "tarjetas": [
+            {
+              "nombre": "Las células",
+              "fecha": "Nivel 1",
+              "icono": "🔬",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/a01_celula.jpg",
+              "texto": "Células: unidades básicas de vida",
+              "locucion": "Emily, Lucas, Mike y Alma quieren construir un cuerpo humano de cartón para su proyecto. Pero, ¿de qué está hecho un cuerpo de verdad? Todos los seres vivos están formados por pequeñas unidades llamadas células. Son las unidades básicas de la vida, y cada tipo de célula tiene una función distinta.",
+              "puntos": []
+            },
+            {
+              "nombre": "Unicelulares y multicelulares",
+              "fecha": "Según el número de células",
+              "icono": "🦠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/a02_unicelulares.jpg",
+              "texto": "Una célula o muchas células",
+              "locucion": "Hay seres vivos formados por una sola célula. Son los unicelulares, como las bacterias. Y hay seres vivos formados por muchas células. Son los multicelulares, como los seres humanos. Mira la imagen: el camarón, el árbol y el orangután son multicelulares. La bacteria, en cambio, es unicelular. Si quieres verlo con más ejemplos, pulsa el botón del vídeo.",
+              "video": {
+                "titulo": "Vídeo: unicelulares y multicelulares",
+                "url": "https://www.youtube.com/watch?v=ocxhCTZSfdA"
+              },
+              "puntos": []
+            },
+            {
+              "nombre": "Construyendo un ser humano",
+              "fecha": "Cinco niveles",
+              "icono": "🧱",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/a03_niveles.jpg",
+              "texto": "De la célula al organismo",
+              "ajuste_imagen": "completo",
+              "locucion": "En los seres vivos multicelulares, las células se construyen unas sobre otras para formar niveles. Es como construir una ciudad: muchos ladrillos forman muros, los muros forman edificios y muchos edificios forman una ciudad. En nuestro cuerpo pasa igual: célula, tejido, órgano, sistema de órganos y organismo. Si quieres verlo con dibujos, pulsa el botón del vídeo.",
+              "video": {
+                "titulo": "Vídeo: Levels of Organization",
+                "url": "https://www.youtube.com/watch?v=ZRFykdf4kDc"
+              },
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: Comprobación 1",
+      "descripcion": "Demuestra lo aprendido sobre células, tejidos y órganos.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Cómo se llama un ser vivo formado por una sola célula?",
+          "opciones": [
+            "Unicelular",
+            "Multicelular",
+            "Organismo",
+            "Tejido"
+          ],
+          "correcta": "Unicelular",
+          "explicacion": "¡Muy bien! Los seres unicelulares tienen una sola célula, como las bacterias."
+        },
+        {
+          "enunciado": "¿Cuál de estos seres vivos es unicelular?",
+          "opciones": [
+            "Bacteria",
+            "Ser humano",
+            "Árbol",
+            "Orangután"
+          ],
+          "correcta": "Bacteria",
+          "explicacion": "¡Eso es! La bacteria tiene una sola célula. Los demás son multicelulares: están formados por muchas células."
+        },
+        {
+          "enunciado": "Un grupo de células que realizan la misma función forma…",
+          "opciones": [
+            "Un tejido",
+            "Un órgano",
+            "Un sistema de órganos",
+            "Un organismo"
+          ],
+          "correcta": "Un tejido",
+          "explicacion": "Las células que hacen la misma función se unen y forman un tejido."
+        },
+        {
+          "enunciado": "¿Qué está formado por dos o más tipos diferentes de tejido?",
+          "opciones": [
+            "Una célula",
+            "Un tejido",
+            "Un órgano",
+            "Un organismo"
+          ],
+          "correcta": "Un órgano",
+          "explicacion": "Un órgano, como los pulmones, tiene varios tipos de tejido que trabajan juntos."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Presentación: Órganos y sistemas",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📜",
+      "fichas": [
+        {
+          "titulo": "Segunda parte",
+          "subtitulo": "Tejidos, órganos y sistemas de órganos",
+          "icono": "📜",
+          "tarjetas": [
+            {
+              "nombre": "Tejidos",
+              "fecha": "Nivel 2",
+              "icono": "🧫",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/a04_tejido.jpg",
+              "texto": "Tejido: células que hacen lo mismo",
+              "locucion": "Un tejido está formado por células que realizan la misma función. Por ejemplo, un grupo de células pulmonares forma el tejido pulmonar. Un grupo de células del cerebro forma el tejido nervioso, y un grupo de células de los huesos forma el tejido óseo.",
+              "puntos": []
+            },
+            {
+              "nombre": "Órganos y sistemas",
+              "fecha": "Niveles 3 y 4",
+              "icono": "🫁",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/a05_organos_sistemas.jpg",
+              "texto": "Órganos que trabajan en equipo",
+              "locucion": "Un órgano está formado por dos o más tipos diferentes de tejido. Los pulmones son un órgano. Cuando varios órganos trabajan juntos para hacer una función, forman un sistema de órganos. Los pulmones y la tráquea forman el sistema respiratorio, que nos permite respirar.",
+              "puntos": []
+            },
+            {
+              "nombre": "Resumen: de la célula al organismo",
+              "fecha": "Resumen",
+              "icono": "🧠",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/b01_resumen.jpg",
+              "texto": "Five levels, one body",
+              "ajuste_imagen": "completo",
+              "locucion": "Ahora ya lo sabes. En inglés, los niveles son cell, tissue, organ, organ system y organism. Cada nivel se construye sobre el anterior, hasta formar el cuerpo humano. Recuerda: célula, tejido, órgano, sistema de órganos y organismo.",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Desafío final",
+      "descripcion": "Preguntas finales sobre los niveles de organización.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "Los pulmones son un ejemplo de…",
+          "opciones": [
+            "Célula",
+            "Tejido",
+            "Órgano",
+            "Organismo"
+          ],
+          "correcta": "Órgano",
+          "explicacion": "Los pulmones son un órgano. Forman parte del sistema respiratorio."
+        },
+        {
+          "enunciado": "El sistema respiratorio es un ejemplo de…",
+          "opciones": [
+            "Célula",
+            "Tejido",
+            "Órgano",
+            "Sistema de órganos"
+          ],
+          "correcta": "Sistema de órganos",
+          "explicacion": "El sistema respiratorio es un conjunto de órganos, como los pulmones y la tráquea, que trabajan juntos."
+        },
+        {
+          "enunciado": "¿Cuál es el orden correcto de menor a mayor?",
+          "opciones": [
+            "Célula → tejido → órgano → sistema de órganos → organismo",
+            "Célula → órgano → tejido → organismo → sistema de órganos",
+            "Tejido → célula → órgano → sistema de órganos → organismo",
+            "Órgano → célula → tejido → sistema de órganos → organismo"
+          ],
+          "correcta": "Célula → tejido → órgano → sistema de órganos → organismo",
+          "explicacion": "Cada nivel se construye sobre el anterior: células, tejidos, órganos, sistemas y organismo."
+        },
+        {
+          "enunciado": "Los tejidos están formados por…",
+          "opciones": [
+            "Células que realizan la misma función",
+            "Dos o más tipos de tejido",
+            "Órganos de un mismo sistema",
+            "Sistemas de órganos"
+          ],
+          "correcta": "Células que realizan la misma función",
+          "explicacion": "Un tejido son células que hacen la misma función. Dos o más tipos de tejido forman un órgano."
+        }
+      ]
+    }
+  ]
+}

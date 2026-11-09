@@ -69,6 +69,36 @@
           ]
         },
         {
+          "id": "ciencias_naturales",
+          "titulo": "Ciencias Naturales",
+          "subtitulo": "Los seres vivos, el cuerpo humano y la materia",
+          "icono": "🔬",
+          "color": "#10b981",
+          "temas": [
+            {
+              "id": "tema_01_somos_humanos",
+              "numero": 1,
+              "titulo": "Tema 1: Somos humanos",
+              "subtitulo": "Cómo es y cómo funciona el cuerpo humano",
+              "icono": "🧬",
+              "color": "#10b981",
+              "juegos": ["parejas", "puzzle"],
+              "capitulos": [
+                {
+                  "id": "cap_01_niveles_organizacion",
+                  "numero": 1,
+                  "titulo": "Capítulo 1: Niveles de organización",
+                  "subtitulo": "Cómo se construye un ser humano: de la célula al organismo",
+                  "icono": "🔬",
+                  "archivo": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/",
+                  "total_estrellas_posibles": 18
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "ingles",
           "titulo": "Inglés",
           "subtitulo": "Vocabulario, gramática y conversación",
