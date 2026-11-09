@@ -93,6 +93,16 @@
                   "archivo": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/contenido.json",
                   "assets_dir": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/",
                   "total_estrellas_posibles": 18
+                },
+                {
+                  "id": "cap_02_que_nos_hace_humanos",
+                  "numero": 2,
+                  "titulo": "Capítulo 2: ¿Qué nos hace humanos?",
+                  "subtitulo": "Pulgares, bipedismo, lenguaje y un cerebro complejo",
+                  "icono": "🧠",
+                  "archivo": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/",
+                  "total_estrellas_posibles": 18
                 }
               ]
             }
