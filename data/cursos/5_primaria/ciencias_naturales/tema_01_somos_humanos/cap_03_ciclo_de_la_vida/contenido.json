@@ -1,0 +1,355 @@
+{
+  "id": "cap_03_ciclo_de_la_vida",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_naturales",
+  "tema_id": "tema_01_somos_humanos",
+  "titulo": "Capítulo 3: El ciclo de la vida",
+  "subtitulo": "Las nueve etapas de la vida humana, del feto a la vejez",
+  "icono": "🔄",
+  "color_primario": "#10b981",
+  "color_secundario": "#059669",
+  "es_circular": true,
+  "juegos": {
+    "parejas": {
+      "subtipo": "parejas",
+      "titulo": "Parejas: Etapas de la vida",
+      "descripcion": "Encuentra las 7 parejas entre las 14 cartas.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "p1", "etiqueta": "Feto", "icono": "🧬", "detalle": "Crece en el útero", "color": "#8b5cf6" },
+        { "id": "p2", "etiqueta": "Bebé", "icono": "👶", "detalle": "Aprende a sostener la cabeza y a sentarse", "color": "#ec4899" },
+        { "id": "p3", "etiqueta": "Niño pequeño", "icono": "🧒", "detalle": "Aprende a caminar y a correr; dice unas 100 palabras", "color": "#f59e0b" },
+        { "id": "p4", "etiqueta": "Infancia", "icono": "📚", "detalle": "Aprende cosas nuevas, como leer", "color": "#3b82f6" },
+        { "id": "p5", "etiqueta": "Adolescencia temprana", "icono": "🧑", "detalle": "Pubertad (10–14 años)", "color": "#10b981" },
+        { "id": "p6", "etiqueta": "Edad adulta", "icono": "🧑‍💼", "detalle": "El cuerpo está completamente desarrollado", "color": "#f97316" },
+        { "id": "p7", "etiqueta": "Vejez", "icono": "👵", "detalle": "Envejecer: más bajos y más débiles", "color": "#06b6d4" }
+      ]
+    },
+    "linea_tiempo": {
+      "subtipo": "linea_tiempo",
+      "titulo": "Línea del tiempo de la vida",
+      "descripcion": "Ordena las etapas de la vida, del feto a la vejez.",
+      "icono": "🕰️",
+      "eventos": [
+        { "id": "e1", "etiqueta": "Feto", "fecha": "Antes del nacimiento", "icono": "🧬", "color": "#8b5cf6" },
+        { "id": "e2", "etiqueta": "Bebé", "fecha": "0–1 año", "icono": "👶", "color": "#ec4899" },
+        { "id": "e3", "etiqueta": "Niño pequeño", "fecha": "1–3 años", "icono": "🧒", "color": "#f59e0b" },
+        { "id": "e4", "etiqueta": "Infancia", "fecha": "3–9 años", "icono": "📚", "color": "#3b82f6" },
+        { "id": "e5", "etiqueta": "Adolescencia temprana", "fecha": "10–14 años", "icono": "🧑", "color": "#10b981" },
+        { "id": "e6", "etiqueta": "Adolescencia tardía", "fecha": "15–18 años", "icono": "🧑‍🎓", "color": "#14b8a6" },
+        { "id": "e7", "etiqueta": "Edad adulta", "fecha": "19–39 años", "icono": "🧑‍💼", "color": "#f97316" },
+        { "id": "e8", "etiqueta": "Mediana edad", "fecha": "40–60 años", "icono": "👨", "color": "#8b5cf6" },
+        { "id": "e9", "etiqueta": "Vejez", "fecha": "A partir de los 60 años", "icono": "👵", "color": "#06b6d4" }
+      ]
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Presentación: Las primeras etapas",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📖",
+      "fichas": [
+        {
+          "titulo": "Primera parte",
+          "subtitulo": "Del feto a la infancia",
+          "icono": "📖",
+          "tarjetas": [
+            {
+              "nombre": "Nuestro cuerpo cambia",
+              "fecha": "Ciclo de vida",
+              "icono": "🔄",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/assets/a01_nueve_etapas.jpg",
+              "texto": "Nueve etapas de la vida",
+              "ajuste_imagen": "completo",
+              "locucion": "Nuestros cuerpos cambian cada día, poco a poco. Un ser humano pasa por nueve etapas a lo largo de su vida. Vamos a verlas por orden, desde el feto hasta la vejez. Si quieres escucharlo en inglés, pulsa el botón del vídeo.",
+              "video": {
+                "titulo": "Vídeo: Human Life Cycle | Stages of Human Life Cycle",
+                "url": "https://www.youtube.com/watch?v=bPMeXUeAI1Y"
+              },
+              "puntos": []
+            },
+            {
+              "nombre": "Feto y bebé",
+              "fecha": "Antes de nacer y el primer año",
+              "icono": "👶",
+              "color": "#ec4899",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/assets/a02_feto_bebe.jpg",
+              "texto": "Del útero al primer año",
+              "locucion": "El feto crece dentro del útero de su madre, durante unos nueve meses. Después nace el bebé. Durante su primer año aprende a sostener la cabeza, a sentarse, a gatear y a decir algunas palabras.",
+              "puntos": []
+            },
+            {
+              "nombre": "Niño pequeño e infancia",
+              "fecha": "1 a 9 años",
+              "icono": "🧒",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/assets/a03_nino_infancia.jpg",
+              "texto": "Caminar, hablar y aprender a leer",
+              "locucion": "Después de un año, el bebé es un niño pequeño. Aprende a caminar, a correr y dice unas 100 palabras. A partir de los 3 años empieza la infancia: los niños aprenden cosas nuevas, como leer.",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: Comprobación 1",
+      "descripcion": "Demuestra lo aprendido sobre el feto, el bebé, el niño pequeño y la infancia, en español e inglés.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿En qué etapa crece el bebé dentro del útero?",
+          "opciones": [
+            "Feto",
+            "Bebé",
+            "Niño pequeño",
+            "Adolescencia temprana"
+          ],
+          "correcta": "Feto",
+          "explicacion": "¡Muy bien! El feto crece en el útero antes de nacer."
+        },
+        {
+          "enunciado": "¿En qué etapa aprende a caminar, a correr y dice unas 100 palabras?",
+          "opciones": [
+            "Niño pequeño",
+            "Bebé",
+            "Infancia",
+            "Feto"
+          ],
+          "correcta": "Niño pequeño",
+          "explicacion": "El niño pequeño tiene entre 1 y 3 años. Aprende a caminar, a correr y a hablar."
+        },
+        {
+          "enunciado": "¿En qué etapa una persona es capaz de sostener la cabeza por primera vez?",
+          "opciones": [
+            "Bebé",
+            "Niño pequeño",
+            "Infancia",
+            "Adolescencia temprana"
+          ],
+          "correcta": "Bebé",
+          "explicacion": "El bebé aprende a sostener la cabeza durante su primer año."
+        },
+        {
+          "enunciado": "¿En qué etapa aprendemos cosas nuevas, como leer?",
+          "opciones": [
+            "Infancia",
+            "Bebé",
+            "Adolescencia temprana",
+            "Edad adulta"
+          ],
+          "correcta": "Infancia",
+          "explicacion": "En la infancia, entre los 3 y los 9 años, los niños aprenden cosas nuevas, como leer."
+        },
+        {
+          "enunciado": "What is the English word for «bebé»?",
+          "opciones": [
+            "Baby",
+            "Toddler",
+            "Childhood",
+            "Foetus"
+          ],
+          "correcta": "Baby",
+          "explicacion": "«Baby» significa «bebé». Un baby tiene entre 0 y 1 año."
+        },
+        {
+          "enunciado": "What does «toddler» mean?",
+          "opciones": [
+            "A child aged 1 to 3",
+            "A baby aged 0 to 1",
+            "A teenager aged 15 to 18",
+            "A person over 60"
+          ],
+          "correcta": "A child aged 1 to 3",
+          "explicacion": "«Toddler» significa «niño pequeño»: un niño de entre 1 y 3 años que empieza a caminar y a hablar."
+        },
+        {
+          "enunciado": "Which stage comes right after «childhood» (infancia)?",
+          "opciones": [
+            "Early adolescence",
+            "Toddler",
+            "Foetus",
+            "Old age"
+          ],
+          "correcta": "Early adolescence",
+          "explicacion": "«Early adolescence» significa «adolescencia temprana», entre los 10 y los 14 años. Es cuando empieza la pubertad."
+        },
+        {
+          "enunciado": "What does «foetus» mean?",
+          "opciones": [
+            "The baby inside the mother's womb before birth",
+            "A child who is learning to walk",
+            "A teenager who is growing",
+            "An adult who is getting old"
+          ],
+          "correcta": "The baby inside the mother's womb before birth",
+          "explicacion": "«Foetus» es el feto: el bebé que crece dentro del útero antes de nacer."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Presentación: Del cuerpo adulto a la vejez",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📜",
+      "fichas": [
+        {
+          "titulo": "Segunda parte",
+          "subtitulo": "Adolescencia, adultez, mediana edad y vejez",
+          "icono": "📜",
+          "tarjetas": [
+            {
+              "nombre": "Adolescencia",
+              "fecha": "10 a 18 años",
+              "icono": "🧑",
+              "color": "#f97316",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/assets/b01_adolescencia.jpg",
+              "texto": "Del cambio al cuerpo adulto",
+              "locucion": "Entre los 10 y los 14 años empieza la adolescencia temprana. El sistema reproductivo comienza a desarrollarse. Es la pubertad. Entre los 15 y los 18 años, el cuerpo de los adolescentes está casi completamente desarrollado.",
+              "puntos": []
+            },
+            {
+              "nombre": "Adultez, mediana edad y vejez",
+              "fecha": "19 años en adelante",
+              "icono": "👵",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/assets/b02_adultez_vejez.jpg",
+              "texto": "Cuerpo completo y después envejecer",
+              "ajuste_imagen": "completo",
+              "locucion": "Entre los 19 y los 39 años estamos en la edad adulta: el cuerpo está completamente desarrollado. Entre los 40 y los 60 años, en la mediana edad, empieza a notarse el envejecimiento. En la vejez, las personas se vuelven más bajas y más débiles.",
+              "puntos": []
+            },
+            {
+              "nombre": "Resumen: el ciclo de la vida",
+              "fecha": "Resumen",
+              "icono": "🔄",
+              "color": "#06b6d4",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/assets/b03_resumen.jpg",
+              "texto": "Del feto a la vejez",
+              "ajuste_imagen": "completo",
+              "locucion": "Este es el resumen: nueve etapas, del feto a la vejez. Cada etapa tiene sus cambios. En inglés se llaman foetus, baby, toddler, childhood, early adolescence, late adolescence, adulthood, middle age y old age. El libro relaciona esta unidad con un Objetivo de Desarrollo Sostenible: la reducción de las desigualdades.",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Desafío final",
+      "descripcion": "Preguntas finales sobre la adolescencia, la adultez, la mediana edad y la vejez, en español e inglés.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Cómo se llama el momento en que el sistema reproductivo empieza a desarrollarse, entre los 10 y los 14 años?",
+          "opciones": [
+            "Pubertad",
+            "Gestación",
+            "Lactancia",
+            "Envejecimiento"
+          ],
+          "correcta": "Pubertad",
+          "explicacion": "La pubertad es el cambio del cuerpo que empieza en la adolescencia temprana."
+        },
+        {
+          "enunciado": "¿En qué etapa una persona empieza a notar el envejecimiento?",
+          "opciones": [
+            "Mediana edad",
+            "Infancia",
+            "Edad adulta",
+            "Vejez"
+          ],
+          "correcta": "Mediana edad",
+          "explicacion": "En la mediana edad, entre los 40 y los 60 años, el envejecimiento empieza a notarse. En la vejez ya es más evidente."
+        },
+        {
+          "enunciado": "¿Los adolescentes tempranos (10–14 años) tienen el cuerpo completamente desarrollado?",
+          "opciones": [
+            "No, su cuerpo todavía se está desarrollando",
+            "Sí, a los 10 años",
+            "Sí, durante la pubertad",
+            "Sí, a los 14 años"
+          ],
+          "correcta": "No, su cuerpo todavía se está desarrollando",
+          "explicacion": "No. Entre los 10 y los 14 años el sistema reproductivo empieza a desarrollarse. El cuerpo está completamente desarrollado en la edad adulta."
+        },
+        {
+          "enunciado": "¿En qué etapa la gente se vuelve más baja y más débil?",
+          "opciones": [
+            "Vejez",
+            "Infancia",
+            "Adolescencia temprana",
+            "Niño pequeño"
+          ],
+          "correcta": "Vejez",
+          "explicacion": "En la vejez, las personas envejecen, se vuelven más bajas y más débiles."
+        },
+        {
+          "enunciado": "What is «puberty»?",
+          "opciones": [
+            "The body changes that start in early adolescence",
+            "The nine months before birth",
+            "The first year of life",
+            "The moment we stop growing forever"
+          ],
+          "correcta": "The body changes that start in early adolescence",
+          "explicacion": "«Puberty» es la pubertad: los cambios del cuerpo que empiezan en la adolescencia temprana, entre los 10 y los 14 años."
+        },
+        {
+          "enunciado": "What does «middle age» mean?",
+          "opciones": [
+            "Mediana edad",
+            "Edad adulta",
+            "Vejez",
+            "Infancia"
+          ],
+          "correcta": "Mediana edad",
+          "explicacion": "«Middle age» significa «mediana edad», entre los 40 y los 60 años."
+        },
+        {
+          "enunciado": "What does «late adolescence» mean?",
+          "opciones": [
+            "Ages 15 to 18, when the body is almost fully developed",
+            "Ages 3 to 9, when children learn to read",
+            "Ages 40 to 60, when ageing starts",
+            "Ages 60 and above"
+          ],
+          "correcta": "Ages 15 to 18, when the body is almost fully developed",
+          "explicacion": "«Late adolescence» es la adolescencia tardía, entre los 15 y los 18 años. El cuerpo está casi completamente desarrollado."
+        },
+        {
+          "enunciado": "What is the English term for «vejez»?",
+          "opciones": [
+            "Old age",
+            "Middle age",
+            "Adulthood",
+            "Childhood"
+          ],
+          "correcta": "Old age",
+          "explicacion": "«Old age» significa «vejez». Empieza a partir de los 60 años."
+        }
+      ]
+    }
+  ]
+}

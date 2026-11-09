@@ -5,7 +5,7 @@
  * `data/catalogo_data.js` es la copia generada por scripts/datos.mjs
  * para que el juego funcione también desde file://.
  */
-import { montarJuegosDelTema, prepararCapituloParaCircuito } from './gameOrder.js';
+import { montarJuegosDelTema, obtenerJuegosDelCapitulo, prepararCapituloParaCircuito } from './gameOrder.js';
 
 export class DataLoader {
   static async loadCatalogo() {
@@ -33,8 +33,9 @@ export class DataLoader {
   static async loadCapitulo(capituloObj, temaObj = null) {
     const capitulo = await DataLoader.cargarCapituloSinBarajar(capituloObj);
     if (!capitulo) return null;
-    // El tema decide qué juegos se muestran; después se barajan las paradas.
-    const conJuegos = montarJuegosDelTema(capitulo, temaObj);
+    // El capítulo (o, si no define los suyos, el tema) decide qué juegos se muestran; después se barajan las paradas.
+    const juegos = obtenerJuegosDelCapitulo(capituloObj, temaObj);
+    const conJuegos = montarJuegosDelTema(capitulo, { juegos });
     return prepararCapituloParaCircuito(conJuegos);
   }
 

@@ -15,6 +15,7 @@ import {
   TIPOS_JUEGO,
   esCasillaDeJuego,
   obtenerJuegosDelTema,
+  obtenerJuegosDelCapitulo,
   montarJuegosDelTema,
   barajarJuegosCircuito,
   prepararCapituloParaCircuito
@@ -158,6 +159,13 @@ function capituloConPool() {
     }
   };
 }
+
+test('obtenerJuegosDelCapitulo: la lista del capitulo manda sobre la del tema', () => {
+  const tema = { juegos: ['parejas', 'puzzle'] };
+  assert.deepEqual(obtenerJuegosDelCapitulo({ juegos: ['parejas', 'linea_tiempo'] }, tema), ['parejas', 'linea_tiempo']);
+  assert.deepEqual(obtenerJuegosDelCapitulo({ id: 'cap' }, tema), ['parejas', 'puzzle']);
+  assert.equal(obtenerJuegosDelCapitulo({ id: 'cap' }, null), null);
+});
 
 test('montarJuegosDelTema: coloca los juegos pedidos en las paradas, conservando id y numero', () => {
   const capitulo = capituloConPool();

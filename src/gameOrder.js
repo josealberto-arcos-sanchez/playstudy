@@ -35,6 +35,15 @@ export function obtenerJuegosDelTema(tema) {
   return juegos.length ? Array.from(new Set(juegos)) : null;
 }
 
+/**
+ * Devuelve la lista de juegos que muestra un capítulo. Si el capítulo del
+ * catálogo define su propia lista `juegos`, esa lista manda; si no, se usa la
+ * del tema.
+ */
+export function obtenerJuegosDelCapitulo(capituloCatalogo, tema) {
+  return obtenerJuegosDelTema(capituloCatalogo) ?? obtenerJuegosDelTema(tema);
+}
+
 /** Antepone el número de parada al título, eliminando cualquier número previo. */
 function numerarTitulo(titulo, numeroParada) {
   const limpio = String(titulo || 'Juego').replace(/^\s*\d+\s*[.)-]\s*/, '');

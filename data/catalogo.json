@@ -103,6 +103,17 @@
                   "archivo": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/contenido.json",
                   "assets_dir": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/",
                   "total_estrellas_posibles": 18
+                },
+                {
+                  "id": "cap_03_ciclo_de_la_vida",
+                  "numero": 3,
+                  "titulo": "Capítulo 3: El ciclo de la vida",
+                  "subtitulo": "Las nueve etapas de la vida humana, del feto a la vejez",
+                  "icono": "🔄",
+                  "juegos": ["parejas", "linea_tiempo"],
+                  "archivo": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_03_ciclo_de_la_vida/assets/",
+                  "total_estrellas_posibles": 18
                 }
               ]
             }

@@ -10,6 +10,9 @@
     const juegos = tema.juegos.filter((subtipo) => typeof subtipo === "string" && subtipo.trim()).map((subtipo) => subtipo.trim());
     return juegos.length ? Array.from(new Set(juegos)) : null;
   }
+  function obtenerJuegosDelCapitulo(capituloCatalogo, tema) {
+    return obtenerJuegosDelTema(capituloCatalogo) ?? obtenerJuegosDelTema(tema);
+  }
   function numerarTitulo(titulo, numeroParada) {
     const limpio = String(titulo || "Juego").replace(/^\s*\d+\s*[.)-]\s*/, "");
     return `${numeroParada}. ${limpio}`;
@@ -128,7 +131,8 @@
     static async loadCapitulo(capituloObj, temaObj = null) {
       const capitulo = await _DataLoader.cargarCapituloSinBarajar(capituloObj);
       if (!capitulo) return null;
-      const conJuegos = montarJuegosDelTema(capitulo, temaObj);
+      const juegos = obtenerJuegosDelCapitulo(capituloObj, temaObj);
+      const conJuegos = montarJuegosDelTema(capitulo, { juegos });
       return prepararCapituloParaCircuito(conJuegos);
     }
     static async cargarCapituloSinBarajar(capituloObj) {

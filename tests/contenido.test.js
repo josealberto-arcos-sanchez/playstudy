@@ -337,6 +337,38 @@ test('detecta desajustes entre las paradas de juego y los juegos del tema', t =>
   );
 });
 
+test('acepta un capitulo con su propia lista de juegos distinta a la del tema', t => {
+  const contenido = capituloValido();
+  contenido.juegos = {
+    parejas: { titulo: 'Parejas' },
+    linea_tiempo: { titulo: 'Linea del tiempo' },
+    puzzle: { titulo: 'Puzzle' }
+  };
+  const catalogo = catalogoValido();
+  catalogo.cursos[0].asignaturas[0].temas[0].juegos = ['parejas', 'puzzle'];
+  catalogo.cursos[0].asignaturas[0].temas[0].capitulos[0].juegos = ['parejas', 'linea_tiempo'];
+  const raiz = crearProyecto(t, { contenido, catalogo });
+
+  const informe = validarContenido({ raiz });
+  assert.deepEqual(informe.errores, []);
+  assert.deepEqual(informe.avisos, []);
+});
+
+test('detecta desajustes y listas invalidas en los juegos de un capitulo', t => {
+  const catalogo = catalogoValido();
+  catalogo.cursos[0].asignaturas[0].temas[0].capitulos[0].juegos = ['parejas', 'linea_tiempo', 'puzzle'];
+  const raiz = crearProyecto(t, { catalogo });
+  assert.match(
+    erroresDe(validarContenido({ raiz })),
+    /2 paradas de minijuego pero el capitulo cap_01_test define 3 juegos/
+  );
+
+  const catalogoPocos = catalogoValido();
+  catalogoPocos.cursos[0].asignaturas[0].temas[0].capitulos[0].juegos = ['parejas'];
+  const raizPocos = crearProyecto(t, { catalogo: catalogoPocos });
+  assert.match(erroresDe(validarContenido({ raiz: raizPocos })), /el capitulo debe definir entre 2 y 4 juegos \(tiene 1\)/);
+});
+
 test('detecta temas con pocos, demasiados o repetidos juegos', t => {
   const catalogoPocos = catalogoValido();
   catalogoPocos.cursos[0].asignaturas[0].temas[0].juegos = ['parejas'];
