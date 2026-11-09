@@ -100,7 +100,7 @@
       "id": 3,
       "tipo": "quiz",
       "titulo": "3. Quiz: Comprobación 1",
-      "descripcion": "Demuestra lo aprendido sobre células, tejidos y órganos.",
+      "descripcion": "Demuestra lo aprendido sobre células, tejidos y órganos, y su vocabulario en inglés.",
       "icono": "❓",
       "preguntas": [
         {
@@ -146,6 +146,72 @@
           ],
           "correcta": "Un órgano",
           "explicacion": "Un órgano, como los pulmones, tiene varios tipos de tejido que trabajan juntos."
+        },
+        {
+          "enunciado": "What is the basic unit of life called?",
+          "opciones": [
+            "Cell",
+            "Tissue",
+            "Organ",
+            "Organism"
+          ],
+          "correcta": "Cell",
+          "explicacion": "«Cell» significa «célula»: es la unidad básica de la vida."
+        },
+        {
+          "enunciado": "What is the English word for «tejido»?",
+          "opciones": [
+            "Tissue",
+            "Organ",
+            "Organism",
+            "Cell"
+          ],
+          "correcta": "Tissue",
+          "explicacion": "«Tissue» significa «tejido». Un tejido es un grupo de células que hacen la misma función."
+        },
+        {
+          "enunciado": "What does «unicellular» mean?",
+          "opciones": [
+            "Made of one cell",
+            "Made of many cells",
+            "Made of organs",
+            "Made of bones"
+          ],
+          "correcta": "Made of one cell",
+          "explicacion": "«Uni-» significa «uno». Unicellular significa «formado por una sola célula»."
+        },
+        {
+          "enunciado": "What does «multicellular» mean?",
+          "opciones": [
+            "Made of many cells",
+            "Made of one cell",
+            "Made of organs",
+            "Made of bones"
+          ],
+          "correcta": "Made of many cells",
+          "explicacion": "«Multi-» significa «muchos». Multicellular significa «formado por muchas células»."
+        },
+        {
+          "enunciado": "What is the English word for «órgano»?",
+          "opciones": [
+            "Organ",
+            "Organism",
+            "Organ system",
+            "Tissue"
+          ],
+          "correcta": "Organ",
+          "explicacion": "«Organ» significa «órgano». Está formado por dos o más tipos de tejido."
+        },
+        {
+          "enunciado": "Which of these living things is multicellular?",
+          "opciones": [
+            "Bacteria",
+            "Amoeba",
+            "Human being",
+            "Yeast"
+          ],
+          "correcta": "Human being",
+          "explicacion": "La bacteria, la ameba y la levadura tienen una sola célula. Un ser humano tiene muchísimas células."
         }
       ]
     },
@@ -207,7 +273,7 @@
       "id": 6,
       "tipo": "quiz",
       "titulo": "6. Quiz: Desafío final",
-      "descripcion": "Preguntas finales sobre los niveles de organización.",
+      "descripcion": "Preguntas finales sobre los niveles de organización, en español e inglés.",
       "icono": "🏆",
       "preguntas": [
         {
@@ -253,6 +319,72 @@
           ],
           "correcta": "Células que realizan la misma función",
           "explicacion": "Un tejido son células que hacen la misma función. Dos o más tipos de tejido forman un órgano."
+        },
+        {
+          "enunciado": "What is a group of organs that work together called?",
+          "opciones": [
+            "Organ system",
+            "Organism",
+            "Tissue",
+            "Cell"
+          ],
+          "correcta": "Organ system",
+          "explicacion": "«Organ system» significa «sistema de órganos». Varios órganos trabajan juntos para hacer una función."
+        },
+        {
+          "enunciado": "Which level of organization is the biggest?",
+          "opciones": [
+            "Cell",
+            "Tissue",
+            "Organ",
+            "Organism"
+          ],
+          "correcta": "Organism",
+          "explicacion": "«Organism» significa «organismo». Un organismo completo, como una persona, está formado por todos los niveles."
+        },
+        {
+          "enunciado": "What is the main job of the respiratory system?",
+          "opciones": [
+            "To breathe",
+            "To digest food",
+            "To pump blood",
+            "To think"
+          ],
+          "correcta": "To breathe",
+          "explicacion": "«Respiratory system» significa «sistema respiratorio». Sirve para respirar."
+        },
+        {
+          "enunciado": "What is the English word for «pulmones»?",
+          "opciones": [
+            "Lungs",
+            "Stomach",
+            "Heart",
+            "Brain"
+          ],
+          "correcta": "Lungs",
+          "explicacion": "«Lungs» significa «pulmones». Son un órgano del sistema respiratorio."
+        },
+        {
+          "enunciado": "What is the English word for «tráquea»?",
+          "opciones": [
+            "Trachea",
+            "Liver",
+            "Stomach",
+            "Brain"
+          ],
+          "correcta": "Trachea",
+          "explicacion": "«Trachea» significa «tráquea»: es el tubo que lleva el aire hasta los pulmones."
+        },
+        {
+          "enunciado": "Which of these is an organ?",
+          "opciones": [
+            "Heart",
+            "Cell",
+            "Bone tissue",
+            "Organism"
+          ],
+          "correcta": "Heart",
+          "explicacion": "El corazón es un órgano. La célula es la unidad básica de la vida, el tejido óseo es un tejido y el organismo es el ser vivo completo."
         }
       ]
     }
