@@ -96,6 +96,16 @@
                   "archivo": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/contenido.json",
                   "assets_dir": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_01_niveles_organizacion/assets/",
                   "total_estrellas_posibles": 18
+                },
+                {
+                  "id": "cap_02_que_nos_hace_humanos",
+                  "numero": 2,
+                  "titulo": "Capítulo 2: ¿Qué nos hace humanos?",
+                  "subtitulo": "Pulgares, bipedismo, lenguaje y un cerebro complejo",
+                  "icono": "🧠",
+                  "archivo": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/contenido.json",
+                  "assets_dir": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/",
+                  "total_estrellas_posibles": 18
                 }
               ]
             }
@@ -5003,6 +5013,702 @@
           ],
           "correcta": "Heart",
           "explicacion": "El corazón es un órgano. La célula es la unidad básica de la vida, el tejido óseo es un tejido y el organismo es el ser vivo completo."
+        }
+      ]
+    }
+  ]
+}
+,
+    "cap_02_que_nos_hace_humanos": {
+  "id": "cap_02_que_nos_hace_humanos",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_naturales",
+  "tema_id": "tema_01_somos_humanos",
+  "titulo": "Capítulo 2: ¿Qué nos hace humanos?",
+  "subtitulo": "Pulgares, bipedismo, lenguaje y un cerebro complejo",
+  "icono": "🧠",
+  "color_primario": "#3b82f6",
+  "color_secundario": "#2563eb",
+  "es_circular": true,
+  "juegos": {
+    "parejas": {
+      "subtipo": "parejas",
+      "titulo": "Parejas: ¿Qué nos hace humanos?",
+      "descripcion": "Encuentra las 7 parejas entre las 14 cartas.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "p1", "etiqueta": "Pulgares oponibles", "icono": "✋", "detalle": "Sujetar objetos y usar herramientas", "color": "#f59e0b" },
+        { "id": "p2", "etiqueta": "Infancia larga", "icono": "👶", "detalle": "Los adultos cuidan y enseñan a sus crías durante mucho tiempo", "color": "#ec4899" },
+        { "id": "p3", "etiqueta": "Bipedismo", "icono": "🚶", "detalle": "Caminar y correr sobre dos piernas", "color": "#3b82f6" },
+        { "id": "p4", "etiqueta": "Lenguaje", "icono": "🗣️", "detalle": "Comunicarnos con palabras e idiomas", "color": "#10b981" },
+        { "id": "p5", "etiqueta": "Consciencia", "icono": "🪞", "detalle": "Conocer el mundo y nuestra propia identidad", "color": "#8b5cf6" },
+        { "id": "p6", "etiqueta": "Cerebro complejo", "icono": "🧠", "detalle": "Entender, aprender y almacenar información", "color": "#ef4444" },
+        { "id": "p7", "etiqueta": "Resolver problemas", "icono": "➗", "detalle": "Problemas complejos, también numéricos", "color": "#06b6d4" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: Humanos de ayer y de hoy",
+      "descripcion": "Ordena las 6 piezas del dibujo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Presentación: Lo que nos hace humanos",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📖",
+      "fichas": [
+        {
+          "titulo": "Primera parte",
+          "subtitulo": "Lo que compartimos y lo que es solo nuestro",
+          "icono": "📖",
+          "tarjetas": [
+            {
+              "nombre": "Lo que compartimos",
+              "fecha": "Otros animales",
+              "icono": "🐒",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/a01_compartimos.jpg",
+              "texto": "Algunas cosas las compartimos",
+              "locucion": "Los humanos compartimos algunas cosas con otros animales. Por ejemplo, el orangután de la imagen, o los chimpancés, pueden mantenerse de pie. Pero hay características que son solo nuestras. Vamos a verlas.",
+              "puntos": []
+            },
+            {
+              "nombre": "Manos y piernas",
+              "fecha": "Dos rasgos",
+              "icono": "✋",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/a02_herramientas.jpg",
+              "texto": "Pulgares y bipedismo",
+              "locucion": "Nuestros pulgares se oponen a los demás dedos. Gracias a ellos podemos sujetar objetos y usar herramientas. Además, somos bípedos: caminamos, corremos y nos mantenemos de pie sobre dos piernas. Si quieres saber cómo empezaron las herramientas, pulsa el botón del vídeo.",
+              "video": {
+                "titulo": "Vídeo: What makes us human?",
+                "url": "https://www.youtube.com/watch?v=ub2cjjNGgpM"
+              },
+              "puntos": []
+            },
+            {
+              "nombre": "La infancia más larga",
+              "fecha": "Cuidados",
+              "icono": "👶",
+              "color": "#ec4899",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/a03_infancia.jpg",
+              "texto": "Crecemos despacio y con cuidados",
+              "locucion": "Los humanos tenemos la infancia más larga del reino animal. Desde que nacemos, los adultos cuidan de nosotros y nos enseñan a hacer cosas. Por eso necesitamos muchos años para aprender a vivir por nuestra cuenta.",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: Comprobación 1",
+      "descripcion": "Demuestra lo aprendido sobre pulgares, bipedismo, infancia y cerebro, en español e inglés.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué característica nos permite sujetar objetos y usar herramientas?",
+          "opciones": [
+            "Pulgares oponibles",
+            "Infancia larga",
+            "Lenguaje",
+            "Bipedismo"
+          ],
+          "correcta": "Pulgares oponibles",
+          "explicacion": "¡Muy bien! Nuestros pulgares se oponen a los demás dedos y nos ayudan a manejar objetos y herramientas."
+        },
+        {
+          "enunciado": "¿Qué significa que los humanos tengamos la infancia más larga del reino animal?",
+          "opciones": [
+            "Los adultos cuidan y enseñan a sus crías durante mucho tiempo",
+            "Crecemos más rápido que otros animales",
+            "Los bebés no necesitan cuidados",
+            "Vivimos menos años que otros animales"
+          ],
+          "correcta": "Los adultos cuidan y enseñan a sus crías durante mucho tiempo",
+          "explicacion": "Desde que nacemos, los adultos cuidan de nosotros y nos enseñan durante muchos años."
+        },
+        {
+          "enunciado": "Un animal bípedo es el que…",
+          "opciones": [
+            "Camina sobre dos piernas",
+            "Camina a cuatro patas",
+            "Vuela",
+            "Vive en el agua"
+          ],
+          "correcta": "Camina sobre dos piernas",
+          "explicacion": "Los bípedos caminan sobre dos piernas. Los humanos somos bípedos."
+        },
+        {
+          "enunciado": "¿Qué nos permite nuestro cerebro complejo?",
+          "opciones": [
+            "Entender, aprender y almacenar información",
+            "Volar sin ayuda",
+            "Respirar bajo el agua",
+            "Cambiar de color la piel"
+          ],
+          "correcta": "Entender, aprender y almacenar información",
+          "explicacion": "Nuestro cerebro nos permite entender, aprender, guardar información y tomar decisiones."
+        },
+        {
+          "enunciado": "Which human feature helps us hold objects and use tools?",
+          "opciones": [
+            "Opposable thumbs",
+            "Long infancy",
+            "Language",
+            "Bipedalism"
+          ],
+          "correcta": "Opposable thumbs",
+          "explicacion": "«Opposable thumbs» significa «pulgares oponibles». Nuestros pulgares se oponen a los demás dedos."
+        },
+        {
+          "enunciado": "What does «bipedal» mean?",
+          "opciones": [
+            "Walks on two legs",
+            "Walks on four legs",
+            "Flies in the air",
+            "Lives in water"
+          ],
+          "correcta": "Walks on two legs",
+          "explicacion": "«Bi-» significa «dos» y «ped-» significa «pie». Un animal bípedo camina sobre dos piernas."
+        },
+        {
+          "enunciado": "What is the English word for «infancia»?",
+          "opciones": [
+            "Infancy",
+            "Adulthood",
+            "Old age",
+            "Adolescence"
+          ],
+          "correcta": "Infancy",
+          "explicacion": "«Infancy» significa «infancia». Los humanos tenemos la infancia más larga del reino animal."
+        },
+        {
+          "enunciado": "Which of these does a complex brain help us do?",
+          "opciones": [
+            "Learn and make decisions",
+            "Fly without help",
+            "Breathe underwater",
+            "Change the colour of our skin"
+          ],
+          "correcta": "Learn and make decisions",
+          "explicacion": "«Complex brain» significa «cerebro complejo». Nos ayuda a aprender, tomar decisiones, guardar información y ser creativos."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Presentación: Pensar, hablar y crear",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📜",
+      "fichas": [
+        {
+          "titulo": "Segunda parte",
+          "subtitulo": "Lenguaje, consciencia y cerebro complejo",
+          "icono": "📜",
+          "tarjetas": [
+            {
+              "nombre": "Lenguaje y consciencia",
+              "fecha": "Comunicación",
+              "icono": "🗣️",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/b01_lenguaje.jpg",
+              "texto": "Hablamos y sabemos quiénes somos",
+              "locucion": "Podemos comunicarnos con el lenguaje, hablando y usando idiomas. Además, somos conscientes del mundo que nos rodea y también de nuestra propia identidad. Eso se llama consciencia.",
+              "puntos": []
+            },
+            {
+              "nombre": "Cerebro complejo",
+              "fecha": "Cerebro",
+              "icono": "🧠",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/b02_cerebro.jpg",
+              "texto": "Pensar, aprender y resolver problemas",
+              "locucion": "Nuestro cerebro es complejo. Nos permite entender, aprender, guardar información, tomar decisiones y ser creativos. Así podemos resolver problemas, como las operaciones matemáticas, y desarrollar tecnología.",
+              "puntos": []
+            },
+            {
+              "nombre": "Humanos de ayer y de hoy",
+              "fecha": "Ayer y hoy",
+              "icono": "🧬",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/b03_ayer_hoy.jpg",
+              "texto": "De la cueva al laboratorio",
+              "ajuste_imagen": "completo",
+              "locucion": "Compara las dos fotos: una persona de la prehistoria, en una cueva, y una científica en un laboratorio. Las dos son humanas. Lo que cambia es lo que hemos creado con nuestro cerebro, nuestro lenguaje y nuestras manos. Un antropólogo lo resume así: lo que nos hace humanos es la capacidad de imaginar, crear, enseñar, aprender y colaborar. Si quieres verlo con más detalle, pulsa el botón del vídeo.",
+              "video": {
+                "titulo": "Vídeo: What makes us human?",
+                "url": "https://www.youtube.com/watch?v=ub2cjjNGgpM"
+              },
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Desafío final",
+      "descripcion": "Preguntas finales sobre consciencia, lenguaje, cerebro y tecnología, en español e inglés.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa que los humanos seamos conscientes de nosotros mismos?",
+          "opciones": [
+            "Conocemos el mundo y también nuestra propia identidad",
+            "Dormimos muchas horas",
+            "Podemos volar",
+            "Olvidamos todo lo que aprendemos"
+          ],
+          "correcta": "Conocemos el mundo y también nuestra propia identidad",
+          "explicacion": "Ser consciente es darte cuenta del mundo que te rodea y también de quién eres. Eso se llama «consciencia»."
+        },
+        {
+          "enunciado": "¿Qué característica humana nos permite comunicarnos mediante palabras e idiomas?",
+          "opciones": [
+            "El lenguaje",
+            "Los pulgares oponibles",
+            "La infancia larga",
+            "El bipedismo"
+          ],
+          "correcta": "El lenguaje",
+          "explicacion": "El lenguaje es la forma en que los humanos nos comunicamos con palabras y con distintos idiomas."
+        },
+        {
+          "enunciado": "¿Es verdadera esta frase? «Los humanos tenemos cerebros simples.»",
+          "opciones": [
+            "Falsa: tenemos cerebros complejos",
+            "Verdadera",
+            "Solo es verdad en los bebés",
+            "Depende de cada país"
+          ],
+          "correcta": "Falsa: tenemos cerebros complejos",
+          "explicacion": "La frase es falsa. Nuestro cerebro es complejo: nos permite entender, aprender y crear."
+        },
+        {
+          "enunciado": "¿Qué nos permite crear y desarrollar tecnología?",
+          "opciones": [
+            "Nuestro cerebro complejo y la capacidad de resolver problemas",
+            "Nuestra infancia corta",
+            "Caminar a cuatro patas",
+            "Ser unicelulares"
+          ],
+          "correcta": "Nuestro cerebro complejo y la capacidad de resolver problemas",
+          "explicacion": "Con nuestro cerebro complejo podemos resolver problemas y crear nueva tecnología."
+        },
+        {
+          "enunciado": "What does «self-awareness» mean?",
+          "opciones": [
+            "Being aware of the world and of our own identity",
+            "Sleeping for many hours",
+            "Being able to fly",
+            "Forgetting what we learn"
+          ],
+          "correcta": "Being aware of the world and of our own identity",
+          "explicacion": "«Self-awareness» es la «consciencia»: darte cuenta del mundo y de tu propia identidad. En el juego usamos siempre «consciencia»."
+        },
+        {
+          "enunciado": "Which human ability allows us to communicate with words and languages?",
+          "opciones": [
+            "Language",
+            "Opposable thumbs",
+            "Long infancy",
+            "Bipedalism"
+          ],
+          "correcta": "Language",
+          "explicacion": "«Language» significa «lenguaje»: la forma en que nos comunicamos con palabras e idiomas."
+        },
+        {
+          "enunciado": "What does «numerical problems» mean?",
+          "opciones": [
+            "Problems solved with mathematics",
+            "Problems with the heart",
+            "Problems with the eyes",
+            "Problems with the feet"
+          ],
+          "correcta": "Problems solved with mathematics",
+          "explicacion": "«Numerical» tiene que ver con los números. Los problemas numéricos se resuelven con matemáticas."
+        },
+        {
+          "enunciado": "What is the English term for «desarrollar tecnología»?",
+          "opciones": [
+            "Develop technology",
+            "Grow plants",
+            "Lose memory",
+            "Walk on four legs"
+          ],
+          "correcta": "Develop technology",
+          "explicacion": "«Develop technology» significa «desarrollar tecnología». Con nuestro cerebro complejo podemos crear y mejorar herramientas y máquinas."
+        }
+      ]
+    }
+  ]
+}
+,
+    "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/contenido.json": {
+  "id": "cap_02_que_nos_hace_humanos",
+  "curso_id": "5_primaria",
+  "asignatura_id": "ciencias_naturales",
+  "tema_id": "tema_01_somos_humanos",
+  "titulo": "Capítulo 2: ¿Qué nos hace humanos?",
+  "subtitulo": "Pulgares, bipedismo, lenguaje y un cerebro complejo",
+  "icono": "🧠",
+  "color_primario": "#3b82f6",
+  "color_secundario": "#2563eb",
+  "es_circular": true,
+  "juegos": {
+    "parejas": {
+      "subtipo": "parejas",
+      "titulo": "Parejas: ¿Qué nos hace humanos?",
+      "descripcion": "Encuentra las 7 parejas entre las 14 cartas.",
+      "icono": "🃏",
+      "parejas": [
+        { "id": "p1", "etiqueta": "Pulgares oponibles", "icono": "✋", "detalle": "Sujetar objetos y usar herramientas", "color": "#f59e0b" },
+        { "id": "p2", "etiqueta": "Infancia larga", "icono": "👶", "detalle": "Los adultos cuidan y enseñan a sus crías durante mucho tiempo", "color": "#ec4899" },
+        { "id": "p3", "etiqueta": "Bipedismo", "icono": "🚶", "detalle": "Caminar y correr sobre dos piernas", "color": "#3b82f6" },
+        { "id": "p4", "etiqueta": "Lenguaje", "icono": "🗣️", "detalle": "Comunicarnos con palabras e idiomas", "color": "#10b981" },
+        { "id": "p5", "etiqueta": "Consciencia", "icono": "🪞", "detalle": "Conocer el mundo y nuestra propia identidad", "color": "#8b5cf6" },
+        { "id": "p6", "etiqueta": "Cerebro complejo", "icono": "🧠", "detalle": "Entender, aprender y almacenar información", "color": "#ef4444" },
+        { "id": "p7", "etiqueta": "Resolver problemas", "icono": "➗", "detalle": "Problemas complejos, también numéricos", "color": "#06b6d4" }
+      ]
+    },
+    "puzzle": {
+      "subtipo": "puzzle",
+      "titulo": "Puzzle: Humanos de ayer y de hoy",
+      "descripcion": "Ordena las 6 piezas del dibujo.",
+      "icono": "🧩",
+      "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/puzzle.jpg"
+    }
+  },
+  "casillas": [
+    {
+      "id": 1,
+      "tipo": "minijuego",
+      "titulo": "1. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 2,
+      "tipo": "teoria",
+      "titulo": "2. Presentación: Lo que nos hace humanos",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📖",
+      "fichas": [
+        {
+          "titulo": "Primera parte",
+          "subtitulo": "Lo que compartimos y lo que es solo nuestro",
+          "icono": "📖",
+          "tarjetas": [
+            {
+              "nombre": "Lo que compartimos",
+              "fecha": "Otros animales",
+              "icono": "🐒",
+              "color": "#10b981",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/a01_compartimos.jpg",
+              "texto": "Algunas cosas las compartimos",
+              "locucion": "Los humanos compartimos algunas cosas con otros animales. Por ejemplo, el orangután de la imagen, o los chimpancés, pueden mantenerse de pie. Pero hay características que son solo nuestras. Vamos a verlas.",
+              "puntos": []
+            },
+            {
+              "nombre": "Manos y piernas",
+              "fecha": "Dos rasgos",
+              "icono": "✋",
+              "color": "#f59e0b",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/a02_herramientas.jpg",
+              "texto": "Pulgares y bipedismo",
+              "locucion": "Nuestros pulgares se oponen a los demás dedos. Gracias a ellos podemos sujetar objetos y usar herramientas. Además, somos bípedos: caminamos, corremos y nos mantenemos de pie sobre dos piernas. Si quieres saber cómo empezaron las herramientas, pulsa el botón del vídeo.",
+              "video": {
+                "titulo": "Vídeo: What makes us human?",
+                "url": "https://www.youtube.com/watch?v=ub2cjjNGgpM"
+              },
+              "puntos": []
+            },
+            {
+              "nombre": "La infancia más larga",
+              "fecha": "Cuidados",
+              "icono": "👶",
+              "color": "#ec4899",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/a03_infancia.jpg",
+              "texto": "Crecemos despacio y con cuidados",
+              "locucion": "Los humanos tenemos la infancia más larga del reino animal. Desde que nacemos, los adultos cuidan de nosotros y nos enseñan a hacer cosas. Por eso necesitamos muchos años para aprender a vivir por nuestra cuenta.",
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "quiz",
+      "titulo": "3. Quiz: Comprobación 1",
+      "descripcion": "Demuestra lo aprendido sobre pulgares, bipedismo, infancia y cerebro, en español e inglés.",
+      "icono": "❓",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué característica nos permite sujetar objetos y usar herramientas?",
+          "opciones": [
+            "Pulgares oponibles",
+            "Infancia larga",
+            "Lenguaje",
+            "Bipedismo"
+          ],
+          "correcta": "Pulgares oponibles",
+          "explicacion": "¡Muy bien! Nuestros pulgares se oponen a los demás dedos y nos ayudan a manejar objetos y herramientas."
+        },
+        {
+          "enunciado": "¿Qué significa que los humanos tengamos la infancia más larga del reino animal?",
+          "opciones": [
+            "Los adultos cuidan y enseñan a sus crías durante mucho tiempo",
+            "Crecemos más rápido que otros animales",
+            "Los bebés no necesitan cuidados",
+            "Vivimos menos años que otros animales"
+          ],
+          "correcta": "Los adultos cuidan y enseñan a sus crías durante mucho tiempo",
+          "explicacion": "Desde que nacemos, los adultos cuidan de nosotros y nos enseñan durante muchos años."
+        },
+        {
+          "enunciado": "Un animal bípedo es el que…",
+          "opciones": [
+            "Camina sobre dos piernas",
+            "Camina a cuatro patas",
+            "Vuela",
+            "Vive en el agua"
+          ],
+          "correcta": "Camina sobre dos piernas",
+          "explicacion": "Los bípedos caminan sobre dos piernas. Los humanos somos bípedos."
+        },
+        {
+          "enunciado": "¿Qué nos permite nuestro cerebro complejo?",
+          "opciones": [
+            "Entender, aprender y almacenar información",
+            "Volar sin ayuda",
+            "Respirar bajo el agua",
+            "Cambiar de color la piel"
+          ],
+          "correcta": "Entender, aprender y almacenar información",
+          "explicacion": "Nuestro cerebro nos permite entender, aprender, guardar información y tomar decisiones."
+        },
+        {
+          "enunciado": "Which human feature helps us hold objects and use tools?",
+          "opciones": [
+            "Opposable thumbs",
+            "Long infancy",
+            "Language",
+            "Bipedalism"
+          ],
+          "correcta": "Opposable thumbs",
+          "explicacion": "«Opposable thumbs» significa «pulgares oponibles». Nuestros pulgares se oponen a los demás dedos."
+        },
+        {
+          "enunciado": "What does «bipedal» mean?",
+          "opciones": [
+            "Walks on two legs",
+            "Walks on four legs",
+            "Flies in the air",
+            "Lives in water"
+          ],
+          "correcta": "Walks on two legs",
+          "explicacion": "«Bi-» significa «dos» y «ped-» significa «pie». Un animal bípedo camina sobre dos piernas."
+        },
+        {
+          "enunciado": "What is the English word for «infancia»?",
+          "opciones": [
+            "Infancy",
+            "Adulthood",
+            "Old age",
+            "Adolescence"
+          ],
+          "correcta": "Infancy",
+          "explicacion": "«Infancy» significa «infancia». Los humanos tenemos la infancia más larga del reino animal."
+        },
+        {
+          "enunciado": "Which of these does a complex brain help us do?",
+          "opciones": [
+            "Learn and make decisions",
+            "Fly without help",
+            "Breathe underwater",
+            "Change the colour of our skin"
+          ],
+          "correcta": "Learn and make decisions",
+          "explicacion": "«Complex brain» significa «cerebro complejo». Nos ayuda a aprender, tomar decisiones, guardar información y ser creativos."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "minijuego",
+      "titulo": "4. Juego",
+      "descripcion": "Juego del tema",
+      "icono": "🎮"
+    },
+    {
+      "id": 5,
+      "tipo": "teoria",
+      "titulo": "5. Presentación: Pensar, hablar y crear",
+      "descripcion": "Tres diapositivas con imágenes y explicación por voz.",
+      "icono": "📜",
+      "fichas": [
+        {
+          "titulo": "Segunda parte",
+          "subtitulo": "Lenguaje, consciencia y cerebro complejo",
+          "icono": "📜",
+          "tarjetas": [
+            {
+              "nombre": "Lenguaje y consciencia",
+              "fecha": "Comunicación",
+              "icono": "🗣️",
+              "color": "#8b5cf6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/b01_lenguaje.jpg",
+              "texto": "Hablamos y sabemos quiénes somos",
+              "locucion": "Podemos comunicarnos con el lenguaje, hablando y usando idiomas. Además, somos conscientes del mundo que nos rodea y también de nuestra propia identidad. Eso se llama consciencia.",
+              "puntos": []
+            },
+            {
+              "nombre": "Cerebro complejo",
+              "fecha": "Cerebro",
+              "icono": "🧠",
+              "color": "#3b82f6",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/b02_cerebro.jpg",
+              "texto": "Pensar, aprender y resolver problemas",
+              "locucion": "Nuestro cerebro es complejo. Nos permite entender, aprender, guardar información, tomar decisiones y ser creativos. Así podemos resolver problemas, como las operaciones matemáticas, y desarrollar tecnología.",
+              "puntos": []
+            },
+            {
+              "nombre": "Humanos de ayer y de hoy",
+              "fecha": "Ayer y hoy",
+              "icono": "🧬",
+              "color": "#ef4444",
+              "imagen": "data/cursos/5_primaria/ciencias_naturales/tema_01_somos_humanos/cap_02_que_nos_hace_humanos/assets/b03_ayer_hoy.jpg",
+              "texto": "De la cueva al laboratorio",
+              "ajuste_imagen": "completo",
+              "locucion": "Compara las dos fotos: una persona de la prehistoria, en una cueva, y una científica en un laboratorio. Las dos son humanas. Lo que cambia es lo que hemos creado con nuestro cerebro, nuestro lenguaje y nuestras manos. Un antropólogo lo resume así: lo que nos hace humanos es la capacidad de imaginar, crear, enseñar, aprender y colaborar. Si quieres verlo con más detalle, pulsa el botón del vídeo.",
+              "video": {
+                "titulo": "Vídeo: What makes us human?",
+                "url": "https://www.youtube.com/watch?v=ub2cjjNGgpM"
+              },
+              "puntos": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "quiz",
+      "titulo": "6. Quiz: Desafío final",
+      "descripcion": "Preguntas finales sobre consciencia, lenguaje, cerebro y tecnología, en español e inglés.",
+      "icono": "🏆",
+      "preguntas": [
+        {
+          "enunciado": "¿Qué significa que los humanos seamos conscientes de nosotros mismos?",
+          "opciones": [
+            "Conocemos el mundo y también nuestra propia identidad",
+            "Dormimos muchas horas",
+            "Podemos volar",
+            "Olvidamos todo lo que aprendemos"
+          ],
+          "correcta": "Conocemos el mundo y también nuestra propia identidad",
+          "explicacion": "Ser consciente es darte cuenta del mundo que te rodea y también de quién eres. Eso se llama «consciencia»."
+        },
+        {
+          "enunciado": "¿Qué característica humana nos permite comunicarnos mediante palabras e idiomas?",
+          "opciones": [
+            "El lenguaje",
+            "Los pulgares oponibles",
+            "La infancia larga",
+            "El bipedismo"
+          ],
+          "correcta": "El lenguaje",
+          "explicacion": "El lenguaje es la forma en que los humanos nos comunicamos con palabras y con distintos idiomas."
+        },
+        {
+          "enunciado": "¿Es verdadera esta frase? «Los humanos tenemos cerebros simples.»",
+          "opciones": [
+            "Falsa: tenemos cerebros complejos",
+            "Verdadera",
+            "Solo es verdad en los bebés",
+            "Depende de cada país"
+          ],
+          "correcta": "Falsa: tenemos cerebros complejos",
+          "explicacion": "La frase es falsa. Nuestro cerebro es complejo: nos permite entender, aprender y crear."
+        },
+        {
+          "enunciado": "¿Qué nos permite crear y desarrollar tecnología?",
+          "opciones": [
+            "Nuestro cerebro complejo y la capacidad de resolver problemas",
+            "Nuestra infancia corta",
+            "Caminar a cuatro patas",
+            "Ser unicelulares"
+          ],
+          "correcta": "Nuestro cerebro complejo y la capacidad de resolver problemas",
+          "explicacion": "Con nuestro cerebro complejo podemos resolver problemas y crear nueva tecnología."
+        },
+        {
+          "enunciado": "What does «self-awareness» mean?",
+          "opciones": [
+            "Being aware of the world and of our own identity",
+            "Sleeping for many hours",
+            "Being able to fly",
+            "Forgetting what we learn"
+          ],
+          "correcta": "Being aware of the world and of our own identity",
+          "explicacion": "«Self-awareness» es la «consciencia»: darte cuenta del mundo y de tu propia identidad. En el juego usamos siempre «consciencia»."
+        },
+        {
+          "enunciado": "Which human ability allows us to communicate with words and languages?",
+          "opciones": [
+            "Language",
+            "Opposable thumbs",
+            "Long infancy",
+            "Bipedalism"
+          ],
+          "correcta": "Language",
+          "explicacion": "«Language» significa «lenguaje»: la forma en que nos comunicamos con palabras e idiomas."
+        },
+        {
+          "enunciado": "What does «numerical problems» mean?",
+          "opciones": [
+            "Problems solved with mathematics",
+            "Problems with the heart",
+            "Problems with the eyes",
+            "Problems with the feet"
+          ],
+          "correcta": "Problems solved with mathematics",
+          "explicacion": "«Numerical» tiene que ver con los números. Los problemas numéricos se resuelven con matemáticas."
+        },
+        {
+          "enunciado": "What is the English term for «desarrollar tecnología»?",
+          "opciones": [
+            "Develop technology",
+            "Grow plants",
+            "Lose memory",
+            "Walk on four legs"
+          ],
+          "correcta": "Develop technology",
+          "explicacion": "«Develop technology» significa «desarrollar tecnología». Con nuestro cerebro complejo podemos crear y mejorar herramientas y máquinas."
         }
       ]
     }
