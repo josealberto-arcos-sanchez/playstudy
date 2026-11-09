@@ -41,6 +41,14 @@ Cada tema decide qué **entre dos y cuatro** minijuegos aparecen en todos sus ca
 - Cada capítulo conserva en su `contenido.json` un catálogo `juegos` con el material de todos sus minijuegos, indexado por subtipo. Así se puede cambiar la lista de juegos del tema sin reescribir los capítulos.
 - Las casillas `"tipo": "minijuego"` del capítulo son solo **paradas**: el cargador coloca en ellas los juegos que el tema tenga configurados. Si un capítulo no define alguno de los juegos pedidos, se avisa por consola y se usan los juegos disponibles.
 - El material de un juego que ya no se muestra (por ejemplo, el puzzle) puede seguir guardado en el catálogo `juegos` para recuperarlo más adelante.
+- Un capítulo puede usar **otros juegos distintos** de los de su tema: basta con añadir en su entrada de `data/catalogo.json` una lista `"juegos"` con las mismas reglas (entre dos y cuatro, distintos, y una parada de minijuego por cada uno). Esa lista sustituye a la del tema solo para ese capítulo:
+
+```json
+{
+  "id": "cap_03_ciclo_de_la_vida",
+  "juegos": ["parejas", "linea_tiempo"]
+}
+```
 
 ### Línea del tiempo (`linea_tiempo`)
 

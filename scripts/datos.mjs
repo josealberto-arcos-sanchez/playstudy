@@ -19,7 +19,9 @@
  * - 6 casillas por capítulo con composición flexible: cada capítulo decide
  *   cuántas paradas dedica a juegos, teoría y quizzes.
  * - Entre 2 y 4 juegos por tema (distintos, aunque el tema no tenga aún
- *   capítulos) y una parada de minijuego en el capítulo por cada juego.
+ *   capítulos) y una parada de minijuego en el capítulo por cada juego. Un
+ *   capítulo puede definir su propia lista `juegos` en el catálogo, que
+ *   sustituye a la del tema con las mismas reglas.
  * - Teoría como presentación: cada tarjeta con imagen local y locución.
  * - Rutas de imagen existentes y créditos completos.
  * - La respuesta correcta de cada quiz, indicada por el texto de una opción
@@ -181,11 +183,25 @@ export function validarContenido({ raiz = RAIZ_PROYECTO } = {}) {
       errores.push(`${donde}: tiene ${casillas.length} casillas (se esperan 6)`);
     }
 
-    const juegosTema = Array.isArray(tema.juegos) ? tema.juegos : [];
+    const juegosCapitulo = Array.isArray(capitulo.juegos) ? capitulo.juegos : null;
+    if (juegosCapitulo) {
+      if (juegosCapitulo.length < MIN_JUEGOS_TEMA || juegosCapitulo.length > MAX_JUEGOS_TEMA) {
+        errores.push(
+          `${donde}: el capitulo debe definir entre ${MIN_JUEGOS_TEMA} y ${MAX_JUEGOS_TEMA} juegos (tiene ${juegosCapitulo.length})`
+        );
+      }
+      const repetidosCapitulo = juegosCapitulo.filter((juego, indice) => juegosCapitulo.indexOf(juego) !== indice);
+      if (repetidosCapitulo.length > 0) {
+        errores.push(`${donde}: los juegos del capitulo deben ser distintos (se repite '${repetidosCapitulo[0]}')`);
+      }
+    }
+
+    const juegosTema = juegosCapitulo ?? (Array.isArray(tema.juegos) ? tema.juegos : []);
+    const origenJuegos = juegosCapitulo ? `el capitulo ${donde}` : `el tema ${tema.id}`;
     const paradasJuego = casillas.filter(casilla => casilla?.tipo === 'minijuego').length;
     if (paradasJuego !== juegosTema.length) {
       errores.push(
-        `${donde}: tiene ${paradasJuego} paradas de minijuego pero el tema ${tema.id} define ${juegosTema.length} juegos`
+        `${donde}: tiene ${paradasJuego} paradas de minijuego pero ${origenJuegos} define ${juegosTema.length} juegos`
       );
     }
     if (contenido.juegos) {
